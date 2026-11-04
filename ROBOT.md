@@ -78,6 +78,7 @@ Tümü Türkçe olur. Sadece ürün sayfasındaki bilgilere dayan; özellik, ser
 4. Onay gelene kadar bekle.
 
 ### 9. Onay gelince planla
+0. **Onay geç geldiyse:** Saati geçmiş bir slotu atlama. O gönderiyi aynı gün saat 18:00'e al; o saat de geçtiyse haftanın ilk boş gününe 10:00'a kaydır. Değişikliği kullanıcıya yaz.
 1. PNG'leri `posts/<HAFTA>/` klasörüne kopyala, commit et (`<HAFTA> haftası gönderileri`) ve push et.
 2. Her görselin adresi `https://raw.githubusercontent.com/<sahip>/tuzla-instagram/main/posts/<HAFTA>/<id>.png` olur. `curl` ile 200 döndüğünü kontrol et.
 3. Her gönderi için Metricool `createScheduledPost` çağır:
