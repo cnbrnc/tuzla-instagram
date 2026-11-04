@@ -71,7 +71,8 @@ def main():
     state = load_json("state.json", {})
     queue = load_json("queue.json", {})
     used = {p.get("url") for p in state.get("posted", [])}
-    used |= {p.get("url") for p in queue.get("products", [])}
+    for k in ("products", "reels", "urun_carousel", "tekli"):
+        used |= {p.get("url") for p in queue.get(k, []) if isinstance(p, dict)}
     recent = state.get("recent_groups", [])[-8:]
 
     order = sorted(GROUPS, key=lambda g: (recent.count(g), random.random()))

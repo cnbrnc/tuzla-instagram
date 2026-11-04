@@ -1,14 +1,60 @@
 {
   "posted": [
-    {"date": "2026-11-09T10:00:00", "id": "2026-11-09-gedore-tork", "type": "urun", "group": "tork", "url": "https://tuzlahirdavat.com.tr/gedore-red-12-40-200-nm-tork-anahtari-r68900200-14000005613", "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=7250319658039985355"},
-    {"date": "2026-11-11T10:00:00", "id": "2026-11-11-grangos-set", "type": "urun", "group": "akulu", "url": "https://tuzlahirdavat.com.tr/20v-kit-gcd25--gcg20--2-x-50-ah--gcc02--grc06-gckit202a-f2", "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=3234855027400130928"},
-    {"date": "2026-11-12T10:00:00", "id": "2026-11-12-a2-a4", "type": "karsilastirma", "group": "baglanti", "url": "", "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-6571475556082367643"},
-    {"date": "2026-11-13T10:00:00", "id": "2026-11-13-starline-cizme", "type": "urun", "group": "isg", "url": "https://tuzlahirdavat.com.tr/stl-9910-s4-yesil-cizme-uzun-no43-starline-20199101211430", "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=324216549419272888"}
+    {
+      "date": "2026-11-09T10:00:00",
+      "id": "2026-11-09-gedore-tork",
+      "type": "urun",
+      "group": "tork",
+      "url": "https://tuzlahirdavat.com.tr/gedore-red-12-40-200-nm-tork-anahtari-r68900200-14000005613",
+      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=7250319658039985355"
+    },
+    {
+      "date": "2026-11-11T10:00:00",
+      "id": "2026-11-11-grangos-set",
+      "type": "urun",
+      "group": "akulu",
+      "url": "https://tuzlahirdavat.com.tr/20v-kit-gcd25--gcg20--2-x-50-ah--gcc02--grc06-gckit202a-f2",
+      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=3234855027400130928"
+    },
+    {
+      "date": "2026-11-12T10:00:00",
+      "id": "2026-11-12-a2-a4",
+      "type": "karsilastirma",
+      "group": "baglanti",
+      "url": "",
+      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-6571475556082367643"
+    },
+    {
+      "date": "2026-11-13T10:00:00",
+      "id": "2026-11-13-starline-cizme",
+      "type": "urun",
+      "group": "isg",
+      "url": "https://tuzlahirdavat.com.tr/stl-9910-s4-yesil-cizme-uzun-no43-starline-20199101211430",
+      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=324216549419272888"
+    }
   ],
-  "planned_weeks": ["2026-11-09"],
-  "recent_groups": ["tork", "akulu", "isg"],
+  "planned_weeks": [
+    "2026-11-09"
+  ],
+  "recent_groups": [
+    "tork",
+    "akulu",
+    "baglanti",
+    "isg"
+  ],
   "last_product_theme": "dark",
-  "extras_cycle": ["bilgi", "karsilastirma", "kampanya", "toplu"],
-  "extras_used": ["karsilastirma"],
-  "notes": ["Robot 2026-11-04'te kuruldu. İlk hafta (2026-11-09) kullanıcı onayıyla planlandı."]
+  "last_tekli_week": "2026-11-09",
+  "facebook_bagli": false,
+  "karne": [
+    {
+      "tarih": "2026-11-03",
+      "takipci": 1498,
+      "not": "Başlangıç noktası (robottan önce). Ekim 2026'da günlük erişim 0–5 kişi; Ağustos–Ekim 2026 arasında paylaşım yok."
+    }
+  ],
+  "notes": [
+    "Robot 2026-11-04'te kuruldu. İlk hafta (2026-11-09) kullanıcı onayıyla planlandı.",
+    "2026-11-04: Kullanıcı yeni düzeni onayladı. 16 Kasım 2026 haftasından itibaren Pazartesi ve Cuma Reels, Çarşamba ürün kaydırmalısı, Perşembe Usta İpucu kaydırmalısı; en fazla 5 hashtag.",
+    "2026-11-04: İlk haftanın (2026-11-09) 4 gönderisinin hashtag'leri 5'e indirildi (Metricool'da güncellendi)."
+  ]
 }

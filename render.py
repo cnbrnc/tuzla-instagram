@@ -24,7 +24,7 @@ def build_html(env, post):
         "title": post.get("id", "gonderi"),
     }
     ctx.update(post)
-    if post.get("template") == "urun" and post.get("product_dir"):
+    if post.get("product_dir"):
         with open(os.path.join(post["product_dir"], "product.json"), encoding="utf-8") as f:
             prod = json.load(f)
         for k in ("image", "image_style", "panel_bg"):

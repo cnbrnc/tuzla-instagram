@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block style %}
+.body{padding:56px 56px 56px 56px;display:flex;flex-direction:column;gap:30px;flex-grow:1}
+.head{display:flex;justify-content:space-between;align-items:flex-start;gap:28px}
+.htext{display:flex;flex-direction:column;gap:18px;flex:1;min-width:0}
+h1.disp{font-size:104px;line-height:.92}
+.thumb{width:240px;height:240px;flex-shrink:0;background:#fff;border-radius:28px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.thumb img{max-width:210px;max-height:210px}
+.list{display:flex;flex-direction:column;gap:20px;margin-top:6px;flex-grow:1}
+.item{flex:1;display:flex;gap:26px;align-items:center;border-radius:24px;padding:26px 30px;max-height:230px}
+.t-dark .item{background:#24497F} .t-light .item{background:#fff}
+.num{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:800;font-size:64px;line-height:.9;flex-shrink:0;width:76px}
+.t-dark .num{color:var(--accent)} .t-light .num{color:var(--navy)}
+.itext{display:flex;flex-direction:column;gap:6px}
+.it{font-weight:700;font-size:34px;line-height:1.2}
+.t-dark .it{color:#fff} .t-light .it{color:var(--deep)}
+.id{font-weight:500;font-size:27px;line-height:1.35}
+.t-dark .id{color:#E3EAF5} .t-light .id{color:#374151}
+{% endblock %}
+{% block content %}
+<div class="body">
+<div class="head">
+<div class="htext"><span class="kicker">{{ kicker }}</span>
+<h1 class="disp" data-fit data-fit-lines="2">{% for l in headline %}{{ l }}{% if not loop.last %}<br>{% endif %}{% endfor %}</h1></div>
+{% if image %}<div class="thumb"><img src="{{ image }}" alt=""></div>{% endif %}
+</div>
+<div class="list">
+{% for it in items %}<div class="item"><span class="num">{{ "%02d"|format(loop.index) }}</span><div class="itext"><span class="it">{{ it.title }}</span><span class="id">{{ it.text }}</span></div></div>{% endfor %}
+</div>
+</div>
+{% endblock %}

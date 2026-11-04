@@ -59,6 +59,7 @@ def main():
                 f.write(env.get_template("reel.html").render(**ctx))
             page.goto("file://" + html_path)
             page.evaluate("document.fonts.ready.then(() => true)")
+            page.evaluate("window.fitText()")
             page.wait_for_timeout(300)
             frames = os.path.join(out, "frames-" + post["id"])
             shutil.rmtree(frames, ignore_errors=True)
