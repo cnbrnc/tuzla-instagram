@@ -26,6 +26,9 @@ Depo herkese açıktır; buraya şifre, anahtar veya kişisel bilgi yazılmaz.
 ### 2. Hafta ve slotlar
 `HAFTA` = gelecek Pazartesi'nin tarihi (YYYY-MM-DD). Slotlar: Pzt ürün, Çar ürün, Per ürün dışı, Cum ürün; hepsi 10:00.
 
+- **Hafta zaten planlıysa:** `state.json` içindeki `planned_weeks` listesinde `HAFTA` varsa yeniden planlama yapma. Kullanıcıya "bu hafta zaten planlı" diye kısa bilgi ver ve bitir.
+- **Geçen haftayı kontrol et:** `getScheduledPosts` ile son 7 günü sorgula. Tarihi geçmiş ama hâlâ planlı görünen gönderi varsa yayınlanmamış demektir; kullanıcıya bildir.
+
 ### 3. İçerik seçimi
 - **Ürün slotları:** Önce `queue.json` içindeki `products` listesini sırayla kullan. Liste bittiyse `python3 pick_products.py 8` çalıştır ve adaylardan 3 ürün seç:
   - Aynı hafta içinde farklı gruplardan olsun.
@@ -91,7 +94,7 @@ Tümü Türkçe olur. Sadece ürün sayfasındaki bilgilere dayan; özellik, ser
 4. Hata gelirse aynı isteği tekrar deneme; hatayı kullanıcıya olduğu gibi bildir.
 
 ### 10. Durumu kaydet
-1. `state.json`'a şunları işle: 4 kayıt (tarih, id, tür, url, grup, Metricool bağlantısı), `recent_groups`, `last_product_theme`, `extras_used`.
+1. `state.json`'a şunları işle: 4 kayıt (tarih, id, tür, url, grup, Metricool bağlantısı), `planned_weeks` listesine `HAFTA`, `recent_groups`, `last_product_theme`, `extras_used`.
 2. Kullanılan öğeleri `queue.json`'dan çıkar.
 3. Commit et ve push et.
 
