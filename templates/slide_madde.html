@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block style %}
+.body{padding:64px 56px 0 56px;display:flex;flex-direction:column;gap:22px;flex-grow:1}
+.code{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:800;font-size:240px;line-height:.85;letter-spacing:-.01em}
+.ill{margin-top:14px} .ill svg{width:860px;height:auto}
+.t-dark .code{color:var(--accent)} .t-light .code{color:var(--deep)}
+h1.disp{font-size:84px;line-height:.95;max-width:968px}
+.text{margin:0;font-weight:500;font-size:36px;line-height:1.35;max-width:940px}
+.t-dark .text{color:#E3EAF5} .t-light .text{color:var(--ink)}
+.tip{margin-top:auto;margin-bottom:56px;border-radius:24px;padding:28px 32px;display:flex;flex-direction:column;gap:8px}
+.t-dark .tip{background:#24497F} .t-light .tip{background:#fff}
+.tip .lab{font-weight:700;font-size:20px;letter-spacing:.14em}
+.t-dark .tip .lab{color:var(--accent)} .t-light .tip .lab{color:var(--navy)}
+.tip .tt{font-weight:500;font-size:30px;line-height:1.35}
+.t-dark .tip .tt{color:#fff} .t-light .tip .tt{color:var(--ink)}
+{% endblock %}
+{% block content %}
+<div class="body">
+<span class="code">{{ code }}</span>
+<h1 class="disp" data-fit data-fit-lines="2">{% for l in headline %}{{ l }}{% if not loop.last %}<br>{% endif %}{% endfor %}</h1>
+<p class="text">{{ text }}</p>
+{% if illustration %}<div class="ill">{{ illustration|safe }}</div>{% endif %}
+{% if tip %}<div class="tip"><span class="lab">{{ tip_label or 'USTA NOTU' }}</span><span class="tt">{{ tip }}</span></div>{% endif %}
+</div>
+{% endblock %}

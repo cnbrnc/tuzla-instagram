@@ -51,16 +51,31 @@ def main():
             "--disable-component-update", "--disable-sync", "--allow-file-access-from-files"])
         page = browser.new_page(viewport={"width": 1080, "height": 1350}, device_scale_factor=1)
         for post in spec["posts"]:
-            html_path = os.path.join(out, "html", post["id"] + ".html")
-            with open(html_path, "w", encoding="utf-8") as f:
-                f.write(build_html(env, post))
-            page.goto("file://" + html_path)
-            page.evaluate("document.fonts.ready.then(() => true)")
-            page.evaluate("window.fitText()")
-            page.wait_for_timeout(150)
-            png = os.path.join(out, post["id"] + ".png")
-            page.locator("#post").screenshot(path=png)
-            print("ok", png)
+            items = []
+            if post.get("slides"):
+                # Kaydırmalı gönderi: her slayt ayrı PNG (id-01, id-02, ...); sağ üstte sayaç
+                n = len(post["slides"])
+                for i, s in enumerate(post["slides"], 1):
+                    item = {k: v for k, v in post.items() if k not in ("slides", "caption", "tag")}
+                    item.update(s)
+                    item["id"] = "%s-%02d" % (post["id"], i)
+                    item.setdefault("tag", "%d / %d" % (i, n))
+                    items.append(item)
+            elif post.get("template") == "reel":
+                continue  # videolar reel.py ile üretilir
+            else:
+                items.append(post)
+            for item in items:
+                html_path = os.path.join(out, "html", item["id"] + ".html")
+                with open(html_path, "w", encoding="utf-8") as f:
+                    f.write(build_html(env, item))
+                page.goto("file://" + html_path)
+                page.evaluate("document.fonts.ready.then(() => true)")
+                page.evaluate("window.fitText()")
+                page.wait_for_timeout(150)
+                png = os.path.join(out, item["id"] + ".png")
+                page.locator("#post").screenshot(path=png)
+                print("ok", png)
         browser.close()
 
 
