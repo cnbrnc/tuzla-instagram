@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block style %}
+.body{padding:48px 56px 0 56px;display:flex;flex-direction:column;gap:18px;flex-grow:1}
+h1.disp{font-size:128px;line-height:.9;max-width:968px;white-space:nowrap}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:14px}
+.col{border-radius:24px;padding:34px 30px;display:flex;flex-direction:column;gap:22px}
+.col.a{background:#fff} .col.b{background:var(--navy)}
+.big{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:800;font-size:136px;line-height:.85}
+.col.a .big{color:var(--deep)} .col.b .big{color:var(--accent)}
+.csub{font-weight:700;font-size:24px;letter-spacing:.08em}
+.col.a .csub{color:var(--navy)} .col.b .csub{color:var(--mist)}
+.row{display:flex;flex-direction:column;gap:6px}
+.lab{font-weight:700;font-size:18px;letter-spacing:.12em}
+.col.a .lab{color:var(--muted)} .col.b .lab{color:var(--mist2)}
+.val{font-weight:500;font-size:26px;line-height:1.3}
+.col.a .val{color:var(--ink)} .col.b .val{color:#fff}
+.head{display:flex;flex-direction:column;gap:6px}
+.bottom{margin:10px 0 0 0;font-weight:700;font-size:30px;line-height:1.3;color:var(--deep)}
+{% endblock %}
+{% block content %}
+<div class="body">
+<span class="kicker">{{ kicker }}</span>
+<h1 class="disp" data-fit data-fit-lines="1">{{ headline[0] }}</h1>
+<div class="cols">
+{% for col in columns %}
+<div class="col {{ 'a' if loop.index == 1 else 'b' }}">
+<div class="head"><span class="big">{{ col.big }}</span><span class="csub">{{ col.sub }}</span></div>
+{% for r in col.rows %}<div class="row"><span class="lab">{{ r.label }}</span><span class="val">{{ r.value }}</span></div>{% endfor %}
+</div>
+{% endfor %}
+</div>
+{% if bottom %}<p class="bottom">{{ bottom }}</p>{% endif %}
+</div>
+{% endblock %}

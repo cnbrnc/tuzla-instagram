@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block style %}
+.body{padding:64px 56px 0 56px;display:flex;flex-direction:column;gap:26px;flex-grow:1}
+h1.disp{font-size:210px;line-height:.86;max-width:968px}
+.lead{margin:0;font-weight:700;font-size:40px;line-height:1.25;color:var(--ink)}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:10px}
+.card{background:#fff;border-radius:22px;padding:26px 30px;display:flex;flex-direction:column;gap:8px}
+.lab{font-weight:700;font-size:18px;letter-spacing:.12em;color:var(--muted)}
+.ct{font-weight:700;font-size:32px;line-height:1.2;color:var(--deep)}
+.cs{font-weight:500;font-size:24px;line-height:1.3;color:#374151}
+{% endblock %}
+{% block content %}
+<div class="body">
+{% if icon %}<div>{{ icon|safe }}</div>{% endif %}
+<h1 class="disp" data-fit data-fit-lines="2">{{ headline[0] }}{% if headline|length > 1 %}<br>{{ headline[1] }}{% endif %}</h1>
+<p class="lead">{{ lead }}</p>
+<div class="cards">
+{% for c in cards %}<div class="card"><span class="lab">{{ c.label }}</span><span class="ct">{{ c.title }}</span><span class="cs">{{ c.sub }}</span></div>{% endfor %}
+</div>
+</div>
+{% endblock %}

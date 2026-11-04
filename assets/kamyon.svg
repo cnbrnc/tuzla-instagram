@@ -1,0 +1,12 @@
+<svg width="300" height="180" viewBox="0 0 300 180" aria-hidden="true" style="display:block">
+<g fill="none" stroke="#002265" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<line x1="14" y1="58" x2="58" y2="58"></line>
+<line x1="4" y1="88" x2="52" y2="88"></line>
+<line x1="22" y1="118" x2="58" y2="118"></line>
+<rect x="80" y="30" width="130" height="100" rx="6"></rect>
+<path d="M210 60 H252 L282 95 V130 H210 Z"></path>
+<path d="M224 74 H246 L262 94 H224 Z"></path>
+</g>
+<circle cx="122" cy="140" r="19" fill="#FFC629" stroke="#002265" stroke-width="8"></circle>
+<circle cx="250" cy="140" r="19" fill="#FFC629" stroke="#002265" stroke-width="8"></circle>
+</svg>

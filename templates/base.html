@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>{{ title }}</title>
+<link rel="stylesheet" href="{{ fontdir }}/@fontsource/barlow-condensed/700.css">
+<link rel="stylesheet" href="{{ fontdir }}/@fontsource/barlow-condensed/800.css">
+<link rel="stylesheet" href="{{ fontdir }}/@fontsource/dm-sans/400.css">
+<link rel="stylesheet" href="{{ fontdir }}/@fontsource/dm-sans/500.css">
+<link rel="stylesheet" href="{{ fontdir }}/@fontsource/dm-sans/700.css">
+<style>
+:root{--navy:#193D73;--deep:#002265;--night:#0E1B33;--ink:#14171C;--ground:#F1F3F6;--accent:{{ accent }};--mist:#C7D3E6;--mist2:#AFC0DA;--muted:#5B6472}
+html,body{margin:0;padding:0;background:#fff}
+#post{width:1080px;height:1350px;box-sizing:border-box;display:flex;flex-direction:column;overflow:hidden;position:relative;font-family:'DM Sans',Arial,sans-serif}
+.disp{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:800}
+.top{display:flex;align-items:center;justify-content:space-between;padding:48px 56px 0 56px;position:relative;z-index:1}
+.logo{height:58px;width:auto;display:block}
+.tag{display:inline-flex;align-items:center;height:52px;padding:0 24px;border-radius:999px;font-weight:700;font-size:22px;letter-spacing:.12em;background:var(--accent);color:var(--ink)}
+.foot{height:96px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 56px;position:relative;z-index:1}
+.foot .url{font-weight:700;font-size:28px;color:#fff}
+.foot .mail{font-weight:500;font-size:24px}
+.bar{width:72px;height:8px;background:var(--accent)}
+.kicker{font-weight:700;font-size:24px;letter-spacing:.16em}
+h1{margin:0}
+/* themes */
+.t-light{background:var(--ground);color:var(--ink)}
+.t-light .foot{background:var(--deep)} .t-light .foot .mail{color:var(--mist)}
+.t-light h1{color:var(--deep)} .t-light .sub{color:#374151} .t-light .kicker{color:var(--navy)}
+.t-light .chip{background:var(--navy);color:#fff}
+.t-dark{background:var(--navy);color:#fff}
+.t-dark .foot{background:var(--night)} .t-dark .foot .mail{color:var(--mist2)}
+.t-dark h1{color:#fff} .t-dark .sub{color:var(--mist)} .t-dark .kicker{color:var(--accent)}
+.t-dark .chip{background:var(--accent);color:var(--ink)}
+.t-yellow{background:var(--accent);color:var(--deep)}
+.t-yellow .tag{background:var(--deep);color:#fff}
+.t-yellow .foot{background:var(--deep)} .t-yellow .foot .mail{color:var(--mist)}
+.t-yellow h1{color:var(--deep)}
+.t-night{background:var(--night);color:#fff}
+.t-night .foot{background:var(--deep)} .t-night .foot .mail{color:var(--mist)}
+.t-night h1{color:#fff} .t-night .kicker{color:var(--accent)}
+{% block style %}{% endblock %}
+</style>
+</head>
+<body>
+<div id="post" class="t-{{ theme }}">
+{% block deco %}{% endblock %}
+<div class="top"><img class="logo" src="{{ logo }}" alt="Tuzla Hırdavat"><span class="tag">{{ tag }}</span></div>
+{% block content %}{% endblock %}
+<div class="foot"><span class="url">tuzlahirdavat.com.tr</span><span class="mail">Sipariş: satis5@tuzlacivata.com.tr</span></div>
+</div>
+<script>
+// Başlık sığmazsa yazıyı küçült (en fazla 2 satır, taşma yok)
+window.fitText = function () {
+  document.querySelectorAll('[data-fit]').forEach(function (el) {
+    var max = parseFloat(el.getAttribute('data-fit-lines') || '2');
+    var size = parseFloat(getComputedStyle(el).fontSize);
+    var lh = parseFloat(getComputedStyle(el).lineHeight) / size;
+    var guard = 0;
+    while ((el.scrollWidth > el.clientWidth + 1 || el.offsetHeight > size * lh * max + 2) && size > 40 && guard < 80) {
+      size -= 2; el.style.fontSize = size + 'px'; guard++;
+    }
+  });
+  return true;
+};
+</script>
+</body>
+</html>

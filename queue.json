@@ -1,0 +1,114 @@
+{
+  "note": "Onaylanmış örnek tasarımlar. Robot önce bunları kullanır; ürün kuyruğu biterse yeni ürün seçer, ürün dışı kuyruk biterse sıradaki türde yeni içerik üretir.",
+  "products": [
+    {
+      "key": "gedore-pense",
+      "template": "urun", "tag": "YENİ ÜRÜN", "brand": "GEDORE RED", "sku": "R28002204",
+      "headline": ["Kabloyu tek", "hamlede soy."],
+      "product_line": "Gedore Red Otomatik Kablo Soyma Pensesi",
+      "chips": ["0,2–6,0 mm²", "Kesici + sıkıcı", "İletkene zarar vermez"],
+      "url": "https://tuzlahirdavat.com.tr/gedore-red-cok-amacli-kablo-soyma-pensesir28002204-14000006114",
+      "group": "pense",
+      "caption": "Kabloyu maket bıçağıyla soyarken bakırı çizmekten bıktıysanız bu pense tam size göre. ⚡\n\nGedore Red R28002204, 0,2–6,0 mm² kabloyu tek hamlede soyar; iletkeni kesmeden, ezmeden. Kesici ve sıkıcı bölümüyle elektrikçinin çantasında üç alet yerine tek alet.\n\n✅ 0,2–6,0 mm² kablo aralığı\n✅ Otomatik soyma, iletkene zarar vermez\n✅ Kesme ve sıkma bir arada\n\n🔎 Sitede “R28002204” yazıp aratın\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#gedore #gedorered #kablosoyma #pense #elektrikçi #elektrik #elaletleri #hırdavat #tuzlahırdavat #tuzla #istanbul"
+    },
+    {
+      "key": "izeltas-fener",
+      "template": "urun", "tag": "AYDINLATMA", "brand": "İZELTAŞ", "sku": "PRO 12000",
+      "headline": ["Gece arızasında", "gündüz gibi."],
+      "product_line": "İzeltaş Pro 12000 Lümen Zoomlu COB LED El Feneri",
+      "chips": ["12000 lümen", "Zoom odak ayarı", "Alüminyum kasa"],
+      "url": "https://tuzlahirdavat.com.tr/pro-12000-lumen-zoom-ozellikli-cob-led-el-feneri--14000006173",
+      "group": "fener",
+      "caption": "Elektrik kesildi, arıza gece çıktı, rögar kapağı açıldı… Işık lazım. 🔦\n\nİzeltaş Pro 12000 lümen el feneri, zoom özelliğiyle ışığı geniş alana yayar ya da uzağa odaklar. Alüminyum kasası sahaya dayanıklı; pil göstergesiyle enerji durumunu her an görürsünüz.\n\n✅ 12000 lümen COB LED\n✅ Zoom ile odak ayarı\n✅ Alüminyum kasa, pil göstergesi\n\nAkşamlar erken kararıyor; aracınızda ve atölyenizde bir tane olsun.\n🔎 Sitede “12000 lümen” yazıp aratın\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#izeltaş #elfeneri #ledfener #fener #aydınlatma #arıza #elektrikçi #hırdavat #tuzlahırdavat #tuzla #istanbul"
+    },
+    {
+      "key": "kolege-kaynak",
+      "template": "urun", "tag": "KAYNAK", "brand": "KOLEGE", "sku": "KLG200MMA",
+      "headline": ["200 amper,", "sağlam dikiş."],
+      "product_line": "Kolege KLG200MMA İnverter Elektrod Kaynak Makinesi",
+      "chips": ["200 A inverter", "Ø1,6–4,0 mm elektrod", "Rutil + bazik"],
+      "url": "https://tuzlahirdavat.com.tr/klg200mma-inverter-200amper-ortulu-elektrod-kaynak-klg200mma",
+      "group": "kaynak",
+      "caption": "Elektrod kaynağında güç ve süreklilik arayanlara: Kolege KLG200MMA. 🔥\n\nØ1,6 mm'den Ø4,0 mm'ye kadar rutil ve bazik elektrodlarla sürekli kaynak yapabilen 200 amperlik inverter makine. Endüstriyel ve profesyonel kullanım için tasarlandı.\n\n✅ 200 A inverter\n✅ Ø1,6–4,0 mm rutil ve bazik elektrod\n✅ Endüstriyel ve profesyonel kullanım\n\nElektrod ve kaynak ekipmanları da sitemizde.\n🔎 Sitede “KLG200MMA” yazıp aratın\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#kolege #kaynak #kaynakmakinesi #elektrodkaynağı #inverterkaynak #kaynakçı #metal #imalat #hırdavat #tuzlahırdavat #tuzla #istanbul"
+    },
+    {
+      "key": "yg1-kilavuz-seti",
+      "template": "urun", "tag": "DİŞ AÇMA", "brand": "YG-1", "sku": "TD804SET7-GLP195",
+      "headline": ["M3'ten M12'ye", "tek kutuda."],
+      "product_line": "YG-1 TiN Kaplı Helis Kılavuz ve Matkap Seti",
+      "chips": ["M3–M12", "TiN kaplı", "Kılavuz + matkap ucu"],
+      "url": "https://tuzlahirdavat.com.tr/tin-kapli-helis-kilavuz-matkap-seti-m3-m12-yg1-td804set7-glp195",
+      "group": "kilavuz/matkap",
+      "caption": "Diş açarken “hangi matkapla delmeliydim?” sorusu tarihe karışıyor. 🔩\n\nYG-1 TD804SET7 setinde M3'ten M12'ye helis makine kılavuzları ve matkap uçları aynı kutuda. TiN kaplama sürtünmeyi azaltır, takım ömrünü uzatır.\n\n✅ M3–M12 helis kılavuz\n✅ Kılavuz + matkap ucu bir arada\n✅ TiN kaplı, YG-1 kalitesi\n\n🔎 Sitede “TD804SET7” yazıp aratın\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#yg1 #kılavuz #matkapucu #dişaçma #talaşlıimalat #cnc #torna #metalişleme #hırdavat #tuzlahırdavat #tuzla #istanbul"
+    },
+    {
+      "key": "rayno-vinc",
+      "template": "urun", "tag": "YÜK KALDIRMA", "brand": "RAYNO", "sku": "RYN11157",
+      "headline": ["Ağır yükü", "kumandayla kaldır."],
+      "product_line": "Rayno Uzaktan Kumandalı Elektrikli Mini Vinç",
+      "chips": ["400–800 kg", "20 m halat", "%100 bakır motor"],
+      "url": "https://tuzlahirdavat.com.tr/rayno-elektrikli-mini-vinc-400-800-kg-20-m-wifi-ryn11157",
+      "group": "kaldirma",
+      "caption": "Atölyede motor indirmek, depoda malzeme yükseltmek, inşaatta kat arası taşıma… 🏗️\n\nRayno RYN11157 mini vinç, uzaktan kumandasıyla yükü güvenli mesafeden kaldırmanızı sağlar.\n\n✅ 400–800 kg kapasite\n✅ 20 metre halat\n✅ %100 bakır motor\n✅ Uzaktan kumanda\n\nKurulum ve kullanım sorularınız için bize yazın.\n🔎 Sitede “RYN11157” yazıp aratın\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#rayno #vinç #minivinç #elektriklivinç #yükkaldırma #atölye #inşaat #depo #hırdavat #tuzlahırdavat #tuzla #istanbul"
+    },
+    {
+      "key": "crc-5-56",
+      "template": "urun", "tag": "BAKIM KİMYASALI", "brand": "CRC", "sku": "5-56 PRO",
+      "headline": ["Sıkışanı çöz,", "nemi uzaklaştır."],
+      "product_line": "CRC 5-56 Pro Pas Sökücü",
+      "chips": ["Pas sökücü", "Nem uzaklaştırıcı", "Korozyon koruması"],
+      "url": "https://tuzlahirdavat.com.tr/crc-5-56-pro-pas-sokucu",
+      "group": "kimyasal",
+      "caption": "Paslı cıvata, sıkışmış menteşe, nem almış soket… Atölyenin en çok aranan spreyi: CRC 5-56. 🧰\n\n✅ Paslı ve sıkışmış parçaları gevşetir\n✅ Nemi uzaklaştırır, ıslak motorların çalışmasına yardımcı olur\n✅ Metal yüzeyleri korozyona karşı korur\n\nKoli halinde alım için ürün sayfasındaki “Özel Teklif İste” butonunu kullanın.\n🔎 Sitede “CRC 5-56” yazıp aratın\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#crc #crc556 #passökücü #yağlayıcı #bakım #otoservis #atölye #sanayi #hırdavat #tuzlahırdavat #tuzla #istanbul"
+    },
+    {
+      "key": "volkel-helikoil",
+      "template": "urun", "tag": "DİŞ TAMİRİ", "brand": "VÖLKEL", "sku": "V-04012",
+      "headline": ["Diş sıyırdı mı?", "Parçayı atma."],
+      "product_line": "Völkel M8×1,25 Helikoil Diş Tamir Seti",
+      "chips": ["M8 × 1,25", "Orijinal ölçüye dönüş", "Set halinde"],
+      "url": "https://tuzlahirdavat.com.tr/m8x125-helikoil-tamir-seti-volkel-v-04012",
+      "group": "helikoil",
+      "caption": "Alüminyum blokta, motor gövdesinde ya da makine parçasında diş mi sıyırdı? Parçayı değiştirmeden önce bunu deneyin. 🛠️\n\nVölkel helikoil seti ile sıyrılan dişi orijinal M8×1,25 ölçüsüne geri getirirsiniz. Çelik yay ile tamir edilen diş, yumuşak malzemede çoğu zaman eskisinden daha dayanıklı olur.\n\n✅ M8 × 1,25 normal diş\n✅ Orijinal ölçüye geri dönüş\n✅ Set halinde, atölyeye hazır\n\nDiğer ölçüler için sitemize göz atın.\n🔎 Sitede “V-04012” yazıp aratın\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#helikoil #helicoil #völkel #diştamiri #dişsıyırma #motor #otoservis #tamir #hırdavat #tuzlahırdavat #tuzla #istanbul"
+    }
+  ],
+  "extras": [
+    {
+      "key": "bilgi-civata-okuma", "kind": "bilgi",
+      "template": "bilgi", "theme": "dark", "tag": "BİLGİ KARTI",
+      "kicker": "CIVATA NASIL OKUNUR?",
+      "headline": ["M8 × 40 · 8.8", "ne demek?"],
+      "illustration_file": "assets/civata-cizim.svg",
+      "cards": [
+        {"code": "M8", "text": "Metrik diş, 8 mm anma çapı"},
+        {"code": "1,25", "text": "Diş adımı (mm). Yazmıyorsa normal diş."},
+        {"code": "40", "text": "Boy: baş altından uca, mm"},
+        {"code": "8.8", "text": "800 N/mm² çekme, 640 N/mm² akma dayanımı"}
+      ],
+      "note": "Paslanmaz cıvatada bu işaretin yerini A2-70 veya A4-80 alır.",
+      "caption": "Cıvata siparişinde en sık karışan konu: ölçü nasıl okunur? 📏\n\nM8 × 40 · 8.8 örneğinde:\n• M8: Metrik diş, 8 mm anma çapı\n• 1,25: Diş adımı (yazılmamışsa normal diş kabul edilir)\n• 40: Baş altından uca boy, mm\n• 8.8: Mukavemet sınıfı (800 N/mm² çekme, 640 N/mm² akma)\n\nPaslanmaz cıvatada 8.8 yerine A2-70, A4-80 gibi işaretler görürsünüz.\n\nKaydedin, sipariş verirken işinize yarar.\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n\n#cıvata #civata #bağlantıelemanları #paslanmazcıvata #din933 #teknikbilgi #makine #imalat #tuzlacıvata #tuzlahırdavat #hırdavat"
+    },
+    {
+      "key": "kampanya-kargo", "kind": "kampanya",
+      "template": "kampanya", "theme": "yellow", "tag": "KAMPANYA",
+      "icon_file": "assets/kamyon.svg",
+      "headline": ["Kargo", "bizden."],
+      "lead": "3.000 TL ve üzeri siparişte ücretsiz kargo",
+      "cards": [
+        {"label": "ÜYELERE ÖZEL", "title": "Vade farksız 3 taksit", "sub": "5.000 TL ve üzeri siparişte"},
+        {"label": "ÜYELERE ÖZEL", "title": "Vade farksız 6 taksit", "sub": "20.000 TL ve üzeri siparişte"}
+      ],
+      "caption": "Siparişinizi verin, kargoyu biz karşılayalım. 🚚\n\n📦 3.000 TL ve üzeri siparişte ücretsiz kargo\n💳 Üyelere özel: 5.000 TL üzeri vade farksız 3 taksit, 20.000 TL üzeri vade farksız 6 taksit\n\nÜye olun, avantajlardan yararlanın.\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#ücretsizkargo #kampanya #taksit #hırdavat #elaletleri #nalbur #usta #sanayi #tuzlahırdavat #tuzla #istanbul"
+    },
+    {
+      "key": "toplu-alim-paslanmaz", "kind": "toplu",
+      "template": "toplu", "theme": "night", "tag": "TOPLU ALIM",
+      "kicker": "PASLANMAZ BAĞLANTI ELEMANLARI",
+      "big": "M1.6 → M48",
+      "headline": ["İthalatçıdan direkt,", "firmanıza özel teklif."],
+      "chips": ["Cıvata", "Somun", "Pul"],
+      "cta": {"label": "SİPARİŞ VE TEKLİF", "l1": "satis5@tuzlacivata.com.tr", "l2": "Telefon: 0542 189 02 69", "l3": "veya ürün sayfasında “Özel Teklif İste” butonu"},
+      "caption": "Paslanmaz bağlantı elemanında aracıya gerek yok. 🔩\n\nM1.6'dan M48'e paslanmaz cıvata, somun ve pulda ithalatçıdan direkt tedarik. Firmanızın ihtiyaç listesini gönderin, toplu alıma özel teklifimizi hazırlayalım.\n\n👉 Ürün sayfasındaki “Özel Teklif İste” butonu\n📞 0542 189 02 69\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n\n#paslanmaz #paslanmazcıvata #inox #bağlantıelemanları #cıvata #somun #pul #toptan #ithalat #tuzlacıvata #tuzlahırdavat"
+    }
+  ]
+}
