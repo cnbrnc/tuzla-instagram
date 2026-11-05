@@ -104,7 +104,8 @@ def cmd_json(hafta, sha, args):
             info["videoCoverMilliseconds"] = 1200
             info["instagramData"] = {"type": "REEL", "showReelOnFeed": True}
             if pid in muzik:
-                info["instagramData"]["audioConfiguration"] = {"audioId": muzik[pid]}
+                # Videonun kendi efektleri (ses: "efekt") müziğin altında kalsın
+                info["instagramData"]["audioConfiguration"] = {"audioId": muzik[pid], "videoVolume": 50}
         else:
             info["media"] = [raw + n for n in names]
             alt = post.get("alt")

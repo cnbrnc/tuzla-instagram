@@ -58,6 +58,15 @@ Alanlar:
 
 Şablon taşan satırı kendisi küçültür, ama karakter sınırlarına yine de uy.
 
+**Ses:** Her Reels'e kodla üretilmiş özgün ses gömülür. `reel.py` bunu kendisi yapar; kullanıcı bu sesi 5 Kasım 2026'da onayladı.
+- Sesin içinde kanca tıkları, geçiş "vuuş"ları, çip "pıt"ları, kapanışta metal "tınn" ve hafif bir ritim var. Telif sorunu yoktur.
+- Dosyalar `assets/reel-ses.wav` (tam) ve `assets/reel-ses-efekt.wav` (yalnız efekt), kaynağı `ses.py`.
+- Gönderide `ses` alanı:
+  - `"tam"` (varsayılan)
+  - `"efekt"`: Instagram müziği eklenecekse
+  - `"yok"`: sessiz
+- `reel.html` içindeki animasyon zamanları değişirse `ses.py` içindeki zamanları da güncelle ve iki dosyayı yeniden üret.
+
 ### Ürün kaydırmalısı (3 slayt)
 
 1. **`urun` (kapak):**
@@ -254,7 +263,10 @@ Kullanıcıya kısa bir özet yaz: hangi gün hangi gönderi yayınlanacak ve he
 
 ## Facebook bağlantısı varsa (`state.json` içinde `facebook_bagli: true`)
 
-- **Reels müziği:** `planla.py json … --muzik <id>=<audioId>` ile eklenir. Müzik yalnız Reels'te olur ve her zaman videonun başından başlar.
+- **Reels müziği:** Haftanın iki Reels'inden birine Instagram müziği ekle, diğeri kendi sesimizle kalsın. Karnede hangisinin daha çok izlendiğini ve paylaşıldığını takip et; birkaç hafta sonra sonucu kullanıcıya öner.
+  - Müzik eklenecek Reels'e `weeks/<HAFTA>.json` dosyasında üretimden önce `"ses": "efekt"` yaz. Böylece ritim müzikle çakışmaz.
+  - Müziği `planla.py json … --muzik <id>=<audioId>` ile ekle. Videonun efektleri müziğin altında kalır (`videoVolume` 50).
+  - Müzik yalnız Reels'te olur ve her zaman videonun başından başlar.
   - `audioId` bir arama terimi (şarkı ya da sanatçı adı) veya bir numaradır.
   - Arama tek sonuca denk gelmezse Metricool isteği aday listesiyle reddeder. O zaman listeden **sözsüz (enstrümantal)** bir parça seç ve numarasıyla bir kez daha dene.
   - Sözlü, argo içeren ya da marka adı geçen parça seçme.
@@ -270,7 +282,8 @@ Kullanıcıya kısa bir özet yaz: hangi gün hangi gönderi yayınlanacak ve he
 ## Dosyalar
 - `hafta.py`: Kuyruktan haftayı kurar, ürünleri indirir, stok kontrol eder.
 - `render.py`: Kaydırmalı ve tekli gönderilerin PNG'lerini üretir (1080×1350).
-- `reel.py`: Reels videosunu ve kapağını üretir.
+- `reel.py`: Reels videosunu ve kapağını üretir; sesi `assets/reel-ses*.wav` dosyalarından ekler.
+- `ses.py`: Reels'in özgün ses izini üretir. Yalnız animasyon zamanları değişirse çalıştırılır.
 - `onizleme.py`: Onay için önizlemeleri üretir; bunlar depoya yüklenmez.
 - `planla.py`: Dosyaları kopyalar, Metricool isteklerini hazırlar, durumu kaydeder.
 - `fetch_product.py`, `pick_products.py`, `tools_svg.py`: Ürün verisi, ürün adayları, cıvata çizimleri.

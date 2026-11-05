@@ -4,6 +4,7 @@
 Kullanım: python3 reel.py <hafta.json> <çıktı_klasörü>
 hafta.json içinde template = "reel" olan gönderileri işler. Her biri için <id>.mp4 ve kapak <id>-kapak.jpg yazar.
 Gerekli alanlar: hook (satırlar), hook_kicker, tag, brand, sku, title, chips, search_code, product_dir.
+İsteğe bağlı: ses = "tam" (varsayılan: efekt + ritim), "efekt" (yalnız efekt; Instagram müziği eklenecekse) ya da "yok".
 """
 import json
 import os
@@ -19,6 +20,9 @@ CHROME = "/usr/bin/google-chrome"
 FPS = 30
 SECONDS = 10
 REEL_STYLE_DEFAULT = "max-width:860px;max-height:640px;width:auto;height:auto"
+# Kodla üretilmiş özgün ses izleri (ses.py). Zamanlama templates/reel.html ile aynıdır.
+SOUNDS = {"tam": os.path.join(ROOT, "assets", "reel-ses.wav"),
+          "efekt": os.path.join(ROOT, "assets", "reel-ses-efekt.wav")}
 
 
 def reel_image_style(prod):
@@ -70,10 +74,17 @@ def main():
                 page.evaluate("t => document.getAnimations().forEach(a => { a.pause(); a.currentTime = t; })", t)
                 page.screenshot(path=os.path.join(frames, "f%04d.jpg" % i), type="jpeg", quality=92)
             mp4 = os.path.join(out, post["id"] + ".mp4")
-            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS), "-i", os.path.join(frames, "f%04d.jpg"),
-                            "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo", "-shortest",
-                            "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p",
-                            "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart", mp4], check=True)
+            # Ses: "tam" (varsayılan, ritimli), "efekt" (Instagram müziği eklenecekse) ya da "yok"
+            audio = SOUNDS.get(post.get("ses", "tam"))
+            if audio and os.path.exists(audio):
+                audio_in = ["-i", audio]
+                audio_fx = ["-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-ar", "44100"]
+            else:
+                audio_in = ["-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo"]
+                audio_fx = []
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS), "-i", os.path.join(frames, "f%04d.jpg")]
+                           + audio_in + ["-shortest", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p"]
+                           + audio_fx + ["-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", mp4], check=True)
             shutil.copy(os.path.join(frames, "f%04d.jpg" % int(FPS * 1.2)), os.path.join(out, post["id"] + "-kapak.jpg"))
             shutil.rmtree(frames, ignore_errors=True)
             print("ok", mp4)

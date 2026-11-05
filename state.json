@@ -55,6 +55,7 @@
   "notes": [
     "Robot 2026-11-04'te kuruldu. İlk hafta (2026-11-09) kullanıcı onayıyla planlandı.",
     "2026-11-04: Kullanıcı yeni düzeni onayladı. 16 Kasım 2026 haftasından itibaren Pazartesi ve Cuma Reels, Çarşamba ürün kaydırmalısı, Perşembe Usta İpucu kaydırmalısı; en fazla 5 hashtag.",
-    "2026-11-04: İlk haftanın (2026-11-09) 4 gönderisinin hashtag'leri 5'e indirildi (Metricool'da güncellendi)."
+    "2026-11-04: İlk haftanın (2026-11-09) 4 gönderisinin hashtag'leri 5'e indirildi (Metricool'da güncellendi).",
+    "2026-11-05: Kullanıcı Reels için kodla üretilmiş özgün sesi onayladı (ses.py, assets/reel-ses.wav). Facebook Sayfası (facebook.com/tuzlacivata) yetkisi kullanıcının babasında ya da abisinde; kullanıcı abisinden tam yetki isteyecek. Olmazsa Facebook olmadan devam: Reels kendi sesimizle çıkar."
   ]
 }
