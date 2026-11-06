@@ -16,30 +16,41 @@ html,body{margin:0;padding:0;background:var(--navy)}
 .top{position:absolute;top:150px;left:60px;right:150px;display:flex;align-items:center;justify-content:space-between}
 .logo{height:64px;width:auto;display:block}
 .pill{display:inline-flex;align-items:center;height:56px;padding:0 26px;border-radius:999px;background:var(--accent);color:var(--ink);font-weight:700;font-size:24px;letter-spacing:.12em}
+/* Zamanlama ses.py ile aynıdır (120 BPM, vuruş 0,5 sn). Birini değiştirirsen ötekini de değiştir. */
 @keyframes up{from{transform:translateY(70px);opacity:0}to{transform:none;opacity:1}}
-@keyframes out{to{transform:translateY(-90px);opacity:0}}
+@keyframes slam{0%{transform:scale(1.35);opacity:0}55%{transform:scale(.96);opacity:1}100%{transform:none;opacity:1}}
+@keyframes slamT{from{transform:translateY(30px) scale(1.12);opacity:0}to{transform:none;opacity:1}}
+@keyframes breathe{from{transform:scale(1)}to{transform:scale(1.05)}}
+@keyframes out{to{transform:translateY(-120px);opacity:0}}
 @keyframes panelIn{from{transform:translateY(1750px)}to{transform:none}}
-@keyframes zoom{from{transform:scale(.88)}to{transform:scale(1.05)}}
+@keyframes zoom{from{transform:scale(.9)}to{transform:scale(1.06)}}
+@keyframes punch{0%{transform:scale(1)}35%{transform:scale(1.08)}100%{transform:scale(1)}}
+@keyframes shine{from{transform:translateX(-140%) skewX(-18deg)}to{transform:translateX(320%) skewX(-18deg)}}
 @keyframes pop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
 @keyframes wipe{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0 0 0 0)}}
-/* 1. sahne: kanca */
-.hook{position:absolute;left:60px;right:150px;top:470px;animation:out .35s ease-in 1.9s both}
+/* 1. sahne: kanca (0–2 sn). Satırlar vuruşla çarparak gelir: 0 / 0,25 / 0,5 sn */
+.hook{position:absolute;left:60px;right:150px;top:470px;animation:out .25s ease-in 1.75s both}
 .hook .k{font-weight:700;font-size:32px;letter-spacing:.16em;color:var(--accent)}
-.hook h1{margin:26px 0 0 0;font-size:168px;line-height:.9;color:#fff}
-.hook .l{display:block;white-space:nowrap;animation:up .5s cubic-bezier(.2,.8,.2,1) both}
-.hook .l:nth-child(1){animation-delay:.05s}.hook .l:nth-child(2){animation-delay:.2s}.hook .l:nth-child(3){animation-delay:.35s}
-/* 2. sahne: ürün */
-.panel{position:absolute;left:60px;right:60px;top:300px;height:820px;background:{{ panel_bg }};border-radius:40px;display:flex;align-items:center;justify-content:center;overflow:hidden;animation:panelIn .55s cubic-bezier(.2,.8,.2,1) 2.0s both}
+.hook h1{margin:26px 0 0 0;font-size:168px;line-height:.9;color:#fff;transform-origin:0 50%;animation:breathe 1.5s linear .25s both}
+.hook .l{display:block;white-space:nowrap;transform-origin:0 60%;animation:slam .22s cubic-bezier(.2,.8,.3,1) both}
+.hook .l:nth-child(1){animation-delay:0s}.hook .l:nth-child(2){animation-delay:.25s}.hook .l:nth-child(3){animation-delay:.5s}
+/* 2. sahne: ürün (2 sn'de düşüşle gelir; 3 ve 3,5 sn'de vuruşla yakınlaşır; 6 sn'de parlar) */
+.panel{position:absolute;left:60px;right:60px;top:300px;height:820px;background:{{ panel_bg }};border-radius:40px;display:flex;align-items:center;justify-content:center;overflow:hidden;animation:panelIn .25s cubic-bezier(.2,.9,.3,1) 1.75s both}
 .panel .brand{position:absolute;top:38px;left:44px;font-weight:700;font-size:28px;letter-spacing:.16em;color:var(--navy)}
 .panel .sku{position:absolute;top:38px;right:44px;font-weight:500;font-size:26px;color:var(--muted)}
-.prodwrap{animation:zoom 4.5s ease-out 2.2s both}
+.prodwrap{animation:zoom 5s ease-out 1.9s both}
+.punch{animation:punch .28s ease-out 3s,punch .28s ease-out 3.5s}
 .prodwrap img{display:block}
-.title{position:absolute;left:60px;right:150px;top:1170px;font-size:132px;line-height:.92;color:#fff;margin:0;white-space:nowrap;animation:up .5s cubic-bezier(.2,.8,.2,1) 2.6s both}
+.shine{position:absolute;top:-20%;left:0;width:34%;height:140%;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.8),rgba(255,255,255,0));mix-blend-mode:screen;z-index:2;animation:shine .55s ease-in-out 5.95s both}
+.title{position:absolute;left:60px;right:150px;top:1170px;font-size:132px;line-height:.92;color:#fff;margin:0;white-space:nowrap;animation:slamT .3s cubic-bezier(.2,.8,.3,1) 2.5s both}
 .chips{position:absolute;left:60px;right:150px;top:1330px;display:flex;flex-wrap:wrap;gap:18px}
-.chip{display:inline-flex;align-items:center;height:76px;padding:0 32px;border-radius:999px;background:var(--accent);color:var(--ink);font-weight:700;font-size:36px;animation:pop .4s cubic-bezier(.3,1.6,.5,1) both}
-.chip:nth-child(1){animation-delay:4.4s}.chip:nth-child(2){animation-delay:4.9s}.chip:nth-child(3){animation-delay:5.4s}
-/* 3. sahne: kapanış kartı */
-.end{position:absolute;inset:0;background:var(--accent);color:var(--deep);animation:wipe .5s cubic-bezier(.7,0,.3,1) 7.2s both}
+.chip{display:inline-flex;align-items:center;height:76px;padding:0 32px;border-radius:999px;background:var(--accent);color:var(--ink);font-weight:700;font-size:36px;animation:pop .35s cubic-bezier(.3,1.6,.5,1) both}
+.chip:nth-child(1){animation-delay:3.94s}.chip:nth-child(2){animation-delay:4.44s}.chip:nth-child(3){animation-delay:4.94s}
+/* 3. sahne: kapanış kartı (7–9 sn). Video döngüde başa kesintisiz döner. */
+.end{position:absolute;inset:0;background:var(--accent);color:var(--deep);animation:wipe .3s cubic-bezier(.7,0,.3,1) 6.75s both}
+.end .k{animation:up .3s cubic-bezier(.2,.8,.2,1) 6.95s both}
+.end .code{animation:slam .3s cubic-bezier(.2,.8,.3,1) 7s both,punch .25s ease-out 8s,punch .25s ease-out 8.5s}
+.end .card{animation:up .35s cubic-bezier(.2,.8,.2,1) 7.15s both}
 .end .in{position:absolute;left:60px;right:150px;top:300px;display:flex;flex-direction:column;gap:26px}
 .end .k{font-weight:700;font-size:32px;letter-spacing:.16em;color:var(--deep)}
 .end .code{font-size:150px;line-height:.9;color:var(--deep);margin:0;white-space:nowrap}
@@ -53,7 +64,7 @@ html,body{margin:0;padding:0;background:var(--navy)}
 <div id="reel">
 <div class="top"><img class="logo" src="{{ logo }}" alt="Tuzla Hırdavat"><span class="pill">{{ tag }}</span></div>
 <div class="hook"><div class="k">{{ hook_kicker }}</div><h1 class="disp" data-fit>{% for l in hook %}<span class="l">{{ l }}</span>{% endfor %}</h1></div>
-<div class="panel"><span class="brand">{{ brand }}</span><span class="sku">{{ sku }}</span><div class="prodwrap"><img src="{{ image }}" alt="" style="{{ image_style }}"></div></div>
+<div class="panel"><span class="brand">{{ brand }}</span><span class="sku">{{ sku }}</span><div class="prodwrap"><div class="punch"><img src="{{ image }}" alt="" style="{{ image_style }}"></div></div><div class="shine"></div></div>
 <h2 class="title disp" data-fit>{{ title }}</h2>
 <div class="chips">{% for c in chips %}<span class="chip">{{ c }}</span>{% endfor %}</div>
 <div class="end"><div class="in">

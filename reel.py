@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Reels videosu üretir (1080x1920, 30 fps, MP4).
+"""Reels videosu üretir (1080x1920, 30 fps, 9 sn, MP4).
 
 Kullanım: python3 reel.py <hafta.json> <çıktı_klasörü>
 hafta.json içinde template = "reel" olan gönderileri işler. Her biri için <id>.mp4 ve kapak <id>-kapak.jpg yazar.
 Gerekli alanlar: hook (satırlar), hook_kicker, tag, brand, sku, title, chips, search_code, product_dir.
-İsteğe bağlı: ses = "tam" (varsayılan: efekt + ritim), "efekt" (yalnız efekt; Instagram müziği eklenecekse) ya da "yok".
+İsteğe bağlı: ses = "enerjik" (varsayılan), "atolye", "derin", "efekt" (yalnız efekt; Instagram müziği
+eklenecekse) ya da "yok". Video ve ses döngüde başa kesintisiz bağlanır.
 """
 import json
 import os
@@ -18,11 +19,10 @@ from playwright.sync_api import sync_playwright
 ROOT = os.path.dirname(os.path.abspath(__file__))
 CHROME = "/usr/bin/google-chrome"
 FPS = 30
-SECONDS = 10
+SECONDS = 9
 REEL_STYLE_DEFAULT = "max-width:860px;max-height:640px;width:auto;height:auto"
 # Kodla üretilmiş özgün ses izleri (ses.py). Zamanlama templates/reel.html ile aynıdır.
-SOUNDS = {"tam": os.path.join(ROOT, "assets", "reel-ses.wav"),
-          "efekt": os.path.join(ROOT, "assets", "reel-ses-efekt.wav")}
+SOUNDS = {k: os.path.join(ROOT, "assets", "reel-ses-%s.wav" % k) for k in ("enerjik", "atolye", "derin", "efekt")}
 
 
 def reel_image_style(prod):
@@ -63,6 +63,8 @@ def main():
                 f.write(env.get_template("reel.html").render(**ctx))
             page.goto("file://" + html_path)
             page.evaluate("document.fonts.ready.then(() => true)")
+            # Yazı sığdırma, animasyonlar durgunken yapılır (1,2 sn): büyüyerek gelen satırlar ölçümü bozmasın
+            page.evaluate("document.getAnimations().forEach(a => { a.pause(); a.currentTime = 1200; })")
             page.evaluate("window.fitText()")
             page.wait_for_timeout(300)
             frames = os.path.join(out, "frames-" + post["id"])
@@ -74,8 +76,8 @@ def main():
                 page.evaluate("t => document.getAnimations().forEach(a => { a.pause(); a.currentTime = t; })", t)
                 page.screenshot(path=os.path.join(frames, "f%04d.jpg" % i), type="jpeg", quality=92)
             mp4 = os.path.join(out, post["id"] + ".mp4")
-            # Ses: "tam" (varsayılan, ritimli), "efekt" (Instagram müziği eklenecekse) ya da "yok"
-            audio = SOUNDS.get(post.get("ses", "tam"))
+            # Ses: ritim adı (varsayılan "enerjik"), "efekt" (Instagram müziği eklenecekse) ya da "yok"
+            audio = SOUNDS.get(post.get("ses", "enerjik"))
             if audio and os.path.exists(audio):
                 audio_in = ["-i", audio]
                 audio_fx = ["-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-ar", "44100"]

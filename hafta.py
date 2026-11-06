@@ -75,6 +75,9 @@ def main():
         (day(4), "reel", q["reels"][1]),
     ]
     theme = "light" if state.get("last_product_theme") == "dark" else "dark"
+    # Reels ritimleri sırayla döner; aynı hafta iki Reels'te aynı ritim olmaz (state.json: ses_sirasi)
+    ritimler = ["enerjik", "atolye", "derin"]
+    ses_i = state.get("ses_sirasi", 0)
 
     posts, warnings = [], []
     for date, fmt, item in slots:
@@ -87,6 +90,8 @@ def main():
             warnings.append("%s: %s" % (item["key"], item["dogrula"]))
         if fmt == "reel":
             post["template"] = "reel"
+            post.setdefault("ses", ritimler[ses_i % len(ritimler)])
+            ses_i += 1
         if item.get("url"):
             dest = os.path.join(ROOT, "work", item["key"])
             prod = fetch(item["url"], dest)

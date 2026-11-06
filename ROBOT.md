@@ -36,11 +36,12 @@ Depo herkese açıktır; buraya şifre, anahtar veya kişisel bilgi yazılmaz.
 
 ### Reels (`reel.py`, şablon `templates/reel.html`)
 
-1080×1920, 10 saniye, 30 fps.
+1080×1920, 9 saniye, 30 fps. İzleyiciyi tutmak için kuruldu (kullanıcı 6 Kasım 2026'da istedi):
 
-- **0–2 sn:** Kanca sorusu.
-- **2–7 sn:** Ürün paneli, başlık ve 3 çip.
-- **7–10 sn:** "Sitede arat" kapanış kartı.
+- **0–2 sn:** Kanca sorusu. Satırlar vuruşla çarparak gelir (0 / 0,25 / 0,5 sn); ilk karede ses var.
+- **2 sn:** Ürün paneli müziğin "düşüş" anında gelir.
+- **2,5–6,5 sn:** Başlık 2,5'te gelir. Ürün 3 ve 3,5'ta vuruşla yakınlaşır, çipler 4 / 4,5 / 5'te gelir. 6'da ürünün üstünden bir parlama geçer. Her 0,5–1 saniyede ekranda bir şey değişir.
+- **7–9 sn:** "Sitede arat" kapanış kartı. Ses sonda yükselir ve video başa kesintisiz sarar; tekrar izlenmesi süreyi artırır.
 - **Kapak:** 1,2. saniyedeki kare (kanca).
 
 Alanlar:
@@ -58,14 +59,14 @@ Alanlar:
 
 Şablon taşan satırı kendisi küçültür, ama karakter sınırlarına yine de uy.
 
-**Ses:** Her Reels'e kodla üretilmiş özgün ses gömülür. `reel.py` bunu kendisi yapar; kullanıcı bu sesi 5 Kasım 2026'da onayladı.
-- Sesin içinde kanca tıkları, geçiş "vuuş"ları, çip "pıt"ları, kapanışta metal "tınn" ve hafif bir ritim var. Telif sorunu yoktur.
-- Dosyalar `assets/reel-ses.wav` (tam) ve `assets/reel-ses-efekt.wav` (yalnız efekt), kaynağı `ses.py`.
-- Gönderide `ses` alanı:
-  - `"tam"` (varsayılan)
-  - `"efekt"`: Instagram müziği eklenecekse
-  - `"yok"`: sessiz
-- `reel.html` içindeki animasyon zamanları değişirse `ses.py` içindeki zamanları da güncelle ve iki dosyayı yeniden üret.
+**Ses:** Her Reels'e kodla üretilmiş özgün ses gömülür; telif sorunu yoktur. `reel.py` bunu kendisi yapar.
+- **İmza sesler her Reels'te aynıdır:** başta "tak-tak-TAK", ürün gelirken düşüş, çiplerde "pıt", parlamada "şing", kapanışta metal "tınn". Bunlar markanın sesi olur.
+- **Ritim üç türlü:** `enerjik`, `atolye` (cırcır, çekiç), `derin` (yarım tempo). Akılda kalan kısa melodi hepsinde vardır.
+- **Sıra:** `hafta.py` ritimleri sırayla dağıtır (`state.json` içinde `ses_sirasi`), böylece aynı hafta iki Reels'te aynı ritim olmaz. `planla.py durum` sırayı ilerletir.
+- **Dosyalar:** `assets/reel-ses-<ritim>.wav` ve `assets/reel-ses-efekt.wav` (yalnız efekt); kaynağı `ses.py`.
+- **Gönderideki `ses` alanı:** ritim adı, `"efekt"` (Instagram müziği eklenecekse) ya da `"yok"`.
+- **Zamanlama:** `reel.html` içindeki animasyon zamanları değişirse `ses.py` içindeki zamanları da güncelle ve dört dosyayı yeniden üret.
+- **Karne:** Karnede ritimlere göre izlenme ve paylaşımı da not et. Birkaç hafta sonra hangi ritim daha iyi gidiyorsa kullanıcıya öner.
 
 ### Ürün kaydırmalısı (3 slayt)
 
@@ -282,7 +283,7 @@ Kullanıcıya kısa bir özet yaz: hangi gün hangi gönderi yayınlanacak ve he
 ## Dosyalar
 - `hafta.py`: Kuyruktan haftayı kurar, ürünleri indirir, stok kontrol eder.
 - `render.py`: Kaydırmalı ve tekli gönderilerin PNG'lerini üretir (1080×1350).
-- `reel.py`: Reels videosunu ve kapağını üretir; sesi `assets/reel-ses*.wav` dosyalarından ekler.
+- `reel.py`: Reels videosunu ve kapağını üretir; sesi `assets/reel-ses-*.wav` dosyalarından ekler.
 - `ses.py`: Reels'in özgün ses izini üretir. Yalnız animasyon zamanları değişirse çalıştırılır.
 - `onizleme.py`: Onay için önizlemeleri üretir; bunlar depoya yüklenmez.
 - `planla.py`: Dosyaları kopyalar, Metricool isteklerini hazırlar, durumu kaydeder.
