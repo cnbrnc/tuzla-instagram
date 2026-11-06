@@ -1,0 +1,247 @@
+{
+  "hafta": "2026-11-30",
+  "on_planli": true,
+  "posts": [
+    {
+      "key": "volkel-helikoil",
+      "group": "helikoil",
+      "url": "https://tuzlahirdavat.com.tr/m8x125-helikoil-tamir-seti-volkel-v-04012",
+      "tag": "DİŞ TAMİRİ",
+      "hook_kicker": "TAMİR SORUSU",
+      "hook": [
+        "Diş mi",
+        "sıyırdı?",
+        "Atma, onar."
+      ],
+      "brand": "VÖLKEL",
+      "sku": "V-04012",
+      "title": "Dişi yenile.",
+      "chips": [
+        "M8 × 1,25",
+        "Orijinal ölçüye dönüş",
+        "Set halinde"
+      ],
+      "search_code": "V-04012",
+      "caption": "Helikoil diş tamir seti: sıyrılan M8 dişi, parçayı değiştirmeden orijinal ölçüsüne geri getir. 🛠️\n\nVölkel V-04012, M8×1,25 normal diş için set halinde. Alüminyum blokta, motor gövdesinde, makine parçasında işe yarar.\n\n💾 Kaydet, lazım olur.\n🔎 Sitede “V-04012” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#helikoil #völkel #otoservis #diştamiri #tuzlahırdavat",
+      "ses": "atolye",
+      "id": "2026-11-30-volkel-helikoil",
+      "date": "2026-11-30",
+      "format": "reel",
+      "template": "reel",
+      "product_dir": "work/volkel-helikoil"
+    },
+    {
+      "key": "scheppach-jenerator",
+      "group": "jenerator",
+      "url": "https://tuzlahirdavat.com.tr/scheppach-sg2500i-20kw-benzin-monofaze-jenerator-5906226901",
+      "theme": "light",
+      "slides": [
+        {
+          "tag": "KIŞ HAZIRLIĞI",
+          "brand": "SCHEPPACH",
+          "sku": "SG2500i",
+          "headline": [
+            "Elektrik kesilse",
+            "de iş durmaz."
+          ],
+          "product_line": "Scheppach SG2500i İnverter Benzinli Jeneratör",
+          "chips": [
+            "İnverter",
+            "4 lt depo",
+            "2 USB çıkışı"
+          ],
+          "template": "urun"
+        },
+        {
+          "kicker": "NEDEN İNVERTER?",
+          "headline": [
+            "Hassas cihaza",
+            "temiz elektrik"
+          ],
+          "items": [
+            {
+              "title": "İnverter teknolojisi",
+              "text": "Hassas elektronik aletleri korumaya yardımcı olur."
+            },
+            {
+              "title": "Voltaj regülatörü",
+              "text": "Otomatik regülatör dengeli güç çıkışı sağlar."
+            },
+            {
+              "title": "4 litre depo",
+              "text": "Düşük yakıt tüketimiyle uzun süre çalışır."
+            },
+            {
+              "title": "Taşıması kolay",
+              "text": "Portatif gövde ve 2 USB çıkışı."
+            }
+          ],
+          "template": "slide_liste"
+        },
+        {
+          "template": "slide_cta",
+          "theme": "yellow",
+          "kicker": "SİPARİŞ",
+          "headline": [
+            "Sitede arat:",
+            "SG2500i"
+          ],
+          "lead": "Stok ve teslimat bilgisi ürün sayfasında.",
+          "actions": [
+            "Kaydet",
+            "Ustana gönder"
+          ],
+          "card": {
+            "label": "SİPARİŞ VE TEKLİF",
+            "l1": "tuzlahirdavat.com.tr",
+            "l2": "Sipariş: satis5@tuzlacivata.com.tr",
+            "l3": "Telefon: 0542 189 02 69"
+          }
+        }
+      ],
+      "alt": [
+        "Scheppach SG2500i inverter benzinli jeneratör",
+        "Neden inverter: dört madde",
+        "Sipariş bilgileri"
+      ],
+      "caption": "İnverter jeneratör: Scheppach SG2500i ile elektrik kesintisinde dükkânda, şantiyede ve sahada iş durmasın. ⚡\n\nİnvertörlü güç hassas elektroniği korumaya yardımcı olur; 4 litre depo, otomatik voltaj regülatörü ve 2 USB çıkışı.\n\n👉 Kaydır: neden inverter?\n💾 Kaydet, 📤 şantiyedeki arkadaşına gönder.\n🔎 Sitede “SG2500i” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#jeneratör #scheppach #şantiye #elektrikkesintisi #tuzlahırdavat",
+      "id": "2026-12-02-scheppach-jenerator",
+      "date": "2026-12-02",
+      "format": "carousel",
+      "product_dir": "work/scheppach-jenerator"
+    },
+    {
+      "key": "ipucu-kilavuz-on-delik",
+      "group": "kilavuz/matkap",
+      "theme": "dark",
+      "slides": [
+        {
+          "template": "slide_kapak",
+          "kicker": "USTA İPUCU · DİŞ AÇMA",
+          "headline": [
+            "Kılavuzdan önce",
+            "hangi matkap?"
+          ],
+          "lead": "M5'ten M12'ye ön delik çapları. Kaydet, tezgâhın başında aç.",
+          "illustration_file": "assets/civata-cizim.svg"
+        },
+        {
+          "template": "slide_madde",
+          "code": "M5",
+          "headline": [
+            "Ön delik:",
+            "4,2 mm"
+          ],
+          "text": "M5×0,8 normal diş için 4,2 mm matkapla delin, sonra kılavuz çekin.",
+          "tip": "Kural: anma çapı eksi diş adımı.",
+          "big": "5 − 0,8 = 4,2"
+        },
+        {
+          "template": "slide_madde",
+          "code": "M6",
+          "headline": [
+            "Ön delik:",
+            "5,0 mm"
+          ],
+          "text": "M6×1 normal diş için 5 mm matkapla delin.",
+          "tip": "Küçük ölçülerde: M3 için 2,5 mm, M4 için 3,3 mm.",
+          "big": "6 − 1 = 5,0"
+        },
+        {
+          "template": "slide_madde",
+          "code": "M8",
+          "headline": [
+            "Ön delik:",
+            "6,8 mm"
+          ],
+          "text": "M8×1,25 normal diş için 6,8 mm matkapla delin.",
+          "tip": "8 − 1,25 = 6,75; en yakın standart matkap 6,8 mm.",
+          "big": "8 − 1,25 ≈ 6,8"
+        },
+        {
+          "template": "slide_madde",
+          "code": "M10",
+          "headline": [
+            "Ön delik:",
+            "8,5 mm"
+          ],
+          "text": "M10×1,5 normal diş için 8,5 mm matkapla delin.",
+          "tip": "İnce diş M10×1,25 ise matkap 8,8 mm.",
+          "big": "10 − 1,5 = 8,5"
+        },
+        {
+          "template": "slide_madde",
+          "code": "M12",
+          "headline": [
+            "Ön delik:",
+            "10,2 mm"
+          ],
+          "text": "M12×1,75 normal diş için 10,2 mm matkapla delin.",
+          "tip": "12 − 1,75 = 10,25; standart matkap 10,2 mm.",
+          "big": "12 − 1,75 ≈ 10,2"
+        },
+        {
+          "template": "slide_cta",
+          "theme": "yellow",
+          "kicker": "KAYDET · PAYLAŞ",
+          "headline": [
+            "Kaydet,",
+            "tezgâhta aç."
+          ],
+          "lead": "Kılavuz, matkap ucu ve diş tamir setleri sitemizde.",
+          "actions": [
+            "Kaydet",
+            "Ustana gönder"
+          ],
+          "card": {
+            "label": "KILAVUZ · MATKAP UCU · HELİKOİL",
+            "l1": "tuzlahirdavat.com.tr",
+            "l2": "Sipariş: satis5@tuzlacivata.com.tr",
+            "l3": "Telefon: 0542 189 02 69"
+          }
+        }
+      ],
+      "alt": [
+        "Kılavuzdan önce hangi matkap",
+        "M5 için 4,2 mm",
+        "M6 için 5 mm",
+        "M8 için 6,8 mm",
+        "M10 için 8,5 mm",
+        "M12 için 10,2 mm",
+        "Kaydet, paylaş"
+      ],
+      "caption": "Kılavuz ön delik çapları: M5 4,2 · M6 5,0 · M8 6,8 · M10 8,5 · M12 10,2 mm. 🔩\n\nKural basit: anma çapı eksi diş adımı. Kılavuzdan önce doğru matkapla delmek hem kılavuzu hem dişi kurtarır.\n\n💾 Kaydet, lazım olur.\n📤 Ustana gönder.\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#kılavuz #matkapucu #talaşlıimalat #metalişleme #tuzlahırdavat",
+      "id": "2026-12-03-ipucu-kilavuz-on-delik",
+      "date": "2026-12-03",
+      "format": "carousel"
+    },
+    {
+      "key": "crommac-isitici",
+      "group": "isitma",
+      "url": "https://tuzlahirdavat.com.tr/elektrikli-fanli-isitici-crm3kw-small",
+      "tag": "KIŞ HAZIRLIĞI",
+      "hook_kicker": "KIŞ SORUSU",
+      "hook": [
+        "Dükkân",
+        "buz gibi",
+        "mi?"
+      ],
+      "brand": "CROMMAC",
+      "sku": "CRM3KW",
+      "title": "Hızlı ısıt.",
+      "chips": [
+        "150 m³/sa hava",
+        "Devrilme emniyeti",
+        "Taşınabilir, 4 kg"
+      ],
+      "search_code": "CRM3KW",
+      "ses": "derin",
+      "caption": "Fanlı ısıtıcı: Crommac CRM3KW ile dükkânı, ofisi, kış bahçesini hızla ısıt. 🔥\n\nSaatte 150 m³ hava akışı, devrilme emniyet sistemi ve 4 kg'lık taşınabilir gövde.\n\n📤 Üşüyen arkadaşına gönder.\n🔎 Sitede “CRM3KW” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#ısıtıcı #crommac #ofis #hırdavat #tuzlahırdavat",
+      "id": "2026-12-04-crommac-isitici",
+      "date": "2026-12-04",
+      "format": "reel",
+      "template": "reel",
+      "product_dir": "work/crommac-isitici"
+    }
+  ]
+}

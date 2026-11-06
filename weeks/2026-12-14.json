@@ -1,0 +1,242 @@
+{
+  "hafta": "2026-12-14",
+  "on_planli": true,
+  "posts": [
+    {
+      "key": "fusion-boru-kaynak",
+      "group": "tesisat",
+      "url": "https://tuzlahirdavat.com.tr/fsbk15-s1-1500w-plastik-boru-kaynak-makinasi-set-fusion",
+      "tag": "TESİSAT",
+      "hook_kicker": "TESİSATÇIYA SORU",
+      "hook": [
+        "Tesisatta",
+        "sızıntı",
+        "derdi mi?"
+      ],
+      "brand": "FUSION",
+      "sku": "FSBK15-S1",
+      "title": "Sızdırmaz ek.",
+      "chips": [
+        "1500 W",
+        "PPR-C boru",
+        "Set halinde"
+      ],
+      "search_code": "FSBK15",
+      "ses": "derin",
+      "caption": "Plastik boru kaynak makinesi: Fusion FSBK15-S1 1500 W set ile PPR-C borularda sızdırmaz ek yap. 💧\n\nSu ve sıhhi tesisat işleri için set halinde; sanayi tipi tesisatta da kullanılır.\n\n📤 Tesisatçı arkadaşına gönder.\n🔎 Sitede “FSBK15” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#borukaynak #fusion #tesisatçı #sıhhitesisat #tuzlahırdavat",
+      "id": "2026-12-14-fusion-boru-kaynak",
+      "date": "2026-12-14",
+      "format": "reel",
+      "template": "reel",
+      "product_dir": "work/fusion-boru-kaynak"
+    },
+    {
+      "key": "atg-maxicut-eldiven",
+      "group": "isg",
+      "url": "https://tuzlahirdavat.com.tr/34-450-eldiven-atg-maxiflex-34-450",
+      "theme": "light",
+      "slides": [
+        {
+          "tag": "İŞ GÜVENLİĞİ",
+          "brand": "ATG",
+          "sku": "MAXICUT 34-450",
+          "headline": [
+            "Keskin sacda",
+            "eli koru."
+          ],
+          "product_line": "ATG MaxiCut® 34-450 Kesilme Dirençli İş Eldiveni",
+          "chips": [
+            "Kesilme dirençli",
+            "Nefes alan kaplama",
+            "Kuru ortam için"
+          ],
+          "template": "urun"
+        },
+        {
+          "kicker": "NEDEN BU ELDİVEN?",
+          "headline": [
+            "Korur, terletmez,",
+            "hissettirir."
+          ],
+          "items": [
+            {
+              "title": "Kesilme direnci",
+              "text": "CUTtech® teknolojisiyle keskin kenarlarda koruma."
+            },
+            {
+              "title": "Nefes alır",
+              "text": "Mikro köpük kaplama hava geçirir, el terlemez."
+            },
+            {
+              "title": "Uzun ömür",
+              "text": "Nitril güçlendirme aşınma direncini artırır."
+            },
+            {
+              "title": "Parmak hassasiyeti",
+              "text": "İnce örgü, küçük parçayı tutmayı kolaylaştırır."
+            }
+          ],
+          "template": "slide_liste"
+        },
+        {
+          "template": "slide_cta",
+          "theme": "yellow",
+          "kicker": "SİPARİŞ",
+          "headline": [
+            "Sitede arat:",
+            "MaxiCut"
+          ],
+          "lead": "Stok ve teslimat bilgisi ürün sayfasında.",
+          "actions": [
+            "Kaydet",
+            "Ustana gönder"
+          ],
+          "card": {
+            "label": "SİPARİŞ VE TEKLİF",
+            "l1": "tuzlahirdavat.com.tr",
+            "l2": "Sipariş: satis5@tuzlacivata.com.tr",
+            "l3": "Telefon: 0542 189 02 69"
+          }
+        }
+      ],
+      "alt": [
+        "ATG MaxiCut 34-450 kesilme dirençli iş eldiveni",
+        "Neden bu eldiven: dört madde",
+        "Sipariş bilgileri"
+      ],
+      "caption": "Kesilmeye dirençli iş eldiveni: ATG MaxiCut® 34-450 ile sac ve keskin kenarlı parçalarda eli koru. 🧤\n\nCUTtech® teknolojisi, nefes alan mikro köpük kaplama ve nitril güçlendirme; kuru ortamlar için.\n\n👉 Kaydır: neden bu eldiven?\n💾 Kaydet, 📤 ekip arkadaşına gönder.\n🔎 Sitede “MaxiCut” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#işeldiveni #atg #işgüvenliği #isg #tuzlahırdavat",
+      "id": "2026-12-16-atg-maxicut-eldiven",
+      "date": "2026-12-16",
+      "format": "carousel",
+      "product_dir": "work/atg-maxicut-eldiven"
+    },
+    {
+      "key": "ipucu-somun-cesitleri",
+      "group": "baglanti",
+      "theme": "dark",
+      "slides": [
+        {
+          "template": "slide_kapak",
+          "kicker": "USTA İPUCU · BAĞLANTI ELEMANI",
+          "headline": [
+            "Her somun",
+            "aynı değil."
+          ],
+          "lead": "Flanşlı, kör, kelebek, kontra, kare: hangisi ne işe yarar?",
+          "illustration_file": "assets/civata-cizim.svg"
+        },
+        {
+          "template": "slide_madde",
+          "code": "DIN 6923",
+          "headline": [
+            "Flanşlı somun"
+          ],
+          "text": "Altındaki geniş flanş pul görevi görür; yükü yayar, ayrıca pul gerekmez.",
+          "tip": "Tırtıllı flanşlı olanı yüzeye tutunarak gevşemeyi zorlaştırır.",
+          "product_dir": "work/ipucu-somun-cesitleri/02"
+        },
+        {
+          "template": "slide_madde",
+          "code": "DIN 1587",
+          "headline": [
+            "Kör (kapak) somun"
+          ],
+          "text": "Cıvatanın ucunu kapatır; hem temiz görünür hem keskin uca karşı korur.",
+          "tip": "Cıvata boyunu somunun içine sığacak şekilde seçin; uzun gelirse somun dibe dayanır.",
+          "product_dir": "work/ipucu-somun-cesitleri/03"
+        },
+        {
+          "template": "slide_madde",
+          "code": "DIN 315",
+          "headline": [
+            "Kelebek somun"
+          ],
+          "text": "Kanatları sayesinde aletsiz, elle sıkılır ve sökülür; sık açılıp kapanan yerler için.",
+          "tip": "Yüksek sıkma torku gereken bağlantıda kullanmayın.",
+          "product_dir": "work/ipucu-somun-cesitleri/04"
+        },
+        {
+          "template": "slide_madde",
+          "code": "DIN 439",
+          "headline": [
+            "Kontra (ince) somun"
+          ],
+          "text": "Normal somundan incedir; ikinci somun olarak karşı sıkılır ya da yer darlığında kullanılır.",
+          "tip": "Kontra: iki somun birbirine karşı sıkılır, bağlantı gevşemeye karşı kilitlenir.",
+          "product_dir": "work/ipucu-somun-cesitleri/05"
+        },
+        {
+          "template": "slide_madde",
+          "code": "DIN 557",
+          "headline": [
+            "Kare somun"
+          ],
+          "text": "Dört köşesi sayesinde kanal ya da yuva içinde dönmez; ahşap ve profil bağlantılarında işe yarar.",
+          "tip": "Anahtar giremeyen dar yerlerde de somun sabit kalır.",
+          "product_dir": "work/ipucu-somun-cesitleri/06"
+        },
+        {
+          "template": "slide_cta",
+          "theme": "yellow",
+          "kicker": "KAYDET · PAYLAŞ",
+          "headline": [
+            "Kaydet,",
+            "siparişte aç."
+          ],
+          "lead": "Hepsi sitede; DIN numarasıyla aratın. Toplu alımda “Özel Teklif İste”.",
+          "actions": [
+            "Kaydet",
+            "Ustana gönder"
+          ],
+          "card": {
+            "label": "CIVATA · SOMUN · PUL",
+            "l1": "tuzlahirdavat.com.tr",
+            "l2": "Sipariş: satis5@tuzlacivata.com.tr",
+            "l3": "Telefon: 0542 189 02 69"
+          }
+        }
+      ],
+      "alt": [
+        "Somun çeşitleri",
+        "DIN 6923 flanşlı somun",
+        "DIN 1587 kör somun",
+        "DIN 315 kelebek somun",
+        "DIN 439 kontra somun",
+        "DIN 557 kare somun",
+        "Kaydet, paylaş"
+      ],
+      "caption": "Somun çeşitleri: flanşlı DIN 6923, kör DIN 1587, kelebek DIN 315, kontra DIN 439, kare DIN 557. 🔩\n\nHangisi ne işe yarar, 5 slaytta. Hepsi sitemizde; DIN numarasıyla aratın.\n\n💾 Kaydet, lazım olur.\n📤 Ustana gönder.\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#somun #bağlantıelemanları #din6923 #imalat #tuzlahırdavat",
+      "id": "2026-12-17-ipucu-somun-cesitleri",
+      "date": "2026-12-17",
+      "format": "carousel"
+    },
+    {
+      "key": "bosch-dekupaj",
+      "group": "testere",
+      "url": "https://tuzlahirdavat.com.tr/gst-8000-e-dekupaj-testeresi-bosch-060158h000",
+      "tag": "ELEKTRİKLİ ALET",
+      "hook_kicker": "USTA SORUSU",
+      "hook": [
+        "Kavisli kesim",
+        "eğri mi",
+        "çıkıyor?"
+      ],
+      "brand": "BOSCH",
+      "sku": "GST 8000 E",
+      "title": "Kavis de keser.",
+      "chips": [
+        "710 W",
+        "4 kademe pandül",
+        "80 mm ahşap"
+      ],
+      "search_code": "GST 8000",
+      "ses": "enerjik",
+      "caption": "Dekupaj testere: Bosch GST 8000 E ile ahşapta 80 mm'ye, çelikte 10 mm'ye kadar düz ve kavisli kesim. 🪚\n\n710 W motor, 4 kademeli pandül ve aletsiz bıçak değiştirme.\n\n💾 Kaydet, lazım olur.\n🔎 Sitede “GST 8000” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#dekupaj #bosch #marangoz #elaletleri #tuzlahırdavat",
+      "id": "2026-12-18-bosch-dekupaj",
+      "date": "2026-12-18",
+      "format": "reel",
+      "template": "reel",
+      "product_dir": "work/bosch-dekupaj"
+    }
+  ]
+}

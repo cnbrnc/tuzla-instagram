@@ -1,0 +1,182 @@
+{
+  "hafta": "yedek",
+  "posts": [
+    {
+      "key": "yedek-metrik-inc",
+      "group": "baglanti",
+      "theme": "dark",
+      "slides": [
+        {
+          "template": "slide_kapak",
+          "kicker": "USTA İPUCU · DİŞ",
+          "headline": [
+            "Metrik mi,",
+            "inç mi?"
+          ],
+          "lead": "M8 ile 5/16\" birbirine çok yakın ama uymaz. Farkı 4 slaytta.",
+          "illustration_file": "assets/civata-cizim.svg"
+        },
+        {
+          "template": "slide_madde",
+          "code": "M8",
+          "headline": [
+            "Metrik diş"
+          ],
+          "text": "Çap milimetre, adım milimetre: M8×1,25'te iki diş tepesi arası 1,25 mm.",
+          "tip": "Adım yazmıyorsa normal (kaba) diştir.",
+          "product_dir": "work/yedek-metrik-inc/02"
+        },
+        {
+          "template": "slide_madde",
+          "code": "5/16\"",
+          "headline": [
+            "İnç diş (UNC)"
+          ],
+          "text": "Çap inç, diş sayısı inç başına (TPI): 5/16\"-18 UNC'de bir inçte 18 diş vardır.",
+          "tip": "5/16\" ≈ 7,94 mm, adımı ≈ 1,41 mm; M8 somuna uymaz.",
+          "product_dir": "work/yedek-metrik-inc/03"
+        },
+        {
+          "template": "slide_madde",
+          "code": "UNF",
+          "headline": [
+            "Kaba ve ince"
+          ],
+          "text": "UNC kaba diş, UNF ince diştir; aynı çapta UNF'nin inç başına diş sayısı daha fazladır.",
+          "tip": "Örnek: 1/2\"-13 UNC, 1/2\"-20 UNF.",
+          "illustration_file": "assets/civata-vurgu-adim.svg"
+        },
+        {
+          "template": "slide_madde",
+          "code": "MASTAR",
+          "headline": [
+            "Diş mastarıyla ölç"
+          ],
+          "text": "Mastarı dişe oturtun; metrik mastar adımı milimetreyle, inç mastarı TPI ile gösterir.",
+          "tip": "Somun zorlanıyorsa durun; zorla sıkılan yanlış diş iki parçayı da bozar.",
+          "illustration_file": "assets/civata-vurgu-cap.svg"
+        },
+        {
+          "template": "slide_cta",
+          "theme": "yellow",
+          "kicker": "KAYDET · PAYLAŞ",
+          "headline": [
+            "Kaydet,",
+            "karıştırma."
+          ],
+          "lead": "Metrik ve inç (UNC) cıvatalar sitemizde.",
+          "actions": [
+            "Kaydet",
+            "Ustana gönder"
+          ],
+          "card": {
+            "label": "METRİK · UNC",
+            "l1": "tuzlahirdavat.com.tr",
+            "l2": "Sipariş: satis5@tuzlacivata.com.tr",
+            "l3": "Telefon: 0542 189 02 69"
+          }
+        }
+      ],
+      "alt": [
+        "Metrik mi inç mi",
+        "M8 metrik diş",
+        "5/16 inç UNC diş",
+        "UNC ve UNF farkı",
+        "Diş mastarıyla ölçmek",
+        "Kaydet, paylaş"
+      ],
+      "caption": "Metrik mi inç mi? M8 ile 5/16\" UNC birbirine çok yakın ama uymaz. 🔩\n\nMetrikte adım milimetreyle, inçte diş sayısı inç başına (TPI) yazılır. Yanlış somunu zorlamak iki parçayı da bozar.\n\n💾 Kaydet, lazım olur.\n📤 Ustana gönder.\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#unc #bağlantıelemanları #cıvata #makine #tuzlahırdavat",
+      "id": "yedek-metrik-inc",
+      "date": "",
+      "format": "carousel"
+    },
+    {
+      "key": "yedek-matkap-ucu",
+      "group": "kilavuz/matkap",
+      "theme": "dark",
+      "slides": [
+        {
+          "template": "slide_kapak",
+          "kicker": "USTA İPUCU · DELME",
+          "headline": [
+            "Hangi uç,",
+            "hangi işe?"
+          ],
+          "lead": "HSS, kobaltlı, TiN kaplı ve SDS Plus: farkı 4 slaytta."
+        },
+        {
+          "template": "slide_madde",
+          "code": "HSS",
+          "headline": [
+            "Genel amaçlı"
+          ],
+          "text": "Yüksek hız çeliği; yumuşak çelik, ahşap ve plastikte günlük delme işleri için.",
+          "tip": "Metalde devri düşük tutun, ucu soğutun; ısınan uç çabuk körelir.",
+          "product_dir": "work/yedek-matkap-ucu/02"
+        },
+        {
+          "template": "slide_madde",
+          "code": "HSS-Co",
+          "headline": [
+            "Kobaltlı"
+          ],
+          "text": "Kobalt katkısı ısıya dayanımı artırır; paslanmaz ve sert çelikte tercih edilir.",
+          "tip": "Paslanmazda düşük devir, yüksek baskı ve kesme yağı kullanın.",
+          "product_dir": "work/yedek-matkap-ucu/03"
+        },
+        {
+          "template": "slide_madde",
+          "code": "TiN",
+          "headline": [
+            "Altın kaplı"
+          ],
+          "text": "Titanyum nitrür kaplama sürtünmeyi azaltır, ucun ömrünü uzatır.",
+          "tip": "Uç bilenince kaplama o bölgeden kalkar.",
+          "product_dir": "work/yedek-matkap-ucu/04"
+        },
+        {
+          "template": "slide_madde",
+          "code": "SDS+",
+          "headline": [
+            "Beton ve taş"
+          ],
+          "text": "SDS Plus uçlar kırıcı-delici makinede darbeyle beton ve taşı deler.",
+          "tip": "SDS Plus uç yalnız SDS Plus mandrenli makineye takılır.",
+          "product_dir": "work/yedek-matkap-ucu/05"
+        },
+        {
+          "template": "slide_cta",
+          "theme": "yellow",
+          "kicker": "KAYDET · PAYLAŞ",
+          "headline": [
+            "Kaydet,",
+            "doğru ucu seç."
+          ],
+          "lead": "HSS, kobaltlı, TiN kaplı ve SDS Plus uçlar sitemizde.",
+          "actions": [
+            "Kaydet",
+            "Ustana gönder"
+          ],
+          "card": {
+            "label": "MATKAP UÇLARI",
+            "l1": "tuzlahirdavat.com.tr",
+            "l2": "Sipariş: satis5@tuzlacivata.com.tr",
+            "l3": "Telefon: 0542 189 02 69"
+          }
+        }
+      ],
+      "alt": [
+        "Hangi uç hangi işe",
+        "HSS genel amaçlı",
+        "Kobaltlı HSS",
+        "TiN kaplı",
+        "SDS Plus beton ucu",
+        "Kaydet, paylaş"
+      ],
+      "caption": "Matkap ucu seçimi: HSS genel iş, kobaltlı paslanmaz, TiN uzun ömür, SDS Plus beton. 🔩\n\nYanlış uç hem işi uzatır hem ucu yakar. Hangisi nerede kullanılır, 4 slaytta.\n\n💾 Kaydet, lazım olur.\n📤 Ustana gönder.\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#matkapucu #yg1 #usta #metalişleme #tuzlahırdavat",
+      "id": "yedek-matkap-ucu",
+      "date": "",
+      "format": "carousel"
+    }
+  ]
+}

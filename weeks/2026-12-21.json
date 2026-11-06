@@ -1,0 +1,171 @@
+{
+  "hafta": "2026-12-21",
+  "on_planli": true,
+  "posts": [
+    {
+      "key": "bosch-panc-67",
+      "group": "panc",
+      "url": "https://tuzlahirdavat.com.tr/67mm-sheet-metal-panc-pro-sm-pc-plus-hc-bosch-2608594461",
+      "tag": "ELEKTRİK PANOSU",
+      "hook_kicker": "ELEKTRİKÇİYE SORU",
+      "hook": [
+        "Panoya",
+        "temiz delik",
+        "lazım mı?"
+      ],
+      "brand": "BOSCH",
+      "sku": "PRO SHEET METAL",
+      "title": "Temiz delik.",
+      "chips": [
+        "67 mm çap",
+        "Bimetal kobalt",
+        "Sacda güvenli kesim"
+      ],
+      "search_code": "panç 67 mm",
+      "ses": "atolye",
+      "caption": "Panç delik testeresi: Bosch PRO Sheet Metal 67 mm ile panoya, saca, paslanmaz panele buat deliğini temiz aç. ⚡\n\nKobalt alaşımlı bimetal, dalma yapmadan emniyetli kesim, Power Change Plus bağlantı.\n\n📤 Elektrikçi arkadaşına gönder.\n🔎 Sitede “panç 67 mm” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#panç #bosch #elektrikçi #elektrikpanosu #tuzlahırdavat",
+      "id": "2026-12-21-bosch-panc-67",
+      "date": "2026-12-21",
+      "format": "reel",
+      "template": "reel",
+      "product_dir": "work/bosch-panc-67"
+    },
+    {
+      "key": "werka-dijital-kumpas",
+      "group": "olcu",
+      "url": "https://tuzlahirdavat.com.tr/3-tuslu-dijital-kumpas-200x001mm-werka-werka210-9071",
+      "theme": "dark",
+      "slides": [
+        {
+          "tag": "ÖLÇÜ ALETİ",
+          "brand": "WERKA",
+          "sku": "210-9071",
+          "headline": [
+            "Milimetrenin",
+            "yüzde biri."
+          ],
+          "product_line": "Werka 3 Tuşlu Dijital Kumpas, 200 × 0,01 mm",
+          "chips": [
+            "0–200 mm",
+            "0,01 mm çözünürlük",
+            "mm / inç"
+          ],
+          "template": "urun"
+        },
+        {
+          "kicker": "TEK ALET, 4 ÖLÇÜ",
+          "headline": [
+            "Kumpasla neler",
+            "ölçülür?"
+          ],
+          "items": [
+            {
+              "title": "Dış ölçü",
+              "text": "Büyük çenelerle mil, cıvata ve boru dış çapı."
+            },
+            {
+              "title": "İç ölçü",
+              "text": "Üstteki küçük çenelerle delik ve boru iç çapı."
+            },
+            {
+              "title": "Derinlik",
+              "text": "Arkadan çıkan çubukla delik ve kanal derinliği."
+            },
+            {
+              "title": "Kademe",
+              "text": "Çenelerin arka yüzleriyle basamak yüksekliği."
+            }
+          ],
+          "template": "slide_liste"
+        },
+        {
+          "template": "slide_cta",
+          "theme": "yellow",
+          "kicker": "SİPARİŞ",
+          "headline": [
+            "Sitede arat:",
+            "210-9071"
+          ],
+          "lead": "Stok ve teslimat bilgisi ürün sayfasında.",
+          "actions": [
+            "Kaydet",
+            "Ustana gönder"
+          ],
+          "card": {
+            "label": "SİPARİŞ VE TEKLİF",
+            "l1": "tuzlahirdavat.com.tr",
+            "l2": "Sipariş: satis5@tuzlacivata.com.tr",
+            "l3": "Telefon: 0542 189 02 69"
+          }
+        }
+      ],
+      "alt": [
+        "Werka 200 mm dijital kumpas",
+        "Kumpasla ölçülen dört şey",
+        "Sipariş bilgileri"
+      ],
+      "caption": "Dijital kumpas: Werka 200 mm, 0,01 mm çözünürlükle dış, iç, derinlik ve kademe ölçer. 📏\n\nSıfırlama (ZERO), mm/inç dönüşümü ve otomatik kapanma; atölye, kalite kontrol ve imalat için.\n\n👉 Kaydır: kumpasla neler ölçülür?\n💾 Kaydet, 📤 tornacı arkadaşına gönder.\n🔎 Sitede “210-9071” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#kumpas #werka #talaşlıimalat #ölçüaletleri #tuzlahırdavat",
+      "id": "2026-12-23-werka-dijital-kumpas",
+      "date": "2026-12-23",
+      "format": "carousel",
+      "product_dir": "work/werka-dijital-kumpas"
+    },
+    {
+      "key": "kampanya-kargo",
+      "template": "kampanya",
+      "theme": "yellow",
+      "tag": "KAMPANYA",
+      "icon_file": "assets/kamyon.svg",
+      "headline": [
+        "Kargo",
+        "bizden."
+      ],
+      "lead": "3.000 TL ve üzeri siparişte ücretsiz kargo",
+      "cards": [
+        {
+          "label": "ÜYELERE ÖZEL",
+          "title": "Vade farksız 3 taksit",
+          "sub": "5.000 TL ve üzeri siparişte"
+        },
+        {
+          "label": "ÜYELERE ÖZEL",
+          "title": "Vade farksız 6 taksit",
+          "sub": "20.000 TL ve üzeri siparişte"
+        }
+      ],
+      "caption": "Ücretsiz kargo: 3.000 TL ve üzeri siparişte kargo bizden. 🚚\n\n💳 Üyelere özel: 5.000 TL ve üzeri siparişte vade farksız 3 taksit, 20.000 TL ve üzeri siparişte vade farksız 6 taksit.\n\nÜye olun, avantajlardan yararlanın.\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#ücretsizkargo #kampanya #hırdavat #usta #tuzlahırdavat",
+      "alt": "Kampanya kartı: 3.000 TL ve üzeri siparişte ücretsiz kargo, üyelere özel vade farksız taksit",
+      "id": "2026-12-24-kampanya-kargo",
+      "date": "2026-12-24",
+      "format": "tekli"
+    },
+    {
+      "key": "grangos-caraskal",
+      "group": "kaldirma",
+      "url": "https://tuzlahirdavat.com.tr/1ton-5mt-caraskal-koseli-grangos",
+      "tag": "YÜK KALDIRMA",
+      "hook_kicker": "ATÖLYE SORUSU",
+      "hook": [
+        "1 tonluk yük",
+        "elle mi",
+        "kalkar?"
+      ],
+      "brand": "GRANGOS",
+      "sku": "GRCK15",
+      "title": "Zincirle kaldır.",
+      "chips": [
+        "1 ton kapasite",
+        "5 m kaldırma",
+        "Elektrik gerekmez"
+      ],
+      "search_code": "GRCK15",
+      "ses": "derin",
+      "caption": "Zincirli caraskal: Grangos GRCK15 ile 1 tonluk yükü 5 metreye kadar elle kaldır. ⛓️\n\nElektrik gerekmez; atölyede, depoda ve şantiyede motor, kalıp ve makine parçası kaldırmak için.\n\n📤 Atölyesi olan arkadaşına gönder.\n🔎 Sitede “GRCK15” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#caraskal #grangos #atölye #yükkaldırma #tuzlahırdavat",
+      "id": "2026-12-25-grangos-caraskal",
+      "date": "2026-12-25",
+      "format": "reel",
+      "template": "reel",
+      "product_dir": "work/grangos-caraskal"
+    }
+  ]
+}

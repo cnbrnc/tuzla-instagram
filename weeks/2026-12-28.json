@@ -1,0 +1,170 @@
+{
+  "hafta": "2026-12-28",
+  "on_planli": true,
+  "posts": [
+    {
+      "key": "varta-f30r",
+      "group": "fener",
+      "url": "https://tuzlahirdavat.com.tr/night-cutter-f30r-el-feneri-varta-vrt18901101111",
+      "tag": "AYDINLATMA",
+      "hook_kicker": "KIŞ SORUSU",
+      "hook": [
+        "Işık da",
+        "şarj da",
+        "lazım mı?"
+      ],
+      "brand": "VARTA",
+      "sku": "F30R",
+      "title": "İkisi bir arada.",
+      "chips": [
+        "700 lümen",
+        "Powerbank: 2600 mAh",
+        "IPX4, 2 m düşme testi"
+      ],
+      "search_code": "F30R",
+      "ses": "enerjik",
+      "caption": "Şarjlı el feneri: VARTA Night Cutter F30R, 700 lümen ışık ve telefonu şarj eden 2600 mAh powerbank bir arada. 🔦\n\nAlüminyum gövde, IPX4 su sıçramasına dayanıklı, 2 metreden düşme testli; 24 saate kadar kullanım.\n\n💾 Kaydet, kış akşamları lazım olur.\n🔎 Sitede “F30R” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#elfeneri #varta #kış #aydınlatma #tuzlahırdavat",
+      "id": "2026-12-28-varta-f30r",
+      "date": "2026-12-28",
+      "format": "reel",
+      "template": "reel",
+      "product_dir": "work/varta-f30r"
+    },
+    {
+      "key": "bosch-gsb-18v-65",
+      "group": "akulu",
+      "url": "https://tuzlahirdavat.com.tr/gsb-18v-65-akulu-darbeli-matkap-2x2ah-l-boxx-bosc-06019n3100",
+      "theme": "light",
+      "slides": [
+        {
+          "tag": "AKÜLÜ ALET",
+          "brand": "BOSCH",
+          "sku": "GSB 18V-65",
+          "headline": [
+            "Dar yerde",
+            "güçlü matkap."
+          ],
+          "product_line": "Bosch GSB 18V-65 Akülü Darbeli Matkap, 2 × 2 Ah, L-Boxx",
+          "chips": [
+            "65 Nm tork",
+            "175 mm kafa boyu",
+            "KickBack Control"
+          ],
+          "template": "urun"
+        },
+        {
+          "kicker": "NELERİ DELER?",
+          "headline": [
+            "Metal, ahşap,",
+            "vida."
+          ],
+          "items": [
+            {
+              "title": "Metalde 13 mm",
+              "text": "13 mm anahtarsız mandrenle metalde delik."
+            },
+            {
+              "title": "Ahşapta 35 mm",
+              "text": "Ahşapta 35 mm'ye kadar delik açar."
+            },
+            {
+              "title": "Geri tepme kontrolü",
+              "text": "KickBack Control ani geri tepmeye karşı korur."
+            },
+            {
+              "title": "Çift LED ışık",
+              "text": "Karanlık köşede de görerek çalışırsın."
+            }
+          ],
+          "template": "slide_liste"
+        },
+        {
+          "template": "slide_cta",
+          "theme": "yellow",
+          "kicker": "SİPARİŞ",
+          "headline": [
+            "Sitede arat:",
+            "GSB 18V-65"
+          ],
+          "lead": "Stok ve teslimat bilgisi ürün sayfasında.",
+          "actions": [
+            "Kaydet",
+            "Ustana gönder"
+          ],
+          "card": {
+            "label": "SİPARİŞ VE TEKLİF",
+            "l1": "tuzlahirdavat.com.tr",
+            "l2": "Sipariş: satis5@tuzlacivata.com.tr",
+            "l3": "Telefon: 0542 189 02 69"
+          }
+        }
+      ],
+      "alt": [
+        "Bosch GSB 18V-65 akülü darbeli matkap seti",
+        "Neleri deler: dört madde",
+        "Sipariş bilgileri"
+      ],
+      "caption": "Akülü darbeli matkap: Bosch GSB 18V-65, 65 Nm tork ve 175 mm kısa kafayla dar yerde delme ve vidalama. 🔩\n\nMetalde 13 mm, ahşapta 35 mm'ye kadar delik; KickBack Control, çift LED ışık, 2 akü ve L-Boxx çanta.\n\n👉 Kaydır: neleri deler?\n💾 Kaydet, 📤 usta arkadaşına gönder.\n🔎 Sitede “GSB 18V-65” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#akülümatkap #bosch #marangoz #elaletleri #tuzlahırdavat",
+      "id": "2026-12-30-bosch-gsb-18v-65",
+      "date": "2026-12-30",
+      "format": "carousel",
+      "product_dir": "work/bosch-gsb-18v-65"
+    },
+    {
+      "key": "yeniyil-2027",
+      "group": "",
+      "template": "slide_cta",
+      "theme": "yellow",
+      "tag": "2027",
+      "kicker": "MUTLU YILLAR",
+      "headline": [
+        "2027'ye",
+        "sağlam başla."
+      ],
+      "lead": "Bu yıl bize güvenen tüm ustalara teşekkürler. Yeni yılda işiniz rast, bağlantılarınız sağlam olsun.",
+      "actions": [
+        "Paylaş",
+        "Ustanı etiketle"
+      ],
+      "card": {
+        "label": "2027'DE DE YANINIZDAYIZ",
+        "l1": "tuzlahirdavat.com.tr",
+        "l2": "Sipariş: satis5@tuzlacivata.com.tr",
+        "l3": "Telefon: 0542 189 02 69"
+      },
+      "alt": "Mutlu yıllar kartı: 2027'ye sağlam başla",
+      "caption": "Mutlu yıllar! 2026'da bize güvenen tüm ustalara teşekkür ederiz. 🎉\n\n2027'de işiniz rast, bağlantılarınız sağlam olsun.\n\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#mutluyıllar #yeniyıl #usta #hırdavat #tuzlahırdavat",
+      "id": "2026-12-31-yeniyil-2027",
+      "date": "2026-12-31",
+      "format": "tekli"
+    },
+    {
+      "key": "klpro-lazer-metre",
+      "group": "olcu",
+      "url": "https://tuzlahirdavat.com.tr/kllzm80-80mt-profesyonel-lazer-metre-klpro",
+      "tag": "ÖLÇÜ ALETİ",
+      "hook_kicker": "USTA SORUSU",
+      "hook": [
+        "Şerit metre",
+        "yetmiyor",
+        "mu?"
+      ],
+      "brand": "KL PRO",
+      "sku": "KLLZM80",
+      "title": "80 metre menzil.",
+      "chips": [
+        "80 m ölçüm",
+        "Tek kişiyle ölçer",
+        "Dijital ekran"
+      ],
+      "search_code": "KLLZM80",
+      "ses": "atolye",
+      "caption": "Lazer metre: KL Pro KLLZM80 ile 80 metreye kadar mesafeyi tek başına ölç. 📏\n\nŞerit metrenin yetmediği uzun mesafelerde ve yardımcı olmadan ölçüm için.\n\n💾 Kaydet, lazım olur.\n🔎 Sitede “KLLZM80” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#lazermetre #klpro #şantiye #ölçüaletleri #tuzlahırdavat",
+      "id": "2027-01-01-klpro-lazer-metre",
+      "date": "2027-01-01",
+      "format": "reel",
+      "template": "reel",
+      "product_dir": "work/klpro-lazer-metre"
+    }
+  ]
+}
