@@ -28,7 +28,13 @@
       "date": "2026-12-14",
       "format": "reel",
       "template": "reel",
-      "product_dir": "work/fusion-boru-kaynak"
+      "product_dir": "work/fusion-boru-kaynak",
+      "metricool": {
+        "uuid": "-8802899935545767752",
+        "ilk_id": 419253583,
+        "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-8802899935545767752",
+        "planlandi": "2026-11-06"
+      }
     },
     {
       "key": "atg-maxicut-eldiven",
@@ -108,7 +114,13 @@
       "id": "2026-12-16-atg-maxicut-eldiven",
       "date": "2026-12-16",
       "format": "carousel",
-      "product_dir": "work/atg-maxicut-eldiven"
+      "product_dir": "work/atg-maxicut-eldiven",
+      "metricool": {
+        "uuid": "-892639623711209970",
+        "ilk_id": 419253685,
+        "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-892639623711209970",
+        "planlandi": "2026-11-06"
+      }
     },
     {
       "key": "ipucu-somun-cesitleri",
@@ -208,7 +220,13 @@
       "caption": "Somun çeşitleri: flanşlı DIN 6923, kör DIN 1587, kelebek DIN 315, kontra DIN 439, kare DIN 557. 🔩\n\nHangisi ne işe yarar, 5 slaytta. Hepsi sitemizde; DIN numarasıyla aratın.\n\n💾 Kaydet, lazım olur.\n📤 Ustana gönder.\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#somun #bağlantıelemanları #din6923 #imalat #tuzlahırdavat",
       "id": "2026-12-17-ipucu-somun-cesitleri",
       "date": "2026-12-17",
-      "format": "carousel"
+      "format": "carousel",
+      "metricool": {
+        "uuid": "6275342447933014210",
+        "ilk_id": 419253823,
+        "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=6275342447933014210",
+        "planlandi": "2026-11-06"
+      }
     },
     {
       "key": "bosch-dekupaj",
@@ -236,7 +254,13 @@
       "date": "2026-12-18",
       "format": "reel",
       "template": "reel",
-      "product_dir": "work/bosch-dekupaj"
+      "product_dir": "work/bosch-dekupaj",
+      "metricool": {
+        "uuid": "5868049014215821146",
+        "ilk_id": 419253905,
+        "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=5868049014215821146",
+        "planlandi": "2026-11-06"
+      }
     }
   ]
 }

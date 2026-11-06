@@ -88,28 +88,6 @@
       ],
       "search_code": "CRC 5-56",
       "caption": "Pas sökücü sprey CRC 5-56: paslı, sıkışmış cıvata ve somunları gevşetir. 🧰\n\nNemi uzaklaştırır, metal yüzeyi korozyona karşı korur. Atölyede, oto serviste ve sahada çantada bir tane olsun.\n\n💾 Kaydet, lazım olur.\n🔎 Sitede “CRC 5-56” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#passökücü #crc #otoservis #bakım #tuzlahırdavat"
-    },
-    {
-      "key": "volkel-helikoil",
-      "group": "helikoil",
-      "url": "https://tuzlahirdavat.com.tr/m8x125-helikoil-tamir-seti-volkel-v-04012",
-      "tag": "DİŞ TAMİRİ",
-      "hook_kicker": "TAMİR SORUSU",
-      "hook": [
-        "Diş mi",
-        "sıyırdı?",
-        "Atma, onar."
-      ],
-      "brand": "VÖLKEL",
-      "sku": "V-04012",
-      "title": "Dişi yenile.",
-      "chips": [
-        "M8 × 1,25",
-        "Orijinal ölçüye dönüş",
-        "Set halinde"
-      ],
-      "search_code": "V-04012",
-      "caption": "Helikoil diş tamir seti: sıyrılan M8 dişi, parçayı değiştirmeden orijinal ölçüsüne geri getir. 🛠️\n\nVölkel V-04012, M8×1,25 normal diş için set halinde. Alüminyum blokta, motor gövdesinde, makine parçasında işe yarar.\n\n💾 Kaydet, lazım olur.\n🔎 Sitede “V-04012” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#helikoil #völkel #otoservis #diştamiri #tuzlahırdavat"
     }
   ],
   "urun_carousel": [
@@ -470,32 +448,6 @@
     }
   ],
   "tekli": [
-    {
-      "key": "kampanya-kargo",
-      "template": "kampanya",
-      "theme": "yellow",
-      "tag": "KAMPANYA",
-      "icon_file": "assets/kamyon.svg",
-      "headline": [
-        "Kargo",
-        "bizden."
-      ],
-      "lead": "3.000 TL ve üzeri siparişte ücretsiz kargo",
-      "cards": [
-        {
-          "label": "ÜYELERE ÖZEL",
-          "title": "Vade farksız 3 taksit",
-          "sub": "5.000 TL ve üzeri siparişte"
-        },
-        {
-          "label": "ÜYELERE ÖZEL",
-          "title": "Vade farksız 6 taksit",
-          "sub": "20.000 TL ve üzeri siparişte"
-        }
-      ],
-      "caption": "Ücretsiz kargo: 3.000 TL ve üzeri siparişte kargo bizden. 🚚\n\n💳 Üyelere özel: 5.000 TL ve üzeri siparişte vade farksız 3 taksit, 20.000 TL ve üzeri siparişte vade farksız 6 taksit.\n\nÜye olun, avantajlardan yararlanın.\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#ücretsizkargo #kampanya #hırdavat #usta #tuzlahırdavat",
-      "dogrula": "Kullanmadan önce sitede bu eşiklerin hâlâ yazdığını kontrol et; değiştiyse görseli ve açıklamayı güncelle, kalktıysa kullanma."
-    },
     {
       "key": "toplu-alim-paslanmaz",
       "template": "toplu",

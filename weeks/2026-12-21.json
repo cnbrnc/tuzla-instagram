@@ -28,7 +28,13 @@
       "date": "2026-12-21",
       "format": "reel",
       "template": "reel",
-      "product_dir": "work/bosch-panc-67"
+      "product_dir": "work/bosch-panc-67",
+      "metricool": {
+        "uuid": "9081701053126887280",
+        "ilk_id": 419254039,
+        "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=9081701053126887280",
+        "planlandi": "2026-11-06"
+      }
     },
     {
       "key": "werka-dijital-kumpas",
@@ -108,7 +114,13 @@
       "id": "2026-12-23-werka-dijital-kumpas",
       "date": "2026-12-23",
       "format": "carousel",
-      "product_dir": "work/werka-dijital-kumpas"
+      "product_dir": "work/werka-dijital-kumpas",
+      "metricool": {
+        "uuid": "7895416078786249961",
+        "ilk_id": 419254107,
+        "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=7895416078786249961",
+        "planlandi": "2026-11-06"
+      }
     },
     {
       "key": "kampanya-kargo",
@@ -137,7 +149,13 @@
       "alt": "Kampanya kartı: 3.000 TL ve üzeri siparişte ücretsiz kargo, üyelere özel vade farksız taksit",
       "id": "2026-12-24-kampanya-kargo",
       "date": "2026-12-24",
-      "format": "tekli"
+      "format": "tekli",
+      "metricool": {
+        "uuid": "5560228647497973925",
+        "ilk_id": 419254177,
+        "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=5560228647497973925",
+        "planlandi": "2026-11-06"
+      }
     },
     {
       "key": "grangos-caraskal",
@@ -165,7 +183,13 @@
       "date": "2026-12-25",
       "format": "reel",
       "template": "reel",
-      "product_dir": "work/grangos-caraskal"
+      "product_dir": "work/grangos-caraskal",
+      "metricool": {
+        "uuid": "3298595060733857328",
+        "ilk_id": 419254249,
+        "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=3298595060733857328",
+        "planlandi": "2026-11-06"
+      }
     }
   ]
 }

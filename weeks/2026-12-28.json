@@ -28,7 +28,13 @@
       "date": "2026-12-28",
       "format": "reel",
       "template": "reel",
-      "product_dir": "work/varta-f30r"
+      "product_dir": "work/varta-f30r",
+      "metricool": {
+        "uuid": "-437729016984418568",
+        "ilk_id": 419254437,
+        "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-437729016984418568",
+        "planlandi": "2026-11-06"
+      }
     },
     {
       "key": "bosch-gsb-18v-65",
@@ -108,7 +114,13 @@
       "id": "2026-12-30-bosch-gsb-18v-65",
       "date": "2026-12-30",
       "format": "carousel",
-      "product_dir": "work/bosch-gsb-18v-65"
+      "product_dir": "work/bosch-gsb-18v-65",
+      "metricool": {
+        "uuid": "-2991203559137260549",
+        "ilk_id": 419254507,
+        "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-2991203559137260549",
+        "planlandi": "2026-11-06"
+      }
     },
     {
       "key": "yeniyil-2027",
@@ -136,7 +148,13 @@
       "caption": "Mutlu yıllar! 2026'da bize güvenen tüm ustalara teşekkür ederiz. 🎉\n\n2027'de işiniz rast, bağlantılarınız sağlam olsun.\n\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#mutluyıllar #yeniyıl #usta #hırdavat #tuzlahırdavat",
       "id": "2026-12-31-yeniyil-2027",
       "date": "2026-12-31",
-      "format": "tekli"
+      "format": "tekli",
+      "metricool": {
+        "uuid": "-7142574277940394389",
+        "ilk_id": 419254565,
+        "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-7142574277940394389",
+        "planlandi": "2026-11-06"
+      }
     },
     {
       "key": "klpro-lazer-metre",
@@ -164,7 +182,13 @@
       "date": "2027-01-01",
       "format": "reel",
       "template": "reel",
-      "product_dir": "work/klpro-lazer-metre"
+      "product_dir": "work/klpro-lazer-metre",
+      "metricool": {
+        "uuid": "-1392825388320929417",
+        "ilk_id": 419254684,
+        "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-1392825388320929417",
+        "planlandi": "2026-11-06"
+      }
     }
   ]
 }

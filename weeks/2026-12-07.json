@@ -28,7 +28,13 @@
       "date": "2026-12-07",
       "format": "reel",
       "template": "reel",
-      "product_dir": "work/grangos-somun-sikma"
+      "product_dir": "work/grangos-somun-sikma",
+      "metricool": {
+        "uuid": "-2434990649305119681",
+        "ilk_id": 419253120,
+        "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-2434990649305119681",
+        "planlandi": "2026-11-06"
+      }
     },
     {
       "key": "gedore-lokma-232",
@@ -108,7 +114,13 @@
       "id": "2026-12-09-gedore-lokma-232",
       "date": "2026-12-09",
       "format": "carousel",
-      "product_dir": "work/gedore-lokma-232"
+      "product_dir": "work/gedore-lokma-232",
+      "metricool": {
+        "uuid": "-7056792636614620738",
+        "ilk_id": 419253234,
+        "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-7056792636614620738",
+        "planlandi": "2026-11-06"
+      }
     },
     {
       "key": "ipucu-pul-cesitleri",
@@ -197,7 +209,13 @@
       "caption": "Pul çeşitleri: düz pul DIN 125, geniş pul DIN 9021, yaylı pul DIN 127, tırtıllı pul DIN 6798. 🔩\n\nHangisi nerede kullanılır, 4 slaytta. Hepsi sitemizde; DIN numarasıyla aratın.\n\n💾 Kaydet, lazım olur.\n📤 Ustana gönder.\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#pul #bağlantıelemanları #din125 #imalat #tuzlahırdavat",
       "id": "2026-12-10-ipucu-pul-cesitleri",
       "date": "2026-12-10",
-      "format": "carousel"
+      "format": "carousel",
+      "metricool": {
+        "uuid": "-3750297479487798541",
+        "ilk_id": 419253359,
+        "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-3750297479487798541",
+        "planlandi": "2026-11-06"
+      }
     },
     {
       "key": "bosch-sicak-hava",
@@ -225,7 +243,13 @@
       "date": "2026-12-11",
       "format": "reel",
       "template": "reel",
-      "product_dir": "work/bosch-sicak-hava"
+      "product_dir": "work/bosch-sicak-hava",
+      "metricool": {
+        "uuid": "-570407006500403085",
+        "ilk_id": 419253415,
+        "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-570407006500403085",
+        "planlandi": "2026-11-06"
+      }
     }
   ]
 }

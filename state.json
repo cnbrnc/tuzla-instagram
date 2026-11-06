@@ -57,7 +57,9 @@
     "2026-11-04: Kullanıcı yeni düzeni onayladı. 16 Kasım 2026 haftasından itibaren Pazartesi ve Cuma Reels, Çarşamba ürün kaydırmalısı, Perşembe Usta İpucu kaydırmalısı; en fazla 5 hashtag.",
     "2026-11-04: İlk haftanın (2026-11-09) 4 gönderisinin hashtag'leri 5'e indirildi (Metricool'da güncellendi).",
     "2026-11-05: Kullanıcı Reels için kodla üretilmiş özgün sesi onayladı (ses.py, assets/reel-ses.wav). Facebook Sayfası (facebook.com/tuzlacivata) yetkisi kullanıcının babasında ya da abisinde; kullanıcı abisinden tam yetki isteyecek. Olmazsa Facebook olmadan devam: Reels kendi sesimizle çıkar.",
-    "2026-11-06: Kullanıcı Reels'in izleyiciyi tutmasını istedi. 2. sürüm: 9 sn, vuruşla gelen kanca, 2. saniyede düşüş, yakınlaşma ve parlama, döngüde başa saran ses. Üç ritim (enerjik, atolye, derin) sırayla döner. Kullanıcıya örnek sayfada sunuldu."
+    "2026-11-06: Kullanıcı Reels'in izleyiciyi tutmasını istedi. 2. sürüm: 9 sn, vuruşla gelen kanca, 2. saniyede düşüş, yakınlaşma ve parlama, döngüde başa saran ses. Üç ritim (enerjik, atolye, derin) sırayla döner. Kullanıcıya örnek sayfada sunuldu.",
+    "2026-11-06: Kullanıcı Aralık 2026'da askerde olacak. 30 Kasım 2026 – 1 Ocak 2027 arasındaki 5 haftanın 20 gönderisi onaylandı ve aynı gün Metricool'a planlandı (weeks/ içinde on_planli). Bu haftalarda onay istenmez; robot Pazar günleri stok ve kampanya denetimi yapar, sorun varsa weeks/yedek.json'daki onaylı yedekle değiştirir (ROBOT.md, 'Önceden planlanmış haftalar'). volkel-helikoil ve kampanya-kargo Aralık'ta kullanıldığı için kuyruktan çıkarıldı."
   ],
-  "ses_sirasi": 0
+  "ses_sirasi": 0,
+  "kullanilan_yedekler": []
 }

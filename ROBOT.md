@@ -24,6 +24,7 @@ Depo herkese açıktır; buraya şifre, anahtar veya kişisel bilgi yazılmaz.
 - **Fiyat yok:** Ne görselde ne açıklamada ürün fiyatı yazılır. Tek istisna, kampanya kartında sitede yazan kargo ve taksit eşikleridir.
 - **İletişim:** Sipariş için satis5@tuzlacivata.com.tr, telefon 0542 189 02 69, site tuzlahirdavat.com.tr.
 - **Onay şart:** Kullanıcı onay vermeden hiçbir gönderi Metricool'a planlanmaz ve hiçbir görsel ya da video depoya yüklenmez.
+  - Tek istisna: Önceden planlanmış haftalar (aşağıda ayrı bölüm). Onları kullanıcı 6 Kasım 2026'da onayladı. Stokta olmayan ürünün gönderisini onaylı yedekle değiştirmeyi de o gün onayladı.
 - **Metricool sınırı:** Ücretsiz planda ayda en fazla 20 planlı gönderi var. `state.json` içinde o aya düşen gönderiler ile yeni gönderilerin toplamı 20'yi geçecekse kullanıcıya söyle.
 - **Doğruluk:**
   - Ürün bilgisi yalnız ürün sayfasından alınır.
@@ -162,7 +163,9 @@ Metnin tamamı Türkçe olur. Bağırma (ünlem yağmuru, büyük harfle yazı) 
 ### 2. Hafta ve slotlar
 `HAFTA` = gelecek Pazartesi'nin tarihi (YYYY-MM-DD).
 
+- **Önce kaçan kayıtları tamamla:** `python3 planla.py yakala <HAFTA>` çalıştır. Önceden planlanmış bir haftanın Pazar çalışması kaçtıysa, o haftanın durumunu sırayla `state.json` dosyasına işler. Kaydedilecek bir şey yoksa bunu söyler. Bir şey kaydettiyse 8. adımdaki gibi commit et ve push et.
 - **Hafta zaten planlıysa:** `planned_weeks` listesinde `HAFTA` varsa yeniden planlama yapma. Kullanıcıya kısa bilgi ver (3. adımdaki karneyi ekleyebilirsin) ve bitir.
+- **Hafta önceden planlandıysa:** `weeks/<HAFTA>.json` dosyasında `"on_planli": true` varsa bu bölümdeki diğer adımları uygulama. Aşağıdaki "Önceden planlanmış haftalar" bölümünü uygula ve bitir.
 - **Geçen haftayı kontrol et:** `getScheduledPosts` ile son 7 günü sorgula (brandId, Europe/Istanbul). Tarihi geçmiş ama hâlâ planlı görünen gönderi yayınlanmamış demektir; kullanıcıya bildir.
 - **Tekli kart haftası mı?** Sabit kurallardaki 42 gün kuralına bak.
 
@@ -195,6 +198,7 @@ Ne yapılacak:
      - Aynı hafta farklı gruplardan olsun. `recent_groups` içinde son 2 haftada geçen grubu tekrarlama.
      - Haftada en az bir bağlantı elemanı içeriği olsun. İpucu genelde bunu karşılar; karşılamıyorsa ürünlerden biri `baglanti` grubundan olsun.
      - Ürün sayfasını `fetch_product.py` ile oku ve açıklamadaki bilgiler dışında özellik yazma.
+     - `weeks/` altındaki herhangi bir haftada (önceden planlananlar ve yedekler dahil) geçen ürünü yeniden seçme. `pick_products.py` bunları zaten atlar.
    - **İpucu:**
      - `ipucu_konulari` listesindeki ilk konuyu al ve 4–6 maddelik kaydırmalı yaz.
      - Her teknik bilgiyi web aramasıyla doğrula.
@@ -262,6 +266,63 @@ Sorun varsa metni kısalt ya da görseli değiştir ve yeniden üret.
 ### 9. Özet
 Kullanıcıya kısa bir özet yaz: hangi gün hangi gönderi yayınlanacak ve her birinin Metricool bağlantısı.
 
+## Önceden planlanmış haftalar (30 Kasım 2026 – 1 Ocak 2027)
+
+Kullanıcı Aralık 2026'da askerde. Bu yüzden 5 haftanın 20 gönderisi önceden hazırlandı. Kullanıcı hepsini 6 Kasım 2026'da onayladı ve hepsi aynı gün Metricool'a planlandı (her biri 10:00'da).
+
+- **Dosyalar:**
+  - `weeks/2026-11-30.json` … `weeks/2026-12-28.json`: Her dosyada `"on_planli": true` var. Her gönderinin `metricool` alanında `uuid` ve Metricool bağlantısı durur.
+  - Görseller ve videolar `posts/<HAFTA>/` klasöründe.
+  - Onaylı 2 yedek: `weeks/yedek.json`, görselleri `posts/yedek/`. Sıra: önce `yedek-metrik-inc`, sonra `yedek-matkap-ucu`. Kullanılanlar `state.json` içindeki `kullanilan_yedekler` listesine yazılır.
+- **Bu haftalarda yapma:**
+  - Onay isteme.
+  - Telefon bildirimi gönderme.
+  - Yeni gönderi üretme.
+  - `hafta.py`, `render.py` ve `reel.py` çalıştırma. `hafta.py` bu haftalarda zaten durur.
+
+| Pazar çalışması | HAFTA | Not |
+|---|---|---|
+| 29 Kasım | 2026-11-30 | |
+| 6 Aralık | 2026-12-07 | |
+| 13 Aralık | 2026-12-14 | |
+| 20 Aralık | 2026-12-21 | 24 Aralık kampanya kartı: eşikler de denetlenir |
+| 27 Aralık | 2026-12-28 | |
+| 3 Ocak 2027 | 2027-01-04 | Normal düzen geri döner ve onay yine şarttır. Kuyruk boşalmış olur; 4. adımdaki kurallarla yeni öğe yaz. |
+
+### Adımlar
+1. **Karne:** 3. adımdaki karneyi çıkar ve `state.json` dosyasına ekle.
+2. **Geçen hafta:** Geçen haftayı 2. adımdaki gibi kontrol et.
+   - Yayınlanmamış gönderi varsa `state.json` içindeki `notes` listesine yaz ve özette belirt.
+   - O gönderiyi yeniden planlama.
+3. **Denetle:** `python3 planla.py stok <HAFTA>` çalıştır.
+   - Ürünlü her gönderinin sayfası stokta mı diye bakılır.
+   - Kampanya kartı varsa sitede şu eşikler hâlâ aynı mı diye bakılır: 3.000 TL üstü ücretsiz kargo, 5.000 TL üstü 3 taksit, 20.000 TL üstü 6 taksit. Bunlar 6 Kasım 2026'da doğrulandı.
+   - Çıkış kodu 0 ise sorun yoktur; 5. adıma geç.
+   - **DENETLENEMEDİ** satırı çıkarsa komutu bir kez daha çalıştır. Yine çıkarsa o ürünün sayfasını WebFetch ile aç:
+     - Ürün kaldırılmışsa ya da tükendiyse SORUNLU say.
+     - Sayfa hiç açılmıyorsa gönderiye dokunma ve özette yaz.
+4. **Yedekle değiştir:** **SORUNLU** her gönderi için sırayla şunları yap:
+   1. `SHA=$(git rev-parse HEAD)`, sonra `python3 planla.py yedek <HAFTA> <id> $SHA > yedek-istek.json`.
+      - Çıktıda şunlar olur: `yedek` (anahtar), `date`, `uuid` (değişecek gönderinin) ve `info`.
+      - "kullanılmamış yedek kalmadı" derse gönderiye dokunma. `notes` listesine yaz ve özette belirt.
+   2. Yedeğin ilk görselini kontrol et: `curl -sI <info içindeki ilk media adresi>` 200 döndürmeli.
+   3. Gönderinin güncel `id` değerini bul. `getScheduledPosts` ile o günü listele (brandId, 00:00–23:59, Europe/Istanbul). `uuid` değeri eşleşen gönderinin `id`'sini al.
+      - Güncellemede `id` değişir, `uuid` değişmez.
+      - Gönderi bulunamazsa ya da artık PENDING değilse dokunma ve yaz.
+   4. `updateScheduledPost` çağır: blogId, `id`, `uuid` ve `info` (metni olduğu gibi).
+   5. `getScheduledPosts` ile doğrula: aynı gün 10:00, tür POST, 6 görsel ve yedeğin metni.
+   6. Başarılıysa `python3 planla.py yedek <HAFTA> <id> --uygula <yedek> --neden "<kısa neden>"` çalıştır.
+   7. Hata olursa aynı isteği tekrarlama. Gönderiyi olduğu gibi bırak ve `notes` listesine yaz.
+   - Kampanya kartını yeniden çizme ve eşikleri kendin değiştirme. Eşik bilgisi kullanıcı onayı ister. Eşikler değiştiyse kart da yedekle değiştirilir.
+5. **Kaydet:** `python3 planla.py durum <HAFTA>` çalıştır. Metricool bağlantıları haftanın dosyasından okunur.
+6. **Commit et ve push et:** Mesaj `<HAFTA> önceden planlı hafta: denetlendi` olsun. `yedek-istek.json` gibi geçici dosyaları ekleme.
+7. **Özet:** Kısa yaz:
+   - haftanın 4 gönderisi (gün ve konu),
+   - denetimin sonucu,
+   - yapılan değişiklik varsa o,
+   - karne satırları.
+   - Bildirim gönderme.
+
 ## Facebook bağlantısı varsa (`state.json` içinde `facebook_bagli: true`)
 
 - **Reels müziği:** Haftanın iki Reels'inden birine Instagram müziği ekle, diğeri kendi sesimizle kalsın. Karnede hangisinin daha çok izlendiğini ve paylaşıldığını takip et; birkaç hafta sonra sonucu kullanıcıya öner.
@@ -287,7 +348,9 @@ Kullanıcıya kısa bir özet yaz: hangi gün hangi gönderi yayınlanacak ve he
 - `ses.py`: Reels'in özgün ses izini üretir. Yalnız animasyon zamanları değişirse çalıştırılır.
 - `onizleme.py`: Onay için önizlemeleri üretir; bunlar depoya yüklenmez.
 - `planla.py`: Dosyaları kopyalar, Metricool isteklerini hazırlar, durumu kaydeder.
+  - Önceden planlanmış haftalar için `stok`, `yedek` ve `yakala` komutları da onda.
 - `fetch_product.py`, `pick_products.py`, `tools_svg.py`: Ürün verisi, ürün adayları, cıvata çizimleri.
 - `templates/`: `urun`, `slide_liste`, `slide_kapak`, `slide_madde`, `slide_cta`, `reel`, `kampanya`, `toplu`, `bilgi`, `karsilastirma`.
 - `queue.json`: İçerik kuyruğu. `state.json`: Geçmiş, karne ve ayarlar.
-- `weeks/`: Haftalık gönderi tanımları. `posts/`: Onaylanmış dosyalar.
+- `weeks/`: Haftalık gönderi tanımları. `weeks/yedek.json`: Önceden planlanmış haftaların onaylı yedekleri.
+- `posts/`: Onaylanmış dosyalar.

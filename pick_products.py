@@ -2,10 +2,11 @@
 """Sitemap'ten yeni gönderi adayları bulur.
 
 Kullanım: python3 pick_products.py [aday_sayısı]
-Paylaşılmış (state.json) ve kuyruktaki (queue.json) ürünleri atlar,
+Paylaşılmış (state.json), kuyruktaki (queue.json) ve planlanmış haftalardaki (weeks/) ürünleri atlar,
 son haftalarda kullanılan grupları geriye atar, stokta olmayanları eler.
 Çıktı: aday listesi (JSON) — son seçimi ve metni robot yapar.
 """
+import glob
 import html
 import json
 import os
@@ -73,6 +74,10 @@ def main():
     used = {p.get("url") for p in state.get("posted", [])}
     for k in ("products", "reels", "urun_carousel", "tekli"):
         used |= {p.get("url") for p in queue.get(k, []) if isinstance(p, dict)}
+    # Planlanmış haftalar (önceden planlananlar ve yedekler dahil) da kullanılmış sayılır
+    for path in glob.glob(os.path.join(ROOT, "weeks", "*.json")):
+        with open(path, encoding="utf-8") as f:
+            used |= {p.get("url") for p in json.load(f).get("posts", []) if isinstance(p, dict)}
     recent = state.get("recent_groups", [])[-8:]
 
     order = sorted(GROUPS, key=lambda g: (recent.count(g), random.random()))

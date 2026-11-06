@@ -53,6 +53,11 @@ def main():
         fail("%s Pazartesi değil" % hafta)
     tekli = "--tekli" in args
     out_path = os.path.join(ROOT, "weeks", hafta + ".json")
+    if os.path.exists(out_path):
+        with open(out_path, encoding="utf-8") as f:
+            if json.load(f).get("on_planli"):
+                fail("%s haftası önceden planlandı ve Metricool'da hazır. hafta.py çalıştırma; "
+                     "ROBOT.md'deki 'Önceden planlanmış haftalar' bölümünü uygula." % hafta)
     if "--cikti" in args:
         out_path = os.path.abspath(args[args.index("--cikti") + 1])
 
