@@ -83,6 +83,9 @@ def main():
     # Reels ritimleri sırayla döner; aynı hafta iki Reels'te aynı ritim olmaz (state.json: ses_sirasi)
     ritimler = ["enerjik", "atolye", "derin"]
     ses_i = state.get("ses_sirasi", 0)
+    # Hikaye denemesi: listedeki haftalarda Reels aynı gün hikaye olarak da yayınlanır (state.json)
+    deneme = state.get("hikaye_denemesi") or {}
+    hikaye_saati = deneme.get("saat", "18:00") if hafta in deneme.get("haftalar", []) else None
 
     posts, warnings = [], []
     for date, fmt, item in slots:
@@ -97,6 +100,8 @@ def main():
             post["template"] = "reel"
             post.setdefault("ses", ritimler[ses_i % len(ritimler)])
             ses_i += 1
+            if hikaye_saati:
+                post["hikaye"] = hikaye_saati
         if item.get("url"):
             dest = os.path.join(ROOT, "work", item["key"])
             prod = fetch(item["url"], dest)

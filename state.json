@@ -58,8 +58,19 @@
     "2026-11-04: İlk haftanın (2026-11-09) 4 gönderisinin hashtag'leri 5'e indirildi (Metricool'da güncellendi).",
     "2026-11-05: Kullanıcı Reels için kodla üretilmiş özgün sesi onayladı (ses.py, assets/reel-ses.wav). Facebook Sayfası (facebook.com/tuzlacivata) yetkisi kullanıcının babasında ya da abisinde; kullanıcı abisinden tam yetki isteyecek. Olmazsa Facebook olmadan devam: Reels kendi sesimizle çıkar.",
     "2026-11-06: Kullanıcı Reels'in izleyiciyi tutmasını istedi. 2. sürüm: 9 sn, vuruşla gelen kanca, 2. saniyede düşüş, yakınlaşma ve parlama, döngüde başa saran ses. Üç ritim (enerjik, atolye, derin) sırayla döner. Kullanıcıya örnek sayfada sunuldu.",
-    "2026-11-06: Kullanıcı Aralık 2026'da askerde olacak. 30 Kasım 2026 – 1 Ocak 2027 arasındaki 5 haftanın 20 gönderisi onaylandı ve aynı gün Metricool'a planlandı (weeks/ içinde on_planli). Bu haftalarda onay istenmez; robot Pazar günleri stok ve kampanya denetimi yapar, sorun varsa weeks/yedek.json'daki onaylı yedekle değiştirir (ROBOT.md, 'Önceden planlanmış haftalar'). volkel-helikoil ve kampanya-kargo Aralık'ta kullanıldığı için kuyruktan çıkarıldı."
+    "2026-11-06: Kullanıcı Aralık 2026'da askerde olacak. 30 Kasım 2026 – 1 Ocak 2027 arasındaki 5 haftanın 20 gönderisi onaylandı ve aynı gün Metricool'a planlandı (weeks/ içinde on_planli). Bu haftalarda onay istenmez; robot Pazar günleri stok ve kampanya denetimi yapar, sorun varsa weeks/yedek.json'daki onaylı yedekle değiştirir (ROBOT.md, 'Önceden planlanmış haftalar'). volkel-helikoil ve kampanya-kargo Aralık'ta kullanıldığı için kuyruktan çıkarıldı.",
+    "2026-11-09: Kullanıcı hikaye denemesini onayladı: 16 ve 23 Kasım haftalarının 4 Reels'i aynı gün 18:00'de Instagram hikayesi olarak da yayınlanır. Kasım'da 13 gönderi + 4 hikaye = 17 (ücretsiz planın 20 sınırı içinde). Sonuç karneye yazılır ve 3 Ocak 2027 çalışmasında kullanıcıya sunulur; devamına kullanıcı karar verir."
   ],
   "ses_sirasi": 0,
-  "kullanilan_yedekler": []
+  "kullanilan_yedekler": [],
+  "hikaye_denemesi": {
+    "haftalar": [
+      "2026-11-16",
+      "2026-11-23"
+    ],
+    "saat": "18:00",
+    "kapsam": "Haftanın iki Reels'i, aynı gün hikaye olarak (aynı video, metinsiz, bağlantısız)",
+    "onay": "2026-11-09",
+    "sonuc_sunulacak": "2027-01-03"
+  }
 }

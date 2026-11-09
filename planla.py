@@ -134,6 +134,17 @@ def cmd_json(hafta, sha, args):
         local = "%sT%s:00" % (day, hm)
         info = make_info(post, local, files_for(post, folder), raw, cdn, ham, muzik.get(pid))
         result.append({"id": pid, "date": local + TZ_OFFSET, "info": json.dumps(info, ensure_ascii=False)})
+        if post.get("hikaye") and info["instagramData"]["type"] == "REEL":
+            hs = post["hikaye"]
+            if hm >= hs:  # geç onayda gönderi kaydıysa hikaye ondan en az 2 saat sonra
+                hs = "%02d:%s" % (min(int(hm[:2]) + 2, 23), hm[3:])
+            hlocal = "%sT%s:00" % (day, hs)
+            # Hikaye: aynı video, metinsiz (Instagram girişli hesapta yazı zaten görünmez), kapak ayarı yok
+            hinfo = {k: v for k, v in info.items() if k != "videoCoverMilliseconds"}
+            hinfo.update({"text": "", "mediaAltText": [], "instagramData": {"type": "STORY"},
+                          "publicationDate": {"dateTime": hlocal, "timezone": "Europe/Istanbul"}})
+            result.append({"id": pid + "-hikaye", "date": hlocal + TZ_OFFSET,
+                           "info": json.dumps(hinfo, ensure_ascii=False)})
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 
@@ -146,11 +157,14 @@ def cmd_durum(hafta, args):
     state, queue = load(state_path), load(queue_path)
     used = set()
     for post in wk["posts"]:
-        state.setdefault("posted", []).append({
+        entry = {
             "date": post["date"] + "T10:00:00", "id": post["id"], "type": post.get("format"),
             "key": post.get("key"), "group": post.get("group", ""), "url": post.get("url", ""),
             "metricool": links.get(post["id"]) or (post.get("metricool") or {}).get("url", ""),
-        })
+        }
+        if post.get("hikaye"):
+            entry["hikaye"] = {"saat": post["hikaye"], "metricool": links.get(post["id"] + "-hikaye", "")}
+        state.setdefault("posted", []).append(entry)
         used.add(post.get("key"))
         if post.get("group"):
             state["recent_groups"] = (state.get("recent_groups", []) + [post["group"]])[-6:]

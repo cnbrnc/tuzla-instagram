@@ -25,7 +25,7 @@ Depo herkese açıktır; buraya şifre, anahtar veya kişisel bilgi yazılmaz.
 - **İletişim:** Sipariş için satis5@tuzlacivata.com.tr, telefon 0542 189 02 69, site tuzlahirdavat.com.tr.
 - **Onay şart:** Kullanıcı onay vermeden hiçbir gönderi Metricool'a planlanmaz ve hiçbir görsel ya da video depoya yüklenmez.
   - Tek istisna: Önceden planlanmış haftalar (aşağıda ayrı bölüm). Onları kullanıcı 6 Kasım 2026'da onayladı. Stokta olmayan ürünün gönderisini onaylı yedekle değiştirmeyi de o gün onayladı.
-- **Metricool sınırı:** Ücretsiz planda ayda en fazla 20 planlı gönderi var. `state.json` içinde o aya düşen gönderiler ile yeni gönderilerin toplamı 20'yi geçecekse kullanıcıya söyle.
+- **Metricool sınırı:** Ücretsiz planda ayda en fazla 20 planlı gönderi var. `state.json` içinde o aya düşen gönderiler ile yeni gönderilerin toplamı 20'yi geçecekse kullanıcıya söyle. Hikayeler de bu sınıra sayılır (`posted` kayıtlarındaki `hikaye` alanı).
 - **Doğruluk:**
   - Ürün bilgisi yalnız ürün sayfasından alınır.
   - İpucu içeriklerinde her teknik bilgiyi (ölçü, standart numarası, değer) en az bir güvenilir kaynakla doğrula: standart kuruluşu, üretici kataloğu ya da teknik başvuru kaynağı. Emin olmadığın bilgiyi yazma.
@@ -123,6 +123,21 @@ Konuyu `queue.json` içindeki `ipucu_konulari` listesinden sırayla al. Aynı ko
 
 `kampanya` ve `toplu` şablonlarını kullanır; öğeler `queue.json` içindeki `tekli` listesindedir. `bilgi` ve `karsilastirma` şablonları da duruyor, ama yeni düzende bilgi içeriği kaydırmalı olarak hazırlanır.
 
+### Hikaye denemesi (16 ve 23 Kasım 2026 haftaları)
+Kullanıcı 9 Kasım 2026'da onayladı. `state.json` içindeki `hikaye_denemesi` ayarı hangi haftalarda yapılacağını söyler.
+
+- **Ne yapılır:** Bu haftalarda iki Reels, aynı gün 18:00'de Instagram hikayesi olarak da yayınlanır.
+  - Video aynıdır. Hikayeye metin, bağlantı ya da çıkartma eklenmez; otomatik yayında Instagram bunlara izin vermez.
+- **Ek iş yok:** `hafta.py` bu haftaların Reels'lerine `"hikaye": "18:00"` yazar. `planla.py json` her biri için `<id>-hikaye` girişini kendisi ekler.
+- **Sınır:** Hikayeler Metricool'un aylık 20 sınırına sayılır. Kasım: 13 gönderi + 4 hikaye = 17.
+- **Ölçüm:** 3. adımdaki hikaye isteğiyle her hikayenin erişimini karneye yaz.
+- **Sonuç (3 Ocak 2027 çalışması):** Onay mesajının başına 2–3 satır yaz:
+  - 4 hikayenin erişimi, yanıtı ve çıkışı,
+  - aynı günün Reels erişimiyle kıyas.
+  - Sonra kullanıcıya hikayeye devam edilip edilmeyeceğini sor.
+  - Ona şunu hatırlat: her gönderiye hikaye için ücretsiz planın sınırı yetmez, Metricool Starter gerekir (9 Kasım 2026'da aylık 20 € + KDV).
+  - Kullanıcı karar vermeden yeni bir hafta için hikaye planlama.
+
 ## Açıklama (caption) kuralları
 
 Açıklama bu sırayla yazılır:
@@ -170,13 +185,14 @@ Metnin tamamı Türkçe olur. Bağırma (ünlem yağmuru, büyük harfle yazı) 
 - **Tekli kart haftası mı?** Sabit kurallardaki 42 gün kuralına bak.
 
 ### 3. Geçen haftanın karnesi
-`getAnalyticsDataByMetrics` ile son 7 günü çek: geçen Pazartesi 00:00'dan bu Pazar 23:59'a, saat dilimi +03:00. Bağlantı türlerini aynı istekte karıştırma; üç ayrı istek gönder:
+`getAnalyticsDataByMetrics` ile son 7 günü çek: geçen Pazartesi 00:00'dan bu Pazar 23:59'a, saat dilimi +03:00. Bağlantı türlerini aynı istekte karıştırma; her tür için ayrı istek gönder. Hikaye isteğini yalnız geçen hafta hikaye yayınlandıysa gönder.
 
 | İstek | Ölçümler | Anlamı |
 |---|---|---|
 | Hesap | `["IGEV01","IGEV43","IGEV44","IGEV06","IGEV42"]` | takipçi, kazanılan, kaybedilen, erişim, etkileşen hesap |
 | Gönderiler | `["IGPO02","IGPO06","IGPO07","IGPO14","IGPO15","IGPO27","IGPO29"]` | tarih, bağlantı, tür, erişim, kaydetme, paylaşım, yeni takip |
 | Reels | `["IGRE02","IGRE06","IGRE11","IGRE23","IGRE12","IGRE21","IGRE28"]` | tarih, bağlantı, erişim, izlenme, kaydetme, paylaşım, 3 sn üstü izlenme oranı |
+| Hikayeler (connector `stories`) | `["IGST02","IGST04","IGST10","IGST09","IGST11","IGST13","IGST08"]` | tarih ve saat, hikaye kimliği, erişim, gösterim, yanıt, ileri dokunma, çıkış |
 
 Sonuçları okurken:
 
@@ -187,6 +203,9 @@ Sonuçları okurken:
 Ne yapılacak:
 
 - `state.json` içindeki `karne` listesine bir kayıt ekle: `{"hafta": "<geçen Pazartesi>", "takipci": N, "yeni_takipci": N, "erisim": N, "en_iyi": {"id": "...", "erisim": N, "kaydetme": N, "paylasim": N}}`. İlk kayıt başlangıç noktasıdır.
+- Geçen hafta hikaye yayınlandıysa kayda `hikayeler` listesini de ekle: `[{"tarih": "...", "erisim": N, "gosterim": N, "yanit": N, "ileri": N, "cikis": N, "reels_erisim": N}]`. `reels_erisim` aynı günün Reels erişimidir.
+  - Bu kayıt şart: Ücretsiz plan yalnız son 30 günün verisini gösterir. Deneme sonucu Ocak'ta buradan okunur.
+  - Veri boş gelirse boş yaz, uydurma.
 - Onay mesajının başına 2–4 satır yaz: takipçi sayısı ve değişimi, erişim, en iyi gönderi ve neden iyi olduğu (kaydetme, paylaşım).
 - Bir şey öğrendiysen (örnek: "soru kancalı Reels daha çok izlendi") yeni haftanın metinlerinde uygula.
 
@@ -231,6 +250,7 @@ Sorun varsa metni kısalt ya da görseli değiştir ve yeniden üret.
 2. **Tek mesaj gönder (SendUserMessage):**
    - En üstte karne satırları.
    - Sonra her gönderi için gün, saat, biçim ve açıklamanın tamamı. Müzik varsa şarkının adı.
+   - Hikaye denemesi haftasındaysa her Reels'in altına şu satırı yaz: "Aynı gün 18:00: bu video hikaye olarak da yayınlanır."
 3. **Onay iste:**
    - "Onaylıyor musun? Değiştirmek istediğin varsa numarasını yaz." diye sor.
    - Telefona tek bildirim gönder: «Bu haftanın 4 Instagram gönderisi onayını bekliyor.»
@@ -249,11 +269,16 @@ Sorun varsa metni kısalt ya da görseli değiştir ve yeniden üret.
 4. **İstekleri hazırla:** `python3 planla.py json <HAFTA> $SHA [--saat …] [--tarih …] [--muzik …] > plan.json`
    - Her gönderi için `id`, `date` ve `info` üretir.
    - Görseller raw.githubusercontent.com'dan, videolar jsDelivr'dan verilir. GitHub videoyu yanlış dosya türüyle sunduğu için videoda jsDelivr kullanılır.
-5. **Planla:** Her gönderi için `createScheduledPost` çağır: `blogId`, `date` ve `info` (metni olduğu gibi). Yanıttaki `plannerUrl` adreslerini `links.json` dosyasına `{"<id>": "<plannerUrl>"}` biçiminde yaz.
-6. **Kontrol et:** `getScheduledPosts` ile haftayı listele. 4 gönderi doğru gün ve saatte olmalı, medya sayısı doğru olmalı: Reels'te 1 video, kaydırmalıda slayt sayısı kadar görsel.
+5. **Planla:** `plan.json` içindeki her giriş için `createScheduledPost` çağır: `blogId`, `date` ve `info` (metni olduğu gibi). Yanıttaki `plannerUrl` adreslerini `links.json` dosyasına `{"<id>": "<plannerUrl>"}` biçiminde yaz.
+   - Hikaye denemesi haftasında `-hikaye` ile biten 2 giriş daha vardır. Onları da planla; bağlantıları da `links.json` dosyasına aynı biçimde yaz.
+6. **Kontrol et:** `getScheduledPosts` ile haftayı listele.
+   - 4 gönderi doğru gün ve saatte olmalı.
+   - Medya sayısı doğru olmalı: Reels'te 1 video, kaydırmalıda slayt sayısı kadar görsel.
+   - Deneme haftasında ayrıca 2 hikaye olmalı: tür STORY, saat 18:00, 1 video.
 7. **Hata olursa:**
    - Aynı isteği tekrar gönderme.
    - Tek istisna: Bir Reels isteği video adresi yüzünden reddedildiyse ve gönderi oluşmadıysa, `planla.py json … --ham` ile üretilen raw adresiyle bir kez dene.
+   - Hikaye isteği reddedilirse gönderiler etkilenmez. Hikayeyi atla ve hatayı kullanıcıya olduğu gibi yaz.
    - Diğer hataları kullanıcıya olduğu gibi yaz.
 
 ### 8. Durumu kaydet
@@ -264,7 +289,7 @@ Sorun varsa metni kısalt ya da görseli değiştir ve yeniden üret.
 3. Commit et (`<HAFTA> haftası planlandı`) ve push et. `links.json`, `plan.json` gibi geçici dosyaları depoya ekleme.
 
 ### 9. Özet
-Kullanıcıya kısa bir özet yaz: hangi gün hangi gönderi yayınlanacak ve her birinin Metricool bağlantısı.
+Kullanıcıya kısa bir özet yaz: hangi gün hangi gönderi (ve varsa hikaye) yayınlanacak ve her birinin Metricool bağlantısı.
 
 ## Önceden planlanmış haftalar (30 Kasım 2026 – 1 Ocak 2027)
 
@@ -287,7 +312,7 @@ Kullanıcı Aralık 2026'da askerde. Bu yüzden 5 haftanın 20 gönderisi önced
 | 13 Aralık | 2026-12-14 | |
 | 20 Aralık | 2026-12-21 | 24 Aralık kampanya kartı: eşikler de denetlenir |
 | 27 Aralık | 2026-12-28 | |
-| 3 Ocak 2027 | 2027-01-04 | Normal düzen geri döner ve onay yine şarttır. Kuyruk boşalmış olur; 4. adımdaki kurallarla yeni öğe yaz. |
+| 3 Ocak 2027 | 2027-01-04 | Normal düzen geri döner ve onay yine şarttır. Kuyruk boşalmış olur; 4. adımdaki kurallarla yeni öğe yaz. Onay mesajının başına hikaye denemesinin sonucunu da yaz (Biçimler → Hikaye denemesi). |
 
 ### Adımlar
 1. **Karne:** 3. adımdaki karneyi çıkar ve `state.json` dosyasına ekle.
