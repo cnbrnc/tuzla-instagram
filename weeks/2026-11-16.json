@@ -1,0 +1,233 @@
+{
+  "hafta": "2026-11-16",
+  "posts": [
+    {
+      "group": "pense",
+      "url": "https://tuzlahirdavat.com.tr/gedore-red-cok-amacli-kablo-soyma-pensesir28002204-14000006114",
+      "tag": "YENİ ÜRÜN",
+      "hook_kicker": "USTA SORUSU",
+      "hook": [
+        "Kabloyu hâlâ",
+        "maketle mi",
+        "soyuyorsun?"
+      ],
+      "brand": "GEDORE RED",
+      "sku": "R28002204",
+      "title": "Tek hamlede soy.",
+      "chips": [
+        "0,2–6,0 mm²",
+        "Kesici + sıkıcı",
+        "İletkene zarar vermez"
+      ],
+      "search_code": "R28002204",
+      "caption": "Kablo soyma pensesi ile 0,2–6,0 mm² kabloyu tek hamlede, iletkeni çizmeden soy. ⚡\n\nGedore Red R28002204: kesici ve sıkıcı bölümüyle çantada üç alet yerine tek alet.\n\n📤 Elektrikçi arkadaşına gönder.\n🔎 Sitede “R28002204” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#kablosoyma #gedore #elektrikçi #elaletleri #tuzlahırdavat",
+      "id": "2026-11-16-gedore-pense",
+      "date": "2026-11-16",
+      "format": "reel",
+      "key": "gedore-pense",
+      "template": "reel",
+      "ses": "enerjik",
+      "hikaye": "18:00",
+      "product_dir": "work/gedore-pense"
+    },
+    {
+      "group": "fener",
+      "theme": "light",
+      "url": "https://tuzlahirdavat.com.tr/pro-12000-lumen-zoom-ozellikli-cob-led-el-feneri--14000006173",
+      "slides": [
+        {
+          "template": "urun",
+          "tag": "AYDINLATMA",
+          "brand": "İZELTAŞ",
+          "sku": "PRO 12000",
+          "headline": [
+            "Gece arızasında",
+            "gündüz gibi."
+          ],
+          "product_line": "İzeltaş Pro 12000 Lümen Zoomlu COB LED El Feneri",
+          "chips": [
+            "12000 lümen",
+            "Zoom odak ayarı",
+            "Alüminyum kasa"
+          ]
+        },
+        {
+          "template": "slide_liste",
+          "kicker": "NEREDE İŞİNE YARAR?",
+          "headline": [
+            "Kimin çantasında",
+            "olmalı?"
+          ],
+          "items": [
+            {
+              "title": "Elektrikçi",
+              "text": "Kesintide pano, sigorta ve tavan arası işlerinde."
+            },
+            {
+              "title": "Oto servis",
+              "text": "Motor altında ve kaput içinde güçlü ışık."
+            },
+            {
+              "title": "Saha ve arama",
+              "text": "Zoom ile uzağa odaklanır, geniş alanı da aydınlatır."
+            },
+            {
+              "title": "Gece vardiyası",
+              "text": "Pil göstergesiyle enerji durumunu her an görürsünüz."
+            }
+          ]
+        },
+        {
+          "template": "slide_cta",
+          "theme": "yellow",
+          "kicker": "SİPARİŞ",
+          "headline": [
+            "Sitede arat:",
+            "12000 lümen"
+          ],
+          "lead": "Stok ve teslimat bilgisi ürün sayfasında.",
+          "actions": [
+            "Kaydet",
+            "Ustana gönder"
+          ],
+          "card": {
+            "label": "SİPARİŞ VE TEKLİF",
+            "l1": "tuzlahirdavat.com.tr",
+            "l2": "Sipariş: satis5@tuzlacivata.com.tr",
+            "l3": "Telefon: 0542 189 02 69"
+          }
+        }
+      ],
+      "alt": [
+        "İzeltaş Pro 12000 lümen zoomlu LED el feneri",
+        "El fenerinin kullanım alanları: elektrikçi, oto servis, saha, gece vardiyası",
+        "Sipariş bilgileri"
+      ],
+      "caption": "El feneri arayanlara: İzeltaş Pro 12000 lümen, zoomlu COB LED. 🔦\n\nZoom ile ışığı geniş alana yayar ya da uzağa odaklar; alüminyum kasa, pil göstergesi.\n\n👉 Kaydır: kimin çantasında olmalı?\n💾 Kaydet, 📤 elektrikçi arkadaşına gönder.\n🔎 Sitede “12000 lümen” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#elfeneri #izeltaş #elektrikçi #aydınlatma #tuzlahırdavat",
+      "id": "2026-11-18-izeltas-fener",
+      "date": "2026-11-18",
+      "format": "carousel",
+      "key": "izeltas-fener",
+      "product_dir": "work/izeltas-fener"
+    },
+    {
+      "group": "baglanti",
+      "theme": "dark",
+      "slides": [
+        {
+          "template": "slide_kapak",
+          "kicker": "USTA İPUCU · BAĞLANTI ELEMANI",
+          "headline": [
+            "M8 × 40 · 8.8",
+            "ne demek?"
+          ],
+          "lead": "Sipariş verirken en çok karışan 4 bilgi, tek tek.",
+          "illustration_file": "assets/civata-cizim.svg"
+        },
+        {
+          "template": "slide_madde",
+          "code": "M8",
+          "headline": [
+            "Metrik diş,",
+            "8 mm anma çapı"
+          ],
+          "text": "“M” metrik dişi, yanındaki sayı dişin dış çapını milimetre olarak gösterir.",
+          "tip": "Kumpasla ölçünce 7,8–7,9 mm çıkması normaldir; diş toleransından kaynaklanır.",
+          "illustration_file": "assets/civata-vurgu-cap.svg"
+        },
+        {
+          "template": "slide_madde",
+          "code": "1,25",
+          "headline": [
+            "Diş adımı"
+          ],
+          "text": "İki diş tepesi arasındaki mesafe (mm). Yazılmamışsa normal diş kabul edilir; M8'de 1,25 mm.",
+          "tip": "İnce diş M8×1 diye yazılır. Somunu ve kılavuzu buna göre seçin.",
+          "illustration_file": "assets/civata-vurgu-adim.svg"
+        },
+        {
+          "template": "slide_madde",
+          "code": "40",
+          "headline": [
+            "Boy"
+          ],
+          "text": "Altıköşe başlı cıvatada baş altından uca kadar ölçülür. M8 × 40 = 40 mm gövde.",
+          "tip": "Havşa başlı cıvatada boy, başın üstünden uca kadar ölçülür.",
+          "illustration_file": "assets/civata-vurgu-boy.svg"
+        },
+        {
+          "template": "slide_madde",
+          "code": "8.8",
+          "headline": [
+            "Mukavemet sınıfı"
+          ],
+          "text": "İlk sayı × 100 = çekme dayanımı (800 N/mm²). İki sayının çarpımı × 10 = akma dayanımı (640 N/mm²).",
+          "tip": "Paslanmazda yerini A2-70 veya A4-80 alır: A2 = AISI 304, A4 = AISI 316; 70/80 = 700/800 N/mm² çekme.",
+          "illustration_file": "assets/civata-vurgu-sinif.svg"
+        },
+        {
+          "template": "slide_cta",
+          "theme": "yellow",
+          "kicker": "KAYDET · PAYLAŞ",
+          "headline": [
+            "Kaydet,",
+            "lazım olur."
+          ],
+          "lead": "Ölçüyü doğru yazan, yanlış ürünle uğraşmaz. Ustana da gönder.",
+          "actions": [
+            "Kaydet",
+            "Ustana gönder"
+          ],
+          "card": {
+            "label": "PASLANMAZ BAĞLANTI ELEMANI · M1.6–M48",
+            "l1": "tuzlahirdavat.com.tr",
+            "l2": "Sipariş: satis5@tuzlacivata.com.tr",
+            "l3": "Telefon: 0542 189 02 69"
+          }
+        }
+      ],
+      "caption": "Cıvata ölçüsü nasıl okunur? M8 × 40 · 8.8 örneğiyle 4 bilgi, 4 slaytta. 📏\n\nSipariş verirken ölçüyü doğru yazmak, yanlış ürünle zaman kaybetmemek demek.\n\n💾 Kaydet, lazım olacak. Ustana da gönder.\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#cıvata #bağlantıelemanları #paslanmazcıvata #hırdavat #tuzlahırdavat",
+      "alt": [
+        "Cıvata ölçüsü nasıl okunur: M8 × 40 · 8.8",
+        "M8: metrik diş, 8 mm anma çapı",
+        "1,25: diş adımı",
+        "40: cıvata boyu",
+        "8.8: mukavemet sınıfı",
+        "Kaydet, paylaş"
+      ],
+      "id": "2026-11-19-ipucu-civata-okuma",
+      "date": "2026-11-19",
+      "format": "carousel",
+      "key": "ipucu-civata-okuma"
+    },
+    {
+      "group": "kaynak",
+      "url": "https://tuzlahirdavat.com.tr/klg200mma-inverter-200amper-ortulu-elektrod-kaynak-klg200mma",
+      "tag": "KAYNAK",
+      "hook_kicker": "KAYNAKÇIYA SORU",
+      "hook": [
+        "Kaynakta",
+        "güç yetmiyor",
+        "mu?"
+      ],
+      "brand": "KOLEGE",
+      "sku": "KLG200MMA",
+      "title": "200 amper güç.",
+      "chips": [
+        "200 A inverter",
+        "Ø1,6–4,0 mm elektrod",
+        "Rutil + bazik"
+      ],
+      "search_code": "KLG200MMA",
+      "caption": "Elektrod kaynak makinesi arayanlara: Kolege KLG200MMA, 200 amper inverter. 🔥\n\nØ1,6 mm'den Ø4,0 mm'ye rutil ve bazik elektrodlarla çalışır; endüstriyel ve profesyonel kullanım için tasarlandı.\n\n📤 Kaynakçı arkadaşına gönder.\n🔎 Sitede “KLG200MMA” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#kaynakmakinesi #kolege #kaynakçı #hırdavat #tuzlahırdavat",
+      "id": "2026-11-20-kolege-kaynak",
+      "date": "2026-11-20",
+      "format": "reel",
+      "key": "kolege-kaynak",
+      "template": "reel",
+      "ses": "atolye",
+      "hikaye": "18:00",
+      "product_dir": "work/kolege-kaynak"
+    }
+  ]
+}
