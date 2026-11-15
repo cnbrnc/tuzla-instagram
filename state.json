@@ -31,18 +31,65 @@
       "group": "isg",
       "url": "https://tuzlahirdavat.com.tr/stl-9910-s4-yesil-cizme-uzun-no43-starline-20199101211430",
       "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=324216549419272888"
+    },
+    {
+      "date": "2026-11-16T10:00:00",
+      "id": "2026-11-16-gedore-pense",
+      "type": "reel",
+      "key": "gedore-pense",
+      "group": "pense",
+      "url": "https://tuzlahirdavat.com.tr/gedore-red-cok-amacli-kablo-soyma-pensesir28002204-14000006114",
+      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-2928118930348815422",
+      "hikaye": {
+        "saat": "18:00",
+        "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=5892304936894153459"
+      }
+    },
+    {
+      "date": "2026-11-18T10:00:00",
+      "id": "2026-11-18-izeltas-fener",
+      "type": "carousel",
+      "key": "izeltas-fener",
+      "group": "fener",
+      "url": "https://tuzlahirdavat.com.tr/pro-12000-lumen-zoom-ozellikli-cob-led-el-feneri--14000006173",
+      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-3017217111699993727"
+    },
+    {
+      "date": "2026-11-19T10:00:00",
+      "id": "2026-11-19-ipucu-civata-okuma",
+      "type": "carousel",
+      "key": "ipucu-civata-okuma",
+      "group": "baglanti",
+      "url": "",
+      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-5332040080573906355"
+    },
+    {
+      "date": "2026-11-20T10:00:00",
+      "id": "2026-11-20-kolege-kaynak",
+      "type": "reel",
+      "key": "kolege-kaynak",
+      "group": "kaynak",
+      "url": "https://tuzlahirdavat.com.tr/klg200mma-inverter-200amper-ortulu-elektrod-kaynak-klg200mma",
+      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-3035150912428815514",
+      "hikaye": {
+        "saat": "18:00",
+        "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-2899628288196391452"
+      }
     }
   ],
   "planned_weeks": [
-    "2026-11-09"
+    "2026-11-09",
+    "2026-11-16"
   ],
   "recent_groups": [
-    "tork",
-    "akulu",
     "baglanti",
-    "isg"
+    "isg",
+    "pense",
+    "fener",
+    "baglanti",
+    "kaynak"
   ],
-  "last_product_theme": "dark",
+  "last_product_theme": "light",
   "last_tekli_week": "2026-11-09",
   "facebook_bagli": false,
   "karne": [
@@ -76,7 +123,7 @@
     "2026-11-06: Kullanıcı Aralık 2026'da askerde olacak. 30 Kasım 2026 – 1 Ocak 2027 arasındaki 5 haftanın 20 gönderisi onaylandı ve aynı gün Metricool'a planlandı (weeks/ içinde on_planli). Bu haftalarda onay istenmez; robot Pazar günleri stok ve kampanya denetimi yapar, sorun varsa weeks/yedek.json'daki onaylı yedekle değiştirir (ROBOT.md, 'Önceden planlanmış haftalar'). volkel-helikoil ve kampanya-kargo Aralık'ta kullanıldığı için kuyruktan çıkarıldı.",
     "2026-11-09: Kullanıcı hikaye denemesini onayladı: 16 ve 23 Kasım haftalarının 4 Reels'i aynı gün 18:00'de Instagram hikayesi olarak da yayınlanır. Kasım'da 13 gönderi + 4 hikaye = 17 (ücretsiz planın 20 sınırı içinde). Sonuç karneye yazılır ve 3 Ocak 2027 çalışmasında kullanıcıya sunulur; devamına kullanıcı karar verir."
   ],
-  "ses_sirasi": 0,
+  "ses_sirasi": 2,
   "kullanilan_yedekler": [],
   "hikaye_denemesi": {
     "haftalar": [
