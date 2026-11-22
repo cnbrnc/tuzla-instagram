@@ -75,21 +75,66 @@
         "saat": "18:00",
         "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-2899628288196391452"
       }
+    },
+    {
+      "date": "2026-11-23T10:00:00",
+      "id": "2026-11-23-rayno-vinc",
+      "type": "reel",
+      "key": "rayno-vinc",
+      "group": "kaldirma",
+      "url": "https://tuzlahirdavat.com.tr/rayno-elektrikli-mini-vinc-400-800-kg-20-m-wifi-ryn11157",
+      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=7443168713099134362",
+      "hikaye": {
+        "saat": "18:00",
+        "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=4727891801889786296"
+      }
+    },
+    {
+      "date": "2026-11-25T10:00:00",
+      "id": "2026-11-25-hikoki-dv18dd",
+      "type": "carousel",
+      "key": "hikoki-dv18dd",
+      "group": "akulu",
+      "url": "https://tuzlahirdavat.com.tr/18v-50-ah-55nm-akulu-darbeli-vidalama-matkap-hiko-dv18dd-50",
+      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-8284489730898574313"
+    },
+    {
+      "date": "2026-11-26T10:00:00",
+      "id": "2026-11-26-ipucu-din-numaralari",
+      "type": "carousel",
+      "key": "ipucu-din-numaralari",
+      "group": "baglanti",
+      "url": "",
+      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=438892824696013262"
+    },
+    {
+      "date": "2026-11-27T10:00:00",
+      "id": "2026-11-27-crc-5-56",
+      "type": "reel",
+      "key": "crc-5-56",
+      "group": "kimyasal",
+      "url": "https://tuzlahirdavat.com.tr/crc-5-56-pro-pas-sokucu",
+      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-8128068499861584844",
+      "hikaye": {
+        "saat": "18:00",
+        "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-4526158585744503431"
+      }
     }
   ],
   "planned_weeks": [
     "2026-11-09",
-    "2026-11-16"
+    "2026-11-16",
+    "2026-11-23"
   ],
   "recent_groups": [
     "baglanti",
-    "isg",
-    "pense",
-    "fener",
+    "kaynak",
+    "kaldirma",
+    "akulu",
     "baglanti",
-    "kaynak"
+    "kimyasal"
   ],
-  "last_product_theme": "light",
+  "last_product_theme": "dark",
   "last_tekli_week": "2026-11-09",
   "facebook_bagli": false,
   "karne": [
@@ -192,7 +237,7 @@
     "2026-11-06: Kullanıcı Aralık 2026'da askerde olacak. 30 Kasım 2026 – 1 Ocak 2027 arasındaki 5 haftanın 20 gönderisi onaylandı ve aynı gün Metricool'a planlandı (weeks/ içinde on_planli). Bu haftalarda onay istenmez; robot Pazar günleri stok ve kampanya denetimi yapar, sorun varsa weeks/yedek.json'daki onaylı yedekle değiştirir (ROBOT.md, 'Önceden planlanmış haftalar'). volkel-helikoil ve kampanya-kargo Aralık'ta kullanıldığı için kuyruktan çıkarıldı.",
     "2026-11-09: Kullanıcı hikaye denemesini onayladı: 16 ve 23 Kasım haftalarının 4 Reels'i aynı gün 18:00'de Instagram hikayesi olarak da yayınlanır. Kasım'da 13 gönderi + 4 hikaye = 17 (ücretsiz planın 20 sınırı içinde). Sonuç karneye yazılır ve 3 Ocak 2027 çalışmasında kullanıcıya sunulur; devamına kullanıcı karar verir."
   ],
-  "ses_sirasi": 2,
+  "ses_sirasi": 4,
   "kullanilan_yedekler": [],
   "hikaye_denemesi": {
     "haftalar": [
