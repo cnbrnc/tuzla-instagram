@@ -48,6 +48,81 @@
   ],
   "urun_carousel": [
     {
+      "key": "hikoki-dv18dd",
+      "group": "akulu",
+      "url": "https://tuzlahirdavat.com.tr/18v-50-ah-55nm-akulu-darbeli-vidalama-matkap-hiko-dv18dd-50",
+      "slides": [
+        {
+          "template": "urun",
+          "tag": "AKÜLÜ ALET",
+          "brand": "HIKOKI",
+          "sku": "DV18DD-5.0",
+          "headline": [
+            "Del, vidala,",
+            "tek makineyle."
+          ],
+          "product_line": "Hikoki DV18DD Akülü Darbeli Vidalama Matkap",
+          "chips": [
+            "18 V · 5,0 Ah",
+            "55 Nm tork",
+            "Kömürsüz motor"
+          ]
+        },
+        {
+          "template": "slide_liste",
+          "kicker": "SEÇERKEN NEYE BAKILIR?",
+          "headline": [
+            "Akülü matkapta",
+            "4 ölçü"
+          ],
+          "items": [
+            {
+              "title": "Volt (V): güç sınıfı",
+              "text": "18 V, atölyede ve sahada en yaygın akülü alet sınıfıdır."
+            },
+            {
+              "title": "Amper-saat (Ah)",
+              "text": "Ah büyüdükçe tek şarjla daha uzun çalışır. Burada 5,0 Ah."
+            },
+            {
+              "title": "Tork (Nm) ve kademe",
+              "text": "55 Nm sıkma torku; 20 kademe ayarla vidayı ezmeden durur."
+            },
+            {
+              "title": "Kömürsüz motor",
+              "text": "Fırça aşınması yok; daha az bakım, daha verimli çalışma."
+            }
+          ]
+        },
+        {
+          "template": "slide_cta",
+          "theme": "yellow",
+          "kicker": "SİPARİŞ",
+          "headline": [
+            "Sitede arat:",
+            "DV18DD"
+          ],
+          "lead": "Stok ve teslimat bilgisi ürün sayfasında.",
+          "actions": [
+            "Kaydet",
+            "Ustana gönder"
+          ],
+          "card": {
+            "label": "SİPARİŞ VE TEKLİF",
+            "l1": "tuzlahirdavat.com.tr",
+            "l2": "Sipariş: satis5@tuzlacivata.com.tr",
+            "l3": "Telefon: 0542 189 02 69"
+          }
+        }
+      ],
+      "alt": [
+        "Hikoki DV18DD 18 V 5,0 Ah akülü darbeli vidalama matkap",
+        "Akülü matkap seçerken bakılacak 4 ölçü: volt, amper-saat, tork, kömürsüz motor",
+        "Sipariş bilgileri"
+      ],
+      "caption": "Akülü darbeli vidalama matkap: Hikoki DV18DD, 18 V 5,0 Ah, kömürsüz motor ve 55 Nm tork. 🔋\n\nİki vitesli şanzıman ve 20 kademe tork ayarı; LED aydınlatma ve elektrik freni de var.\n\n👉 Kaydır: akülü matkap seçerken bakılacak 4 ölçü.\n💾 Kaydet, 📤 usta arkadaşına gönder.\n🔎 Sitede “DV18DD” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#akülümatkap #hikoki #usta #elaletleri #tuzlahırdavat"
+    },
+    {
       "key": "yg1-kilavuz-seti",
       "group": "kilavuz/matkap",
       "theme": "dark",

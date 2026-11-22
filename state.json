@@ -112,6 +112,75 @@
         "paylasim": 0
       },
       "not": "4 tekli görsel gönderi yayınlandı; Reels ve hikaye yoktu. Kaydetme ve paylaşım 0. Erişimler: 150, 82, 87, 78."
+    },
+    {
+      "hafta": "2026-11-16",
+      "takipci": 1501,
+      "yeni_takipci": 3,
+      "kaybedilen": 5,
+      "erisim": 420,
+      "etkilesen": 9,
+      "en_iyi": {
+        "id": "2026-11-16-gedore-pense",
+        "erisim": 176,
+        "kaydetme": 0,
+        "paylasim": 0
+      },
+      "reels": [
+        {
+          "id": "2026-11-16-gedore-pense",
+          "ses": "enerjik",
+          "erisim": 176,
+          "izlenme": 233,
+          "kaydetme": 0,
+          "paylasim": 0,
+          "izlenme_3sn_orani": 26.0
+        },
+        {
+          "id": "2026-11-20-kolege-kaynak",
+          "ses": "atolye",
+          "erisim": 143,
+          "izlenme": 173,
+          "kaydetme": 0,
+          "paylasim": 0,
+          "izlenme_3sn_orani": 9.5
+        }
+      ],
+      "kaydirmali": [
+        {
+          "id": "2026-11-18-izeltas-fener",
+          "erisim": 43,
+          "kaydetme": 0,
+          "paylasim": 0
+        },
+        {
+          "id": "2026-11-19-ipucu-civata-okuma",
+          "erisim": 77,
+          "kaydetme": 1,
+          "paylasim": 0
+        }
+      ],
+      "hikayeler": [
+        {
+          "tarih": "2026-11-16T18:00",
+          "erisim": null,
+          "gosterim": null,
+          "yanit": null,
+          "ileri": null,
+          "cikis": null,
+          "reels_erisim": 176
+        },
+        {
+          "tarih": "2026-11-20T18:00",
+          "erisim": null,
+          "gosterim": null,
+          "yanit": null,
+          "ileri": null,
+          "cikis": null,
+          "reels_erisim": 143
+        }
+      ],
+      "not": "İlk Reels haftası. Takipçi 1503'ten 1501'e (3 kazanılan, 5 kaybedilen; 22 Kasım verisi henüz yok). Reels erişimi kaydırmalıların 2–4 katı. Soru kancalı Gedore Reels'i 3 sn üstü izlenmede %26, Kolege %9,5. İki hikaye de yayınlandı (Metricool: PUBLISHED) ama hikaye ölçümleri boş geldi. yg1-kilavuz-seti stokta yok; kuyruğun sonuna alındı, yerine hikoki-dv18dd eklendi."
     }
   ],
   "notes": [
