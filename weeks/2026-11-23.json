@@ -255,6 +255,62 @@
       "ses": "enerjik",
       "hikaye": "18:00",
       "product_dir": "work/crc-5-56"
+    },
+    {
+      "id": "2026-11-28-rayno-kaynak-200",
+      "key": "rayno-kaynak-200",
+      "format": "reel",
+      "template": "reel_tanitim",
+      "group": "kaynak",
+      "kanca_kalibi": "urun-adi",
+      "stil": "sinematik",
+      "muzik": "c",
+      "url": "https://tuzlahirdavat.com.tr/rayno-200a-invertor-kaynak-makinasi",
+      "product_dir": "work/rayno-kaynak-200",
+      "tag": "KAYNAK MAKİNESİ",
+      "hook_kicker": "RAYNO",
+      "hook": [
+        "200 AMPER",
+        "çanta tipi",
+        "kaynak makinesi"
+      ],
+      "marka": "RAYNO",
+      "baslik": "RAYNO 200A İNVERTER",
+      "ozellikler": [
+        "200 amper çıkış gücü",
+        "2,50 ve 3,25 mm elektrot",
+        "Çanta tipi, omuz askılı",
+        "Aşırı ısınma koruması"
+      ],
+      "rozet": [
+        "2 YIL",
+        "GARANTİ"
+      ],
+      "slogan": "3,25'lik elektrodu rahat yakar.",
+      "search_code": "RYN6155",
+      "urun": {
+        "marka": "RAYNO",
+        "ad": "200A inverter kaynak makinesi",
+        "ozellik": "Çanta tipi · IGBT · 2 yıl garanti"
+      },
+      "bg_video": {
+        "file": "work/stok/pexels-11887094.mp4",
+        "url": "https://videos.pexels.com/video-files/11887094/11887094-hd_1920_1080_25fps.mp4",
+        "start": 0.0,
+        "x": 0.45,
+        "pan": 0.03
+      },
+      "kaynak_video": "https://www.pexels.com/video/slow-motion-of-welding-in-factory-11887094/ (Pexels lisansı)",
+      "kaynak": "Bütün özellikler ürün sayfasından (23 Kasım 2026): 200 A, 2,50 ve 3,25 mm rutil/bazik elektrot, IGBT, çanta tipi omuz askılı, aşırı ısınma koruması ve fan, 2 yıl garanti.",
+      "caption": "Rayno 200A inverter kaynak makinesi: çanta tipi, omuz askılı, 200 amper. ⚡\n\n2,50 ve 3,25 mm rutil ve bazik elektrotla çalışır. IGBT teknolojisi, aşırı ısınma koruması ve fanlı soğutma. İskelede, çatıda, mobil serviste taşıması kolay. 2 yıl garantili.\n\n📤 Kaynakçı arkadaşına gönder.\n🔎 Sitede “RYN6155” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#kaynakmakinesi #rayno #kaynakçı #demirdoğrama #tuzlahırdavat",
+      "date": "2026-11-28",
+      "ek": true,
+      "metricool": {
+        "uuid": "-3875703907430610441",
+        "ilk_id": 438805048,
+        "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-3875703907430610441",
+        "planlandi": "2026-11-23"
+      }
     }
   ]
 }

@@ -360,7 +360,7 @@ Ne yapılacak:
   - Veri boş gelirse boş yaz, uydurma.
 - Onay mesajının başına 2–4 satır yaz: takipçi sayısı ve değişimi, erişim, en iyi gönderi ve neden iyi olduğu (kaydetme, paylaşım).
 - Bir şey öğrendiysen (örnek: "soru kancalı Reels daha çok izlendi") yeni haftanın metinlerinde uygula.
-- Karne kaydındaki her Reels'e türünü (`tur`: `urun`, `bil`, `yd`), `gecme_orani`, `ort_izlenme` ve `yorum` değerlerini de yaz.
+- Karne kaydındaki her Reels'e türünü (`tur`: `urun`, `bil`, `yd`, `tanitim`), `gecme_orani`, `ort_izlenme` ve `yorum` değerlerini de yaz.
   - Yeni türlerde `kanca_kalibi` ve (Cuma Reels'inde) `cift` değerini de yaz. `python3 fikir.py karne` bunlardan hangi kalıbın tuttuğunu çıkarır (`SENARYO.md`, bölüm 9).
   - Kıyas noktası, Kasım 2026'nın ürün Reels'leri: geçme oranı %73 ve %90, ortalama izlenme 4,3 ve 1,9 saniye.
   - Yeni türlerin ilk 4 haftası dolunca onay mesajının başına türlere göre kısa bir kıyas yaz. Hangi tür daha iyi tutuyorsa kullanıcıya söyle; karar onundur.
