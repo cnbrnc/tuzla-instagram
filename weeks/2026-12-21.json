@@ -18,7 +18,8 @@
         "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=9081701053126887280",
         "planlandi": "2026-11-06",
         "guncellendi": "2026-11-23",
-        "son_id": 438519920
+        "son_id": 438948392,
+        "ses_guncellendi": "2026-11-23"
       },
       "template": "reel_bil",
       "tag": "BİL BAKALIM",
@@ -50,7 +51,7 @@
       },
       "kaynak": "Pro Tool Reviews delik testeresi devir tablosu: 67 mm bimetal, paslanmazda yaklaşık 65 dev/dk",
       "stil": "sinematik",
-      "muzik": "a",
+      "muzik": "b",
       "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi",
       "kanca_kalibi": "hangisi"
     },
@@ -191,7 +192,8 @@
         "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=3298595060733857328",
         "planlandi": "2026-11-06",
         "guncellendi": "2026-11-23",
-        "son_id": 438519978
+        "son_id": 438949169,
+        "ses_guncellendi": "2026-11-23"
       },
       "template": "reel_yd",
       "tag": "USTA HATASI",
@@ -227,7 +229,7 @@
       "kaynak_video": "https://www.pexels.com/video/6160043/ (Pexels lisansı)",
       "kaynak": "ASME B30.16, Harrington ve Kito kullanım kılavuzları: caraskalla yandan çekiş yapılmaz, yük dik kaldırılır",
       "stil": "sinematik",
-      "muzik": "b",
+      "muzik": "i",
       "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi",
       "kanca_kalibi": "ima",
       "cift": "yanlis-dogru"

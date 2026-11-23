@@ -18,7 +18,8 @@
         "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-2434990649305119681",
         "planlandi": "2026-11-06",
         "guncellendi": "2026-11-23",
-        "son_id": 438519356
+        "son_id": 438947804,
+        "ses_guncellendi": "2026-11-23"
       },
       "template": "reel_bil",
       "tag": "BİL BAKALIM",
@@ -50,7 +51,7 @@
       },
       "kaynak": "Snap-on, Draper, Chicago Pneumatic: darbeli alette yalnız darbeli (impact) lokma kullanılır",
       "stil": "sinematik",
-      "muzik": "c",
+      "muzik": "f",
       "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi",
       "kanca_kalibi": "hangisi"
     },
@@ -251,7 +252,8 @@
         "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-570407006500403085",
         "planlandi": "2026-11-06",
         "guncellendi": "2026-11-23",
-        "son_id": 438519399
+        "son_id": 438947903,
+        "ses_guncellendi": "2026-11-23"
       },
       "template": "reel_yd",
       "tag": "USTA HATASI",
@@ -287,7 +289,7 @@
       "kaynak_video": "https://www.pexels.com/video/6079664/ (Pexels lisansı)",
       "kaynak": "Essentra Components: makaron için sıcak hava tabancası önerilir; açık alev eşit ısıtmaz ve güvenlik riskidir",
       "stil": "sinematik",
-      "muzik": "a",
+      "muzik": "g",
       "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi",
       "kanca_kalibi": "ima",
       "cift": "yanlis-dogru"

@@ -18,7 +18,8 @@
         "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-437729016984418568",
         "planlandi": "2026-11-06",
         "guncellendi": "2026-11-23",
-        "son_id": 438520053
+        "son_id": 438948737,
+        "ses_guncellendi": "2026-11-23"
       },
       "template": "reel_bil",
       "tag": "BİL BAKALIM",
@@ -50,7 +51,7 @@
       },
       "kaynak": "IEC 60529 (DigiKey özeti): IPX4 her yönden su sıçraması; IPX7 ve IPX8 suya daldırma",
       "stil": "sinematik",
-      "muzik": "c",
+      "muzik": "j",
       "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi",
       "kanca_kalibi": "evet-hayir"
     },
@@ -190,7 +191,8 @@
         "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-1392825388320929417",
         "planlandi": "2026-11-06",
         "guncellendi": "2026-11-23",
-        "son_id": 438520116
+        "son_id": 438948819,
+        "ses_guncellendi": "2026-11-23"
       },
       "template": "reel_yd",
       "tag": "USTA HATASI",
@@ -227,7 +229,7 @@
       "kaynak_video": "https://www.pexels.com/video/7033925/ (Pexels lisansı)",
       "kaynak": "Genel ölçüm bilgisi: uzun şerit sarkar; lazer metre tek kişiyle ölçer",
       "stil": "sinematik",
-      "muzik": "a",
+      "muzik": "c",
       "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi",
       "kanca_kalibi": "ima",
       "cift": "yanlis-dogru"

@@ -18,7 +18,8 @@
         "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-8802899935545767752",
         "planlandi": "2026-11-06",
         "guncellendi": "2026-11-23",
-        "son_id": 438519437
+        "son_id": 438949025,
+        "ses_guncellendi": "2026-11-23"
       },
       "template": "reel_bil",
       "tag": "BİL BAKALIM",
@@ -50,7 +51,7 @@
       },
       "kaynak": "Wavin Ekoplastik PP-R montaj kılavuzu: kaynak sıcaklığı 250–270 °C",
       "stil": "sinematik",
-      "muzik": "b",
+      "muzik": "d",
       "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi",
       "kanca_kalibi": "kac"
     },
@@ -262,7 +263,8 @@
         "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=5868049014215821146",
         "planlandi": "2026-11-06",
         "guncellendi": "2026-11-23",
-        "son_id": 438519703
+        "son_id": 438948255,
+        "ses_guncellendi": "2026-11-23"
       },
       "template": "reel_yd",
       "tag": "USTA HATASI",
@@ -292,7 +294,7 @@
       },
       "kaynak": "Bosch: T 118 A ince dişli, 1–3 mm sac için; T 101 B ahşap için",
       "stil": "sinematik",
-      "muzik": "c",
+      "muzik": "h",
       "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi",
       "kanca_kalibi": "ima",
       "cift": "yanlis-dogru"

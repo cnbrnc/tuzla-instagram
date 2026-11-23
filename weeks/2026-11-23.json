@@ -31,6 +31,67 @@
       "product_dir": "work/rayno-vinc"
     },
     {
+      "id": "2026-11-24-oyun-usta-modu",
+      "key": "oyun-usta-modu",
+      "format": "reel",
+      "template": "reel_oyun",
+      "group": "site",
+      "kanca_kalibi": "oyun",
+      "stil": "sinematik",
+      "muzik": "i",
+      "tag": "USTA MODU",
+      "hook_kicker": "TUZLA HIRDAVAT SUNAR",
+      "hook": [
+        "USTA",
+        "MODU"
+      ],
+      "gorev": {
+        "no": "01",
+        "seviye": "SEVİYE: USTA",
+        "ad": "Atölyeyi donat"
+      },
+      "maddeler": [
+        {
+          "ad": "Paslanmaz cıvata",
+          "product_dir": "work/f-paslanmaz-din933"
+        },
+        {
+          "ad": "El aletleri",
+          "product_dir": "work/f-izeltas-lokma-35"
+        },
+        {
+          "ad": "Kesme taşı",
+          "product_dir": "work/f-karbosan-thinline"
+        },
+        {
+          "ad": "İş eldiveni",
+          "product_dir": "work/atg-maxicut-eldiven"
+        }
+      ],
+      "tamam": "GÖREV TAMAM!",
+      "odul": "+100 USTALIK PUANI",
+      "cagri_ust": "Sıradaki görev burada:",
+      "cagri": "tuzlahirdavat.com.tr",
+      "cipler": [
+        "20.000+ ürün",
+        "Paslanmazdan el aletine",
+        "Tek adres"
+      ],
+      "kapanis_k": "HEMEN GİR",
+      "search_code": "tuzlahirdavat.com.tr",
+      "kaynak": "Ürün sayısı: sitenin ürün haritasında 21.517 ürün adresi (23 Kasım 2026). Görseller sitedeki ürün fotoğrafları.",
+      "caption": "Usta modu açıldı. 🎮 Görev: atölyeyi donat.\n\nPaslanmaz cıvatadan el aletine, kesme taşından iş güvenliğine 20.000'den fazla ürün tek adreste. Aradığını bul, sepete at, görevi tamamla.\n\n📤 Atölyesi olan arkadaşına gönder.\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#hırdavat #paslanmazcıvata #elaletleri #usta #tuzlahırdavat",
+      "date": "2026-11-24",
+      "ek": true,
+      "hazir": true,
+      "metricool": {
+        "uuid": "4268851937087605144",
+        "ilk_id": 438946948,
+        "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=4268851937087605144",
+        "planlandi": "2026-11-23"
+      }
+    },
+    {
       "group": "akulu",
       "url": "https://tuzlahirdavat.com.tr/18v-50-ah-55nm-akulu-darbeli-vidalama-matkap-hiko-dv18dd-50",
       "slides": [
@@ -260,31 +321,71 @@
       "id": "2026-11-28-rayno-kaynak-200",
       "key": "rayno-kaynak-200",
       "format": "reel",
-      "template": "reel_tanitim",
+      "template": "reel_fragman",
       "group": "kaynak",
-      "kanca_kalibi": "urun-adi",
+      "kanca_kalibi": "fragman",
       "stil": "sinematik",
-      "muzik": "c",
+      "muzik": "e",
       "url": "https://tuzlahirdavat.com.tr/rayno-200a-invertor-kaynak-makinasi",
       "product_dir": "work/rayno-kaynak-200",
       "tag": "KAYNAK MAKİNESİ",
-      "hook_kicker": "RAYNO",
-      "hook": [
-        "200 AMPER",
-        "çanta tipi",
-        "kaynak makinesi"
+      "kapak_ms": 4900,
+      "replikler": [
+        [
+          "ARK",
+          "KOPMASIN."
+        ],
+        [
+          "ELEKTROT",
+          "YAPIŞMASIN."
+        ],
+        [
+          "İŞ YARIM",
+          "KALMASIN."
+        ],
+        [
+          "GÜCÜ",
+          "OMZUNA AL."
+        ]
       ],
-      "marka": "RAYNO",
-      "baslik": "RAYNO 200A İNVERTER",
+      "sahneler": [
+        {
+          "file": "work/stok/pexels-14314764.mp4",
+          "url": "https://videos.pexels.com/video-files/14314764/14314764-hd_1920_1080_50fps.mp4",
+          "start": 2.0,
+          "x": 0.35,
+          "pan": 0.02,
+          "hiz": 0.6
+        },
+        {
+          "file": "work/stok/pexels-11887094.mp4",
+          "url": "https://videos.pexels.com/video-files/11887094/11887094-hd_1920_1080_25fps.mp4",
+          "start": 0.5,
+          "x": 0.45,
+          "pan": 0.02
+        },
+        {
+          "file": "work/stok/pexels-11887093.mp4",
+          "url": "https://videos.pexels.com/video-files/11887093/11887093-hd_1920_1080_25fps.mp4",
+          "start": 1.0,
+          "x": 0.4,
+          "pan": 0.02
+        },
+        {
+          "file": "work/stok/pexels-14314764.mp4",
+          "url": "https://videos.pexels.com/video-files/14314764/14314764-hd_1920_1080_50fps.mp4",
+          "start": 8.0,
+          "x": 0.38,
+          "pan": 0.01,
+          "hiz": 0.6
+        }
+      ],
+      "baslik": "RAYNO 200A",
+      "tur_yazi": "ÇANTA TİPİ KAYNAK MAKİNESİ",
       "ozellikler": [
-        "200 amper çıkış gücü",
-        "2,50 ve 3,25 mm elektrot",
-        "Çanta tipi, omuz askılı",
-        "Aşırı ısınma koruması"
-      ],
-      "rozet": [
-        "2 YIL",
-        "GARANTİ"
+        "200 amper",
+        "3,25 mm elektrot",
+        "2 yıl garanti"
       ],
       "slogan": "3,25'lik elektrodu rahat yakar.",
       "search_code": "RYN6155",
@@ -293,23 +394,20 @@
         "ad": "200A inverter kaynak makinesi",
         "ozellik": "Çanta tipi · IGBT · 2 yıl garanti"
       },
-      "bg_video": {
-        "file": "work/stok/pexels-11887094.mp4",
-        "url": "https://videos.pexels.com/video-files/11887094/11887094-hd_1920_1080_25fps.mp4",
-        "start": 0.0,
-        "x": 0.45,
-        "pan": 0.03
-      },
-      "kaynak_video": "https://www.pexels.com/video/slow-motion-of-welding-in-factory-11887094/ (Pexels lisansı)",
+      "kaynak_video": "Pexels lisansı: pexels.com/video/14314764, /11887094, /11887093",
       "kaynak": "Bütün özellikler ürün sayfasından (23 Kasım 2026): 200 A, 2,50 ve 3,25 mm rutil/bazik elektrot, IGBT, çanta tipi omuz askılı, aşırı ısınma koruması ve fan, 2 yıl garanti.",
       "caption": "Rayno 200A inverter kaynak makinesi: çanta tipi, omuz askılı, 200 amper. ⚡\n\n2,50 ve 3,25 mm rutil ve bazik elektrotla çalışır. IGBT teknolojisi, aşırı ısınma koruması ve fanlı soğutma. İskelede, çatıda, mobil serviste taşıması kolay. 2 yıl garantili.\n\n📤 Kaynakçı arkadaşına gönder.\n🔎 Sitede “RYN6155” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#kaynakmakinesi #rayno #kaynakçı #demirdoğrama #tuzlahırdavat",
       "date": "2026-11-28",
       "ek": true,
+      "hazir": true,
       "metricool": {
         "uuid": "-3875703907430610441",
         "ilk_id": 438805048,
         "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-3875703907430610441",
-        "planlandi": "2026-11-23"
+        "planlandi": "2026-11-23",
+        "son_id": 438947208,
+        "guncellendi": "2026-11-23",
+        "not": "Ürün tanıtımı sürümü fragman sürümüyle değiştirildi (kullanıcı fragmanı daha çok beğendi)."
       }
     }
   ]

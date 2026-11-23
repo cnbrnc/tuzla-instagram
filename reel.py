@@ -102,6 +102,9 @@ def main():
             tpl = post.get("template") or ""
             if tpl not in DEFAULT_SOUND:
                 continue
+            if post.get("hazir"):              # onaylı, bitmiş video (ek.py ekledi): yeniden üretilmez
+                print("hazır video, atlandı: %s" % post["id"])
+                continue
             ctx = {"fontdir": os.path.join(ROOT, "node_modules"), "logo": os.path.join(ROOT, "assets", "logo.png"),
                    "accent": "#FFC629"}
             if tpl == "reel":

@@ -90,6 +90,16 @@
       }
     },
     {
+      "date": "2026-11-24T10:00:00",
+      "id": "2026-11-24-oyun-usta-modu",
+      "type": "reel",
+      "key": "oyun-usta-modu",
+      "group": "site",
+      "url": "",
+      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=4268851937087605144",
+      "ek": true
+    },
+    {
       "date": "2026-11-25T10:00:00",
       "id": "2026-11-25-hikoki-dv18dd",
       "type": "carousel",
@@ -256,7 +266,8 @@
     "2026-11-23: Kullanıcı Rayno tanıtım videosunu onaylayıp planlattıktan sonra \"daha sinematik, daha senaryolu bir şey yapamaz mıyız\" dedi. Yeni tür kuruldu: Fragman (reel_fragman): dört gerçek sahne, dört cümle, sonra ürün. Rayno'nun fragman sürümü taslak/rayno-kaynak-200/rayno-fragman.json; video sohbette gönderildi, onay bekliyor. 28 Kasım'a planlı video (ürün tanıtımı sürümü) yerinde duruyor; kullanıcı isterse fragmanla değiştirilecek.",
     "2026-11-23: Kullanıcı Rayno fragmanını beğendi (\"bunu sevdim\") ve 5-6 ürüne aynı türde tanıtım istedi. 5 fragman hazırlandı ve sohbette gönderildi: Karbosan NK Thinline kesme taşı (910450), Tyrolit ONE 2in1 flap disk (34689695), Egesan Pro inox kesme taşı, İzeltaş 35 parça lokma takımı (1113001038; stok 8), A2 paslanmaz DIN 933 cıvata. Taslak: taslak/fragman-5/. ONAY ve yayın günleri bekliyor; hiçbiri planlanmadı. GFB için yapılmadı: stokta olan ürün SDS-Plus beton ucu, ama yüzü ya da markası görünmeyen beton delme görüntüsü bulunamadı. Aylık sınır: Kasım'da 2, Aralık'ta 2 boş yer. 28 Kasım'a planlı Rayno videosu hâlâ 'ürün tanıtımı' sürümü; kullanıcı 'değiştir' derse fragman sürümüyle değiştirilecek.",
     "2026-11-23: Kullanıcı \"GTA 6 temalı Tuzla Hırdavat sitesi tanıtımı\" istedi. GTA'nın adı, logosu ve görünümü kullanılmadı (tescilli marka); kullanıcıya söylendi. Yerine özgün oyun temalı site tanıtımı hazırlandı: \"Usta Modu\" (reel_oyun). Taslak taslak/oyun-usta-modu/; video sohbette gönderildi, onay bekliyor, planlanmadı.",
-    "2026-11-23: Kullanıcı: \"Güzel ama hep aynı melodi; izleyeni sıkar; her gönderide aynı.\" Müzik kütüphanesi 1 parçadan 6 parçaya çıkarıldı (kimlikler a–j, assets/ses-kaynak.json; hepsi Pixabay, Content ID kaydı yok). Müzik miksajda öne alındı, ortak efektler kısıldı. Taslak 7 videonun (5 fragman, Rayno fragman, oyun) sesi farklı parçalarla değiştirildi ve sohbette gönderildi. Planlı 11 videonun (28 Kasım Rayno + Aralık'ın 10 Reels'i) yeni sesli sürümleri hazırlandı (out/yeni-ses/, plan.json) ama Metricool'a YÜKLENMEDİ: kullanıcı parçaları dinleyip onay verince yüklenecek."
+    "2026-11-23: Kullanıcı: \"Güzel ama hep aynı melodi; izleyeni sıkar; her gönderide aynı.\" Müzik kütüphanesi 1 parçadan 6 parçaya çıkarıldı (kimlikler a–j, assets/ses-kaynak.json; hepsi Pixabay, Content ID kaydı yok). Müzik miksajda öne alındı, ortak efektler kısıldı. Taslak 7 videonun (5 fragman, Rayno fragman, oyun) sesi farklı parçalarla değiştirildi ve sohbette gönderildi. Planlı 11 videonun (28 Kasım Rayno + Aralık'ın 10 Reels'i) yeni sesli sürümleri hazırlandı (out/yeni-ses/, plan.json) ama Metricool'a YÜKLENMEDİ: kullanıcı parçaları dinleyip onay verince yüklenecek.",
+    "2026-11-23: Kullanıcı: \"Oyun temalı onaylı, kalanı hangisi iyi olacaksa onu yap.\" Yapılanlar: (1) Oyun temalı \"Usta Modu\" 24 Kasım Salı 10:00'a planlandı (Kasım toplamı 19). (2) 28 Kasım Rayno gönderisinin videosu fragman sürümüyle değiştirildi; açıklama aynı. (3) Paslanmaz DIN 933 fragmanı 1 Aralık Salı 10:00'a planlandı (Aralık toplamı 19; weeks/2026-11-30.json içinde ek gönderi). (4) Aralık'ın 10 Reels'inin sesi farklı parçalarla değiştirildi ve Metricool'da güncellendi (görüntü, açıklama, tarih aynı). (5) Kalan 4 fragman (İzeltaş lokma, Karbosan Thinline, Tyrolit flap, Egesan inox) queue.json 'ek_fragman' listesine alındı; Ocak'tan itibaren ek.py ile haftaya bir tane, ayın toplamı 19'u geçmeden eklenir ve Pazar onay mesajında gösterilir. Sitede aranacak kodlar (RYN6155, 910450, 34689695, 1113001038, 'Egesan inox', 'DIN 933 A2') site aramasında denenemedi; kullanıcıdan denemesi istendi."
   ],
   "ses_sirasi": 4,
   "kullanilan_yedekler": [],

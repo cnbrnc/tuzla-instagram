@@ -18,7 +18,8 @@
         "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=3999527185590994202",
         "planlandi": "2026-11-06",
         "guncellendi": "2026-11-23",
-        "son_id": 438518594
+        "son_id": 438947515,
+        "ses_guncellendi": "2026-11-23"
       },
       "template": "reel_bil",
       "tag": "BİL BAKALIM",
@@ -67,6 +68,100 @@
       "muzik": "a",
       "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi",
       "kanca_kalibi": "hangisi"
+    },
+    {
+      "key": "paslanmaz-din933",
+      "group": "baglanti",
+      "tag": "PASLANMAZ",
+      "replikler": [
+        [
+          "YAĞMUR."
+        ],
+        [
+          "NEM."
+        ],
+        [
+          "GÜNEŞ."
+        ],
+        [
+          "BAĞLANTI",
+          "DAYANSIN."
+        ]
+      ],
+      "sahneler": [
+        {
+          "file": "work/stok/pexels-13159531.mp4",
+          "url": "https://videos.pexels.com/video-files/13159531/13159531-hd_1920_1080_60fps.mp4",
+          "start": 2,
+          "x": 0.35,
+          "pan": 0.02,
+          "hiz": 0.5,
+          "gamma": 1.0
+        },
+        {
+          "file": "work/stok/pexels-5038492.mp4",
+          "url": "https://videos.pexels.com/video-files/5038492/5038492-hd_1920_1080_24fps.mp4",
+          "start": 1,
+          "x": 0.3,
+          "pan": 0.02,
+          "hiz": 1.0,
+          "gamma": 1.0
+        },
+        {
+          "file": "work/stok/pexels-8851164.mp4",
+          "url": "https://videos.pexels.com/video-files/8851164/8851164-hd_1920_1080_30fps.mp4",
+          "start": 3,
+          "x": 0.5,
+          "pan": 0.02,
+          "hiz": 1.0,
+          "gamma": 1.0
+        },
+        {
+          "file": "work/stok/pexels-13159531.mp4",
+          "url": "https://videos.pexels.com/video-files/13159531/13159531-hd_1920_1080_60fps.mp4",
+          "start": 6,
+          "x": 0.35,
+          "pan": 0.02,
+          "hiz": 0.5,
+          "gamma": 1.0
+        }
+      ],
+      "baslik": "A2 PASLANMAZ",
+      "tur_yazi": "ALTI KÖŞE BAŞLI CIVATA · DIN 933",
+      "ozellikler": [
+        "A2 (304)",
+        "DIN 933",
+        "Stoktan gönderim"
+      ],
+      "slogan": "Deniz kenarı için A4 de var.",
+      "search_code": "DIN 933 A2",
+      "urun": {
+        "kicker": "SİTEMİZDE",
+        "marka": "PASLANMAZ",
+        "ad": "Altı köşe başlı cıvata DIN 933",
+        "ozellik": "A2 (304) kalite"
+      },
+      "kaynak": "Ürün sayfası: DIN 933, A2-304; tersane, yat, güneş enerjisi, su arıtma, gıda tesisleri. Sitede A4 (316) ürünler de var. A2/A4 farkı: A4 klorlu ve deniz ortamına daha dayanıklı (önceki doğrulama).",
+      "id": "2026-12-01-paslanmaz-din933",
+      "format": "reel",
+      "template": "reel_fragman",
+      "stil": "sinematik",
+      "muzik": "j",
+      "kanca_kalibi": "fragman",
+      "kapak_ms": 4900,
+      "url": "https://tuzlahirdavat.com.tr/m8x100-inox-akb-civata-din933-a2-304",
+      "product_dir": "work/f-paslanmaz-din933",
+      "caption": "A2 paslanmaz altı köşe başlı cıvata, DIN 933: dış ortamda, nemde ve yağmurda uzun ömürlü bağlantı. 🔩\n\nGüneş enerjisi, su arıtma, gıda tesisi ve endüstriyel mutfak imalatında kullanılır. Deniz kenarı ve klorlu ortam için A4 (316) kalite de sitemizde.\n\n💾 Kaydet, lazım olur.\n🔎 Sitede “DIN 933 A2” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#paslanmazcıvata #inox #a2 #bağlantıelemanları #tuzlahırdavat",
+      "kaynak_video": "Pexels ve Pixabay lisansı; dosya adlarındaki numaralar video kimliğidir",
+      "date": "2026-12-01",
+      "ek": true,
+      "hazir": true,
+      "metricool": {
+        "uuid": "-4220170377183672701",
+        "ilk_id": 438947066,
+        "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-4220170377183672701",
+        "planlandi": "2026-11-23"
+      }
     },
     {
       "key": "scheppach-jenerator",
@@ -281,7 +376,8 @@
         "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-4972109523897792242",
         "planlandi": "2026-11-06",
         "guncellendi": "2026-11-23",
-        "son_id": 438519324
+        "son_id": 438947635,
+        "ses_guncellendi": "2026-11-23"
       },
       "template": "reel_yd",
       "tag": "USTA HATASI",
@@ -318,7 +414,7 @@
       "kaynak_video": "https://www.pexels.com/video/4873237/ (Pexels lisansı)",
       "kaynak": "CPSC, NFPA, ESFI: ısıtıcı doğrudan duvar prizine takılır; uzatma kablosu ve çoklu priz kullanılmaz",
       "stil": "sinematik",
-      "muzik": "b",
+      "muzik": "e",
       "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi",
       "kanca_kalibi": "ima",
       "cift": "yanlis-dogru"

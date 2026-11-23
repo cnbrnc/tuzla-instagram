@@ -167,6 +167,22 @@ Kullanıcı 23 Kasım 2026'da "GTA 6 temalı site tanıtımı" istedi. Gerçek b
 - **Kural:** Başka bir markanın ya da eserin (oyun, film, dizi, karakter) adı, logosu, kapağı ve tanınan görünümü hiçbir gönderide kullanılmaz. Kullanıcı böyle bir tema isterse nedenini bir cümleyle söyle ve aynı fikri özgün bir tasarımla yap.
 - **Sayılar:** "20.000+ ürün" gibi bir sayı yazılacaksa `work/products.xml` içindeki ürün adresi sayısından doğrula.
 
+### Ek fragmanlar: onaylı, bitmiş videolar (`ek.py`, liste `ek_fragman`)
+
+Kullanıcı 23 Kasım 2026'da 5 fragmanı izledi ve "kalanı hangisi iyi olacaksa onu yap" dedi. Paslanmaz DIN 933 fragmanı 1 Aralık'a planlandı. Kalan dördü Aralık'ın sınırına (ayda 19) sığmadığı için sıraya alındı: İzeltaş 35 parça lokma, Karbosan Thinline kesme taşı, Tyrolit flap disk, Egesan inox kesme taşı.
+
+- **Videolar hazır:** `posts/ek/fragman-<anahtar>.mp4` ve `-kapak.jpg`. Yeniden üretme; `reel.py` `"hazir": true` yazan gönderiyi atlar.
+- **Ne zaman:** 4 Ocak 2027 haftasından itibaren, liste bitene kadar, haftada en fazla bir tane; **Salı 10:00**. Haftanın 4 gönderisine ektir, onların yerine geçmez.
+- **Nasıl:** `python3 hafta.py <HAFTA>` çalıştıktan sonra `python3 ek.py ekle <HAFTA>` çalıştır.
+  - Ayın toplamı (gönderi + hikaye) 19'u geçecekse eklemez ve bunu söyler; o hafta ek video çıkmaz.
+  - Ürünün stokta olduğuna bakar; stokta değilse sıradakine geçer.
+  - Videoyu `out/<HAFTA>/` klasörüne kopyalar ve gönderiyi `weeks/<HAFTA>.json` dosyasına `"ek": true` ile ekler.
+  - `hafta.py` yeniden çalışırsa `ek.py ekle` komutunu da yinele.
+- **Onay:** Pazar günkü onay mesajında 5. gönderi olarak göster ("Ek: Salı 10:00, fragman") ve videoyu gönder. Kullanıcı istemezse `weeks/<HAFTA>.json` dosyasından çıkar; öğe listede kalır.
+- **Sonrası aynı:** `planla.py kopyala`, `json` ve `durum` ek gönderiyi öbürleriyle birlikte işler; `durum` öğeyi listeden düşer. Kapak karesi 4900 ms'dir (`kapak_ms`).
+- `python3 ek.py liste`: sıradaki videoları ve önümüzdeki ayların sayımını gösterir.
+- **Yeni fragman:** Liste bitince kendi başına yenisini ekleme. Kullanıcı bir ürün için tanıtım isterse "Fragman" türünde hazırla, onaya sun.
+
 **Kapanışta ürün (`urun`):** Amaç bilgi verirken ürünü de tanıtmak. Öğede `url` (ürün sayfası) ve `urun` varsa kapanış kartında "Sitede arat" kodunun altında ürünün fotoğrafı, markası ve adı durur.
 - `kicker` (isteğe bağlı): fotoğrafın yanındaki küçük başlık. Yazılmazsa "BU İŞİN ALETİ". Alet olmayan ürünlerde (cıvata, eldiven) "SİTEMİZDE" yaz.
 - `marka`: en fazla 10 karakter, büyük harf. `ad`: en fazla 30 karakter. `ozellik`: en fazla 36 karakter, " · " ile ayrılmış 2–3 özellik.
@@ -419,6 +435,7 @@ Ne yapılacak:
 3. **Haftayı kur:** `python3 hafta.py <HAFTA>` (tekli haftasıysa `python3 hafta.py <HAFTA> --tekli`). Betik ürünleri indirir, stok durumunu kontrol eder ve `weeks/<HAFTA>.json` dosyasını yazar.
    - "stokta yok" derse o öğeyi kuyruktan çıkar ya da sona taşı, gerekirse yenisini ekle ve betiği yeniden çalıştır.
    - UYARI satırlarını oku ve gereğini yap.
+4. **Ek fragman:** `queue.json` içinde `ek_fragman` listesi boş değilse `python3 ek.py ekle <HAFTA>` çalıştır (Biçimler → Ek fragmanlar). "EKLENMEDİ" derse devam et; o hafta ek video yok.
 
 ### 5. Üret ve kontrol et
 ```
@@ -446,7 +463,7 @@ Sorun varsa metni kısalt ya da görseli değiştir ve yeniden üret.
    - Hikaye denemesi haftasındaysa her Reels'in altına şu satırı yaz: "Aynı gün 18:00: bu video hikaye olarak da yayınlanır."
 3. **Onay iste:**
    - "Onaylıyor musun? Değiştirmek istediğin varsa numarasını yaz." diye sor.
-   - Telefona tek bildirim gönder: «Bu haftanın 4 Instagram gönderisi onayını bekliyor.»
+   - Telefona tek bildirim gönder: «Bu haftanın 4 Instagram gönderisi onayını bekliyor.» (Ek fragman varsa 5 yaz.)
 4. **Bekle:** Onay gelene kadar bekle. Kısmi onayda ("1, 2, 4 tamam; 3'ü değiştir") yalnız istenen gönderiyi yeniden üret ve tekrar göster.
 
 ### 7. Onay gelince planla
@@ -465,7 +482,7 @@ Sorun varsa metni kısalt ya da görseli değiştir ve yeniden üret.
 5. **Planla:** `plan.json` içindeki her giriş için `createScheduledPost` çağır: `blogId`, `date` ve `info` (metni olduğu gibi). Yanıttaki `plannerUrl` adreslerini `links.json` dosyasına `{"<id>": "<plannerUrl>"}` biçiminde yaz.
    - Hikaye denemesi haftasında `-hikaye` ile biten 2 giriş daha vardır. Onları da planla; bağlantıları da `links.json` dosyasına aynı biçimde yaz.
 6. **Kontrol et:** `getScheduledPosts` ile haftayı listele.
-   - 4 gönderi doğru gün ve saatte olmalı.
+   - 4 gönderi doğru gün ve saatte olmalı (ek fragman varsa 5; o Salı 10:00'da, kapak karesi 4900 ms).
    - Medya sayısı doğru olmalı: Reels'te 1 video, kaydırmalıda slayt sayısı kadar görsel.
    - Deneme haftasında ayrıca 2 hikaye olmalı: tür STORY, saat 18:00, 1 video.
 7. **Hata olursa:**
@@ -505,7 +522,7 @@ Kullanıcı Aralık 2026'da askerde. Bu yüzden 5 haftanın 20 gönderisi önced
 | 13 Aralık | 2026-12-14 | |
 | 20 Aralık | 2026-12-21 | 24 Aralık kampanya kartı: eşikler de denetlenir |
 | 27 Aralık | 2026-12-28 | |
-| 3 Ocak 2027 | 2027-01-04 | Normal düzen geri döner ve onay yine şarttır. Reels'ler yeni türlerdedir: Pazartesi "Bil bakalım", Cuma "Yanlış / doğru"; ilk öğeler kuyrukta hazır. Kaydırmalı listeleri boşalmış olur; 4. adımdaki kurallarla yeni öğe yaz. Reels türü Aralık'ta zaten değişti; onay mesajında Aralık Reels'lerinin karne özetini (geçme oranı, ortalama izlenme) yaz. Mesajın başına hikaye denemesinin sonucunu da yaz (Biçimler → Hikaye denemesi). |
+| 3 Ocak 2027 | 2027-01-04 | Normal düzen geri döner ve onay yine şarttır. Reels'ler yeni türlerdedir: Pazartesi "Bil bakalım", Cuma "Yanlış / doğru"; ilk öğeler kuyrukta hazır. Kaydırmalı listeleri boşalmış olur; 4. adımdaki kurallarla yeni öğe yaz. Sırada onaylı ek fragman var (`ek.py`; Ocak'ta 1 Ocak gönderisiyle birlikte 17 normal gönderi olur, yani en fazla 2 ek sığar). Reels türü Aralık'ta zaten değişti; onay mesajında Aralık Reels'lerinin karne özetini (geçme oranı, ortalama izlenme) yaz. Mesajın başına hikaye denemesinin sonucunu da yaz (Biçimler → Hikaye denemesi). |
 
 ### Aralık Reels'leri yeni biçimde (23 Kasım 2026'da onaylandı ve uygulandı)
 
@@ -516,6 +533,13 @@ Kullanıcı 23 Kasım 2026'da Aralık'ın 10 ürün Reels'inin yeni türlere çe
 - **İçerik kaynağı:** `taslak/aralik-yeni/yap.py`. Yeniden üretmek gerekirse: `python3 taslak/aralik-yeni/yap.py --indir`, `python3 taslak/aralik-yeni/yap.py`, `python3 reel.py taslak/aralik-yeni/aralik-yeni.json out/aralik-yeni`.
 - **Pazar çalışması:** Aşağıdaki adımlar aynen geçerli. Stok denetimi her Reels'in `url` alanındaki ürüne bakar. Yedekle değiştirme kuralı da aynıdır.
 - **Karne:** Bu haftaların Reels'lerinde `tur` alanına `bil` ya da `yd` yaz; 4 Ocak'tan sonraki haftalarla karşılaştırılabilsin.
+
+### 23 Kasım 2026 akşamı yapılan ekler (kullanıcı: "Oyun temalı onaylı, kalanı hangisi iyi olacaksa onu yap")
+
+- **Sesler değişti:** Kullanıcı "hep aynı melodi" dedi. 10 Reels'in sesi farklı parçalarla değiştirildi ve Metricool'da güncellendi; görüntü, açıklama, tarih ve `uuid` aynı. Her öğenin `muzik` alanı yeni parçayı, `metricool.son_id` yeni Metricool kimliğini gösterir. Sıra: helikoil `a`, ısıtıcı `e`, somun sıkma `f`, sıcak hava `g`, boru kaynak `d`, dekupaj `h`, panç `b`, caraskal `i`, fener `j`, lazer metre `c`.
+- **1 Aralık Salı 10:00, ek gönderi:** Paslanmaz DIN 933 A2 cıvata fragmanı (`weeks/2026-11-30.json` içinde `"ek": true`). Bu yüzden 30 Kasım haftasında 5 gönderi var ve Aralık'ın toplamı 19. Stok denetimi ve yedekle değiştirme kuralı bu gönderi için de geçerli.
+- **24 Kasım Salı 10:00:** Oyun temalı "Usta Modu" site tanıtımı. **28 Kasım Cumartesi 10:00:** Rayno 200A kaynak makinesi, fragman sürümü. İkisi de `weeks/2026-11-23.json` içinde `"ek": true`; Kasım'ın toplamı 19.
+- **Aralık'ta başka gönderi ekleme.** İki ay da sınırda.
 
 ### Adımlar
 1. **Karne:** 3. adımdaki karneyi çıkar ve `state.json` dosyasına ekle.
@@ -545,7 +569,7 @@ Kullanıcı 23 Kasım 2026'da Aralık'ın 10 ürün Reels'inin yeni türlere çe
 5. **Kaydet:** `python3 planla.py durum <HAFTA>` çalıştır. Metricool bağlantıları haftanın dosyasından okunur.
 6. **Commit et ve push et:** Mesaj `<HAFTA> önceden planlı hafta: denetlendi` olsun. `yedek-istek.json` gibi geçici dosyaları ekleme.
 7. **Özet:** Kısa yaz:
-   - haftanın 4 gönderisi (gün ve konu),
+   - haftanın gönderileri (gün ve konu; 30 Kasım haftasında 5 tane),
    - denetimin sonucu,
    - yapılan değişiklik varsa o,
    - karne satırları.
@@ -579,12 +603,13 @@ Kullanıcı 23 Kasım 2026'da Aralık'ın 10 ürün Reels'inin yeni türlere çe
 - `dagarcik.json`: Fikir dağarcığı; kaynağı `dagarcik_yaz.py`. `fikir.py`: dağarcıktan aday seçer, kuyruk iskeleti yazar, karneden kalıp kıyası çıkarır.
 - `ses_pro.py`: Sinematik Reels'in profesyonel sesini üretir (stok müzik ve efekt); kaynak listesi `assets/ses-kaynak.json`. `reel.py` kendisi çağırır.
 - `muzik_olc.py`: Yeni müziğin temposunu ve başlangıç anını ölçer. `ses_degistir.py`: Üretilmiş videonun yalnız sesini değiştirir.
+- `ek.py`: Onaylı, bitmiş ek videoları (`ek_fragman`) haftaya ekler; ayın sayımını gösterir.
 - `taslak/`: Onay bekleyen taslakların içeriği (yalnız metin ve betik; video konmaz).
 - `onizleme.py`: Onay için önizlemeleri üretir; bunlar depoya yüklenmez.
 - `planla.py`: Dosyaları kopyalar, Metricool isteklerini hazırlar, durumu kaydeder.
   - Önceden planlanmış haftalar için `stok`, `yedek` ve `yakala` komutları da onda.
 - `fetch_product.py`, `pick_products.py`, `tools_svg.py`: Ürün verisi, ürün adayları, cıvata çizimleri.
-- `templates/`: `urun`, `slide_liste`, `slide_kapak`, `slide_madde`, `slide_cta`, `reel`, `reel_taban`, `reel_bil`, `reel_yd`, `kampanya`, `toplu`, `bilgi`, `karsilastirma`.
+- `templates/`: `urun`, `slide_liste`, `slide_kapak`, `slide_madde`, `slide_cta`, `reel`, `reel_taban`, `reel_bil`, `reel_yd`, `reel_tanitim`, `reel_fragman`, `reel_oyun`, `kampanya`, `toplu`, `bilgi`, `karsilastirma`.
 - `queue.json`: İçerik kuyruğu. `state.json`: Geçmiş, karne ve ayarlar.
 - `weeks/`: Haftalık gönderi tanımları. `weeks/yedek.json`: Önceden planlanmış haftaların onaylı yedekleri.
-- `posts/`: Onaylanmış dosyalar.
+- `posts/`: Onaylanmış dosyalar. `posts/ek/`: sırasını bekleyen onaylı ek fragmanlar.
