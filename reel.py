@@ -32,7 +32,8 @@ SECONDS = 9
 REEL_STYLE_DEFAULT = "max-width:860px;max-height:640px;width:auto;height:auto"
 # Kodla üretilmiş özgün ses izleri (ses.py). Zamanlama templates/reel.html ile aynıdır.
 # Yeni türlerin sesi ses_tur.py ile üretilir; zamanlaması reel_bil.html ve reel_yd.html ile aynıdır.
-SOUNDS = {k: os.path.join(ROOT, "assets", "reel-ses-%s.wav" % k) for k in ("enerjik", "atolye", "derin", "efekt", "bil", "yd")}
+SOUNDS = {k: os.path.join(ROOT, "assets", "reel-ses-%s.wav" % k)
+          for k in ("enerjik", "atolye", "derin", "efekt", "bil", "yd", "bil-sin", "yd-sin")}
 DEFAULT_SOUND = {"reel": "enerjik", "reel_bil": "bil", "reel_yd": "yd"}
 
 
@@ -99,11 +100,12 @@ def main():
             total = FPS * SECONDS
             for i in range(total):
                 t = i * 1000.0 / FPS
-                page.evaluate("t => document.getAnimations().forEach(a => { a.pause(); a.currentTime = t; })", t)
+                page.evaluate("t => { document.getAnimations().forEach(a => { a.pause(); a.currentTime = t; }); if (window.setTime) window.setTime(t); }", t)
                 page.screenshot(path=os.path.join(frames, "f%04d.jpg" % i), type="jpeg", quality=92)
             mp4 = os.path.join(out, post["id"] + ".mp4")
             # Ses: ritim adı (varsayılan "enerjik"), "efekt" (Instagram müziği eklenecekse) ya da "yok"
-            audio = SOUNDS.get(post.get("ses") or DEFAULT_SOUND[tpl])
+            varsayilan = DEFAULT_SOUND[tpl] + ("-sin" if post.get("stil") == "sinematik" and tpl != "reel" else "")
+            audio = SOUNDS.get(post.get("ses") or varsayilan)
             if audio and os.path.exists(audio):
                 audio_in = ["-i", audio]
                 audio_fx = ["-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-ar", "44100"]
@@ -111,7 +113,9 @@ def main():
                 audio_in = ["-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo"]
                 audio_fx = []
             subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS), "-i", os.path.join(frames, "f%04d.jpg")]
-                           + audio_in + ["-shortest", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p"]
+                           + audio_in + ["-shortest", "-c:v", "libx264", "-preset", "veryfast",
+                                         # film greni dosyayı büyütür; sinematik stilde biraz daha sıkıştır (jsDelivr sınırı 20 MB)
+                                         "-crf", "24" if post.get("stil") == "sinematik" else "20", "-pix_fmt", "yuv420p"]
                            + audio_fx + ["-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", mp4], check=True)
             shutil.copy(os.path.join(frames, "f%04d.jpg" % int(FPS * 1.2)), os.path.join(out, post["id"] + "-kapak.jpg"))
             shutil.rmtree(frames, ignore_errors=True)

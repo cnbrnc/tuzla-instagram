@@ -28,6 +28,27 @@ html,body{margin:0;padding:0;background:var(--navy)}
 @keyframes pop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
 @keyframes wipe{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0 0 0 0)}}
 {% block style %}{% endblock %}
+{% if stil == 'sinematik' %}
+/* Sinematik stil: koyu sahne ve spot ışığı, yavaş kamera yaklaşması, vinyet, film greni, yumuşak yazı girişleri.
+   Zamanlama aynıdır; yalnız görünüş ve ses (ses_tur.py --stil sinematik) değişir. */
+@keyframes itme{from{transform:scale(1)}to{transform:scale(1.045)}}
+@keyframes belir{from{opacity:0;letter-spacing:.14em;filter:blur(16px);transform:translateY(22px)}to{opacity:1;letter-spacing:0;filter:blur(0);transform:none}}
+@keyframes flas{0%{opacity:0}18%{opacity:1}100%{opacity:0}}
+@keyframes serit{from{transform:translateX(-120%) scaleY(1)}to{transform:translateX(120%) scaleY(1)}}
+#reel.sin{background:radial-gradient(120% 70% at 50% 36%,#1F4480 0%,#0C1A36 52%,#03060D 100%)}
+.sin .kamera{transform-origin:50% 45%;animation:itme 6.75s linear both}
+.sin .kamera > *{z-index:2}
+.sin #fx{position:absolute;inset:0;width:1080px;height:1920px;z-index:1;pointer-events:none}
+.sin .vinyet{position:absolute;inset:0;pointer-events:none;background:radial-gradient(92% 62% at 50% 44%,rgba(0,0,0,0) 52%,rgba(0,0,0,.78) 100%)}
+.sin #gren{position:absolute;inset:0;width:1080px;height:1920px;opacity:.13;mix-blend-mode:overlay;pointer-events:none;image-rendering:pixelated}
+.sin .serit{position:absolute;left:0;right:0;height:10px;border-radius:5px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(190,220,255,.95),rgba(255,255,255,0));filter:blur(5px);mix-blend-mode:screen;pointer-events:none;opacity:.9;transform:translateX(-120%)}
+.sin .pill{background:rgba(255,198,41,.08);border:2px solid var(--accent);color:var(--accent)}
+.sin .end{background:radial-gradient(110% 70% at 40% 34%,#1F4480 0%,#0A1530 55%,#03060D 100%);color:#fff}
+.sin .end .k{color:var(--accent)}
+.sin .end .code{color:var(--accent);text-shadow:0 0 70px rgba(255,198,41,.4)}
+.sin .end .card{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.2)}
+.sin .end .l1{color:#fff}.sin .end .l2{color:#E6ECF7}.sin .end .l3{color:var(--mist)}
+{% endif %}
 /* Kapanış kartı (6,75–9 sn). Video döngüde başa kesintisiz döner. */
 .end{position:absolute;inset:0;background:var(--accent);color:var(--deep);animation:wipe .3s cubic-bezier(.7,0,.3,1) 6.75s both}
 .end .k{animation:up .3s cubic-bezier(.2,.8,.2,1) 6.95s both}
@@ -43,15 +64,20 @@ html,body{margin:0;padding:0;background:var(--navy)}
 </style>
 </head>
 <body>
-<div id="reel">
+<div id="reel"{% if stil == 'sinematik' %} class="sin"{% endif %}>
 <div class="top"><img class="logo" src="{{ logo }}" alt="Tuzla Hırdavat"><span class="pill">{{ tag }}</span></div>
+<div class="kamera" style="position:absolute;inset:0">
+{% if stil == 'sinematik' %}<canvas id="fx" width="1080" height="1920"{% block fx %}{% endblock %}></canvas>{% endif %}
 {% block sahne %}{% endblock %}
+</div>
+{% if stil == 'sinematik' %}<div class="vinyet"></div>{% endif %}
 <div class="end"><div class="in">
 <img class="logo" src="{{ logo }}" alt="Tuzla Hırdavat" style="height:72px;align-self:flex-start">
 <span class="k">SİTEDE ARAT</span>
 <p class="code disp" data-fit>{{ search_code }}</p>
 <div class="card"><span class="l1">tuzlahirdavat.com.tr</span><span class="l2">Sipariş: satis5@tuzlacivata.com.tr</span><span class="l3">Telefon: 0542 189 02 69</span></div>
 </div></div>
+{% if stil == 'sinematik' %}<canvas id="gren" width="270" height="480"></canvas>{% endif %}
 </div>
 <script>
 // Taşan satırı sığana kadar küçültür (en az 60px). reel.py kare almadan önce çağırır.
@@ -61,6 +87,56 @@ window.fitText = function () {
     while (el.scrollWidth > el.clientWidth + 1 && size > 60) { size -= 2; el.style.fontSize = size + 'px'; }
   });
 };
+{% if stil == 'sinematik' %}
+// Sinematik stil: kıvılcım, havada toz ve film greni. Hepsi zamana bağlı ve tohumlu; aynı kare hep aynı çıkar.
+// reel.py her karede window.setTime(ms) çağırır.
+(function () {
+  function rnd(seed) { var a = seed >>> 0; return function () { a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  var fx = document.getElementById('fx'), c = fx.getContext('2d');
+  var gren = document.getElementById('gren'), g = gren.getContext('2d');
+  var K = fx.dataset.kivilcim ? fx.dataset.kivilcim.split(',').map(Number) : null;   // x, y, yön (derece), bitiş (sn)
+  var toz = [], r0 = rnd(7);
+  for (var i = 0; i < 26; i++) toz.push({x: r0() * 1080, y: r0() * 1920, r: 5 + r0() * 26, a: .03 + r0() * .09, vx: (r0() - .5) * 26, vy: -8 - r0() * 30, f: r0() * 6.28});
+  var YAVAS = .5, ORAN = 420, G = 2600;                                          // yarı hız (ağır çekim), saniyede kıvılcım, yer çekimi
+  function kivilcim(t) {
+    var x0 = K[0], y0 = K[1], yon = K[2] * Math.PI / 180, bitis = K[3];
+    var ts = t * YAVAS, n1 = Math.floor(Math.min(t, bitis) * YAVAS * ORAN);
+    c.globalCompositeOperation = 'lighter'; c.lineCap = 'round';
+    for (var i = Math.max(0, n1 - 400); i < n1; i++) {
+      var r = rnd(1000 + i * 7919), dogum = i / ORAN, omur = .22 + r() * .5, tau = ts - dogum;
+      if (tau < 0 || tau > omur) { continue; }
+      var a = yon + (r() - .5) * .62 + (r() < .12 ? (r() - .5) * 1.5 : 0), hiz = 1300 + r() * 2300, kal = 2 + r() * 4.5;
+      var p = function (u) { return [x0 + Math.cos(a) * hiz * u, y0 + Math.sin(a) * hiz * u + .5 * G * u * u]; };
+      var u1 = p(tau), u0 = p(Math.max(0, tau - .022 - r() * .02)), k = tau / omur;
+      c.strokeStyle = k < .25 ? 'rgba(255,250,225,' + (1 - k) + ')' : k < .6 ? 'rgba(255,196,84,' + (1 - k * .8) + ')' : 'rgba(255,106,30,' + (1 - k) * 1.3 + ')';
+      c.lineWidth = kal * (1 - k * .6); c.shadowColor = 'rgba(255,150,40,.9)'; c.shadowBlur = 16;
+      c.beginPath(); c.moveTo(u0[0], u0[1]); c.lineTo(u1[0], u1[1]); c.stroke();
+    }
+    c.shadowBlur = 0;
+    if (t < bitis) {                                                              // temas noktasında titreyen kor
+      var tit = .75 + .25 * Math.sin(t * 61) * Math.sin(t * 23), gr = c.createRadialGradient(x0, y0, 0, x0, y0, 210);
+      gr.addColorStop(0, 'rgba(255,240,200,' + .95 * tit + ')'); gr.addColorStop(.18, 'rgba(255,170,60,' + .55 * tit + ')'); gr.addColorStop(1, 'rgba(255,90,20,0)');
+      c.fillStyle = gr; c.fillRect(x0 - 210, y0 - 210, 420, 420);
+    }
+    c.globalCompositeOperation = 'source-over';
+  }
+  window.setTime = function (ms) {
+    var t = ms / 1000;
+    c.clearRect(0, 0, 1080, 1920);
+    for (var i = 0; i < toz.length; i++) {
+      var d = toz[i], x = ((d.x + d.vx * t) % 1080 + 1080) % 1080, y = ((d.y + d.vy * t) % 1920 + 1920) % 1920;
+      var gr = c.createRadialGradient(x, y, 0, x, y, d.r);
+      gr.addColorStop(0, 'rgba(200,220,255,' + d.a * (.7 + .3 * Math.sin(t * 1.3 + d.f)) + ')'); gr.addColorStop(1, 'rgba(200,220,255,0)');
+      c.fillStyle = gr; c.fillRect(x - d.r, y - d.r, 2 * d.r, 2 * d.r);
+    }
+    if (K) kivilcim(t);
+    var r = rnd(90000 + Math.floor(Math.round(ms / 33.3333) / 2)), im    /* gren iki karede bir değişir: film gibi durur, dosya küçük kalır */ = g.createImageData(270, 480), b = im.data;
+    for (var j = 0; j < b.length; j += 4) { var v = 128 + (r() - .5) * 150; b[j] = b[j + 1] = b[j + 2] = v; b[j + 3] = 255; }
+    g.putImageData(im, 0, 0);
+  };
+  window.setTime(0);
+})();
+{% endif %}
 </script>
 </body>
 </html>

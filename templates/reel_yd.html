@@ -36,10 +36,32 @@
 /* neden 5,0 sn */
 .neden{position:absolute;left:60px;right:150px;top:1392px;font-weight:700;font-size:41px;line-height:1.22;color:#fff;animation:up .3s cubic-bezier(.2,.8,.2,1) 5s both}
 .neden b{color:var(--accent)}
+{% if stil == 'sinematik' %}
+/* kanca: ağır çekimde dönen taş, iş parçası ve kıvılcım (kıvılcımı taban şablondaki tuval çizer) */
+@keyframes agir{from{transform:rotate(0)}to{transform:rotate(170deg)}}
+.sin .hook .l,.sin .hook .l:nth-child(1){animation-name:belir;animation-duration:.6s;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
+.sin .hook .l:nth-child(1){animation-delay:-.3s}  /* ilk satır ilk karede yarı görünür */
+.sin .hook h1{text-shadow:0 6px 40px rgba(0,0,0,.7)}
+.sin .kamera .hookimg,.sin .kamera .parca{z-index:0}
+.sin .hookimg img.daire{height:640px;box-shadow:0 0 0 2px rgba(255,255,255,.12),0 40px 120px rgba(0,0,0,.75),0 0 160px rgba(255,140,40,.22);animation:agir 1.5s linear both}
+.sin .parca{position:absolute;left:715px;top:1392px;width:700px;height:86px;transform-origin:0 50%;transform:rotate(33deg);border-radius:6px;background:linear-gradient(180deg,#8E99AB 0%,#D9DEE6 12%,#69748A 30%,#2A3243 70%,#141A26 100%);box-shadow:0 30px 60px rgba(0,0,0,.6);z-index:0;animation:out .25s ease-in 1.25s both}
+.sin .p{background:linear-gradient(150deg,rgba(255,255,255,.13),rgba(255,255,255,.04));border:1.5px solid rgba(255,255,255,.18);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.sin .p .ne{color:#fff}.sin .p .alt{color:var(--mist)}
+.sin .p .gorsel img{filter:drop-shadow(0 20px 34px rgba(0,0,0,.65))}
+.sin .p::after{content:"";position:absolute;inset:0;border-radius:40px;pointer-events:none;opacity:0}
+.sin .p.y::after{background:radial-gradient(80% 90% at 30% 50%,rgba(229,56,59,.55),rgba(229,56,59,0));animation:flas .9s ease-out 2s both}
+.sin .p.d::after{background:radial-gradient(80% 90% at 30% 50%,rgba(22,163,74,.55),rgba(22,163,74,0));animation:flas .9s ease-out 4s both}
+.sin .p.y .soz{text-shadow:0 0 40px rgba(229,56,59,.6)}.sin .p.d .soz{text-shadow:0 0 40px rgba(22,163,74,.6)}
+.sin .serit.s1{top:286px;animation:serit .5s ease-in-out 2s both}
+.sin .serit.s2{top:836px;animation:serit .5s ease-in-out 4s both}
+{% endif %}
 {% endblock %}
+{% block fx %}{% if yanlis.image_shape == 'daire' %} data-kivilcim="724,1412,145,1.25"{% endif %}{% endblock %}
 {% block sahne %}
 <div class="hook"><div class="k">{{ hook_kicker }}</div><h1 class="disp" data-fit>{% for l in hook %}<span class="l">{{ l }}</span>{% endfor %}</h1></div>
 {% if yanlis.image %}<div class="hookimg"><img src="{{ yanlis.image }}" alt=""{% if yanlis.image_shape == 'daire' %} class="daire"{% endif %}></div>{% endif %}
+{% if stil == 'sinematik' and yanlis.image_shape == 'daire' %}<div class="parca"></div>{% endif %}
+{% if stil == 'sinematik' %}<div class="serit s1"></div><div class="serit s2"></div>{% endif %}
 <div class="p y">
 <div class="yazi">
 <div class="rozet"><span class="daire"><svg width="56" height="56" viewBox="0 0 56 56"><path d="M14 14l28 28M42 14L14 42" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/></svg></span><span class="soz disp">YANLIŞ</span></div>

@@ -20,8 +20,11 @@ Türler ve zamanlama (şablonlarla aynıdır; birini değiştirirsen ötekini de
     5,00          neden satırı              -> "pıt"
     6,75 – 9,0    kapanış kartı             -> aynı kapanış
 
-Kullanım: python3 ses_tur.py <çıktı.wav> --tur bil|yd
+Kullanım: python3 ses_tur.py <çıktı.wav> --tur bil|yd [--stil sinematik]
 Tohum sabit; her çalıştırmada aynı ses çıkar.
+
+--stil sinematik: aynı zamanlama, film fragmanı havası. Tempo yarıya iner; derin vuruşlar, kalın "braam",
+uzun yankı ve ağır çekim taşlama sesi (yd) vardır. Şablonlardaki "stil": "sinematik" ile birlikte kullanılır.
 """
 import sys
 
@@ -149,6 +152,111 @@ def kapanis(m, note, T):
     m.put(S.riser(0.75, 400, 8000), 8.25, 0.5)
 
 
+# --- sinematik stil ---
+
+def braam(note, semi=-36, d=1.6):
+    """Fragmanlardaki kalın, pirinç nefesli 'braam'."""
+    t = S.tt(d)
+    f = note(semi)
+    s = sum(S.saw(f * k * (1 + det), t, S.rng.uniform(0, 1)) / k for k in (1, 2, 3) for det in (-0.006, 0, 0.006))
+    s = np.tanh(1.8 * S.filt(s, "lowpass", 900) / 3)
+    return s * np.minimum(1, t / 0.05) * np.exp(-t / 0.9) * np.minimum(1, (d - t) / 0.2)
+
+
+def taslama(d):
+    """Ağır çekimde taşlama: alçalmış motor uğultusu, sürtünme hışırtısı ve kıvılcım çıtırtısı."""
+    t = S.tt(d)
+    ugultu = S.filt(S.saw(118, t) + 0.6 * S.saw(177.5, t, 0.3), "lowpass", 700) * 0.35
+    surtunme = S.filt(S.noise(d), "bandpass", [1800, 6500]) * (0.55 + 0.45 * np.sin(2 * np.pi * 9 * t) * np.sin(2 * np.pi * 2.3 * t)) * 0.5
+    citirti = np.zeros(len(t))
+    for _ in range(int(d * 70)):
+        i = int(S.rng.uniform(0, len(t) - 200))
+        citirti[i:i + 120] += S.rng.uniform(0.3, 1.0) * np.exp(-np.arange(120) / 18.0) * S.rng.choice((-1, 1))
+    citirti = S.filt(citirti, "highpass", 4500) * 0.5
+    zarf = np.minimum(1, t / 0.08) * np.minimum(1, (d - t) / 0.3)
+    return (ugultu + surtunme + citirti) * zarf
+
+
+def govde_sin(m, note, T):
+    """4,0 – 9,0 sn: yarım tempo, uzun bas ve geniş akorlar; kapanışta 'tınn' ve başa saran yükseliş."""
+    for a, b, c in [(4.0, 5.0, (-4, 0, 3)), (5.0, 6.0, (-2, 2, 5)), (6.0, 7.0, (-5, -2, 2)), (7.0, 9.0, (0, 3, 7))]:
+        m.put(S.chord([note(s - 12) for s in c] + [note(c[0] - 24)], b - a + 0.4, cutoff=1700, attack=0.25, decay=5.0), a, 0.3, send=0.7)
+    for a, b, s in [(4.0, 5.0, -28), (5.0, 6.0, -26), (6.0, 7.0, -29), (7.0, 8.3, -24)]:
+        m.put(S.long_bass(note(s - 12), b - a), a, 0.6)
+    for at, g in ((4.0, 1.0), (5.5, 0.6), (6.0, 0.9)):
+        m.put(S.kick(), at, g)
+        m.put(S.sub_boom(), at, 0.5 * g)
+    m.put(S.snare(150), 5.0, 0.8, send=0.8)
+    m.put(S.clap(), 5.0, 0.5, send=0.8)
+    for k, (at, s) in enumerate(((4.0, 7), (4.75, 3), (5.5, 2), (6.25, 5))):          # seyrek, uzun yankılı çan
+        m.put(S.bell_lead(note(s - 12), 1.2), at, 0.5, 0.25 if k % 2 else -0.25, send=0.9)
+    # kapanış kartı
+    m.put(S.riser(0.6, 200, 5000), 6.15, 0.45, send=0.3)
+    m.put(S.clank(), 7.0, 0.5, send=0.8)
+    m.put(S.impact(), 7.0, 0.7)
+    m.put(S.sub_boom(), 7.0, 0.9)
+    m.put(braam(note, -24, 1.4), 7.0, 0.3, send=0.5)
+    for k, s in enumerate((7, 3, 0)):
+        m.put(S.bell_lead(note(s - 12), 1.2), 7.25 + 0.5 * k, 0.32, send=0.9)
+    m.put(S.kick(), 8.0, 0.6)
+    m.put(S.crash(0.75)[::-1], 8.25, 0.5, send=0.2)
+    m.put(S.riser(0.75, 300, 7000), 8.25, 0.5)
+
+
+def bil_sin(m, note, T):
+    m.put(S.impact(), 0.0, 0.8)                                                  # soru: derin vuruş
+    m.put(S.sub_boom(), 0.0, 0.9)
+    m.put(braam(note, -24, 1.0), 0.0, 0.35, send=0.4)
+    m.put(S.impact(0.2), 0.25, 0.5)
+    for at, f, p in ((0.5, 520, -0.35), (0.75, 700, 0.35)):
+        m.put(S.pop(f), at, 0.6, p, send=0.6)
+    for k in range(3):                                                           # geri sayım: kalp atışı ve saat
+        at = 1.0 + k
+        m.put(S.kick(muffled=True), at, 1.0)
+        m.put(S.kick(muffled=True), at + 0.22, 0.6)
+        m.put(S.tink(1500 + 150 * k), at, 0.6, -0.2, send=0.6)
+        m.put(S.tink(1200), at + 0.5, 0.3, 0.2, send=0.6)
+    for k, at in enumerate((3.5, 3.625, 3.75, 3.875)):
+        m.put(S.kick(muffled=True), at, 0.5 + 0.12 * k)
+    m.put(S.chord([note(-24), note(-17), note(-12)], 3.0, cutoff=900, attack=1.5, decay=6.0), 1.0, 0.35, send=0.6)
+    m.put(S.riser(3.0, 150, 6000), 1.0, 0.5, send=0.2)
+    m.put(S.crash(0.5)[::-1], 3.5, 0.5, send=0.2)
+    m.put(S.impact(), 4.0, 0.8)                                                  # cevap
+    m.put(braam(note, -33, 1.8), 4.0, 0.42, send=0.5)
+    m.put(S.crash(), 4.0, 0.4, send=0.6)
+    ding(m, note, 4.0)
+    for at, f, p in ((4.27, 560, -0.2), (4.77, 640, 0.0), (5.27, 720, 0.2)):
+        m.put(S.pop(f), at, 0.4, p, send=0.6)
+    govde_sin(m, note, T)
+
+
+def yd_sin(m, note, T):
+    m.put(taslama(1.5), 0.0, 0.75, -0.1, send=0.25)                              # kanca: ağır çekim taşlama
+    m.put(S.impact(), 0.0, 0.7)
+    m.put(S.sub_boom(), 0.0, 0.9)
+    m.put(braam(note, -24, 1.2), 0.0, 0.3, send=0.4)
+    for at in (0.25, 0.5):
+        m.put(S.impact(0.2), at, 0.4)
+    m.put(S.riser(0.9, 200, 5000), 0.55, 0.35, send=0.2)
+    m.put(S.sweep_noise(0.3, 300, 4000) * S.bell(int(SR * 0.3), 0.85), 1.25, 0.6, send=0.4)
+    m.put(S.impact(), 1.5, 0.8)                                                  # YANLIŞ paneli
+    m.put(S.sub_boom(), 1.5, 0.6)
+    m.put(braam(note, -37, 1.5), 2.0, 0.55, send=0.5)                            # YANLIŞ damgası: akortsuz braam
+    m.put(buzzer(), 2.0, 0.35, send=0.4)
+    m.put(S.hammer(), 2.0, 0.7, send=0.7)
+    for at in (2.5, 2.72, 3.0, 3.22):                                            # kalp atışı
+        m.put(S.kick(muffled=True), at, 0.8 if at in (2.5, 3.0) else 0.5)
+    m.put(S.sweep_noise(0.3, 300, 4000) * S.bell(int(SR * 0.3), 0.85), 3.25, 0.6, send=0.4)
+    m.put(S.impact(), 3.5, 0.7)                                                  # DOĞRU paneli
+    m.put(S.crash(0.5)[::-1], 3.5, 0.5, send=0.2)
+    m.put(S.impact(), 4.0, 0.8)                                                  # DOĞRU damgası
+    m.put(braam(note, -33, 1.8), 4.0, 0.4, send=0.5)
+    m.put(S.crash(), 4.0, 0.4, send=0.6)
+    ding(m, note, 4.0)
+    m.put(S.pop(600), 5.02, 0.45, 0.0, send=0.6)
+    govde_sin(m, note, T)
+
+
 def bil(m, note, T):
     for at, semi, g in ((0.0, -12, 0.9), (0.25, -5, 1.0)):                 # soru: tak-TAK
         m.put(S.metal_hit(note(semi)), at, g, (at - 0.12) * 1.5, send=0.25)
@@ -216,13 +324,14 @@ def yd(m, note, T):
 def main():
     out_path = sys.argv[1]
     tur = sys.argv[sys.argv.index("--tur") + 1] if "--tur" in sys.argv else ""
+    sin = "--stil" in sys.argv and sys.argv[sys.argv.index("--stil") + 1] == "sinematik"
     if tur not in TURLER:
-        raise SystemExit("kullanım: python3 ses_tur.py <çıktı.wav> --tur bil|yd")
+        raise SystemExit("kullanım: python3 ses_tur.py <çıktı.wav> --tur bil|yd [--stil sinematik]")
     T = TURLER[tur]
     tr = 2 ** (T["kok"] / 12)
     note = lambda semi: 440.0 * tr * 2 ** (semi / 12)
     m = Mix()
-    {"bil": bil, "yd": yd}[tur](m, note, T)
+    {"bil": bil_sin if sin else bil, "yd": yd_sin if sin else yd}[tur](m, note, T)
     m.write(out_path)
 
 

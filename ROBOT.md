@@ -117,6 +117,10 @@ Alanlar (`"template": "reel_yd"`):
 
 **Yeni türlerde ses:** Her türün kendi sesi vardır: `assets/reel-ses-bil.wav` ve `assets/reel-ses-yd.wav`; kaynağı `ses_tur.py`. Kapanıştaki "tınn" ve melodi ürün Reels'iyle aynıdır. `ses` alanı yazılmaz; `reel.py` türe göre seçer. Şablonlardaki zamanlar değişirse `ses_tur.py` içindeki zamanları da güncelle ve iki dosyayı yeniden üret.
 
+**Sinematik stil (deneme; kullanıcı karar vermedi):** İki yeni türde gönderiye `"stil": "sinematik"` yazılırsa aynı kurgu koyu sahne, film greni, yavaş kamera yaklaşması ve fragman havasında sesle üretilir (`assets/reel-ses-bil-sin.wav`, `reel-ses-yd-sin.wav`; `ses_tur.py --stil sinematik`). "Yanlış / doğru"da yuvarlak ürün ağır çekimde döner ve kodla üretilmiş kıvılcım saçar. Kullanıcıya 23 Kasım 2026'da örnek gösterildi. O "sinematik olsun" demeden bu alanı yazma.
+
+**Stok video (henüz kurulmadı):** Kullanıcı Reels'lerde internetten video kesiti kullanılmasını istedi. Yalnız ticari kullanımı serbest stok sitelerinden (Pexels, Pixabay gibi) alınabilir; başkasının YouTube ya da Instagram videosundan kesit alınmaz. Bu ortamdan o sitelere erişim kapalı; kullanıcı alan adlarına izin verince kurulacak.
+
 **Gerçek çekim (henüz kurulmadı):** Kullanıcıya telefonla çekilmiş kısa işlik videolarını robotun kurgulaması önerildi. Kullanıcı deneme çekimi gönderirse kurulacak. O zamana kadar Cuma "Yanlış / doğru" olur.
 
 ### Ürün Reels'i (`reel.py`, şablon `templates/reel.html`, liste `reels`)

@@ -41,6 +41,20 @@
 .neden .cvp{font-size:104px;line-height:.95;color:var(--accent);white-space:nowrap;animation:slamT .3s cubic-bezier(.2,.8,.3,1) 4.25s both}
 .neden .s{margin-top:16px;font-weight:700;font-size:42px;line-height:1.22;color:#fff;animation:up .3s cubic-bezier(.2,.8,.2,1) both}
 .neden .s:nth-of-type(2){animation-delay:4.75s}.neden .s:nth-of-type(3){animation-delay:5.25s}
+{% if stil == 'sinematik' %}
+.sin .soru .l,.sin .soru .l:nth-child(1){animation-name:belir;animation-duration:.6s;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
+.sin .soru .l:nth-child(1){animation-delay:-.3s}  /* ilk satır ilk karede yarı görünür */
+.sin .kart{background:linear-gradient(150deg,rgba(255,255,255,.13),rgba(255,255,255,.04));border:1.5px solid rgba(255,255,255,.18);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.sin .kart .et,.sin .kart .kafa + .et{color:#E6ECF7}
+.sin .buyuk{color:#fff}
+.sin .harf{background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.3)}
+.sin .kart svg.kafa{filter:drop-shadow(0 18px 26px rgba(0,0,0,.6))}
+@keyframes dogruS{0%{transform:scale(1)}40%{transform:scale(1.1);border-color:var(--accent);box-shadow:0 0 140px rgba(255,198,41,.75),inset 0 0 0 6px var(--accent)}100%{transform:scale(1.04);border-color:var(--accent);box-shadow:0 0 90px rgba(255,198,41,.45),inset 0 0 0 6px var(--accent)}}
+.sin .kart.dogru{animation-name:dogruS}
+.sin .kart.yanlis{animation-name:yanlisK}
+.sin .serit{top:660px;animation:serit .55s ease-in-out 4s both}
+.sin .neden .cvp{text-shadow:0 0 60px rgba(255,198,41,.4)}
+{% endif %}
 {% endblock %}
 {% block sahne %}
 <div class="soru"><div class="k">{{ question_kicker }}</div><h1 class="disp" data-fit>{% for l in question %}<span class="l">{{ l }}</span>{% endfor %}</h1></div>
@@ -62,5 +76,6 @@
 <div class="cember"><svg viewBox="0 0 210 210"><circle class="iz" cx="105" cy="105" r="92"/><circle class="dolu" cx="105" cy="105" r="92"/></svg><span class="n disp">3</span><span class="n disp">2</span><span class="n disp">1</span></div>
 <div><div class="t1 disp">Tahminin ne?</div><div class="t2">Yoruma yaz: A mı, B mi?</div></div>
 </div>
+{% if stil == 'sinematik' %}<div class="serit"></div>{% endif %}
 <div class="neden"><div class="cvp disp" data-fit>{{ answer_text }}</div>{% for s in why %}<div class="s">{{ s }}</div>{% endfor %}</div>
 {% endblock %}
