@@ -113,6 +113,12 @@ def main():
     theme = "light" if state.get("last_product_theme") == "dark" else "dark"
     # Reels ritimleri sırayla döner; aynı hafta iki Reels'te aynı ritim olmaz (state.json: ses_sirasi)
     ritimler = ["enerjik", "atolye", "derin"]
+    # Yeni türlerde müzik: ses-kaynak.json'daki sıra (farklı parçalar); art arda iki Reels aynı parçayla çıkmaz
+    try:
+        with open(os.path.join(ROOT, "assets", "ses-kaynak.json"), encoding="utf-8") as f:
+            muzik_sirasi = json.load(f).get("sira") or ["a", "b", "c"]
+    except (OSError, ValueError):
+        muzik_sirasi = ["a", "b", "c"]
     ses_i = state.get("ses_sirasi", 0)
     # Hikaye denemesi: listedeki haftalarda Reels aynı gün hikaye olarak da yayınlanır (state.json)
     deneme = state.get("hikaye_denemesi") or {}
@@ -137,7 +143,7 @@ def main():
             if post["template"] != "reel" and rs.get("stil") and hafta >= rs.get("baslangic", "9999"):
                 post.setdefault("stil", rs["stil"])
                 # profesyonel ses: müzik varyantı sırayla döner (a, b, c)
-                post.setdefault("muzik", "abc"[ses_i % 3])
+                post.setdefault("muzik", muzik_sirasi[ses_i % len(muzik_sirasi)])
                 ses_i += 1
             bgv = post.get("bg_video")
             if bgv and bgv.get("url"):

@@ -42,5 +42,90 @@
       "url": "https://cdn.pixabay.com/audio/2021/10/27/audio_82fa5b6ca5.mp3",
       "vurus": 9.0
     }
-  }
+  },
+  "muzikler": {
+    "d": {
+      "dosya": "wardrums",
+      "ad": "Chrome War Drums",
+      "yapan": "alaschgari",
+      "hava": "savaş davulları",
+      "sayfa": "https://pixabay.com/music/percussion-chrome-war-drums-551986/",
+      "url": "https://cdn.pixabay.com/download/audio/2026/06/22/audio_bbcead5354.mp3?filename=alaschgari-chrome-war-drums-551986.mp3",
+      "bpm": 105.03,
+      "bas_sn": 53.53
+    },
+    "e": {
+      "dosya": "indrock",
+      "ad": "Industrial Instrumental 01",
+      "yapan": "alanajordan",
+      "hava": "sert rock",
+      "sayfa": "https://pixabay.com/music/hard-rock-industrial-instrumental-01-477845/",
+      "url": "https://cdn.pixabay.com/download/audio/2026/02/01/audio_2c0d3c8895.mp3?filename=alanajordan-industrial-instrumental-01-477845.mp3",
+      "bpm": 112.21,
+      "bas_sn": 123.73
+    },
+    "f": {
+      "dosya": "techno",
+      "ad": "Techno Stomp Percussion",
+      "yapan": "BerryDeep",
+      "hava": "tekno",
+      "sayfa": "https://pixabay.com/music/techno-trance-techno-stomp-percussion-612985/",
+      "url": "https://cdn.pixabay.com/download/audio/2026/10/06/audio_4ab723705e.mp3?filename=berrydeep-techno-stomp-percussion-612985.mp3",
+      "bpm": 140.04,
+      "bas_sn": 6.066
+    },
+    "g": {
+      "dosya": "cinehop",
+      "ad": "Experimental Cinematic Hip-Hop",
+      "yapan": "Rockot",
+      "hava": "sinematik hip-hop",
+      "sayfa": "https://pixabay.com/music/beats-experimental-cinematic-hip-hop-315904/",
+      "url": "https://cdn.pixabay.com/download/audio/2025/03/19/audio_91b4c0a3b6.mp3?filename=rockot-experimental-cinematic-hip-hop-315904.mp3",
+      "bpm": 142.03,
+      "bas_sn": 24.582
+    },
+    "h": {
+      "dosya": "dynperc",
+      "ad": "Dynamic Percussion",
+      "yapan": "YuraSoop",
+      "hava": "hareketli vurmalı",
+      "sayfa": "https://pixabay.com/music/upbeat-dynamic-percussion-343556/",
+      "url": "https://cdn.pixabay.com/download/audio/2025/05/18/audio_22407da5ac.mp3?filename=yurasoop-dynamic-percussion-343556.mp3",
+      "bpm": 130.13,
+      "bas_sn": 40.498
+    },
+    "i": {
+      "dosya": "techno",
+      "ad": "Techno Stomp Percussion",
+      "yapan": "BerryDeep",
+      "hava": "tekno (ikinci bölüm)",
+      "sayfa": "https://pixabay.com/music/techno-trance-techno-stomp-percussion-612985/",
+      "url": "https://cdn.pixabay.com/download/audio/2026/10/06/audio_4ab723705e.mp3?filename=berrydeep-techno-stomp-percussion-612985.mp3",
+      "bpm": 140.04,
+      "bas_sn": 51.91
+    },
+    "j": {
+      "dosya": "cinehop",
+      "ad": "Experimental Cinematic Hip-Hop",
+      "yapan": "Rockot",
+      "hava": "sinematik hip-hop (ikinci bölüm)",
+      "sayfa": "https://pixabay.com/music/beats-experimental-cinematic-hip-hop-315904/",
+      "url": "https://cdn.pixabay.com/download/audio/2025/03/19/audio_91b4c0a3b6.mp3?filename=rockot-experimental-cinematic-hip-hop-315904.mp3",
+      "bpm": 142.03,
+      "bas_sn": 53.309
+    }
+  },
+  "sira": [
+    "a",
+    "e",
+    "f",
+    "g",
+    "d",
+    "h",
+    "b",
+    "i",
+    "j",
+    "c"
+  ],
+  "muzikler_aciklama": "Kullanıcı 23 Kasım 2026'da 'hep aynı melodi' dedi; farklı havada parçalar eklendi. a, b, c eski parçanın (muzik) üç bölümüdür; d–j ayrı parçalardır. bas_sn = özgün dosyada başlangıç anı (python3 muzik_olc.py --bas <mp3> ile ölçülür): 8 vuruş sonra enerji yükselir, düşüş 4. saniyeye oturur. sira = hafta.py'nin Reels'lere sırayla yazdığı müzik kimlikleri; art arda iki Reels aynı parçayla çıkmaz. Hepsi Pixabay İçerik Lisansı, Content ID kaydı yok (23 Kasım 2026'da parça sayfasından bakıldı)."
 }

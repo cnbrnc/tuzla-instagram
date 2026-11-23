@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Sinematik Reels için profesyonel ses: stok müzik + stok efektler + kendi imza seslerimiz.
 
-Kullanım: python3 ses_pro.py <bil|yd|urun|fragman> <a|b|c> [--taslama] [--yumusak]
+Kullanım: python3 ses_pro.py <bil|yd|urun|fragman> <müzik kimliği: a–j; assets/ses-kaynak.json> [--taslama] [--yumusak]
 Çıktı:    work/ses/pro-<tür>-<varyant>[-taslama][-yumusak].wav (9 sn; yolu yazdırır)
 
 - Müzik ve efekt kaynakları assets/ses-kaynak.json dosyasındadır (Pixabay; ticari kullanım serbest,
@@ -36,7 +36,7 @@ def yukle(ad, url, tempo=None):
     os.makedirs(HAM, exist_ok=True)
     mp3 = os.path.join(HAM, ad + ".mp3")
     if not (os.path.exists(mp3) and os.path.getsize(mp3) > 20000):
-        subprocess.run(["curl", "-sSL", "-m", "180", "-A", "Mozilla/5.0", "-o", mp3, url], capture_output=True)
+        subprocess.run(["curl", "-sSL", "-m", "180", "-A", "Mozilla/5.0", "-e", "https://pixabay.com/", "-o", mp3, url], capture_output=True)
     if not (os.path.exists(mp3) and os.path.getsize(mp3) > 20000):
         raise SystemExit("HATA: indirilemedi: " + url)
     wav = os.path.join(HAM, ad + ("-120" if tempo else "") + ".wav")
@@ -56,11 +56,17 @@ def main():
     with open(KAYNAK, encoding="utf-8") as f:
         K = json.load(f)
     mz = K["muzik"]
-    if varyant not in mz["varyantlar"]:
-        raise SystemExit("HATA: bilinmeyen müzik varyantı: " + varyant)
-    oran = 120.0 / mz["bpm"]                                  # 120 BPM: vuruş 0,5 sn, çubuk 2 sn
-    muzik = yukle("muzik", mz["url"], tempo=oran)
-    bas = (mz["faz"] + mz["varyantlar"][varyant] * 4 * 60.0 / mz["bpm"]) / oran + mz.get("kaydirma", {}).get(varyant, 0.0)
+    if varyant in K.get("muzikler", {}):                      # ayrı parça (d, e, f, ...): başlangıç anı dosyada yazılı
+        mz = K["muzikler"][varyant]
+        oran = 120.0 / mz["bpm"]                              # 120 BPM: vuruş 0,5 sn, çubuk 2 sn
+        muzik = yukle("muzik-" + mz["dosya"], mz["url"], tempo=oran)
+        bas = mz["bas_sn"] / oran + mz.get("kaydirma", 0.0)
+    elif varyant in mz["varyantlar"]:                         # ilk parçanın bölümleri (a, b, c)
+        oran = 120.0 / mz["bpm"]
+        muzik = yukle("muzik", mz["url"], tempo=oran)
+        bas = (mz["faz"] + mz["varyantlar"][varyant] * 4 * 60.0 / mz["bpm"]) / oran + mz.get("kaydirma", {}).get(varyant, 0.0)
+    else:
+        raise SystemExit("HATA: bilinmeyen müzik kimliği: " + varyant)
     i = int(round(bas * SR))
     parca = muzik[i:i + N]
     if len(parca) < N:
@@ -69,6 +75,7 @@ def main():
     vur = {k: v["vurus"] for k, v in K["efektler"].items()}
 
     stereo = np.zeros((2, N))
+    EFEKT = 0.5            # stok efektlerin (vuruş, vuuş, yükseliş) düzeyi: müziğin önüne geçmesin
 
     def koy(x, at, kazanc=1.0, bas=0.0, sure=None):
         """Stok sesi (stereo) 'at' saniyesine yerleştirir; bas = kaynaktaki başlangıç, sure = en çok süre."""
@@ -78,14 +85,16 @@ def main():
             seg, i0 = seg[-i0:], 0
         n = min(len(seg), N - i0)
         if n > 0:
-            stereo[:, i0:i0 + n] += seg[:n].T * kazanc
+            stereo[:, i0:i0 + n] += seg[:n].T * kazanc * EFEKT
 
     # müzik: başta ve sonda tık önleme; kapanış kartında biraz geri çekilir
     zarf = np.ones(N)
     k = int(0.01 * SR); zarf[:k] = np.linspace(0, 1, k)
     k = int(0.08 * SR); zarf[-k:] = np.linspace(1, 0, k)
     i7 = int(6.9 * SR); zarf[i7:] *= np.concatenate([np.linspace(1, 0.7, int(0.3 * SR)), np.full(N - i7 - int(0.3 * SR), 0.7)])
-    stereo += parca.T * zarf * 0.85
+    # Müzik öndedir (kullanıcı: "hep aynı melodi"): her parça aynı düzeye getirilir, kendi efektlerimiz geride kalır
+    parca = parca * (0.26 / (np.sqrt(np.mean(parca ** 2)) + 1e-9))
+    stereo += parca.T * zarf
 
     m = Mix()                                                  # kendi seslerimiz (ses.py çalgıları)
     note = lambda semi: 440.0 * 2 ** (semi / 12)
@@ -118,7 +127,6 @@ def main():
         koy(fx["hit"], 4.0 - vur["hit"], 0.85)                                 # ürün ortaya çıkar
         m.put(S.hammer(), 4.0, 0.7, send=0.5)
         m.put(S.sub_boom(), 4.0, 0.9)
-        ding(m, note, 4.0)
         m.put(S.pop(520), 4.27, 0.45, 0.0, send=0.4)                           # ad
         m.put(S.pop(600), 4.52, 0.4, 0.0, send=0.4)                            # tür
         for n, at in enumerate((4.77, 5.02, 5.27)):                            # özellikler
@@ -140,7 +148,6 @@ def main():
             m.put(S.kick(muffled=True), at, 0.7)
         koy(fx["riser"], 4.0 - vur["riser"], 0.5)                              # rozete doğru yükseliş
         koy(fx["hit"], 4.0 - vur["hit"], 0.7)                                  # rozet
-        ding(m, note, 4.0)
         m.put(S.pop(640), 5.02, 0.5, 0.0, send=0.5)                            # slogan
     else:
         if taslama:
@@ -176,7 +183,7 @@ def main():
     m.write(gecici)                                            # kendi seslerimiz: yankılı, tepe 0,89
     sr, biz = wavfile.read(gecici)
     os.remove(gecici)
-    mix = stereo + (biz.astype(float) / 32768).T * 0.8
+    mix = stereo + (biz.astype(float) / 32768).T * 0.45
     mix = np.tanh(mix * 0.9) / np.tanh(0.9)
     mix /= np.abs(mix).max() / 0.89
     yol = os.path.join(CIKTI, "pro-%s-%s%s%s.wav" % (tur, varyant, "-taslama" if taslama else "", "-yumusak" if yumusak else ""))

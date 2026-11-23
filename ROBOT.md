@@ -183,7 +183,12 @@ Kullanıcı 23 Kasım 2026'da "GTA 6 temalı site tanıtımı" istedi. Gerçek b
 - **"Yanlış / doğru":** Zeminde gerçek stok görüntü olur (`bg_video`, aşağıda). Uygun kesit bulunamazsa `bg_video` yazma; şablon yuvarlak ürünü (disk, taş) ağır çekimde döndürür ve kodla kıvılcım çizer.
 
 **Profesyonel ses (`muzik`; kullanıcı 23 Kasım 2026'da istedi):** Sinematik Reels'in sesi stok müzik, stok efekt ve kendi imza seslerimizin karışımıdır. `ses_pro.py` üretir; kaynaklar `assets/ses-kaynak.json` dosyasındadır.
-- `hafta.py` yeni türlere `muzik` alanını sırayla yazar: `a`, `b`, `c`. Aynı müziğin üç ayrı bölümüdür; aynı hafta iki Reels aynı bölümle çıkmaz.
+- **Müzik çeşitliliği (kullanıcı 23 Kasım 2026: "Hep aynı melodi, izleyeni sıkar"):** Kütüphanede 6 ayrı parça var; kimlikleri `a`–`j` (`a`, `b`, `c` ilk parçanın bölümleri; `d` savaş davulları, `e` sert rock, `f` ve `i` tekno, `g` ve `j` sinematik hip-hop, `h` hareketli vurmalı).
+  - `hafta.py` yeni türlere `muzik` alanını `assets/ses-kaynak.json` içindeki `sira` listesinden sırayla yazar. Art arda iki Reels aynı parçayla çıkmaz.
+  - Müzik öndedir; ortak efektler (vuruş, vuuş, yükseliş) ve imza sesler geride kalır. "Fragman" ve "Ürün tanıtımı" türlerinde melodik "ding" çalmaz.
+  - Yalnız sesi değiştirmek için: `python3 ses_degistir.py <video> <tür> <kimlik> <çıktı>` (görüntü aynen kalır).
+  - **Kütüphaneyi büyüt:** Ayda en az bir yeni parça ekle. Parça sayfasındaki veride "Content ID Registered" olmamalı (arama listesinde kalkan simgesi olan parçalar kayıtlıdır; onları alma). `python3 muzik_olc.py --bas <mp3>` tempoyu ve başlangıç anını ölçer; sonucu `muzikler` altına yaz ve kimliği `sira` listesine ekle. Tempo 100–145 arasında olsun.
+  - Kullanıcı bir parçayı beğenmezse `sira` listesinden çıkar.
 - Müzik 120 BPM'e getirilir; düşüşü 4. saniyeye, yani cevabın ya da DOĞRU damgasının geldiği ana oturur.
 - `"sfx_kanca": "taslama"`: Kancaya gerçek taşlama sesi ekler. Yalnız taş, disk ve spiral konularında yaz.
 - Müzik ya da efekt indirilemezse `reel.py` uyarı verir ve kodla üretilmiş sinematik sesi kullanır. Gönderi yine çıkar.
@@ -573,6 +578,7 @@ Kullanıcı 23 Kasım 2026'da Aralık'ın 10 ürün Reels'inin yeni türlere çe
 - `SENARYO.md`: Senaryo rehberi (konu bulma, kanca kalıpları, kurgular, yazım kuralları, kontrol listesi).
 - `dagarcik.json`: Fikir dağarcığı; kaynağı `dagarcik_yaz.py`. `fikir.py`: dağarcıktan aday seçer, kuyruk iskeleti yazar, karneden kalıp kıyası çıkarır.
 - `ses_pro.py`: Sinematik Reels'in profesyonel sesini üretir (stok müzik ve efekt); kaynak listesi `assets/ses-kaynak.json`. `reel.py` kendisi çağırır.
+- `muzik_olc.py`: Yeni müziğin temposunu ve başlangıç anını ölçer. `ses_degistir.py`: Üretilmiş videonun yalnız sesini değiştirir.
 - `taslak/`: Onay bekleyen taslakların içeriği (yalnız metin ve betik; video konmaz).
 - `onizleme.py`: Onay için önizlemeleri üretir; bunlar depoya yüklenmez.
 - `planla.py`: Dosyaları kopyalar, Metricool isteklerini hazırlar, durumu kaydeder.

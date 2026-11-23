@@ -92,7 +92,7 @@ for i, u in enumerate(URUNLER):
     cap = u.pop("giris") + "\n\n" + u.pop("cagri") + "\n🔎 Sitede “%s” arat" % u["search_code"] + SON + u.pop("etiket")
     assert len([w for w in cap.split() if w.startswith("#")]) == 5, u["key"]
     slug = u.pop("slug")
-    posts.append(dict(u, id="fragman-" + u["key"], format="reel", template="reel_fragman", stil="sinematik", muzik="abc"[i % 3],
+    posts.append(dict(u, id="fragman-" + u["key"], format="reel", template="reel_fragman", stil="sinematik", muzik="fgdhj"[i],     # her videoda ayrı parça (assets/ses-kaynak.json)
                       kanca_kalibi="fragman", kapak_ms=4900, url=SITE + slug, product_dir="work/f-" + u["key"], caption=cap,
                       kaynak_video="Pexels ve Pixabay lisansı; dosya adlarındaki numaralar video kimliğidir"))
 json.dump({"hafta": "taslak", "taslak": "23 Kasım 2026: kullanıcı 5-6 ürüne fragman türünde tanıtım istedi; onay bekliyor", "posts": posts},
