@@ -17,7 +17,7 @@ Türler ve gerekli alanlar:
   reel_tanitim  "Ürün tanıtımı": doğrudan ürünü tanıtır (soru, yanlış/doğru yok). tag, hook_kicker (marka), hook (3 satır:
             ürünün adı), marka, baslik, ozellikler (3–4 kısa madde), rozet (2 kısa satır, isteğe bağlı), slogan (tek satır,
             isteğe bağlı), search_code, urun, product_dir.
-  reel_fragman  "Fragman": film fragmanı gibi kurulmuş ürün tanıtımı. sahneler (4 gerçek görüntü: file, start, x, pan, hiz;
+  reel_fragman  "Fragman": film fragmanı gibi kurulmuş ürün tanıtımı. sahneler (4 gerçek görüntü: file, start, x, pan, hiz, gamma;
             her biri 1 sn, sonuncusu ürünün arkasında bulanık sürer), replikler (4 sahne için 1–2 satırlık cümleler),
             baslik, tur_yazi, ozellikler (3), slogan, search_code, urun, product_dir, kapak_ms (kapak karesi, ms).
   Seçeneklerde ve panellerde image_shape = "daire" yuvarlak ürünü (disk, taş) daire içinde gösterir.
@@ -179,8 +179,9 @@ def main():
                 for i, c in enumerate(sahneler):
                     sure = SECONDS - t0 if i == len(sahneler) - 1 else float(c.get("sure", 1.0))
                     video_in += ["-stream_loop", "-1", "-ss", str(c.get("start", 0)), "-i", c["file"]]
-                    parca.append("[%d:v]setpts=PTS/%s,fps=%d,trim=duration=%s,setpts=PTS-STARTPTS,%s[s%d]"
-                                 % (i, c.get("hiz", 1.0), FPS, sure, kirp % (c.get("x", 0.5), c.get("pan", 0.0), sure), i))
+                    # gamma: karanlık kesiti açar (1.0 = dokunma; 1.3–1.7 karanlık atölye çekimleri için)
+                    parca.append("[%d:v]setpts=PTS/%s,fps=%d,trim=duration=%s,setpts=PTS-STARTPTS,%s,eq=gamma=%s[s%d]"
+                                 % (i, c.get("hiz", 1.0), FPS, sure, kirp % (c.get("x", 0.5), c.get("pan", 0.0), sure), c.get("gamma", 1.0), i))
                     t0 += sure
                 n = len(sahneler)
                 zemin = (";".join(parca) + ";" + "".join("[s%d]" % i for i in range(n)) + "concat=n=%d:v=1:a=0," % n

@@ -1,0 +1,441 @@
+{
+ "hafta": "taslak",
+ "taslak": "23 Kasım 2026: kullanıcı 5-6 ürüne fragman türünde tanıtım istedi; onay bekliyor",
+ "posts": [
+  {
+   "key": "karbosan-thinline",
+   "group": "asindirici",
+   "tag": "KESME TAŞI",
+   "replikler": [
+    [
+     "DEMİRİ",
+     "KES."
+    ],
+    [
+     "PROFİLİ",
+     "KES."
+    ],
+    [
+     "İNCE",
+     "KES."
+    ],
+    [
+     "KARBOSAN'LA",
+     "KES."
+    ]
+   ],
+   "sahneler": [
+    {
+     "file": "work/stok/pexels-5846450.mp4",
+     "url": "https://videos.pexels.com/video-files/5846450/5846450-hd_1080_1920_25fps.mp4",
+     "start": 3,
+     "x": 0.5,
+     "pan": 0.02,
+     "hiz": 1.0,
+     "gamma": 1.7
+    },
+    {
+     "file": "work/stok/pixabay-94063.mp4",
+     "url": "https://cdn.pixabay.com/video/2021/10/31/94063-641767740_large.mp4",
+     "start": 1,
+     "x": 0.6,
+     "pan": 0.02,
+     "hiz": 1.0,
+     "gamma": 1.0
+    },
+    {
+     "file": "work/stok/pexels-6046362.mp4",
+     "url": null,
+     "start": 5,
+     "x": 0.55,
+     "pan": 0.02,
+     "hiz": 1.0,
+     "gamma": 1.0
+    },
+    {
+     "file": "work/stok/pexels-5846450.mp4",
+     "url": "https://videos.pexels.com/video-files/5846450/5846450-hd_1080_1920_25fps.mp4",
+     "start": 14,
+     "x": 0.5,
+     "pan": 0.02,
+     "hiz": 1.0,
+     "gamma": 1.7
+    }
+   ],
+   "baslik": "KARBOSAN",
+   "tur_yazi": "THINLINE KESME TAŞI",
+   "ozellikler": [
+    "115 × 1,6 mm",
+    "Çelik ve demir",
+    "13.300 dev/dk"
+   ],
+   "slogan": "Kesmeye özel taş: taşlama yapma.",
+   "search_code": "910450",
+   "urun": {
+    "kicker": "SİTEMİZDE",
+    "marka": "KARBOSAN",
+    "ad": "NK Thinline kesme taşı",
+    "ozellik": "115 × 1,6 × 22,23 mm · çelik"
+   },
+   "kaynak": "Ürün adı ve ürün fotoğrafındaki etiket: 115 x 1,6 x 22,23 mm, STEEL, max 13.300 RPM, 80 m/s, 'Taşlama yapmayınız'.",
+   "id": "fragman-karbosan-thinline",
+   "format": "reel",
+   "template": "reel_fragman",
+   "stil": "sinematik",
+   "muzik": "a",
+   "kanca_kalibi": "fragman",
+   "kapak_ms": 4900,
+   "url": "https://tuzlahirdavat.com.tr/115x1-6x22-nk-thinline-kesme-tasi-karbosan",
+   "product_dir": "work/f-karbosan-thinline",
+   "caption": "Karbosan NK Thinline kesme taşı: 115 × 1,6 mm, çelik ve demir kesimi için. ⚙️\n\nEn yüksek devir 13.300 dev/dk (80 m/sn). Yalnız kesme içindir; etiketinde de yazar: taşlama yapmayınız.\n\n📤 Demirci arkadaşına gönder.\n🔎 Sitede “910450” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#kesmetaşı #karbosan #demirci #aşındırıcı #tuzlahırdavat",
+   "kaynak_video": "Pexels ve Pixabay lisansı; dosya adlarındaki numaralar video kimliğidir"
+  },
+  {
+   "key": "tyrolit-flap",
+   "group": "asindirici",
+   "tag": "FLAP DİSK",
+   "replikler": [
+    [
+     "KAYNAK",
+     "DİKİŞİ."
+    ],
+    [
+     "PAS."
+    ],
+    [
+     "YÜZEY",
+     "TEMİZLİĞİ."
+    ],
+    [
+     "TEK DİSK",
+     "YETER."
+    ]
+   ],
+   "sahneler": [
+    {
+     "file": "work/stok/pexels-6046352.mp4",
+     "url": "https://videos.pexels.com/video-files/6046352/6046352-hd_1920_1080_24fps.mp4",
+     "start": 4,
+     "x": 0.45,
+     "pan": 0.02,
+     "hiz": 1.0,
+     "gamma": 1.5
+    },
+    {
+     "file": "work/stok/pexels-5846450.mp4",
+     "url": "https://videos.pexels.com/video-files/5846450/5846450-hd_1080_1920_25fps.mp4",
+     "start": 8,
+     "x": 0.5,
+     "pan": 0.02,
+     "hiz": 1.0,
+     "gamma": 1.7
+    },
+    {
+     "file": "work/stok/pexels-6046352.mp4",
+     "url": "https://videos.pexels.com/video-files/6046352/6046352-hd_1920_1080_24fps.mp4",
+     "start": 11,
+     "x": 0.45,
+     "pan": 0.02,
+     "hiz": 1.0,
+     "gamma": 1.5
+    },
+    {
+     "file": "work/stok/pexels-5846450.mp4",
+     "url": "https://videos.pexels.com/video-files/5846450/5846450-hd_1080_1920_25fps.mp4",
+     "start": 20,
+     "x": 0.5,
+     "pan": 0.02,
+     "hiz": 1.0,
+     "gamma": 1.7
+    }
+   ],
+   "baslik": "TYROLIT ONE",
+   "tur_yazi": "2'Sİ 1 ARADA FLAP DİSK",
+   "ozellikler": [
+    "115 mm · 60 kum",
+    "Çelik ve paslanmaz",
+    "Zirkonyum"
+   ],
+   "slogan": "Disk değiştirmeden çelik ve paslanmaz.",
+   "search_code": "34689695",
+   "urun": {
+    "kicker": "SİTEMİZDE",
+    "marka": "TYROLIT",
+    "ad": "ONE 2in1 flap disk",
+    "ozellik": "115 mm · 60 kum · zirkonyum"
+   },
+   "kaynak": "Ürün sayfası: 2in1 (çelik ve paslanmaz), 60 kum zirkonyum alüminyum, 115 mm, 22,23 mm göbek; taşlama, pas alma, kaynak dikişi düzeltme, yüzey temizleme.",
+   "id": "fragman-tyrolit-flap",
+   "format": "reel",
+   "template": "reel_fragman",
+   "stil": "sinematik",
+   "muzik": "b",
+   "kanca_kalibi": "fragman",
+   "kapak_ms": 4900,
+   "url": "https://tuzlahirdavat.com.tr/115x60-inoxst-flap-disk-one-serisi-tyrolit-34689695",
+   "product_dir": "work/f-tyrolit-flap",
+   "caption": "Tyrolit ONE 2in1 flap disk: 115 mm, 60 kum; çelikte de paslanmazda da aynı diskle çalış. 🔧\n\nZirkonyum aşındırıcı ile kaynak dikişi düzeltme, pas alma ve yüzey temizleme. Fiberglas altlık, 22,23 mm göbek; 115'lik avuç taşlamaya uyar.\n\n📤 Kaynakçı arkadaşına gönder.\n🔎 Sitede “34689695” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#flapdisk #tyrolit #kaynakçı #aşındırıcı #tuzlahırdavat",
+   "kaynak_video": "Pexels ve Pixabay lisansı; dosya adlarındaki numaralar video kimliğidir"
+  },
+  {
+   "key": "egesan-inox",
+   "group": "asindirici",
+   "tag": "İNOX KESME",
+   "replikler": [
+    [
+     "PASLANMAZ",
+     "KESİLECEK."
+    ],
+    [
+     "ISI",
+     "AZ OLSUN."
+    ],
+    [
+     "KESİM",
+     "İNCE OLSUN."
+    ],
+    [
+     "TAŞ",
+     "İNOX OLSUN."
+    ]
+   ],
+   "sahneler": [
+    {
+     "file": "work/stok/pexels-2386581.mp4",
+     "url": "https://videos.pexels.com/video-files/2386581/2386581-uhd_4096_2160_24fps.mp4",
+     "start": 3,
+     "x": 0.6,
+     "pan": 0.02,
+     "hiz": 1.0,
+     "gamma": 1.35
+    },
+    {
+     "file": "work/stok/pixabay-94063.mp4",
+     "url": "https://cdn.pixabay.com/video/2021/10/31/94063-641767740_large.mp4",
+     "start": 5,
+     "x": 0.6,
+     "pan": 0.02,
+     "hiz": 1.0,
+     "gamma": 1.0
+    },
+    {
+     "file": "work/stok/pexels-6046362.mp4",
+     "url": null,
+     "start": 12,
+     "x": 0.55,
+     "pan": 0.02,
+     "hiz": 1.0,
+     "gamma": 1.0
+    },
+    {
+     "file": "work/stok/pexels-2386581.mp4",
+     "url": "https://videos.pexels.com/video-files/2386581/2386581-uhd_4096_2160_24fps.mp4",
+     "start": 14,
+     "x": 0.6,
+     "pan": 0.02,
+     "hiz": 1.0,
+     "gamma": 1.35
+    }
+   ],
+   "baslik": "EGESAN PRO",
+   "tur_yazi": "İNOX İNCE KESME TAŞI",
+   "ozellikler": [
+    "115 × 1 mm",
+    "Paslanmaz ve çelik",
+    "13.300 dev/dk"
+   ],
+   "slogan": "Soğuk kesim: malzemede en az ısı.",
+   "search_code": "Egesan inox",
+   "urun": {
+    "kicker": "SİTEMİZDE",
+    "marka": "EGESAN",
+    "ad": "Pro serisi inox kesme taşı",
+    "ozellik": "115 × 1 × 22 mm"
+   },
+   "kaynak": "Ürün sayfası: 115 mm çap, 1 mm kalınlık, paslanmaz ve çelikte ince kesim, soğuk kesim (minimum ısı), 13.300 rpm, 80 m/s, Türkiye'de üretim.",
+   "id": "fragman-egesan-inox",
+   "format": "reel",
+   "template": "reel_fragman",
+   "stil": "sinematik",
+   "muzik": "c",
+   "kanca_kalibi": "fragman",
+   "kapak_ms": 4900,
+   "url": "https://tuzlahirdavat.com.tr/115x1x22-inox-kesme-tasi-pro-serisi-egesan--8697442725817",
+   "product_dir": "work/f-egesan-inox",
+   "caption": "Egesan Pro inox ince kesme taşı: 115 × 1 mm, paslanmaz ve çelikte ince kesim. ✨\n\nSoğuk kesim sayesinde malzemede ısı az oluşur. En yüksek devir 13.300 dev/dk (80 m/sn). Türkiye'de üretilir.\n\n📤 Paslanmazcı arkadaşına gönder.\n🔎 Sitede “Egesan inox” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#inoxkesme #egesan #paslanmaz #aşındırıcı #tuzlahırdavat",
+   "kaynak_video": "Pexels ve Pixabay lisansı; dosya adlarındaki numaralar video kimliğidir"
+  },
+  {
+   "key": "izeltas-lokma-35",
+   "group": "el-aleti",
+   "tag": "LOKMA TAKIMI",
+   "replikler": [
+    [
+     "SOMUN",
+     "SIKIŞMIŞ."
+    ],
+    [
+     "YER",
+     "DAR."
+    ],
+    [
+     "ANAHTAR",
+     "UYMUYOR."
+    ],
+    [
+     "TAKIMIN",
+     "TAM OLSUN."
+    ]
+   ],
+   "sahneler": [
+    {
+     "file": "work/stok/pexels-9373200.mp4",
+     "url": null,
+     "start": 14,
+     "x": 0.62,
+     "pan": 0.02,
+     "hiz": 1.0,
+     "gamma": 1.25
+    },
+    {
+     "file": "work/stok/pexels-6685025.mp4",
+     "url": "https://videos.pexels.com/video-files/6685025/6685025-hd_1920_1080_30fps.mp4",
+     "start": 3,
+     "x": 0.66,
+     "pan": 0.02,
+     "hiz": 1.0,
+     "gamma": 1.0
+    },
+    {
+     "file": "work/stok/pexels-4941356.mp4",
+     "url": "https://videos.pexels.com/video-files/4941356/4941356-hd_1920_1080_25fps.mp4",
+     "start": 0.5,
+     "x": 0.56,
+     "pan": 0.02,
+     "hiz": 1.0,
+     "gamma": 1.0
+    },
+    {
+     "file": "work/stok/pexels-9373200.mp4",
+     "url": null,
+     "start": 18,
+     "x": 0.62,
+     "pan": 0.02,
+     "hiz": 1.0,
+     "gamma": 1.25
+    }
+   ],
+   "baslik": "İZELTAŞ",
+   "tur_yazi": "35 PARÇA LOKMA TAKIMI",
+   "ozellikler": [
+    "1/4\" ve 1/2\"",
+    "35 parça",
+    "Çantalı set"
+   ],
+   "slogan": "Lokmalar ve cırcır kol tek çantada.",
+   "search_code": "1113001038",
+   "urun": {
+    "marka": "İZELTAŞ",
+    "ad": "Lokma anahtar takımı",
+    "ozellik": "35 parça · 1/4\" ve 1/2\""
+   },
+   "kaynak": "Ürün adı: İzeltaş 1/4\"-1/2\" Lokma Anahtar Takımı 35 Parça 1113001038. Çanta, lokmalar ve cırcır kol ürün fotoğrafında görünüyor.",
+   "id": "fragman-izeltas-lokma-35",
+   "format": "reel",
+   "template": "reel_fragman",
+   "stil": "sinematik",
+   "muzik": "a",
+   "kanca_kalibi": "fragman",
+   "kapak_ms": 4900,
+   "url": "https://tuzlahirdavat.com.tr/1-4-1-2-lokma-anahtar-takimi-35parca-izeltas",
+   "product_dir": "work/f-izeltas-lokma-35",
+   "caption": "İzeltaş 35 parça lokma anahtar takımı: 1/4\" ve 1/2\" lokmalar ve cırcır kol tek çantada. 🧰\n\nSanayi, atölye ve servis işleri için.\n\n📤 Tamirci arkadaşına gönder.\n🔎 Sitede “1113001038” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#lokmatakımı #izeltaş #otoservis #elaletleri #tuzlahırdavat",
+   "kaynak_video": "Pexels ve Pixabay lisansı; dosya adlarındaki numaralar video kimliğidir"
+  },
+  {
+   "key": "paslanmaz-din933",
+   "group": "baglanti",
+   "tag": "PASLANMAZ",
+   "replikler": [
+    [
+     "YAĞMUR."
+    ],
+    [
+     "NEM."
+    ],
+    [
+     "GÜNEŞ."
+    ],
+    [
+     "BAĞLANTI",
+     "DAYANSIN."
+    ]
+   ],
+   "sahneler": [
+    {
+     "file": "work/stok/pexels-13159531.mp4",
+     "url": "https://videos.pexels.com/video-files/13159531/13159531-hd_1920_1080_60fps.mp4",
+     "start": 2,
+     "x": 0.35,
+     "pan": 0.02,
+     "hiz": 0.5,
+     "gamma": 1.0
+    },
+    {
+     "file": "work/stok/pexels-5038492.mp4",
+     "url": "https://videos.pexels.com/video-files/5038492/5038492-hd_1920_1080_24fps.mp4",
+     "start": 1,
+     "x": 0.3,
+     "pan": 0.02,
+     "hiz": 1.0,
+     "gamma": 1.0
+    },
+    {
+     "file": "work/stok/pexels-8851164.mp4",
+     "url": "https://videos.pexels.com/video-files/8851164/8851164-hd_1920_1080_30fps.mp4",
+     "start": 3,
+     "x": 0.5,
+     "pan": 0.02,
+     "hiz": 1.0,
+     "gamma": 1.0
+    },
+    {
+     "file": "work/stok/pexels-13159531.mp4",
+     "url": "https://videos.pexels.com/video-files/13159531/13159531-hd_1920_1080_60fps.mp4",
+     "start": 6,
+     "x": 0.35,
+     "pan": 0.02,
+     "hiz": 0.5,
+     "gamma": 1.0
+    }
+   ],
+   "baslik": "A2 PASLANMAZ",
+   "tur_yazi": "ALTI KÖŞE BAŞLI CIVATA · DIN 933",
+   "ozellikler": [
+    "A2 (304)",
+    "DIN 933",
+    "Stoktan gönderim"
+   ],
+   "slogan": "Deniz kenarı için A4 de var.",
+   "search_code": "DIN 933 A2",
+   "urun": {
+    "kicker": "SİTEMİZDE",
+    "marka": "PASLANMAZ",
+    "ad": "Altı köşe başlı cıvata DIN 933",
+    "ozellik": "A2 (304) kalite"
+   },
+   "kaynak": "Ürün sayfası: DIN 933, A2-304; tersane, yat, güneş enerjisi, su arıtma, gıda tesisleri. Sitede A4 (316) ürünler de var. A2/A4 farkı: A4 klorlu ve deniz ortamına daha dayanıklı (önceki doğrulama).",
+   "id": "fragman-paslanmaz-din933",
+   "format": "reel",
+   "template": "reel_fragman",
+   "stil": "sinematik",
+   "muzik": "b",
+   "kanca_kalibi": "fragman",
+   "kapak_ms": 4900,
+   "url": "https://tuzlahirdavat.com.tr/m8x100-inox-akb-civata-din933-a2-304",
+   "product_dir": "work/f-paslanmaz-din933",
+   "caption": "A2 paslanmaz altı köşe başlı cıvata, DIN 933: dış ortamda, nemde ve yağmurda uzun ömürlü bağlantı. 🔩\n\nGüneş enerjisi, su arıtma, gıda tesisi ve endüstriyel mutfak imalatında kullanılır. Deniz kenarı ve klorlu ortam için A4 (316) kalite de sitemizde.\n\n💾 Kaydet, lazım olur.\n🔎 Sitede “DIN 933 A2” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#paslanmazcıvata #inox #a2 #bağlantıelemanları #tuzlahırdavat",
+   "kaynak_video": "Pexels ve Pixabay lisansı; dosya adlarındaki numaralar video kimliğidir"
+  }
+ ]
+}

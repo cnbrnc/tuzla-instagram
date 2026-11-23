@@ -32,12 +32,16 @@
 .vitrin .ic::after{content:"";position:absolute;top:-10%;bottom:-10%;left:0;width:36%;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.85),rgba(255,255,255,0));animation:isik .7s ease-in-out 4.3s both}
 .ad{position:absolute;left:60px;right:60px;top:946px;text-align:center;font-size:176px;line-height:.92;color:#fff;white-space:nowrap;text-shadow:0 6px 40px rgba(0,0,0,.85);animation:slamT .3s cubic-bezier(.2,.8,.3,1) 4.25s both}
 .tur{position:absolute;left:60px;right:60px;top:1116px;text-align:center;font-weight:700;font-size:44px;letter-spacing:.1em;color:var(--accent);white-space:nowrap;text-shadow:0 2px 18px rgba(0,0,0,.9);animation:up .28s cubic-bezier(.2,.8,.2,1) 4.5s both}
-.ozl{position:absolute;left:50px;right:50px;top:1206px;display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
-.oz{height:76px;padding:0 30px;border-radius:999px;display:flex;align-items:center;font-weight:700;font-size:38px;color:#fff;white-space:nowrap;background:rgba(8,14,28,.7);border:1.5px solid rgba(255,255,255,.28);animation:pop .28s cubic-bezier(.3,1.6,.5,1) both}
+/* özellikler ve slogan alt alta akar: özellikler iki satıra taşsa da slogana binmez */
+.altblok{position:absolute;left:40px;right:40px;top:1206px;display:flex;flex-direction:column;align-items:center;gap:30px}
+.ozl{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.oz{height:72px;padding:0 24px;border-radius:999px;display:flex;align-items:center;font-weight:700;font-size:34px;color:#fff;white-space:nowrap;background:rgba(8,14,28,.7);border:1.5px solid rgba(255,255,255,.28);animation:pop .28s cubic-bezier(.3,1.6,.5,1) both}
 .oz:nth-child(1){animation-delay:4.75s}.oz:nth-child(2){animation-delay:5s}.oz:nth-child(3){animation-delay:5.25s}
-.slogan{position:absolute;left:60px;right:60px;top:1330px;text-align:center;font-weight:700;font-size:46px;line-height:1.15;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.9);animation:up .3s cubic-bezier(.2,.8,.2,1) 5.5s both}
+.slogan{text-align:center;font-weight:700;font-size:46px;line-height:1.15;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.9);animation:up .3s cubic-bezier(.2,.8,.2,1) 5.5s both}
 .sin .kamera{animation:none}
 .sin .karart{background:rgba(3,6,13,.72)}
+/* yazı alt üçte birde durur: görüntünün üstü açık kalır, altı kararır */
+.sin .perde{background:linear-gradient(180deg,rgba(3,6,13,.2) 0%,rgba(3,6,13,0) 30%,rgba(3,6,13,.12) 52%,rgba(3,6,13,.74) 100%)}
 {% endblock %}
 {% block sahne %}
 {% for r in replikler[:4] %}<div class="rep r{{ loop.index0 }} disp" data-fit>{% for l in r %}<span{% if loop.last and loop.length > 1 %} class="v"{% endif %}>{{ l }}</span>{% endfor %}</div>
@@ -46,8 +50,8 @@
 <div class="vitrin"><div class="ic"><img src="{{ urun_gorsel }}" alt=""></div></div>
 <div class="ad disp" data-fit>{{ baslik }}</div>
 {% if tur_yazi %}<div class="tur">{{ tur_yazi }}</div>{% endif %}
-<div class="ozl">{% for o in ozellikler[:3] %}<span class="oz">{{ o }}</span>{% endfor %}</div>
-{% if slogan %}<div class="slogan">{{ slogan }}</div>{% endif %}
+<div class="altblok"><div class="ozl">{% for o in ozellikler[:3] %}<span class="oz">{{ o }}</span>{% endfor %}</div>
+{% if slogan %}<div class="slogan">{{ slogan }}</div>{% endif %}</div>
 <div class="cak c1"></div><div class="cak c2"></div><div class="cak c3"></div><div class="cak c4"></div>
 <div class="bant ust"></div><div class="bant alt"></div>
 {% endblock %}
