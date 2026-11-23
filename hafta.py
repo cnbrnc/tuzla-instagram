@@ -17,6 +17,8 @@ Slotlar (hepsi 10:00):
 queue.json içindeki "reels_slotlari" ayarı varsa ve HAFTA onun "baslangic" tarihinden önce değilse,
 Pazartesi ve Cuma Reels'i ayarda yazan listelerin ilk öğesinden alınır
 (4 Ocak 2027'den itibaren: Pazartesi reels_bil "Bil bakalım", Cuma reels_yd "Yanlış / doğru").
+Ayarda "stil" varsa (sinematik) yeni türlerin gönderilerine yazılır. Öğede bg_video.url varsa stok görüntü
+work/stok/ klasörüne indirilir; indirilemezse uyarı verilir ve gönderi kodla üretilmiş sahneyle hazırlanır.
 
 Ürün sayfalarını fetch_product.py ile work/<anahtar>/ klasörüne indirir ve stok durumunu kontrol eder.
 queue.json ve state.json DEĞİŞMEZ; kullanılan öğeler planlamadan sonra 'planla.py durum' ile düşülür.
@@ -45,6 +47,22 @@ def fetch(url, dest):
         fail("ürün sayfası okunamadı: %s\n%s" % (url, (r.stderr or r.stdout)[-600:]))
     with open(pj, encoding="utf-8") as f:
         return json.load(f)
+
+
+def stok_indir(url):
+    """Stok videoyu work/stok/ klasörüne indirir; yolu (depoya göre) ya da None döndürür."""
+    hedef = os.path.join(ROOT, "work", "stok", os.path.basename(url.split("?")[0]))
+    os.makedirs(os.path.dirname(hedef), exist_ok=True)
+    if not (os.path.exists(hedef) and os.path.getsize(hedef) > 100000):
+        subprocess.run(["curl", "-sSL", "-m", "240", "-A", "Mozilla/5.0", "-o", hedef, url], capture_output=True)
+    ok = os.path.exists(hedef) and os.path.getsize(hedef) > 100000 and subprocess.run(
+        ["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=codec_name", "-of", "csv=p=0", hedef],
+        capture_output=True, text=True).stdout.strip() != ""
+    if not ok:
+        if os.path.exists(hedef):
+            os.remove(hedef)
+        return None
+    return os.path.relpath(hedef, ROOT)
 
 
 def main():
@@ -116,6 +134,16 @@ def main():
                 ses_i += 1
             if hikaye_saati:
                 post["hikaye"] = hikaye_saati
+            if post["template"] != "reel" and rs.get("stil") and hafta >= rs.get("baslangic", "9999"):
+                post.setdefault("stil", rs["stil"])
+            bgv = post.get("bg_video")
+            if bgv and bgv.get("url"):
+                yol = stok_indir(bgv["url"]) if post.get("stil") == "sinematik" else None
+                if yol:
+                    post["bg_video"] = dict(bgv, file=yol)
+                else:
+                    post.pop("bg_video")
+                    warnings.append("%s: stok video indirilemedi ya da stil sinematik değil; kodla üretilmiş sahneyle hazırlanacak" % item["key"])
         if item.get("url"):
             dest = os.path.join(ROOT, "work", item["key"])
             prod = fetch(item["url"], dest)

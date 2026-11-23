@@ -1,5 +1,5 @@
 {
-  "note": "Haftalık içerik kuyruğu (yeni düzen, 16 Kasım 2026 haftasından itibaren). Robot her slot için ilgili listedeki ilk öğeyi alır ve kullanınca listeden çıkarır. Liste biterse ROBOT.md'deki kurallarla yenisini üretir. 'ipucu_konulari' yalnız konu ve özet listesidir; içerik yazılırken her teknik bilgi doğrulanır. 4 Ocak 2027 haftasından itibaren Reels'ler 'reels_slotlari' ayarındaki listelerden alınır: Pazartesi 'reels_bil' (Bil bakalım), Cuma 'reels_yd' (Yanlış / doğru). 'reels' listesi (ürün Reels'i) yedek tür olarak durur.",
+  "note": "Haftalık içerik kuyruğu (yeni düzen, 16 Kasım 2026 haftasından itibaren). Robot her slot için ilgili listedeki ilk öğeyi alır ve kullanınca listeden çıkarır. Liste biterse ROBOT.md'deki kurallarla yenisini üretir. 'ipucu_konulari' yalnız konu ve özet listesidir; içerik yazılırken her teknik bilgi doğrulanır. 4 Ocak 2027 haftasından itibaren Reels'ler 'reels_slotlari' ayarındaki listelerden alınır: Pazartesi 'reels_bil' (Bil bakalım), Cuma 'reels_yd' (Yanlış / doğru). 'reels' listesi (ürün Reels'i) yedek tür olarak durur. Yeni türler sinematik stilde üretilir (reels_slotlari.stil). 'Yanlış / doğru' öğelerinde bg_video ile gerçek stok görüntü kullanılır; 'Bil bakalım' kodla üretilmiş sahneyle çıkar.",
   "reels": [],
   "urun_carousel": [
     {
@@ -143,7 +143,8 @@
   "reels_slotlari": {
     "baslangic": "2027-01-04",
     "pazartesi": "reels_bil",
-    "cuma": "reels_yd"
+    "cuma": "reels_yd",
+    "stil": "sinematik"
   },
   "reels_bil": [
     {
@@ -266,7 +267,14 @@
       "why": "Kesme taşı yan yük için yapılmaz; kırılıp parçalanabilir. Etiketinde de yazar: “Taşlama yapmayınız.”",
       "search_code": "taşlama taşı",
       "kaynak": "Norton güvenlik önerileri: kesme taşının yan yüzüyle taşlama yapılmaz. Karbosan kesme taşının etiketinde “Taşlama yapmayınız / No side grinding” yazar (23 Kasım 2026'da doğrulandı).",
-      "caption": "Kesme taşıyla taşlama yapılmaz: ince disk yan yük için üretilmez, kırılıp parçalanabilir. ⚠️\n\nTaşlama için taşlama taşı kullan. Karbosan 115 × 6,4 mm taşlama taşı sitemizde.\n\n📤 Spiral kullanan arkadaşına gönder.\n💾 Kaydet, lazım olur.\n🔎 Sitede “taşlama taşı” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#taşlamataşı #karbosan #kaynakçı #aşındırıcı #tuzlahırdavat"
+      "caption": "Kesme taşıyla taşlama yapılmaz: ince disk yan yük için üretilmez, kırılıp parçalanabilir. ⚠️\n\nTaşlama için taşlama taşı kullan. Karbosan 115 × 6,4 mm taşlama taşı sitemizde.\n\n📤 Spiral kullanan arkadaşına gönder.\n💾 Kaydet, lazım olur.\n🔎 Sitede “taşlama taşı” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#taşlamataşı #karbosan #kaynakçı #aşındırıcı #tuzlahırdavat",
+      "bg_video": {
+        "url": "https://cdn.pixabay.com/video/2021/10/31/94063-641767740_large.mp4",
+        "start": 1.0,
+        "x": 0.6,
+        "pan": 0.04
+      },
+      "kaynak_video": "Pixabay, “Sparks, Grind, Grinder” (Fronbondi_Skegs): https://pixabay.com/videos/sparks-grind-grinder-grinding-94063/ · Pixabay İçerik Lisansı (ticari kullanım serbest, kaynak göstermek gerekmez)."
     }
   ]
 }

@@ -7,7 +7,8 @@ Depo herkese açıktır; buraya şifre, anahtar veya kişisel bilgi yazılmaz.
 
 ## Sabit kurallar
 
-- **Amaç:** tuzlahirdavat.com.tr'yi yaymak.
+- **Amaç:** tuzlahirdavat.com.tr'yi yaymak. Kullanıcının 23 Kasım 2026'daki sözüyle: yayılmak, izlenmek, ürünü tanıtmak, yeri geldiğinde bilgi vermek ve sayfayı popüler yapmak.
+  - İçerik seçerken bu sırayı gözet: önce izlenir ve paylaşılır olsun, sonra ürünü göstersin. Bilgi doğru ve işe yarar olsun.
   - Reels, takip etmeyenlere ulaşır.
   - Kaydırmalı gönderiler kaydedilir ve paylaşılır.
   - Her gönderi, sitede aranacak bir kodla siteye yönlendirir.
@@ -107,6 +108,7 @@ Alanlar (`"template": "reel_yd"`):
   - `product_url`: sitedeki ürün sayfası; fotoğrafı gösterilir.
 - `why_kicker`: `Neden?`. `why`: en fazla 110 karakter.
 - `url`: önerilen (doğru) ürünün sayfası. `search_code`, `key`, `group`, `caption`, `kaynak`.
+- `bg_video`, `kaynak_video`: zemindeki stok görüntü ve kaynağı (aşağıda "Stok video zemini").
 
 İçerik kuralları:
 
@@ -117,14 +119,27 @@ Alanlar (`"template": "reel_yd"`):
 
 **Yeni türlerde ses:** Her türün kendi sesi vardır: `assets/reel-ses-bil.wav` ve `assets/reel-ses-yd.wav`; kaynağı `ses_tur.py`. Kapanıştaki "tınn" ve melodi ürün Reels'iyle aynıdır. `ses` alanı yazılmaz; `reel.py` türe göre seçer. Şablonlardaki zamanlar değişirse `ses_tur.py` içindeki zamanları da güncelle ve iki dosyayı yeniden üret.
 
-**Sinematik stil (deneme; kullanıcı karar vermedi):** İki yeni türde gönderiye `"stil": "sinematik"` yazılırsa aynı kurgu koyu sahne, film greni, yavaş kamera yaklaşması ve fragman havasında sesle üretilir (`assets/reel-ses-bil-sin.wav`, `reel-ses-yd-sin.wav`; `ses_tur.py --stil sinematik`). "Yanlış / doğru"da yuvarlak ürün ağır çekimde döner ve kodla üretilmiş kıvılcım saçar. Kullanıcıya 23 Kasım 2026'da örnek gösterildi. O "sinematik olsun" demeden bu alanı yazma.
+**Sinematik stil (kullanıcı 23 Kasım 2026'da seçti; 4 Ocak 2027'den itibaren varsayılan):** İki yeni tür sinematik stilde üretilir: koyu sahne, kenarlarda kararma, film greni, yavaş kamera yaklaşması ve fragman havasında ses (`assets/reel-ses-bil-sin.wav`, `reel-ses-yd-sin.wav`; `ses_tur.py --stil sinematik`).
+- `hafta.py`, `queue.json` içindeki `reels_slotlari.stil` ayarına bakar ve gönderiye `"stil": "sinematik"` yazar. Öğeye ayrıca yazmana gerek yok.
+- **"Bil bakalım":** Kodla üretilmiş sahneyle çıkar. Soru ve kartlar ekranı doldurduğu için gerçek görüntü burada az etki ediyor; `bg_video` yazma.
+- **"Yanlış / doğru":** Zeminde gerçek stok görüntü olur (`bg_video`, aşağıda). Uygun kesit bulunamazsa `bg_video` yazma; şablon yuvarlak ürünü (disk, taş) ağır çekimde döndürür ve kodla kıvılcım çizer.
 
-**Stok video zemini (deneme; kullanıcı karar vermedi):** Sinematik stilde gönderiye `bg_video` yazılırsa zemine gerçek görüntü konur (`reel.py`; alanlar dosyanın başında). Kullanıcıya 23 Kasım 2026'da iki örnek gösterildi.
+**Stok video zemini (`bg_video`):** `{"url": "<mp4 adresi>", "start": <sn>, "x": <0–1>, "pan": <0–0,08>}`. `hafta.py` dosyayı `work/stok/` klasörüne indirir; indiremezse uyarı verir ve gönderi kodla üretilmiş sahneyle hazırlanır.
 - **Kaynak:** Yalnız ticari kullanımı serbest stok siteleri: Pexels ve Pixabay. Başkasının YouTube, Instagram ya da TikTok videosundan kesit alınmaz.
-- **Erişim:** Kullanıcı `www.pexels.com`, `videos.pexels.com`, `pixabay.com` ve `cdn.pixabay.com` adreslerine izin verdi. Site sayfaları `curl` ile açılmaz; sayfayı WebSearch ile bul, WebFetch ile dosya adresini oku, dosyayı `curl` ile `work/stok/` klasörüne indir.
-- **Depoya yükleme:** Stok dosyasını depoya koyma; lisans tek başına dağıtıma izin vermez. Yalnız bitmiş Reels videosu `posts/` klasörüne girer.
-- **Seçim:** Yüzü tanınan kişi ve okunur marka olmayan, konuyla doğrudan ilgili kesit seç. Gönderiye `kaynak_video` alanında sayfa adresini ve lisansı yaz.
-- Kullanıcı "gerçek görüntülü olsun" demeden kullanma. Haftalık akışa (hafta.py) henüz bağlanmadı.
+- **Nasıl bulunur:**
+  1. WebSearch ile ara; `allowed_domains` olarak `pexels.com` ya da `pixabay.com` ver. Örnek sorgu: "angle grinder sparks video".
+  2. Video sayfasını WebFetch ile aç ve doğrudan dosya adresini iste (`videos.pexels.com/video-files/…mp4` ya da `cdn.pixabay.com/video/…mp4`). Lisans etiketini de oku.
+  3. Dosyayı `curl -A "Mozilla/5.0"` ile `work/stok/` klasörüne indir. Site sayfaları `curl` ile açılmaz; yalnız dosya adresleri açılır.
+  4. `ffmpeg` ile saniyede bir kare çıkarıp Read ile bak. 9 saniye boyunca hareketin sürdüğü bir başlangıç anı (`start`) seç.
+- **Seçim kuralları:**
+  - Kesit, kancadaki hatayı ya da işi doğrudan göstersin (taşlama sorusunda taşlama görüntüsü).
+  - Yüzü tanınan kişi ve okunur marka olmasın.
+  - Koyu zeminli, yakın çekim, hareketli kesit en iyi sonucu verir. En az 1280 piksel genişlik olsun.
+- **Kırpma:** Görüntü yataysa dikeye kırpılır. `x`, kırpmanın yatay merkezidir (0 sol, 1 sağ); hareketin olduğu yeri ortala. `pan`, 9 saniyede sağa kayma oranıdır.
+- **Kontrol:** Üretimden sonra karelere bak: kanca yazısı görüntünün üstünde okunuyor mu, kesit konuyla ilgili mi?
+- **Kayıt:** Öğeye `kaynak_video` alanında sayfa adresini, yükleyeni ve lisansı yaz.
+- **Depoya yükleme:** Stok dosyasını depoya koyma; lisans tek başına dağıtıma izin vermez. `work/` zaten yok sayılır. Yalnız bitmiş Reels videosu `posts/` klasörüne girer.
+- **Erişim:** Kullanıcı `www.pexels.com`, `videos.pexels.com`, `pixabay.com` ve `cdn.pixabay.com` adreslerine izin verdi. Erişim kapalıysa tekrar deneme; gönderiyi kodla üretilmiş sahneyle hazırla ve kullanıcıya yaz.
 
 **Gerçek çekim (henüz kurulmadı):** Kullanıcıya telefonla çekilmiş kısa işlik videolarını robotun kurgulaması önerildi. Kullanıcı deneme çekimi gönderirse kurulacak. O zamana kadar Cuma "Yanlış / doğru" olur.
 
