@@ -72,12 +72,14 @@ Alanlar (`"template": "reel_bil"`):
 - `question`: 2 satır, her biri en fazla 14 karakter. Örnek: "Hangisi daha / sağlam?"
 - `options`: tam 2 seçenek. Her biri şu üçünden biriyle gösterilir:
   - `head`: cıvata başına basılı yazı (en fazla 4 karakter, örnek "8.8", "A4"),
-  - `big`: büyük yazı (en fazla 5 karakter, örnek "M8"),
+  - `big`: büyük yazı (en fazla 6 karakter, örnek "M8", "260°C", "DÜŞÜK"),
+  - `lines`: iki satırlı büyük yazı (her satır en fazla 8 karakter, örnek `["HELİKOİL", "DİŞ"]`),
   - `product_url`: sitedeki ürünün fotoğrafı (yuvarlak ürünse `"image_shape": "daire"`).
   - İsteğe bağlı `label`: en fazla 14 karakter.
 - `answer`: doğru seçeneğin sırası (0 = A, 1 = B). `answer_text`: "Cevap: …", en fazla 16 karakter.
 - `why`: 2 satır, her biri en fazla 40 karakter. Kısa ve sayıyla söyle.
 - `search_code`, `key`, `group`, `caption`; isteğe bağlı `url` (stok denetimi için ürün sayfası).
+- `urun`: `{marka, ad, ozellik}`. `url` ile birlikte yazılırsa kapanış kartında ürünün fotoğrafı ve adı durur (aşağıda "Kapanışta ürün").
 - `kaynak`: Cevabı doğruladığın kaynak, tek cümle. Videoda görünmez.
 
 İçerik kuralları:
@@ -105,7 +107,10 @@ Alanlar (`"template": "reel_yd"`):
 - `yanlis` ve `dogru`: her biri `{ne, alt, product_url, image_shape}`.
   - `ne`: ne yapıldığı, en fazla 36 karakter.
   - `alt`: ürünün adı, en fazla 28 karakter.
-  - `product_url`: sitedeki ürün sayfası; fotoğrafı gösterilir.
+  - `product_url`: sitedeki ürün sayfası; fotoğrafı gösterilir. Yazılmazsa panelin sağında yalnız büyük çarpı ya da onay işareti durur (sitede ürünü olmayan şeyler için: çakmak, yandan çekiş).
+  - `image`: ürün sayfası yerine hazır bir görsel dosyası (depoya göre yol). Örnek: bıçağın diş kısmının yakın kırpması.
+- `hook_image`: kancada yanlış ürünün yerine gösterilecek görsel (isteğe bağlı; `bg_video` yoksa görünür).
+- `urun`: `{marka, ad, ozellik}`; kapanış kartına ürünün fotoğrafını ve adını koyar (aşağıda "Kapanışta ürün").
 - `why_kicker`: `Neden?`. `why`: en fazla 110 karakter.
 - `url`: önerilen (doğru) ürünün sayfası. `search_code`, `key`, `group`, `caption`, `kaynak`.
 - `bg_video`, `kaynak_video`: zemindeki stok görüntü ve kaynağı (aşağıda "Stok video zemini").
@@ -117,12 +122,30 @@ Alanlar (`"template": "reel_yd"`):
 - **Stok:** Önerilen ürün stokta olmalı; `hafta.py` denetler.
 - **Görsel:** İki ürünün de fotoğrafı net ve sade zeminli olsun.
 
+**Kapanışta ürün (`urun`):** Amaç bilgi verirken ürünü de tanıtmak. Öğede `url` (ürün sayfası) ve `urun` varsa kapanış kartında "Sitede arat" kodunun altında ürünün fotoğrafı, markası ve adı durur.
+- `marka`: en fazla 10 karakter, büyük harf. `ad`: en fazla 30 karakter. `ozellik`: en fazla 36 karakter, " · " ile ayrılmış 2–3 özellik.
+- Fiyat yazılmaz. Soru ya da hata o ürünün işiyle ilgili olsun (somun sıkma → hangi lokma; ısıtıcı → hangi priz).
+- Ürünle ilgisi olmayan genel bilgi sorusunda `urun` yazma.
+
+**Koyu sahnede ürün fotoğrafı:** Sinematik stilde beyaz zeminli ürün fotoğrafı beyaz, köşesi yuvarlak bir karo içinde durur (şablon kendisi yapar). Yuvarlak ürün (`"image_shape": "daire"`) daire olarak kalır.
+
 **Yeni türlerde ses:** Her türün kendi sesi vardır: `assets/reel-ses-bil.wav` ve `assets/reel-ses-yd.wav`; kaynağı `ses_tur.py`. Kapanıştaki "tınn" ve melodi ürün Reels'iyle aynıdır. `ses` alanı yazılmaz; `reel.py` türe göre seçer. Şablonlardaki zamanlar değişirse `ses_tur.py` içindeki zamanları da güncelle ve iki dosyayı yeniden üret.
 
 **Sinematik stil (kullanıcı 23 Kasım 2026'da seçti; 4 Ocak 2027'den itibaren varsayılan):** İki yeni tür sinematik stilde üretilir: koyu sahne, kenarlarda kararma, film greni, yavaş kamera yaklaşması ve fragman havasında ses (`assets/reel-ses-bil-sin.wav`, `reel-ses-yd-sin.wav`; `ses_tur.py --stil sinematik`).
 - `hafta.py`, `queue.json` içindeki `reels_slotlari.stil` ayarına bakar ve gönderiye `"stil": "sinematik"` yazar. Öğeye ayrıca yazmana gerek yok.
-- **"Bil bakalım":** Kodla üretilmiş sahneyle çıkar. Soru ve kartlar ekranı doldurduğu için gerçek görüntü burada az etki ediyor; `bg_video` yazma.
+- **"Bil bakalım":** Çoğunlukla kodla üretilmiş sahneyle çıkar; soru ve kartlar ekranı doldurur. Konuyu doğrudan gösteren, sade bir kesit varsa `bg_video` yazılabilir.
 - **"Yanlış / doğru":** Zeminde gerçek stok görüntü olur (`bg_video`, aşağıda). Uygun kesit bulunamazsa `bg_video` yazma; şablon yuvarlak ürünü (disk, taş) ağır çekimde döndürür ve kodla kıvılcım çizer.
+
+**Profesyonel ses (`muzik`; kullanıcı 23 Kasım 2026'da istedi):** Sinematik Reels'in sesi stok müzik, stok efekt ve kendi imza seslerimizin karışımıdır. `ses_pro.py` üretir; kaynaklar `assets/ses-kaynak.json` dosyasındadır.
+- `hafta.py` yeni türlere `muzik` alanını sırayla yazar: `a`, `b`, `c`. Aynı müziğin üç ayrı bölümüdür; aynı hafta iki Reels aynı bölümle çıkmaz.
+- Müzik 120 BPM'e getirilir; düşüşü 4. saniyeye, yani cevabın ya da DOĞRU damgasının geldiği ana oturur.
+- `"sfx_kanca": "taslama"`: Kancaya gerçek taşlama sesi ekler. Yalnız taş, disk ve spiral konularında yaz.
+- Müzik ya da efekt indirilemezse `reel.py` uyarı verir ve kodla üretilmiş sinematik sesi kullanır. Gönderi yine çıkar.
+- **Yeni müzik ya da efekt seçerken:**
+  - Yalnız ticari kullanımı serbest kaynak: Pixabay (müzik ve efekt). Başkasının videosundan ses alınmaz.
+  - YouTube Content ID'ye kayıtlı parçayı seçme; Instagram'da telif uyarısına yol açabilir. Pixabay arama sayfasındaki veride `hasYoutubeContentId` alanı `false` olmalı.
+  - Seçtiğin parçayı `assets/ses-kaynak.json` dosyasına adı, yapanı ve adresiyle yaz. Dosyayı depoya koyma.
+  - Müziği değiştirirsen `bpm`, `faz` ve `varyantlar` değerlerini yeniden ölç; vuruşlar 0. ve 4. saniyeye oturmalı.
 
 **Stok video zemini (`bg_video`):** `{"url": "<mp4 adresi>", "start": <sn>, "x": <0–1>, "pan": <0–0,08>}`. `hafta.py` dosyayı `work/stok/` klasörüne indirir; indiremezse uyarı verir ve gönderi kodla üretilmiş sahneyle hazırlanır.
 - **Kaynak:** Yalnız ticari kullanımı serbest stok siteleri: Pexels ve Pixabay. Başkasının YouTube, Instagram ya da TikTok videosundan kesit alınmaz.
@@ -429,6 +452,20 @@ Kullanıcı Aralık 2026'da askerde. Bu yüzden 5 haftanın 20 gönderisi önced
 | 27 Aralık | 2026-12-28 | |
 | 3 Ocak 2027 | 2027-01-04 | Normal düzen geri döner ve onay yine şarttır. Reels'ler yeni türlerdedir: Pazartesi "Bil bakalım", Cuma "Yanlış / doğru"; ilk öğeler kuyrukta hazır. Kaydırmalı listeleri boşalmış olur; 4. adımdaki kurallarla yeni öğe yaz. Onay mesajında Reels türünün değiştiğini bir cümleyle hatırlat. Mesajın başına hikaye denemesinin sonucunu da yaz (Biçimler → Hikaye denemesi). |
 
+### Aralık Reels'leri: yeni biçim taslağı (23 Kasım 2026, ONAY BEKLİYOR)
+
+Kullanıcı 23 Kasım 2026'da Aralık'ın 10 ürün Reels'inin de yeni türlere çevrilmesini istedi. Taslak hazırlandı ve videolar kullanıcıya sohbette gönderildi. **Kullanıcı açıkça onaylayana kadar Metricool'daki gönderiler eski hâliyle kalır ve yayınlanır.** Pazar çalışması bu taslağa dokunmaz.
+
+- **Taslak:** `taslak/aralik-yeni/yap.py` (içerik) ve `taslak/aralik-yeni/aralik-yeni.json` (çıktı). Videolar depoda yok.
+- **Düzen:** Pazartesi Reels'i "Bil bakalım", Cuma Reels'i "Yanlış / doğru" oldu. Hepsi sinematik stilde, profesyonel sesle. Kapanış kartında ürünün fotoğrafı ve adı var (`urun`). Kimlik, tarih, saat, ürün ve aranacak kod aynı.
+- **Onay gelirse (yalnız kullanıcının olduğu oturumda):**
+  1. `python3 taslak/aralik-yeni/yap.py --indir`, sonra `python3 taslak/aralik-yeni/yap.py`, sonra `python3 reel.py taslak/aralik-yeni/aralik-yeni.json out/aralik-yeni`.
+  2. Her videoyu ve kapağını `posts/<HAFTA>/` klasörüne eski dosyanın adıyla kopyala. Commit et ve push et.
+  3. `getScheduledPosts` ile gönderiyi `uuid` üzerinden bul (`weeks/<HAFTA>.json` → `metricool.uuid`). `updateScheduledPost` ile yalnız videoyu (jsDelivr adresi, yeni SHA) ve açıklamayı değiştir; tarih ve saat aynı kalır.
+  4. `weeks/<HAFTA>.json` içindeki öğeyi taslaktaki öğeyle değiştir; `metricool` alanını koru. `getScheduledPosts` ile kontrol et.
+  5. Bu başlığı "uygulandı" diye güncelle ve `state.json` notuna yaz.
+- **Kullanıcı düzeltme isterse:** `yap.py` içindeki öğeyi düzelt, yeniden üret, videoyu yine sohbette gönder.
+
 ### Adımlar
 1. **Karne:** 3. adımdaki karneyi çıkar ve `state.json` dosyasına ekle.
 2. **Geçen hafta:** Geçen haftayı 2. adımdaki gibi kontrol et.
@@ -487,6 +524,8 @@ Kullanıcı Aralık 2026'da askerde. Bu yüzden 5 haftanın 20 gönderisi önced
 - `render.py`: Kaydırmalı ve tekli gönderilerin PNG'lerini üretir (1080×1350).
 - `reel.py`: Reels videosunu ve kapağını üretir (üç tür: `reel`, `reel_bil`, `reel_yd`); sesi `assets/reel-ses-*.wav` dosyalarından ekler.
 - `ses.py`: Ürün Reels'inin özgün ses izini üretir. `ses_tur.py`: "Bil bakalım" ve "Yanlış / doğru" seslerini üretir. Yalnız animasyon zamanları değişirse çalıştırılırlar.
+- `ses_pro.py`: Sinematik Reels'in profesyonel sesini üretir (stok müzik ve efekt); kaynak listesi `assets/ses-kaynak.json`. `reel.py` kendisi çağırır.
+- `taslak/`: Onay bekleyen taslakların içeriği (yalnız metin ve betik; video konmaz).
 - `onizleme.py`: Onay için önizlemeleri üretir; bunlar depoya yüklenmez.
 - `planla.py`: Dosyaları kopyalar, Metricool isteklerini hazırlar, durumu kaydeder.
   - Önceden planlanmış haftalar için `stok`, `yedek` ve `yakala` komutları da onda.

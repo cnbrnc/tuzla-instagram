@@ -9,11 +9,15 @@ Türler ve gerekli alanlar:
   reel_bil  "Bil bakalım": tag, question_kicker, question (en çok 2 satır), options (2 adet: big ya da product_dir,
             isteğe bağlı label), answer (0 ya da 1), answer_text, why (en çok 2 satır), search_code.
   reel_yd   "Yanlış / doğru": tag, hook_kicker, hook (satırlar), yanlis ve dogru ({ne, alt, product_dir}),
-            why (isteğe bağlı why_kicker), search_code.
+            why (isteğe bağlı why_kicker), search_code. Panelde görsel yoksa yazı tüm genişliği kullanır.
+            hook_image: kancada yanlış ürün yerine gösterilecek görsel (isteğe bağlı).
+  Yeni türlerde seçenek yazısı iki satırsa big yerine lines = ["ÜST", "ALT"] verilir.
+  urun = {marka, ad, ozellik} ve product_dir verilirse kapanış kartında ürünün fotoğrafı ve adı durur (ürün tanıtımı).
   Seçeneklerde ve panellerde image_shape = "daire" yuvarlak ürünü (disk, taş) daire içinde gösterir.
 
 İsteğe bağlı (yeni türlerde): stil = "sinematik" (koyu sahne, film greni, fragman havasında ses) ve onunla birlikte
 bg_video = {"file": "<yerel mp4>", "start": sn, "x": 0–1 (kırpmanın yatay merkezi), "pan": kayma oranı, "hiz": 1.0}.
+muzik = "a" | "b" | "c": stok müzikli profesyonel ses (ses_pro.py); sfx_kanca = "taslama" kancaya gerçek taşlama sesi ekler.
 bg_video varsa gerçek görüntü zemine konur: şablon saydam çizilir ve ffmpeg ile görüntünün üstüne bindirilir.
 Stok görüntü depoya yüklenmez (lisans); hafta.py onu kaynağından work/stok/ klasörüne indirir.
 
@@ -42,11 +46,20 @@ SOUNDS = {k: os.path.join(ROOT, "assets", "reel-ses-%s.wav" % k)
 DEFAULT_SOUND = {"reel": "enerjik", "reel_bil": "bil", "reel_yd": "yd"}
 
 
+def mutlak(yol):
+    """Depoya göre verilmiş görsel yolunu tam yola çevirir (HTML başka klasörde açılır)."""
+    return yol if not yol or os.path.isabs(yol) or "://" in yol else os.path.join(ROOT, yol)
+
+
 def with_image(d):
     """product_dir verilmiş seçenek ya da panele ürün görselinin yolunu ekler."""
     if isinstance(d, dict) and d.get("product_dir") and not d.get("image"):
-        with open(os.path.join(d["product_dir"], "product.json"), encoding="utf-8") as f:
-            d = dict(d, image=json.load(f)["image"])
+        with open(os.path.join(ROOT, d["product_dir"], "product.json"), encoding="utf-8") as f:
+            d = dict(d, image=os.path.join(ROOT, d["product_dir"], "product.png"))
+            if not os.path.exists(d["image"]):
+                d["image"] = json.load(f)["image"]
+    elif isinstance(d, dict) and d.get("image"):
+        d = dict(d, image=mutlak(d["image"]))
     return d
 
 
@@ -96,6 +109,10 @@ def main():
                 ctx["options"] = [with_image(o) for o in post["options"]]
             elif tpl == "reel_yd":
                 ctx["yanlis"], ctx["dogru"] = with_image(post["yanlis"]), with_image(post["dogru"])
+                ctx["hook_image"] = mutlak(post.get("hook_image"))
+            # Kapanışta ürün: "urun" = {marka, ad, ozellik} ve product_dir varsa ürün fotoğrafı kapanış kartına girer
+            if tpl != "reel" and post.get("urun") and post.get("product_dir"):
+                ctx["urun_gorsel"] = with_image({"product_dir": post["product_dir"]})["image"]
             html_path = os.path.join(out, "html", post["id"] + ".html")
             with open(html_path, "w", encoding="utf-8") as f:
                 f.write(env.get_template(tpl + ".html").render(**ctx))
@@ -120,6 +137,18 @@ def main():
             # Ses: ritim adı (varsayılan "enerjik"), "efekt" (Instagram müziği eklenecekse) ya da "yok"
             varsayilan = DEFAULT_SOUND[tpl] + ("-sin" if post.get("stil") == "sinematik" and tpl != "reel" else "")
             audio = SOUNDS.get(post.get("ses") or varsayilan)
+            # Profesyonel ses (stok müzik + efekt): "muzik": "a" | "b" | "c". Üretilemezse kodla üretilmiş ses kalır.
+            if post.get("muzik") and post.get("stil") == "sinematik" and tpl != "reel" and not post.get("ses"):
+                tur = DEFAULT_SOUND[tpl]
+                komut = [sys.executable, os.path.join(ROOT, "ses_pro.py"), tur, post["muzik"]]
+                if post.get("sfx_kanca") == "taslama" and tur == "yd":
+                    komut.append("--taslama")
+                r = subprocess.run(komut, capture_output=True, text=True, cwd=ROOT)
+                yol = os.path.join(ROOT, r.stdout.strip().splitlines()[-1]) if r.returncode == 0 and r.stdout.strip() else ""
+                if yol and os.path.exists(yol):
+                    audio = yol
+                else:
+                    print("UYARI: profesyonel ses üretilemedi, kodla üretilmiş ses kullanılıyor:", post["id"])
             if audio and os.path.exists(audio):
                 audio_in = ["-i", audio]
                 audio_fx = ["-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-ar", "44100"]

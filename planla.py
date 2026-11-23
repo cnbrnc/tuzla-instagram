@@ -172,7 +172,8 @@ def cmd_durum(hafta, args):
             state["last_product_theme"] = post.get("theme", state.get("last_product_theme"))
         if post.get("format") == "tekli":
             state["last_tekli_week"] = hafta
-    n_reels = sum(1 for p in wk["posts"] if p.get("template") == "reel")  # ritim yalnız ürün Reels'inde döner
+    # ürün Reels'inde ritim ("ses"), yeni türlerde müzik varyantı ("muzik") sırayla döner
+    n_reels = sum(1 for p in wk["posts"] if p.get("format") == "reel" and (p.get("ses") or p.get("muzik")))
     state["ses_sirasi"] = state.get("ses_sirasi", 0) + n_reels
     if hafta not in state.setdefault("planned_weeks", []):
         state["planned_weeks"].append(hafta)

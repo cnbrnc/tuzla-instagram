@@ -136,6 +136,9 @@ def main():
                 post["hikaye"] = hikaye_saati
             if post["template"] != "reel" and rs.get("stil") and hafta >= rs.get("baslangic", "9999"):
                 post.setdefault("stil", rs["stil"])
+                # profesyonel ses: müzik varyantı sırayla döner (a, b, c)
+                post.setdefault("muzik", "abc"[ses_i % 3])
+                ses_i += 1
             bgv = post.get("bg_video")
             if bgv and bgv.get("url"):
                 yol = stok_indir(bgv["url"]) if post.get("stil") == "sinematik" else None

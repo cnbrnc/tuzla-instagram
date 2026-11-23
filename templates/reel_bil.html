@@ -22,6 +22,8 @@
 .buyuk{display:block;width:100%;text-align:center;font-size:210px;line-height:.9;color:var(--deep);white-space:nowrap}
 .kart img{display:block;max-width:380px;max-height:300px;width:auto;height:auto}
 .kart img.daire{border-radius:50%}
+.buyuk .st{display:block}          /* iki satırlı yazı seçeneği: "lines" */
+.buyuk.cok{font-size:150px;line-height:.92}
 .kart svg.kafa{display:block;width:290px;height:290px}
 .kart .kafa + .et{font-size:44px;color:var(--deep)}
 .et{font-weight:700;font-size:34px;line-height:1.15;color:var(--muted);text-align:center}
@@ -47,6 +49,7 @@
 .sin .kart{background:linear-gradient(150deg,rgba(255,255,255,.13),rgba(255,255,255,.04));border:1.5px solid rgba(255,255,255,.18);box-shadow:0 30px 80px rgba(0,0,0,.55)}
 .sin .kart .et,.sin .kart .kafa + .et{color:#E6ECF7}
 .sin .buyuk{color:#fff}
+.sin .kart img:not(.daire){background:#fff;border-radius:22px;padding:12px;box-sizing:border-box;filter:drop-shadow(0 18px 26px rgba(0,0,0,.6))}
 .sin .harf{background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.3)}
 .sin .kart svg.kafa{filter:drop-shadow(0 18px 26px rgba(0,0,0,.6))}
 @keyframes dogruS{0%{transform:scale(1)}40%{transform:scale(1.1);border-color:var(--accent);box-shadow:0 0 140px rgba(255,198,41,.75),inset 0 0 0 6px var(--accent)}100%{transform:scale(1.04);border-color:var(--accent);box-shadow:0 0 90px rgba(255,198,41,.45),inset 0 0 0 6px var(--accent)}}
@@ -67,6 +70,7 @@
 <circle cx="150" cy="150" r="112" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="4"/><circle cx="150" cy="150" r="116" fill="none" stroke="#4B5563" stroke-opacity=".35" stroke-width="3"/>
 <text x="152" y="189" text-anchor="middle" font-family="'Barlow Condensed','Arial Narrow',sans-serif" font-weight="800" font-size="112" fill="#fff" fill-opacity=".6">{{ o.head }}</text>
 <text x="150" y="186" text-anchor="middle" font-family="'Barlow Condensed','Arial Narrow',sans-serif" font-weight="800" font-size="112" fill="#273142">{{ o.head }}</text></svg>
+{% elif o.lines %}<span class="buyuk cok disp" data-fit>{% for l in o.lines %}<span class="st">{{ l }}</span>{% endfor %}</span>
 {% else %}<span class="buyuk disp" data-fit>{{ o.big }}</span>{% endif %}
 {% if o.label %}<span class="et">{{ o.label }}</span>{% endif %}
 {% if loop.index0 == answer %}<span class="tik"><svg width="56" height="56" viewBox="0 0 56 56"><path d="M12 29l11 11 21-24" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>{% endif %}

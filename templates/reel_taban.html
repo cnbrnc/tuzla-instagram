@@ -48,6 +48,8 @@ html,body{margin:0;padding:0;background:var(--navy)}
 .sin .end .code{color:var(--accent);text-shadow:0 0 70px rgba(255,198,41,.4)}
 .sin .end .card{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.2)}
 .sin .end .l1{color:#fff}.sin .end .l2{color:#E6ECF7}.sin .end .l3{color:var(--mist)}
+.sin .end .urun{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.2)}
+.sin .end .urun .uk{color:var(--accent)}.sin .end .urun .um{color:#fff}.sin .end .urun .ua{color:#E6ECF7}.sin .end .urun .uo{color:var(--mist)}
 {% if video_zemin %}
 /* Gerçek görüntü zemini: sayfa saydam çizilir, reel.py görüntünün üstüne bindirir. Gren ve bulanıklığı ffmpeg ekler. */
 @keyframes kararma{from{opacity:0}to{opacity:1}}
@@ -74,6 +76,18 @@ html,body{background:transparent}
 .end .l1{font-weight:700;font-size:54px;color:var(--deep)}
 .end .l2{font-weight:700;font-size:40px;color:var(--ink)}
 .end .l3{font-weight:500;font-size:36px;color:#374151}
+/* Kapanışta ürün: "urun" alanı ve product_dir varsa aranacak kodun altında ürünün fotoğrafı ve adı durur */
+.end .urun{display:flex;align-items:center;gap:34px;background:#fff;border-radius:32px;padding:26px;animation:up .35s cubic-bezier(.2,.8,.2,1) 7.1s both}
+.end .urun .foto{flex:none;width:340px;height:340px;border-radius:22px;background:#fff;display:flex;align-items:center;justify-content:center}
+.end .urun .foto img{display:block;max-width:310px;max-height:310px;width:auto;height:auto}
+.end .urun .y{min-width:0;display:flex;flex-direction:column;gap:10px}
+.end .urun .uk{font-weight:700;font-size:26px;letter-spacing:.16em;color:var(--muted)}
+.end .urun .um{font-size:96px;line-height:.92;color:var(--deep);white-space:nowrap}
+.end .urun .ua{font-weight:700;font-size:42px;line-height:1.16;color:var(--ink)}
+.end .urun .uo{font-weight:500;font-size:32px;line-height:1.2;color:#374151}
+.end.urunlu .card{margin-top:0;padding:30px 40px;gap:10px;animation-delay:7.25s}
+.end.urunlu .l1{font-size:48px}.end.urunlu .l2{font-size:36px}.end.urunlu .l3{font-size:33px}
+.end.urunlu .code{font-size:140px}
 </style>
 </head>
 <body>
@@ -85,10 +99,11 @@ html,body{background:transparent}
 {% block sahne %}{% endblock %}
 </div>
 {% if stil == 'sinematik' %}<div class="vinyet"></div>{% endif %}
-<div class="end"><div class="in">
+<div class="end{% if urun and urun_gorsel %} urunlu{% endif %}"><div class="in">
 <img class="logo" src="{{ logo }}" alt="Tuzla Hırdavat" style="height:72px;align-self:flex-start">
 <span class="k">SİTEDE ARAT</span>
 <p class="code disp" data-fit>{{ search_code }}</p>
+{% if urun and urun_gorsel %}<div class="urun"><div class="foto"><img src="{{ urun_gorsel }}" alt=""></div><div class="y"><span class="uk">{{ urun.kicker or 'BU İŞİN ALETİ' }}</span><span class="um disp" data-fit>{{ urun.marka }}</span><span class="ua">{{ urun.ad }}</span>{% if urun.ozellik %}<span class="uo">{{ urun.ozellik }}</span>{% endif %}</div></div>{% endif %}
 <div class="card"><span class="l1">tuzlahirdavat.com.tr</span><span class="l2">Sipariş: satis5@tuzlacivata.com.tr</span><span class="l3">Telefon: 0542 189 02 69</span></div>
 </div></div>
 {% if stil == 'sinematik' %}<canvas id="gren" width="270" height="480"></canvas>{% endif %}

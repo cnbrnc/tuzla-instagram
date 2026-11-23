@@ -23,6 +23,10 @@
 .p .gorsel{position:relative;flex:none;width:400px;display:flex;align-items:center;justify-content:center}
 .p .gorsel img{display:block;max-width:360px;max-height:430px;width:auto;height:auto}
 .p .gorsel img.daire{border-radius:50%}
+/* görseli olmayan panel: sağda yalnız büyük işaret (çarpı ya da onay) durur */
+.p.duz .gorsel{width:300px}
+.p.duz .gorsel .isaret{animation:damga .3s cubic-bezier(.2,.8,.3,1) both}
+.p.y.duz .gorsel .isaret{animation-delay:2s}.p.d.duz .gorsel .isaret{animation-delay:4s}
 .rozet{display:flex;align-items:center;gap:18px;transform-origin:0 50%}
 .rozet .daire{flex:none;width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center}
 .rozet .soz{font-size:92px;line-height:1}
@@ -48,6 +52,9 @@
 .sin .p{background:linear-gradient(150deg,rgba(255,255,255,.13),rgba(255,255,255,.04));border:1.5px solid rgba(255,255,255,.18);box-shadow:0 30px 80px rgba(0,0,0,.55)}
 .sin .p .ne{color:#fff}.sin .p .alt{color:var(--mist)}
 .sin .p .gorsel img{filter:drop-shadow(0 20px 34px rgba(0,0,0,.65))}
+/* beyaz zeminli ürün fotoğrafı koyu sahnede beyaz karo içinde durur */
+.sin .p .gorsel img:not(.daire){background:#fff;border-radius:24px;padding:14px;box-sizing:border-box;max-width:340px;max-height:420px}
+.sin .hookimg img:not(.daire){background:#fff;border-radius:36px;padding:26px;box-sizing:border-box;box-shadow:0 40px 120px rgba(0,0,0,.7)}
 .sin .p::after{content:"";position:absolute;inset:0;border-radius:40px;pointer-events:none;opacity:0}
 .sin .p.y::after{background:radial-gradient(80% 90% at 30% 50%,rgba(229,56,59,.55),rgba(229,56,59,0));animation:flas .9s ease-out 2s both}
 .sin .p.d::after{background:radial-gradient(80% 90% at 30% 50%,rgba(22,163,74,.55),rgba(22,163,74,0));animation:flas .9s ease-out 4s both}
@@ -59,23 +66,25 @@
 {% block fx %}{% if yanlis.image_shape == 'daire' and not video_zemin %} data-kivilcim="724,1412,145,1.25"{% endif %}{% endblock %}
 {% block sahne %}
 <div class="hook"><div class="k">{{ hook_kicker }}</div><h1 class="disp" data-fit>{% for l in hook %}<span class="l">{{ l }}</span>{% endfor %}</h1></div>
-{% if yanlis.image and not video_zemin %}<div class="hookimg"><img src="{{ yanlis.image }}" alt=""{% if yanlis.image_shape == 'daire' %} class="daire"{% endif %}></div>{% endif %}
+{% set kanca_gorsel = hook_image or yanlis.image %}{% if kanca_gorsel and not video_zemin %}<div class="hookimg"><img src="{{ kanca_gorsel }}" alt=""{% if not hook_image and yanlis.image_shape == 'daire' %} class="daire"{% endif %}></div>{% endif %}
 {% if stil == 'sinematik' and yanlis.image_shape == 'daire' and not video_zemin %}<div class="parca"></div>{% endif %}
 {% if stil == 'sinematik' %}<div class="serit s1"></div><div class="serit s2"></div>{% endif %}
-<div class="p y">
+<div class="p y{% if not yanlis.image %} duz{% endif %}">
 <div class="yazi">
 <div class="rozet"><span class="daire"><svg width="56" height="56" viewBox="0 0 56 56"><path d="M14 14l28 28M42 14L14 42" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/></svg></span><span class="soz disp">YANLIŞ</span></div>
 <div class="ne">{{ yanlis.ne }}</div>{% if yanlis.alt %}<div class="alt">{{ yanlis.alt }}</div>{% endif %}
 </div>
-<div class="gorsel">{% if yanlis.image %}<img src="{{ yanlis.image }}" alt=""{% if yanlis.image_shape == 'daire' %} class="daire"{% endif %}>{% endif %}
+{% if yanlis.image %}<div class="gorsel"><img src="{{ yanlis.image }}" alt=""{% if yanlis.image_shape == 'daire' %} class="daire"{% endif %}>
 <div class="carpi"><svg width="330" height="330" viewBox="0 0 330 330"><path d="M40 40l250 250M290 40L40 290" fill="none" stroke="#E5383B" stroke-width="34" stroke-linecap="round" opacity=".92"/></svg></div></div>
+{% else %}<div class="gorsel"><svg class="isaret" width="230" height="230" viewBox="0 0 330 330"><path d="M40 40l250 250M290 40L40 290" fill="none" stroke="#E5383B" stroke-width="40" stroke-linecap="round" opacity=".92"/></svg></div>{% endif %}
 </div>
-<div class="p d">
+<div class="p d{% if not dogru.image %} duz{% endif %}">
 <div class="yazi">
 <div class="rozet"><span class="daire"><svg width="56" height="56" viewBox="0 0 56 56"><path d="M12 29l11 11 21-24" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="soz disp">DOĞRU</span></div>
 <div class="ne">{{ dogru.ne }}</div>{% if dogru.alt %}<div class="alt">{{ dogru.alt }}</div>{% endif %}
 </div>
-<div class="gorsel">{% if dogru.image %}<img src="{{ dogru.image }}" alt=""{% if dogru.image_shape == 'daire' %} class="daire"{% endif %}>{% endif %}</div>
+{% if dogru.image %}<div class="gorsel"><img src="{{ dogru.image }}" alt=""{% if dogru.image_shape == 'daire' %} class="daire"{% endif %}></div>
+{% else %}<div class="gorsel"><svg class="isaret" width="240" height="240" viewBox="0 0 330 330"><path d="M50 175l80 80 150-180" fill="none" stroke="#16A34A" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/></svg></div>{% endif %}
 </div>
 <div class="neden">{% if why_kicker %}<b>{{ why_kicker }}</b> {% endif %}{{ why }}</div>
 {% endblock %}
