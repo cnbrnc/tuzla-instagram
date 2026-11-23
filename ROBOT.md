@@ -450,7 +450,7 @@ Kullanıcı Aralık 2026'da askerde. Bu yüzden 5 haftanın 20 gönderisi önced
 | 13 Aralık | 2026-12-14 | |
 | 20 Aralık | 2026-12-21 | 24 Aralık kampanya kartı: eşikler de denetlenir |
 | 27 Aralık | 2026-12-28 | |
-| 3 Ocak 2027 | 2027-01-04 | Normal düzen geri döner ve onay yine şarttır. Reels'ler yeni türlerdedir: Pazartesi "Bil bakalım", Cuma "Yanlış / doğru"; ilk öğeler kuyrukta hazır. Kaydırmalı listeleri boşalmış olur; 4. adımdaki kurallarla yeni öğe yaz. Onay mesajında Reels türünün değiştiğini bir cümleyle hatırlat. Mesajın başına hikaye denemesinin sonucunu da yaz (Biçimler → Hikaye denemesi). |
+| 3 Ocak 2027 | 2027-01-04 | Normal düzen geri döner ve onay yine şarttır. Reels'ler yeni türlerdedir: Pazartesi "Bil bakalım", Cuma "Yanlış / doğru"; ilk öğeler kuyrukta hazır. Kaydırmalı listeleri boşalmış olur; 4. adımdaki kurallarla yeni öğe yaz. Reels türü Aralık'ta zaten değişti; onay mesajında Aralık Reels'lerinin karne özetini (geçme oranı, ortalama izlenme) yaz. Mesajın başına hikaye denemesinin sonucunu da yaz (Biçimler → Hikaye denemesi). |
 
 ### Aralık Reels'leri yeni biçimde (23 Kasım 2026'da onaylandı ve uygulandı)
 
