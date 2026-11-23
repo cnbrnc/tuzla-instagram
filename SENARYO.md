@@ -55,8 +55,15 @@ Kanca yazarken:
 | Efsane / gerçek | `reel_yd`, `"cift": "efsane-gercek"` | EFSANE (kırmızı çarpı) / GERÇEK | Yaygın yanlış inanış. Kimse suçlanmaz. |
 | Zor yol / kolay yol | `reel_yd`, `"cift": "zor-kolay"` | ZOR YOL (turuncu saat, çarpı yok) / KOLAY YOL | Yanlış yok; bir ürün işi kolaylaştırıyor. Hata sesi çalmaz. |
 | Ürün tanıtımı | `reel_tanitim` | Ürün fotoğrafı, özellikler, rozet | Kullanıcı bir ürünü doğrudan tanıtmak istediğinde. Soru ve yanlış/doğru yok. |
+| Fragman | `reel_fragman` | Dört sahne ve dört cümle, sonra ürün | Kullanıcı sinematik ve senaryolu ürün tanıtımı istediğinde (ürün tanıtımında ilk tercih). |
 
 - **Kullanıcı "tanıtım videosu" derse:** Doğrudan ürünü tanıtan videoyu kasteder (23 Kasım 2026: "direkt ürünü tanıt, doğru yanlış yapma"). "Ürün tanıtımı" türünü kullan.
+- **Fragman senaryosu nasıl yazılır:** Dört kısa cümle bir yay çizer: üç dert ya da istek, dördüncüsü çözüme çağrı. Ardından ürün gelir.
+  - Örnek (Rayno kaynak makinesi): "ARK KOPMASIN." · "ELEKTROT YAPIŞMASIN." · "İŞ YARIM KALMASIN." · "GÜCÜ OMZUNA AL." → RAYNO 200A.
+  - Her cümle ustanın ağzından çıkabilecek bir istek olsun; her biri ürün sayfasındaki bir özelliğe dayansın (ark kararlılığı, elektrodu yakması, taşınabilirlik).
+  - Cümleler aynı kalıpta olsun (hepsi "-masın" ya da hepsi tek kelime); son cümle kalıbı bozar ve ürüne bağlar.
+  - Sahne ile cümle uyuşsun: "ark" cümlesinde ark görüntüsü. Görüntüde olmayan şeyi (çatı, iskele) cümleye yazma.
+  - Fiyat, kıyas ve abartı yine yok.
 - **Sattığımız ürüne çarpı:** İlk panelde bizim sattığımız bir ürün gösterilecekse önce "Zor yol / kolay yol" kurgusunu düşün. Kırmızı çarpı ürünü kötü gösterir. Kullanıcı Karbosan, İzeltaş, GFB, Tyrolit ve Egesan'ın ana bayisidir; bu markaların ürününe çarpı koymadan önce iki kez düşün.
 - **Etiketler:**
   - Yanlış / doğru: `tag` "USTA HATASI", `hook_kicker` "SIK YAPILAN HATA".

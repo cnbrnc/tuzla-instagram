@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Sinematik Reels için profesyonel ses: stok müzik + stok efektler + kendi imza seslerimiz.
 
-Kullanım: python3 ses_pro.py <bil|yd|urun> <a|b|c> [--taslama] [--yumusak]
+Kullanım: python3 ses_pro.py <bil|yd|urun|fragman> <a|b|c> [--taslama] [--yumusak]
 Çıktı:    work/ses/pro-<tür>-<varyant>[-taslama][-yumusak].wav (9 sn; yolu yazdırır)
 
 - Müzik ve efekt kaynakları assets/ses-kaynak.json dosyasındadır (Pixabay; ticari kullanım serbest,
@@ -50,7 +50,7 @@ def yukle(ad, url, tempo=None):
 
 def main():
     a = sys.argv[1:]
-    if len(a) < 2 or a[0] not in ("bil", "yd", "urun"):
+    if len(a) < 2 or a[0] not in ("bil", "yd", "urun", "fragman"):
         raise SystemExit(__doc__)
     tur, varyant, taslama, yumusak = a[0], a[1], "--taslama" in a, "--yumusak" in a
     with open(KAYNAK, encoding="utf-8") as f:
@@ -105,6 +105,26 @@ def main():
         ding(m, note, 4.0)
         for at, f, p in ((4.27, 560, -0.2), (4.77, 640, 0.0), (5.27, 720, 0.2)):
             m.put(S.pop(f), at, 0.45, p, send=0.5)
+    elif tur == "fragman":                                                     # film fragmanı (reel_fragman.html)
+        koy(fx["hit"], 0.0 - vur["hit"], 0.55)                                 # açılış vuruşu
+        m.put(S.sub_boom(), 0.0, 0.8)
+        m.put(S.metal_hit(note(-12)), 0.0, 0.7, 0.0, send=0.4)
+        for at in (1.0, 2.0, 3.0):                                             # sahne kesimleri: vuuş ve darbe
+            koy(fx["whoosh"], at - vur["whoosh"], 0.5)
+            m.put(S.impact(), at, 0.75)
+            m.put(S.sub_boom(), at, 0.65)
+            m.put(S.kick(muffled=True), at - 0.5, 0.5)
+        koy(fx["riser"], 4.0 - vur["riser"], 0.65)                             # ürüne doğru yükseliş
+        koy(fx["hit"], 4.0 - vur["hit"], 0.85)                                 # ürün ortaya çıkar
+        m.put(S.hammer(), 4.0, 0.7, send=0.5)
+        m.put(S.sub_boom(), 4.0, 0.9)
+        ding(m, note, 4.0)
+        m.put(S.pop(520), 4.27, 0.45, 0.0, send=0.4)                           # ad
+        m.put(S.pop(600), 4.52, 0.4, 0.0, send=0.4)                            # tür
+        for n, at in enumerate((4.77, 5.02, 5.27)):                            # özellikler
+            m.put(S.pop(600 + 80 * n), at, 0.55, -0.3 + 0.3 * n, send=0.45)
+            m.put(S.tink(1400 + 150 * n), at, 0.45, 0.2, send=0.5)
+        m.put(S.pop(700), 5.52, 0.45, 0.0, send=0.5)                           # slogan
     elif tur == "urun":                                                        # ürün tanıtımı (reel_tanitim.html)
         for at, semi, g in ((0.0, -12, 0.8), (0.25, -9, 0.7), (0.5, -5, 0.9)):  # kanca: tak-tak-TAK
             m.put(S.metal_hit(note(semi)), at, g, (at - 0.25) * 1.2, send=0.3)

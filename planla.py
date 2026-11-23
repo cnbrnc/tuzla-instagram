@@ -105,7 +105,7 @@ def make_info(post, local, names, raw, cdn, ham=False, audio=None):
     if is_reel:
         info["media"] = [(raw if ham else cdn) + names[0]]
         info["mediaAltText"] = []
-        info["videoCoverMilliseconds"] = 1200
+        info["videoCoverMilliseconds"] = int(post.get("kapak_ms", 1200))
         info["instagramData"] = {"type": "REEL", "showReelOnFeed": True}
         if audio:
             # Videonun kendi efektleri (ses: "efekt") müziğin altında kalsın

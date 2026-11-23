@@ -17,6 +17,9 @@ Türler ve gerekli alanlar:
   reel_tanitim  "Ürün tanıtımı": doğrudan ürünü tanıtır (soru, yanlış/doğru yok). tag, hook_kicker (marka), hook (3 satır:
             ürünün adı), marka, baslik, ozellikler (3–4 kısa madde), rozet (2 kısa satır, isteğe bağlı), slogan (tek satır,
             isteğe bağlı), search_code, urun, product_dir.
+  reel_fragman  "Fragman": film fragmanı gibi kurulmuş ürün tanıtımı. sahneler (4 gerçek görüntü: file, start, x, pan, hiz;
+            her biri 1 sn, sonuncusu ürünün arkasında bulanık sürer), replikler (4 sahne için 1–2 satırlık cümleler),
+            baslik, tur_yazi, ozellikler (3), slogan, search_code, urun, product_dir, kapak_ms (kapak karesi, ms).
   Seçeneklerde ve panellerde image_shape = "daire" yuvarlak ürünü (disk, taş) daire içinde gösterir.
 
 İsteğe bağlı (yeni türlerde): stil = "sinematik" (koyu sahne, film greni, fragman havasında ses) ve onunla birlikte
@@ -47,8 +50,8 @@ REEL_STYLE_DEFAULT = "max-width:860px;max-height:640px;width:auto;height:auto"
 # Yeni türlerin sesi ses_tur.py ile üretilir; zamanlaması reel_bil.html ve reel_yd.html ile aynıdır.
 SOUNDS = {k: os.path.join(ROOT, "assets", "reel-ses-%s.wav" % k)
           for k in ("enerjik", "atolye", "derin", "efekt", "bil", "yd", "bil-sin", "yd-sin")}
-DEFAULT_SOUND = {"reel": "enerjik", "reel_bil": "bil", "reel_yd": "yd", "reel_tanitim": "yd"}
-PRO_TUR = {"reel_bil": "bil", "reel_yd": "yd", "reel_tanitim": "urun"}      # ses_pro.py'deki zaman çizelgesi
+DEFAULT_SOUND = {"reel": "enerjik", "reel_bil": "bil", "reel_yd": "yd", "reel_tanitim": "yd", "reel_fragman": "yd"}
+PRO_TUR = {"reel_bil": "bil", "reel_yd": "yd", "reel_tanitim": "urun", "reel_fragman": "fragman"}      # ses_pro.py'deki zaman çizelgesi
 
 
 def mutlak(yol):
@@ -105,18 +108,25 @@ def main():
                             "image_style": reel_image_style(prod)})
             ctx.update(post)
             bg = post.get("bg_video") if post.get("stil") == "sinematik" and tpl != "reel" else None
-            if bg and not os.path.exists(bg["file"]):
-                raise SystemExit("HATA: zemin videosu yok: %s" % bg["file"])
+            # Fragman: birden çok sahne art arda kesilir; her biri {"file", "start", "x", "pan", "hiz", "sure"}
+            sahneler = post.get("sahneler") if tpl == "reel_fragman" else None
+            if tpl == "reel_fragman":
+                if not sahneler or post.get("stil") != "sinematik":
+                    raise SystemExit("HATA: reel_fragman için stil=sinematik ve sahneler (gerçek görüntü) gerekir: %s" % post["id"])
+                bg = sahneler[0]
+            for c in (sahneler or ([bg] if bg else [])):
+                if not os.path.exists(c["file"]):
+                    raise SystemExit("HATA: zemin videosu yok: %s" % c["file"])
             ctx["video_zemin"] = bool(bg)
             # zeminin bulanıklaşıp karardığı an: Yanlış/doğru'da ilk panel (1,4 sn), Bil bakalım'da geri sayım (1,0 sn)
-            ctx["bg_gecis"] = gecis = float(post.get("bg_gecis", 1.0 if tpl == "reel_bil" else 1.4))
+            ctx["bg_gecis"] = gecis = float(post.get("bg_gecis", 1.0 if tpl == "reel_bil" else 4.0 if tpl == "reel_fragman" else 1.4))
             if tpl == "reel_bil":
                 ctx["options"] = [with_image(o) for o in post["options"]]
             elif tpl == "reel_yd":
                 ctx["yanlis"], ctx["dogru"] = with_image(post["yanlis"]), with_image(post["dogru"])
                 ctx["hook_image"] = mutlak(post.get("hook_image"))
             # Kapanışta ürün: "urun" = {marka, ad, ozellik} ve product_dir varsa ürün fotoğrafı kapanış kartına girer
-            if tpl != "reel" and post.get("product_dir") and (post.get("urun") or tpl == "reel_tanitim"):
+            if tpl != "reel" and post.get("product_dir") and (post.get("urun") or tpl in ("reel_tanitim", "reel_fragman")):
                 ctx["urun_gorsel"] = with_image({"product_dir": post["product_dir"]})["image"]
             html_path = os.path.join(out, "html", post["id"] + ".html")
             with open(html_path, "w", encoding="utf-8") as f:
@@ -162,7 +172,24 @@ def main():
             else:
                 audio_in = ["-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo"]
                 audio_fx = []
-            if bg:
+            if sahneler:
+                # Fragman: sahneleri sırayla kes (son sahne videonun sonuna kadar sürer), sinema rengi ver, ürün gelince bulanıklaştır
+                kirp = "crop=ih*9/16:ih:x='min(max(iw*%s-ow/2+iw*%s*t/%s\\,0)\\,iw-ow)':y=0,scale=1080:1920:flags=lanczos,setsar=1"
+                parca, video_in, t0 = [], [], 0.0
+                for i, c in enumerate(sahneler):
+                    sure = SECONDS - t0 if i == len(sahneler) - 1 else float(c.get("sure", 1.0))
+                    video_in += ["-stream_loop", "-1", "-ss", str(c.get("start", 0)), "-i", c["file"]]
+                    parca.append("[%d:v]setpts=PTS/%s,fps=%d,trim=duration=%s,setpts=PTS-STARTPTS,%s[s%d]"
+                                 % (i, c.get("hiz", 1.0), FPS, sure, kirp % (c.get("x", 0.5), c.get("pan", 0.0), sure), i))
+                    t0 += sure
+                n = len(sahneler)
+                zemin = (";".join(parca) + ";" + "".join("[s%d]" % i for i in range(n)) + "concat=n=%d:v=1:a=0," % n
+                         + "eq=contrast=1.2:saturation=1.06:brightness=-0.04,colorbalance=rs=-0.07:bs=0.07:rh=0.07:bh=-0.07,"
+                         "vignette=PI/5,gblur=sigma=18:enable='gte(t,%s)',noise=alls=7:allf=t[bg];[bg][%d:v]overlay=0:0:format=auto,format=yuv420p[v]"
+                         % (gecis, n))
+                video_in += ["-framerate", str(FPS), "-i", os.path.join(frames, "f%04d.png")]
+                video_map = ["-filter_complex", zemin, "-map", "[v]", "-map", "%d:a" % (n + 1), "-t", str(SECONDS)]
+            elif bg:
                 # Zemin: dikey kırp (yavaş kaydırma), renk ve kontrast, panel gelince bulanıklaş, hafif gren; üstüne şablon
                 zemin = ("[0:v]setpts=PTS/%s,fps=%d,crop=ih*9/16:ih:x='min(max(iw*%s-ow/2+iw*%s*t/%d\\,0)\\,iw-ow)':y=0,"
                          "scale=1080:1920:flags=lanczos,eq=contrast=1.14:saturation=1.12:brightness=-0.03,"
@@ -181,7 +208,7 @@ def main():
                            + audio_fx + ["-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", mp4], check=True)
             kapak = os.path.join(out, post["id"] + "-kapak.jpg")
             if bg:
-                subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", "1.2", "-i", mp4, "-frames:v", "1", "-q:v", "3", kapak], check=True)
+                subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", str(post.get("kapak_ms", 1200) / 1000.0), "-i", mp4, "-frames:v", "1", "-q:v", "3", kapak], check=True)
             else:
                 shutil.copy(os.path.join(frames, "f%04d.jpg" % int(FPS * 1.2)), kapak)
             shutil.rmtree(frames, ignore_errors=True)

@@ -1,0 +1,87 @@
+{
+ "hafta": "taslak",
+ "taslak": "23 Kasım 2026: daha sinematik ve senaryolu sürüm (fragman); kullanıcıya gösterildi, onay bekliyor",
+ "posts": [
+  {
+   "id": "rayno-kaynak-200-fragman",
+   "key": "rayno-kaynak-200",
+   "format": "reel",
+   "template": "reel_fragman",
+   "group": "kaynak",
+   "kanca_kalibi": "fragman",
+   "stil": "sinematik",
+   "muzik": "a",
+   "url": "https://tuzlahirdavat.com.tr/rayno-200a-invertor-kaynak-makinasi",
+   "product_dir": "work/rayno-kaynak-200",
+   "tag": "KAYNAK MAKİNESİ",
+   "kapak_ms": 4900,
+   "replikler": [
+    [
+     "ARK",
+     "KOPMASIN."
+    ],
+    [
+     "ELEKTROT",
+     "YAPIŞMASIN."
+    ],
+    [
+     "İŞ YARIM",
+     "KALMASIN."
+    ],
+    [
+     "GÜCÜ",
+     "OMZUNA AL."
+    ]
+   ],
+   "sahneler": [
+    {
+     "file": "work/stok/pexels-14314764.mp4",
+     "url": "https://videos.pexels.com/video-files/14314764/14314764-hd_1920_1080_50fps.mp4",
+     "start": 2.0,
+     "x": 0.35,
+     "pan": 0.02,
+     "hiz": 0.6
+    },
+    {
+     "file": "work/stok/pexels-11887094.mp4",
+     "url": "https://videos.pexels.com/video-files/11887094/11887094-hd_1920_1080_25fps.mp4",
+     "start": 0.5,
+     "x": 0.45,
+     "pan": 0.02
+    },
+    {
+     "file": "work/stok/pexels-11887093.mp4",
+     "url": "https://videos.pexels.com/video-files/11887093/11887093-hd_1920_1080_25fps.mp4",
+     "start": 1.0,
+     "x": 0.4,
+     "pan": 0.02
+    },
+    {
+     "file": "work/stok/pexels-14314764.mp4",
+     "url": "https://videos.pexels.com/video-files/14314764/14314764-hd_1920_1080_50fps.mp4",
+     "start": 8.0,
+     "x": 0.38,
+     "pan": 0.01,
+     "hiz": 0.6
+    }
+   ],
+   "baslik": "RAYNO 200A",
+   "tur_yazi": "ÇANTA TİPİ KAYNAK MAKİNESİ",
+   "ozellikler": [
+    "200 amper",
+    "3,25 mm elektrot",
+    "2 yıl garanti"
+   ],
+   "slogan": "3,25'lik elektrodu rahat yakar.",
+   "search_code": "RYN6155",
+   "urun": {
+    "marka": "RAYNO",
+    "ad": "200A inverter kaynak makinesi",
+    "ozellik": "Çanta tipi · IGBT · 2 yıl garanti"
+   },
+   "kaynak_video": "Pexels lisansı: pexels.com/video/14314764, /11887094, /11887093",
+   "kaynak": "Bütün özellikler ürün sayfasından (23 Kasım 2026): 200 A, 2,50 ve 3,25 mm rutil/bazik elektrot, IGBT, çanta tipi omuz askılı, aşırı ısınma koruması ve fan, 2 yıl garanti.",
+   "caption": "Rayno 200A inverter kaynak makinesi: çanta tipi, omuz askılı, 200 amper. ⚡\n\n2,50 ve 3,25 mm rutil ve bazik elektrotla çalışır. IGBT teknolojisi, aşırı ısınma koruması ve fanlı soğutma. İskelede, çatıda, mobil serviste taşıması kolay. 2 yıl garantili.\n\n📤 Kaynakçı arkadaşına gönder.\n🔎 Sitede “RYN6155” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#kaynakmakinesi #rayno #kaynakçı #demirdoğrama #tuzlahırdavat"
+  }
+ ]
+}

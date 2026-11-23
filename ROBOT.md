@@ -142,6 +142,22 @@ Kullanıcı 23 Kasım 2026'da istedi: "Direkt ürünü tanıt, doğru yanlış y
 - **Ses:** `muzik` alanıyla profesyonel ses; `ses_pro.py urun` zaman çizelgesini kullanır.
 - **Açıklama:** İlk satır ürünün adı ve en güçlü özelliği. Ardından sayfadaki özellikler, çağrı, sabit satırlar ve 5 hashtag.
 
+### Reels: "Fragman" (`reel.py`, şablon `templates/reel_fragman.html`)
+
+Kullanıcı 23 Kasım 2026'da "Ürün tanıtımı" videosunu görünce istedi: "Daha sinematik, daha senaryolu bir şey." Film fragmanı gibi kurulmuş ürün tanıtımıdır.
+
+- **Akış (9 sn):** Dört gerçek sahne, her biri 1 saniye, kesimler müziğin vuruşunda; her sahnede kısa bir cümle (0–4 sn) · 4. saniyede müziğin düşüşüyle ürün ortaya çıkar · ad (4,25) · tür (4,5) · üç özellik (4,75 / 5,0 / 5,25) · slogan (5,5) · kapanış kartı (6,75). Üstte ve altta siyah sinema bantları durur.
+- **Alanlar (`"template": "reel_fragman"`, `"stil": "sinematik"` şart):**
+  - `sahneler`: 4 stok görüntü, her biri `{file ya da url, start, x, pan, hiz}`. `hiz` 1'den küçükse ağır çekim olur (50 kare/sn kaynakta 0,6 iyi durur). Son sahne ürünün arkasında bulanık olarak sürer.
+  - `replikler`: 4 cümle, her biri 1–2 satır, satır başına en fazla 11 karakter, büyük harf. İkinci satır sarı çıkar.
+  - `baslik` (marka ve model, en fazla 12 karakter), `tur_yazi` (ürünün türü, büyük harf), `ozellikler` (3 kısa madde, toplamı 36 karakteri geçmesin), `slogan` (tek satır).
+  - `kapak_ms`: kapak karesi; `4900` yaz (ürünün ve adının göründüğü an). `planla.py` bunu Metricool'a iletir.
+  - `url`, `product_dir`, `search_code`, `urun`, `tag`, `caption`, `kaynak`, `kaynak_video`.
+- **Senaryo:** Cümleler ustanın derdinden ürüne gider; nasıl yazılacağı `SENARYO.md` dosyasında (bölüm 3, "Fragman").
+- **Görüntü kuralları:** "Stok video zemini" bölümündeki kurallar aynen geçerli. Sahneler birbirinden farklı olsun (yakın, orta, geniş çekim) ve hepsi ürünün işini göstersin. Yüzü görünen kesiti kullanma.
+- **Ses:** `ses_pro.py fragman`: her kesimde vuuş ve darbe, 4. saniyeye yükseliş, üründe büyük vuruş.
+- **Ne zaman:** Kullanıcı bir ürün için tanıtım istediğinde önce bu türü hazırla; uygun görüntü bulunamazsa "Ürün tanıtımı" türüne dön ve nedenini kullanıcıya yaz.
+
 **Kapanışta ürün (`urun`):** Amaç bilgi verirken ürünü de tanıtmak. Öğede `url` (ürün sayfası) ve `urun` varsa kapanış kartında "Sitede arat" kodunun altında ürünün fotoğrafı, markası ve adı durur.
 - `kicker` (isteğe bağlı): fotoğrafın yanındaki küçük başlık. Yazılmazsa "BU İŞİN ALETİ". Alet olmayan ürünlerde (cıvata, eldiven) "SİTEMİZDE" yaz.
 - `marka`: en fazla 10 karakter, büyük harf. `ad`: en fazla 30 karakter. `ozellik`: en fazla 36 karakter, " · " ile ayrılmış 2–3 özellik.
@@ -543,7 +559,7 @@ Kullanıcı 23 Kasım 2026'da Aralık'ın 10 ürün Reels'inin yeni türlere çe
 ## Dosyalar
 - `hafta.py`: Kuyruktan haftayı kurar, ürünleri indirir, stok kontrol eder.
 - `render.py`: Kaydırmalı ve tekli gönderilerin PNG'lerini üretir (1080×1350).
-- `reel.py`: Reels videosunu ve kapağını üretir (dört tür: `reel`, `reel_bil`, `reel_yd`, `reel_tanitim`); sesi `assets/reel-ses-*.wav` dosyalarından ekler.
+- `reel.py`: Reels videosunu ve kapağını üretir (beş tür: `reel`, `reel_bil`, `reel_yd`, `reel_tanitim`, `reel_fragman`); sesi `assets/reel-ses-*.wav` dosyalarından ekler.
 - `ses.py`: Ürün Reels'inin özgün ses izini üretir. `ses_tur.py`: "Bil bakalım" ve "Yanlış / doğru" seslerini üretir. Yalnız animasyon zamanları değişirse çalıştırılırlar.
 - `SENARYO.md`: Senaryo rehberi (konu bulma, kanca kalıpları, kurgular, yazım kuralları, kontrol listesi).
 - `dagarcik.json`: Fikir dağarcığı; kaynağı `dagarcik_yaz.py`. `fikir.py`: dağarcıktan aday seçer, kuyruk iskeleti yazar, karneden kalıp kıyası çıkarır.
