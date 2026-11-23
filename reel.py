@@ -12,6 +12,11 @@ Türler ve gerekli alanlar:
             why (isteğe bağlı why_kicker), search_code.
   Seçeneklerde ve panellerde image_shape = "daire" yuvarlak ürünü (disk, taş) daire içinde gösterir.
 
+İsteğe bağlı (yeni türlerde): stil = "sinematik" (koyu sahne, film greni, fragman havasında ses) ve onunla birlikte
+bg_video = {"file": "<yerel mp4>", "start": sn, "x": 0–1 (kırpmanın yatay merkezi), "pan": kayma oranı, "hiz": 1.0}.
+bg_video varsa gerçek görüntü zemine konur: şablon saydam çizilir ve ffmpeg ile görüntünün üstüne bindirilir.
+Stok görüntü depoya yüklenmez (lisans); hafta.py onu kaynağından work/stok/ klasörüne indirir.
+
 İsteğe bağlı: ses. Ürün Reels'inde "enerjik" (varsayılan), "atolye", "derin", "efekt" (yalnız efekt; Instagram
 müziği eklenecekse); yeni türlerde kendi sesi ("bil", "yd") varsayılandır. "yok" sessiz üretir.
 Video ve ses döngüde başa kesintisiz bağlanır.
@@ -81,6 +86,12 @@ def main():
                 ctx.update({"image": prod["image"], "panel_bg": prod.get("panel_bg", "#FFFFFF"),
                             "image_style": reel_image_style(prod)})
             ctx.update(post)
+            bg = post.get("bg_video") if post.get("stil") == "sinematik" and tpl != "reel" else None
+            if bg and not os.path.exists(bg["file"]):
+                raise SystemExit("HATA: zemin videosu yok: %s" % bg["file"])
+            ctx["video_zemin"] = bool(bg)
+            # zeminin bulanıklaşıp karardığı an: Yanlış/doğru'da ilk panel (1,4 sn), Bil bakalım'da geri sayım (1,0 sn)
+            ctx["bg_gecis"] = gecis = float(post.get("bg_gecis", 1.0 if tpl == "reel_bil" else 1.4))
             if tpl == "reel_bil":
                 ctx["options"] = [with_image(o) for o in post["options"]]
             elif tpl == "reel_yd":
@@ -101,7 +112,10 @@ def main():
             for i in range(total):
                 t = i * 1000.0 / FPS
                 page.evaluate("t => { document.getAnimations().forEach(a => { a.pause(); a.currentTime = t; }); if (window.setTime) window.setTime(t); }", t)
-                page.screenshot(path=os.path.join(frames, "f%04d.jpg" % i), type="jpeg", quality=92)
+                if bg:   # saydam kare: gerçek görüntünün üstüne bindirilecek
+                    page.screenshot(path=os.path.join(frames, "f%04d.png" % i), type="png", omit_background=True)
+                else:
+                    page.screenshot(path=os.path.join(frames, "f%04d.jpg" % i), type="jpeg", quality=92)
             mp4 = os.path.join(out, post["id"] + ".mp4")
             # Ses: ritim adı (varsayılan "enerjik"), "efekt" (Instagram müziği eklenecekse) ya da "yok"
             varsayilan = DEFAULT_SOUND[tpl] + ("-sin" if post.get("stil") == "sinematik" and tpl != "reel" else "")
@@ -112,12 +126,28 @@ def main():
             else:
                 audio_in = ["-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo"]
                 audio_fx = []
-            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS), "-i", os.path.join(frames, "f%04d.jpg")]
-                           + audio_in + ["-shortest", "-c:v", "libx264", "-preset", "veryfast",
+            if bg:
+                # Zemin: dikey kırp (yavaş kaydırma), renk ve kontrast, panel gelince bulanıklaş, hafif gren; üstüne şablon
+                zemin = ("[0:v]setpts=PTS/%s,fps=%d,crop=ih*9/16:ih:x='min(max(iw*%s-ow/2+iw*%s*t/%d\\,0)\\,iw-ow)':y=0,"
+                         "scale=1080:1920:flags=lanczos,eq=contrast=1.14:saturation=1.12:brightness=-0.03,"
+                         "gblur=sigma=16:enable='gte(t,%s)',noise=alls=6:allf=t[bg];[bg][1:v]overlay=0:0:format=auto,format=yuv420p[v]"
+                         % (bg.get("hiz", 1.0), FPS, bg.get("x", 0.5), bg.get("pan", 0.0), SECONDS, gecis))
+                video_in = ["-stream_loop", "-1", "-ss", str(bg.get("start", 0)), "-i", bg["file"],
+                            "-framerate", str(FPS), "-i", os.path.join(frames, "f%04d.png")]
+                video_map = ["-filter_complex", zemin, "-map", "[v]", "-map", "2:a", "-t", str(SECONDS)]
+            else:
+                video_in = ["-framerate", str(FPS), "-i", os.path.join(frames, "f%04d.jpg")]
+                video_map = []
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error"] + video_in
+                           + audio_in + video_map + ["-shortest", "-c:v", "libx264", "-preset", "veryfast",
                                          # film greni dosyayı büyütür; sinematik stilde biraz daha sıkıştır (jsDelivr sınırı 20 MB)
                                          "-crf", "24" if post.get("stil") == "sinematik" else "20", "-pix_fmt", "yuv420p"]
                            + audio_fx + ["-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", mp4], check=True)
-            shutil.copy(os.path.join(frames, "f%04d.jpg" % int(FPS * 1.2)), os.path.join(out, post["id"] + "-kapak.jpg"))
+            kapak = os.path.join(out, post["id"] + "-kapak.jpg")
+            if bg:
+                subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", "1.2", "-i", mp4, "-frames:v", "1", "-q:v", "3", kapak], check=True)
+            else:
+                shutil.copy(os.path.join(frames, "f%04d.jpg" % int(FPS * 1.2)), kapak)
             shutil.rmtree(frames, ignore_errors=True)
             print("ok", mp4)
         browser.close()

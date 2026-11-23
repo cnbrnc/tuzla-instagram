@@ -119,7 +119,12 @@ Alanlar (`"template": "reel_yd"`):
 
 **Sinematik stil (deneme; kullanıcı karar vermedi):** İki yeni türde gönderiye `"stil": "sinematik"` yazılırsa aynı kurgu koyu sahne, film greni, yavaş kamera yaklaşması ve fragman havasında sesle üretilir (`assets/reel-ses-bil-sin.wav`, `reel-ses-yd-sin.wav`; `ses_tur.py --stil sinematik`). "Yanlış / doğru"da yuvarlak ürün ağır çekimde döner ve kodla üretilmiş kıvılcım saçar. Kullanıcıya 23 Kasım 2026'da örnek gösterildi. O "sinematik olsun" demeden bu alanı yazma.
 
-**Stok video (henüz kurulmadı):** Kullanıcı Reels'lerde internetten video kesiti kullanılmasını istedi. Yalnız ticari kullanımı serbest stok sitelerinden (Pexels, Pixabay gibi) alınabilir; başkasının YouTube ya da Instagram videosundan kesit alınmaz. Bu ortamdan o sitelere erişim kapalı; kullanıcı alan adlarına izin verince kurulacak.
+**Stok video zemini (deneme; kullanıcı karar vermedi):** Sinematik stilde gönderiye `bg_video` yazılırsa zemine gerçek görüntü konur (`reel.py`; alanlar dosyanın başında). Kullanıcıya 23 Kasım 2026'da iki örnek gösterildi.
+- **Kaynak:** Yalnız ticari kullanımı serbest stok siteleri: Pexels ve Pixabay. Başkasının YouTube, Instagram ya da TikTok videosundan kesit alınmaz.
+- **Erişim:** Kullanıcı `www.pexels.com`, `videos.pexels.com`, `pixabay.com` ve `cdn.pixabay.com` adreslerine izin verdi. Site sayfaları `curl` ile açılmaz; sayfayı WebSearch ile bul, WebFetch ile dosya adresini oku, dosyayı `curl` ile `work/stok/` klasörüne indir.
+- **Depoya yükleme:** Stok dosyasını depoya koyma; lisans tek başına dağıtıma izin vermez. Yalnız bitmiş Reels videosu `posts/` klasörüne girer.
+- **Seçim:** Yüzü tanınan kişi ve okunur marka olmayan, konuyla doğrudan ilgili kesit seç. Gönderiye `kaynak_video` alanında sayfa adresini ve lisansı yaz.
+- Kullanıcı "gerçek görüntülü olsun" demeden kullanma. Haftalık akışa (hafta.py) henüz bağlanmadı.
 
 **Gerçek çekim (henüz kurulmadı):** Kullanıcıya telefonla çekilmiş kısa işlik videolarını robotun kurgulaması önerildi. Kullanıcı deneme çekimi gönderirse kurulacak. O zamana kadar Cuma "Yanlış / doğru" olur.
 

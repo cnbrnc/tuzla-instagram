@@ -56,11 +56,11 @@
 .sin .serit.s2{top:836px;animation:serit .5s ease-in-out 4s both}
 {% endif %}
 {% endblock %}
-{% block fx %}{% if yanlis.image_shape == 'daire' %} data-kivilcim="724,1412,145,1.25"{% endif %}{% endblock %}
+{% block fx %}{% if yanlis.image_shape == 'daire' and not video_zemin %} data-kivilcim="724,1412,145,1.25"{% endif %}{% endblock %}
 {% block sahne %}
 <div class="hook"><div class="k">{{ hook_kicker }}</div><h1 class="disp" data-fit>{% for l in hook %}<span class="l">{{ l }}</span>{% endfor %}</h1></div>
-{% if yanlis.image %}<div class="hookimg"><img src="{{ yanlis.image }}" alt=""{% if yanlis.image_shape == 'daire' %} class="daire"{% endif %}></div>{% endif %}
-{% if stil == 'sinematik' and yanlis.image_shape == 'daire' %}<div class="parca"></div>{% endif %}
+{% if yanlis.image and not video_zemin %}<div class="hookimg"><img src="{{ yanlis.image }}" alt=""{% if yanlis.image_shape == 'daire' %} class="daire"{% endif %}></div>{% endif %}
+{% if stil == 'sinematik' and yanlis.image_shape == 'daire' and not video_zemin %}<div class="parca"></div>{% endif %}
 {% if stil == 'sinematik' %}<div class="serit s1"></div><div class="serit s2"></div>{% endif %}
 <div class="p y">
 <div class="yazi">
