@@ -51,7 +51,8 @@
       "kaynak": "Wavin Ekoplastik PP-R montaj kılavuzu: kaynak sıcaklığı 250–270 °C",
       "stil": "sinematik",
       "muzik": "b",
-      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi"
+      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi",
+      "kanca_kalibi": "kac"
     },
     {
       "key": "atg-maxicut-eldiven",
@@ -292,7 +293,9 @@
       "kaynak": "Bosch: T 118 A ince dişli, 1–3 mm sac için; T 101 B ahşap için",
       "stil": "sinematik",
       "muzik": "c",
-      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi"
+      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi",
+      "kanca_kalibi": "ima",
+      "cift": "yanlis-dogru"
     }
   ]
 }

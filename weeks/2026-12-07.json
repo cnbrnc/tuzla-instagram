@@ -51,7 +51,8 @@
       "kaynak": "Snap-on, Draper, Chicago Pneumatic: darbeli alette yalnız darbeli (impact) lokma kullanılır",
       "stil": "sinematik",
       "muzik": "c",
-      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi"
+      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi",
+      "kanca_kalibi": "hangisi"
     },
     {
       "key": "gedore-lokma-232",
@@ -287,7 +288,9 @@
       "kaynak": "Essentra Components: makaron için sıcak hava tabancası önerilir; açık alev eşit ısıtmaz ve güvenlik riskidir",
       "stil": "sinematik",
       "muzik": "a",
-      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi"
+      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi",
+      "kanca_kalibi": "ima",
+      "cift": "yanlis-dogru"
     }
   ]
 }

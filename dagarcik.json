@@ -1,0 +1,965 @@
+{
+ "aciklama": "Reels ve İpucu için fikir dağarcığı. Kaynağı dagarcik_yaz.py; elle düzenleme. Kullanım ve kurallar: SENARYO.md. dogrulandi boşsa fikir kullanılmadan önce bir kaynakla doğrulanır. Kullanılan fikirler state.json içindeki kullanilan_fikirler listesine yazılır.",
+ "fikirler": [
+  {
+   "id": "bil-sapan-renk",
+   "tur": "bil",
+   "grup": "kaldirma",
+   "meslek": "depo, vinç, nakliye",
+   "kanca_kalibi": "renk-kod",
+   "question_kicker": "YÜK KALDIRMA",
+   "question": [
+    "Gri sapan",
+    "kaç ton taşır?"
+   ],
+   "options": [
+    {
+     "big": "2 TON"
+    },
+    {
+     "big": "4 TON"
+    }
+   ],
+   "answer": 1,
+   "answer_text": "Cevap: 4 ton",
+   "why": [
+    "Sapanın rengi kapasitesini gösterir",
+    "Mor 1, yeşil 2, sarı 3, gri 4, kırmızı 5 ton"
+   ],
+   "urun_ara": "polyester sapan",
+   "kaynak": "EN 1492-1 renk kodu: Certex, Mennens ve LiftKing güvenlik belgeleri",
+   "dogrulandi": "2026-11-23",
+   "not": "Sitedeki sapanın tonajı ile soruyu eşle (4 ton gri, 5 ton kırmızı). Etiketteki değer esastır, bunu açıklamaya yaz."
+  },
+  {
+   "id": "bil-imbus-alyan",
+   "tur": "bil",
+   "grup": "baglanti",
+   "meslek": "makine bakım, kalıpçı",
+   "kanca_kalibi": "kac",
+   "question_kicker": "CIVATA BİLGİSİ",
+   "question": [
+    "M8 imbusa",
+    "kaç alyan?"
+   ],
+   "options": [
+    {
+     "big": "5 mm"
+    },
+    {
+     "big": "6 mm"
+    }
+   ],
+   "answer": 1,
+   "answer_text": "Cevap: 6 mm",
+   "why": [
+    "DIN 912: M6'ya 5, M8'e 6, M10'a 8 mm",
+    "Yanlış ölçü, anahtar yuvasını bozar"
+   ],
+   "urun_ara": "alyan anahtar takımı, imbus cıvata din912",
+   "kaynak": "DIN 912 / ISO 4762 ölçü tablosu (Brighton-Best ürün föyü)",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "id": "bil-tas-tarih",
+   "tur": "bil",
+   "grup": "asindirici",
+   "meslek": "kaynakçı, demirci",
+   "kanca_kalibi": "evet-hayir",
+   "question_kicker": "KESME TAŞI",
+   "question": [
+    "Kesme taşının",
+    "tarihi geçer mi?"
+   ],
+   "options": [
+    {
+     "big": "EVET",
+     "label": "Son kullanma var"
+    },
+    {
+     "big": "HAYIR",
+     "label": "Sonsuza dek dayanır"
+    }
+   ],
+   "answer": 0,
+   "answer_text": "Cevap: Evet",
+   "why": [
+    "Reçine bağlı taşın ömrü en çok 3 yıldır",
+    "Tarih, ortadaki metal halkada yazar"
+   ],
+   "urun_ara": "kesme taşı karbosan, inox kesme taşı",
+   "kaynak": "EN 12413; FEPA ve oSa (osa-abrasives.org) açıklamaları",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "id": "bil-miknatis",
+   "tur": "bil",
+   "grup": "paslanmaz",
+   "meslek": "paslanmaz imalat, denizci",
+   "kanca_kalibi": "efsane",
+   "question_kicker": "PASLANMAZ",
+   "question": [
+    "Mıknatıs tutan",
+    "cıvata paslanmaz mı?"
+   ],
+   "options": [
+    {
+     "big": "OLAMAZ"
+    },
+    {
+     "big": "OLABİLİR"
+    }
+   ],
+   "answer": 1,
+   "answer_text": "Cevap: Olabilir",
+   "why": [
+    "A2 (304) soğuk şekillenince hafif mıknatıslanır",
+    "Mıknatıs tek başına kesin sonuç vermez"
+   ],
+   "urun_ara": "inox cıvata a2",
+   "kaynak": "British Stainless Steel Association (bssa.org.uk): soğuk işlemenin manyetik geçirgenliğe etkisi",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "id": "bil-a2-70",
+   "tur": "bil",
+   "grup": "paslanmaz",
+   "meslek": "paslanmaz imalat",
+   "kanca_kalibi": "ne-demek",
+   "question_kicker": "PASLANMAZ",
+   "question": [
+    "A2-70'teki",
+    "70 ne demek?"
+   ],
+   "options": [
+    {
+     "lines": [
+      "NİKEL",
+      "ORANI"
+     ]
+    },
+    {
+     "lines": [
+      "ÇEKME",
+      "DAYANIMI"
+     ]
+    }
+   ],
+   "answer": 1,
+   "answer_text": "Cevap: Dayanım",
+   "why": [
+    "70: en az 700 MPa çekme dayanımı",
+    "A2 çeliğin türünü gösterir (304)"
+   ],
+   "urun_ara": "inox cıvata a2-70",
+   "kaynak": "ISO 3506-1: özellik sınıfı = çekme dayanımının onda biri",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "id": "bil-s1-s3",
+   "tur": "bil",
+   "grup": "isg",
+   "meslek": "şantiye, depo",
+   "kanca_kalibi": "hangisi",
+   "question_kicker": "İŞ GÜVENLİĞİ",
+   "question": [
+    "Çiviye basınca",
+    "hangisi korur?"
+   ],
+   "options": [
+    {
+     "big": "S1",
+     "label": "iş ayakkabısı"
+    },
+    {
+     "big": "S3",
+     "label": "iş ayakkabısı"
+    }
+   ],
+   "answer": 1,
+   "answer_text": "Cevap: S3",
+   "why": [
+    "S3'te delinmez ara taban vardır",
+    "S1'de yok; S1P'de var (EN ISO 20345)"
+   ],
+   "urun_ara": "s3 ayakkabı, s1 ayakkabı",
+   "kaynak": "EN ISO 20345 sınıf tablosu (Strauss, Cromwell rehberleri)",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "id": "bil-eldiven-kesilme",
+   "tur": "bil",
+   "grup": "isg",
+   "meslek": "sac işleri, cam",
+   "kanca_kalibi": "hangisi",
+   "question_kicker": "İŞ GÜVENLİĞİ",
+   "question": [
+    "Hangi eldiven",
+    "kesilmeye dayanır?"
+   ],
+   "options": [
+    {
+     "big": "A",
+     "label": "EN 388 seviyesi"
+    },
+    {
+     "big": "F",
+     "label": "EN 388 seviyesi"
+    }
+   ],
+   "answer": 1,
+   "answer_text": "Cevap: F",
+   "why": [
+    "Kesilme seviyesi A'dan F'ye doğru artar",
+    "F en yüksek: en az 30 newton"
+   ],
+   "urun_ara": "kesilmez eldiven, atg maxicut",
+   "kaynak": "EN 388:2016 (ISO 13997) seviye tablosu",
+   "dogrulandi": "2026-11-23",
+   "not": "Tanıtılan eldivenin kendi seviyesini ürün sayfasından oku; yazmıyorsa seviye yazma."
+  },
+  {
+   "id": "bil-serit-ucu",
+   "tur": "bil",
+   "grup": "olcu",
+   "meslek": "marangoz, inşaat",
+   "kanca_kalibi": "neden",
+   "question_kicker": "ÖLÇÜ ALETİ",
+   "question": [
+    "Metrenin ucu",
+    "neden oynar?"
+   ],
+   "options": [
+    {
+     "lines": [
+      "BOZUK",
+      "DEMEK"
+     ]
+    },
+    {
+     "lines": [
+      "BİLEREK",
+      "YAPILIR"
+     ]
+    }
+   ],
+   "answer": 1,
+   "answer_text": "Cevap: Bilerek",
+   "why": [
+    "Uç, kendi kalınlığı kadar oynar",
+    "İçten de dıştan da doğru ölçmek için"
+   ],
+   "urun_ara": "şerit metre",
+   "kaynak": "Stanley Tools destek sayfası: uç kancası neden oynar",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "id": "bil-tork-saklama",
+   "tur": "bil",
+   "grup": "el-aleti",
+   "meslek": "oto servis, makine bakım",
+   "kanca_kalibi": "nasil",
+   "question_kicker": "TORK ANAHTARI",
+   "question": [
+    "Tork anahtarı",
+    "nasıl saklanır?"
+   ],
+   "options": [
+    {
+     "lines": [
+      "AYARINDA",
+      "BIRAK"
+     ]
+    },
+    {
+     "lines": [
+      "EN DÜŞÜĞE",
+      "AL"
+     ]
+    }
+   ],
+   "answer": 1,
+   "answer_text": "Cevap: En düşüğe",
+   "why": [
+    "Yay sıkışık kalırsa ayar zamanla kayar",
+    "Skalanın en düşük değerine al, altına inme"
+   ],
+   "urun_ara": "tork anahtarı",
+   "kaynak": "Snap-on ve Park Tool kullanım kılavuzları",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "id": "bil-uc-acisi",
+   "tur": "bil",
+   "grup": "matkap",
+   "meslek": "paslanmaz imalat, tesisat",
+   "kanca_kalibi": "hangisi",
+   "question_kicker": "MATKAP UCU",
+   "question": [
+    "Paslanmaza",
+    "hangi uç açısı?"
+   ],
+   "options": [
+    {
+     "big": "118°"
+    },
+    {
+     "big": "135°"
+    }
+   ],
+   "answer": 1,
+   "answer_text": "Cevap: 135°",
+   "why": [
+    "135° uç kaymaz, daha az baskı ister",
+    "Kobaltlı uç, düşük devir, kesme yağı"
+   ],
+   "urun_ara": "kobalt matkap ucu",
+   "kaynak": "British Stainless Steel Association (bssa.org.uk) delme önerileri; Thürmer matkap SSS",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "id": "bil-testere-disi",
+   "tur": "bil",
+   "grup": "el-aleti",
+   "meslek": "tesisat, demirci",
+   "kanca_kalibi": "nereye",
+   "question_kicker": "EL ALETİ",
+   "question": [
+    "Demir testeresi",
+    "dişi nereye bakar?"
+   ],
+   "options": [
+    {
+     "big": "İLERİ"
+    },
+    {
+     "big": "GERİ"
+    }
+   ],
+   "answer": 0,
+   "answer_text": "Cevap: İleri",
+   "why": [
+    "Demir testeresi iterken keser",
+    "Dişler saptan uzağa, ileri bakmalı"
+   ],
+   "urun_ara": "testere kolu izeltaş",
+   "kaynak": "CCOHS el testeresi güvenlik föyü; RS demir testeresi rehberi",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "id": "bil-flap-kum",
+   "tur": "bil",
+   "grup": "asindirici",
+   "meslek": "kaynakçı, demirci",
+   "kanca_kalibi": "hangisi",
+   "question_kicker": "FLAP DİSK",
+   "question": [
+    "Hangi flap disk",
+    "daha kaba?"
+   ],
+   "options": [
+    {
+     "big": "40",
+     "label": "kum"
+    },
+    {
+     "big": "80",
+     "label": "kum"
+    }
+   ],
+   "answer": 0,
+   "answer_text": "Cevap: 40 kum",
+   "why": [
+    "Kum numarası küçüldükçe tane irileşir",
+    "40 kum kaba talaş, 80 kum ince yüzey"
+   ],
+   "urun_ara": "flap disk",
+   "kaynak": "FEPA P tane numarası",
+   "dogrulandi": null
+  },
+  {
+   "id": "bil-anahtar-m8",
+   "tur": "bil",
+   "grup": "baglanti",
+   "meslek": "makine bakım",
+   "kanca_kalibi": "kac",
+   "question_kicker": "CIVATA BİLGİSİ",
+   "question": [
+    "M8 somuna",
+    "kaç anahtar?"
+   ],
+   "options": [
+    {
+     "big": "13",
+     "label": "mm"
+    },
+    {
+     "big": "14",
+     "label": "mm"
+    }
+   ],
+   "answer": 0,
+   "answer_text": "Cevap: 13 mm",
+   "why": [
+    "DIN 934: M6'ya 10, M8'e 13, M10'a 17 mm",
+    "ISO'da M10 için 16 mm de görülür"
+   ],
+   "urun_ara": "somun din934",
+   "kaynak": "DIN 934 / ISO 4032 anahtar ağzı tablosu",
+   "dogrulandi": null
+  },
+  {
+   "id": "bil-somun-sinif",
+   "tur": "bil",
+   "grup": "baglanti",
+   "meslek": "çelik konstrüksiyon",
+   "kanca_kalibi": "hangisi",
+   "question_kicker": "CIVATA BİLGİSİ",
+   "question": [
+    "8.8 cıvataya",
+    "hangi somun?"
+   ],
+   "options": [
+    {
+     "big": "6",
+     "label": "kalite"
+    },
+    {
+     "big": "8",
+     "label": "kalite"
+    }
+   ],
+   "answer": 1,
+   "answer_text": "Cevap: 8 kalite",
+   "why": [
+    "Somun sınıfı cıvatanın ilk sayısına uyar",
+    "8.8 cıvataya 8, 10.9 cıvataya 10 kalite"
+   ],
+   "urun_ara": "somun 8 kalite",
+   "kaynak": "ISO 898-2",
+   "dogrulandi": null
+  },
+  {
+   "id": "bil-dubel-uc",
+   "tur": "bil",
+   "grup": "insaat",
+   "meslek": "inşaat, montaj",
+   "kanca_kalibi": "kac",
+   "question_kicker": "DÜBEL",
+   "question": [
+    "8'lik dübele",
+    "kaç mm uç?"
+   ],
+   "options": [
+    {
+     "big": "6 mm"
+    },
+    {
+     "big": "8 mm"
+    }
+   ],
+   "answer": 1,
+   "answer_text": "Cevap: 8 mm",
+   "why": [
+    "Dübelin numarası delik çapıdır",
+    "Vida ise genelde 2–3 mm daha incedir"
+   ],
+   "urun_ara": "plastik dübel 8mm",
+   "kaynak": "Dübel üreticisi teknik föyü",
+   "dogrulandi": null
+  },
+  {
+   "id": "bil-tas-devir",
+   "tur": "bil",
+   "grup": "asindirici",
+   "meslek": "kaynakçı",
+   "kanca_kalibi": "kac",
+   "question_kicker": "KESME TAŞI",
+   "question": [
+    "115'lik taş en",
+    "çok kaç devir?"
+   ],
+   "options": [
+    {
+     "big": "6.600",
+     "label": "devir/dk"
+    },
+    {
+     "big": "13.300",
+     "label": "devir/dk"
+    }
+   ],
+   "answer": 1,
+   "answer_text": "Cevap: 13.300",
+   "why": [
+    "Sınır 80 m/sn çevre hızıdır",
+    "Değer taşın üstünde yazar; makineyle karşılaştır"
+   ],
+   "urun_ara": "kesme taşı 115",
+   "kaynak": "EN 12413 işaretleme: 80 m/sn; 115 mm için hesap 13.286 dev/dk",
+   "dogrulandi": null
+  },
+  {
+   "id": "yd-paslanmaz-sarma",
+   "tur": "yd",
+   "cift": "yanlis-dogru",
+   "grup": "paslanmaz",
+   "meslek": "paslanmaz imalat, denizci",
+   "kanca_kalibi": "ima",
+   "hook": [
+    "Paslanmazı",
+    "darbeliyle mi",
+    "sıkıyorsun?"
+   ],
+   "yanlis": {
+    "ne": "Paslanmaz somunu kuru ve hızlı sıkmak",
+    "alt": "Diş ısınır, sarar, kilitlenir"
+   },
+   "dogru": {
+    "ne": "Dişi yağlayıp yavaş sıkmak",
+    "alt": "Elle ya da düşük devirde"
+   },
+   "why": "Paslanmaz diş sürtünmeyle ısınır ve birbirine kaynar. Buna sarma denir; sonu kopan cıvatadır.",
+   "urun_ara": "inox cıvata a2, inox somun",
+   "kaynak": "TWI (twi-global.com) ve Essentra: galling nedir, nasıl önlenir",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "id": "yd-paslanmaz-firca",
+   "tur": "yd",
+   "cift": "yanlis-dogru",
+   "grup": "paslanmaz-bulasma",
+   "meslek": "paslanmaz imalat, kaynakçı",
+   "kanca_kalibi": "ima",
+   "hook": [
+    "Paslanmazı",
+    "demir fırçayla",
+    "mı siliyorsun?"
+   ],
+   "yanlis": {
+    "ne": "Paslanmazı demir tel fırçayla temizlemek",
+    "alt": "Demir tozu bulaşır, pas lekesi yapar"
+   },
+   "dogru": {
+    "ne": "Paslanmaz (inox) tel fırça kullanmak",
+    "alt": "Yalnız paslanmazda kullan"
+   },
+   "why": "Demir parçacığı yüzeye gömülür, nem alınca paslanır. Fırça ve disk paslanmaza ayrı olsun.",
+   "urun_ara": "inox fırça",
+   "kaynak": "British Stainless Steel Association (bssa.org.uk): demir bulaşması ve pas lekesi",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "id": "yd-inox-tas",
+   "tur": "yd",
+   "cift": "yanlis-dogru",
+   "grup": "paslanmaz-bulasma",
+   "meslek": "paslanmaz imalat",
+   "kanca_kalibi": "ima",
+   "hook": [
+    "Demir kestiğin",
+    "taşla inox mu",
+    "kesiyorsun?"
+   ],
+   "yanlis": {
+    "ne": "Demir kesilmiş taşla paslanmaz kesmek",
+    "alt": "Kesim yeri sonradan pas tutar"
+   },
+   "dogru": {
+    "ne": "Paslanmaza ayrı inox kesme taşı",
+    "alt": "Demirsiz (Fe içermeyen) taş"
+   },
+   "why": "Taştaki demir tozu kesim yüzeyine bulaşır. İnox taşı yalnız paslanmazda kullan.",
+   "urun_ara": "inox kesme taşı",
+   "kaynak": "British Stainless Steel Association (bssa.org.uk): demirsiz kesme ve taşlama diskleri kullanılmalı",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "id": "yd-paslanmaz-devir",
+   "tur": "yd",
+   "cift": "yanlis-dogru",
+   "grup": "matkap",
+   "meslek": "paslanmaz imalat, tesisat",
+   "kanca_kalibi": "ima",
+   "hook": [
+    "Paslanmazı",
+    "yüksek devirde",
+    "mi deliyorsun?"
+   ],
+   "yanlis": {
+    "ne": "Yüksek devir, hafif baskıyla delmek",
+    "alt": "Yüzey sertleşir, uç yanar"
+   },
+   "dogru": {
+    "ne": "Düşük devir, sabit baskı, kesme yağı",
+    "alt": "Kobaltlı uç, 135° açı"
+   },
+   "why": "Uç kesmeden sürtünürse paslanmaz sertleşir ve delinmez olur. Baskıyı hiç bırakma.",
+   "urun_ara": "kobalt matkap ucu",
+   "kaynak": "British Stainless Steel Association (bssa.org.uk) delme hız ve ilerleme önerileri; Thürmer",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "id": "yd-eldiven-matkap",
+   "tur": "yd",
+   "cift": "yanlis-dogru",
+   "grup": "isg",
+   "meslek": "torna, freze, atölye",
+   "kanca_kalibi": "ima",
+   "hook": [
+    "Matkapta",
+    "eldivenle mi",
+    "çalışıyorsun?"
+   ],
+   "yanlis": {
+    "ne": "Dönen makinede eldiven takmak",
+    "alt": "Eldiven uca dolanır, eli içeri çeker"
+   },
+   "dogru": {
+    "ne": "Eldivensiz çalış, parçayı mengeneye bağla",
+    "alt": "Kol sıvalı, saç toplu"
+   },
+   "why": "Sütunlu matkap ve tornada eldiven koruma değil tehlikedir. Parçayı elle tutma.",
+   "urun_ara": "matkap mengenesi",
+   "kaynak": "CCOHS sütunlu matkap föyü; OSHA torna rehberi (Harvard EHS)",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "id": "yd-fayans-darbe",
+   "tur": "yd",
+   "cift": "yanlis-dogru",
+   "grup": "matkap",
+   "meslek": "tesisat, montaj, tadilat",
+   "kanca_kalibi": "ima",
+   "hook": [
+    "Fayansı",
+    "darbeli mi",
+    "deliyorsun?"
+   ],
+   "yanlis": {
+    "ne": "Fayansı darbe açıkken delmek",
+    "alt": "Titreşim fayansı çatlatır"
+   },
+   "dogru": {
+    "ne": "Darbeyi kapat, düşük devirde del",
+    "alt": "Fayans ucu, hafif baskı"
+   },
+   "why": "Önce fayansı darbesiz geç; duvara gelince beton ucu tak ve darbeyi aç.",
+   "urun_ara": "seramik matkap ucu, darbeli matkap",
+   "kaynak": "Bosch: fayans nasıl delinir",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "id": "yd-kilavuz-kirma",
+   "tur": "yd",
+   "cift": "yanlis-dogru",
+   "grup": "kilavuz",
+   "meslek": "torna, makine bakım",
+   "kanca_kalibi": "ima",
+   "hook": [
+    "Kılavuzu",
+    "tek seferde mi",
+    "çekiyorsun?"
+   ],
+   "yanlis": {
+    "ne": "Kılavuzu durmadan ileri çevirmek",
+    "alt": "Talaş sıkışır, kılavuz kırılır"
+   },
+   "dogru": {
+    "ne": "Yarım tur ileri, çeyrek tur geri",
+    "alt": "Kesme yağıyla"
+   },
+   "why": "Geri çevirmek talaşı kırar. Kırılan kılavuzu delikten çıkarmak çok zordur.",
+   "urun_ara": "kılavuz pafta seti",
+   "kaynak": "Sheldon Brown kılavuz yazısı; ToolGuyd elle kılavuz çekme",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "id": "yd-teflon-yon",
+   "tur": "yd",
+   "cift": "yanlis-dogru",
+   "grup": "tesisat",
+   "meslek": "tesisatçı",
+   "kanca_kalibi": "ima",
+   "hook": [
+    "Teflonu",
+    "ters yöne mi",
+    "sarıyorsun?"
+   ],
+   "yanlis": {
+    "ne": "Teflonu sıkma yönünün tersine sarmak",
+    "alt": "Sıkarken açılır, sızdırır"
+   },
+   "dogru": {
+    "ne": "Sıkma yönünde, gergin sarmak",
+    "alt": "Dişin ucundan bakınca saat yönü"
+   },
+   "why": "Doğru yönde sarılan bant sıkarken dişe yatar. 3–5 tur yeter.",
+   "urun_ara": "teflon bant",
+   "kaynak": "Toolstation PTFE bant rehberi",
+   "dogrulandi": "2026-11-23",
+   "not": "Sitede teflon bant yoksa urun yazma; boru anahtarıyla eşle."
+  },
+  {
+   "id": "yd-kurbagacik",
+   "tur": "yd",
+   "cift": "yanlis-dogru",
+   "grup": "el-aleti",
+   "meslek": "tesisat, bakım",
+   "kanca_kalibi": "ima",
+   "hook": [
+    "Kurbağacığı",
+    "ters mi",
+    "tutuyorsun?"
+   ],
+   "yanlis": {
+    "ne": "Yükü oynak çeneye bindirmek",
+    "alt": "Çene açılır, somunu sıyırır"
+   },
+   "dogru": {
+    "ne": "Yük sabit çenede olacak şekilde çevirmek",
+    "alt": "Çeneyi somuna tam sıkıştır"
+   },
+   "why": "Sabit çene daha sağlamdır. Anahtarı kendine doğru çek, itme.",
+   "urun_ara": "kurbağacık anahtar",
+   "kaynak": "CCOHS anahtarlar güvenlik föyü",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "id": "yd-tork-sokme",
+   "tur": "yd",
+   "cift": "yanlis-dogru",
+   "grup": "el-aleti",
+   "meslek": "oto servis",
+   "kanca_kalibi": "ima",
+   "hook": [
+    "Tork anahtarıyla",
+    "somun mu",
+    "söküyorsun?"
+   ],
+   "yanlis": {
+    "ne": "Tork anahtarını sökme kolu yapmak",
+    "alt": "Ayarı bozulur"
+   },
+   "dogru": {
+    "ne": "Sökmeye cırcır ya da kol kullanmak",
+    "alt": "Tork anahtarı yalnız son sıkmada"
+   },
+   "why": "Tork anahtarı ölçü aletidir. Sökerken sınırını aşarsın, bir daha doğru sıkmaz.",
+   "urun_ara": "tork anahtarı, cırcır kol",
+   "kaynak": "Park Tool tork anahtarı kullanım ve bakım",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "id": "yd-siperlik",
+   "tur": "yd",
+   "cift": "yanlis-dogru",
+   "grup": "asindirici",
+   "meslek": "kaynakçı, demirci",
+   "kanca_kalibi": "ima",
+   "hook": [
+    "Taşlamanın",
+    "siperini mi",
+    "söktün?"
+   ],
+   "yanlis": {
+    "ne": "Siperliksiz taşlama yapmak",
+    "alt": "Taş kırılırsa parça sana gelir"
+   },
+   "dogru": {
+    "ne": "Siper takılı, tarihi geçmemiş taşla çalışmak",
+    "alt": "Gözlük ve yüz siperi de tak"
+   },
+   "why": "Siperlik kırılan taşın önündeki tek engeldir. Rahat kesmek için sökülmez.",
+   "urun_ara": "kesme taşı, koruyucu gözlük",
+   "kaynak": "FEPA taşlama ve kesme taşı güvenlik föyü",
+   "dogrulandi": "2026-11-23",
+   "sfx_kanca": "taslama"
+  },
+  {
+   "id": "ef-miknatis",
+   "tur": "yd",
+   "cift": "efsane-gercek",
+   "grup": "paslanmaz",
+   "meslek": "paslanmaz imalat",
+   "kanca_kalibi": "efsane",
+   "hook": [
+    "Mıknatıs tuttu,",
+    "paslanmaz",
+    "değil mi?"
+   ],
+   "yanlis": {
+    "ne": "Mıknatıs tutuyorsa paslanmaz değildir",
+    "alt": "Çok duyulan bir söz"
+   },
+   "dogru": {
+    "ne": "A2 cıvata hafif mıknatıs tutabilir",
+    "alt": "Soğuk şekillenirken olur"
+   },
+   "why": "Baş ve diş soğuk dövülürken çelik biraz mıknatıslanır. Paslanmazlığı bundan etkilenmez.",
+   "urun_ara": "inox cıvata a2",
+   "kaynak": "British Stainless Steel Association (bssa.org.uk): soğuk işlemenin manyetik geçirgenliğe etkisi",
+   "dogrulandi": "2026-11-23",
+   "not": "bil-miknatis ile aynı konu; yalnız biri kullanılır."
+  },
+  {
+   "id": "ef-paslanmaz-paslanir",
+   "tur": "yd",
+   "cift": "efsane-gercek",
+   "grup": "paslanmaz-bulasma",
+   "meslek": "paslanmaz imalat, denizci",
+   "kanca_kalibi": "efsane",
+   "hook": [
+    "Paslanmaz",
+    "hiç paslanmaz",
+    "mı?"
+   ],
+   "yanlis": {
+    "ne": "Paslanmaz hiçbir koşulda paslanmaz",
+    "alt": "Adından öyle sanılır"
+   },
+   "dogru": {
+    "ne": "Demir bulaşırsa pas lekesi yapar",
+    "alt": "Temiz tut, demirle temas ettirme"
+   },
+   "why": "Lekenin çoğu paslanmazın kendisi değil, üstüne bulaşan demir tozudur.",
+   "urun_ara": "inox cıvata, inox fırça",
+   "kaynak": "British Stainless Steel Association (bssa.org.uk): demir bulaşması ve pas lekesi",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "id": "ef-serit-ucu",
+   "tur": "yd",
+   "cift": "efsane-gercek",
+   "grup": "olcu",
+   "meslek": "marangoz, inşaat",
+   "kanca_kalibi": "efsane",
+   "hook": [
+    "Metrenin ucu",
+    "oynuyor,",
+    "bozuk mu?"
+   ],
+   "yanlis": {
+    "ne": "Ucu oynayan metre bozuktur",
+    "alt": "Perçini gevşemiş sanılır"
+   },
+   "dogru": {
+    "ne": "Uç bilerek oynar",
+    "alt": "Kendi kalınlığı kadar"
+   },
+   "why": "İçten ölçerken uç içeri, dıştan ölçerken dışarı kayar. Ölçü iki durumda da doğru çıkar.",
+   "urun_ara": "şerit metre",
+   "kaynak": "Stanley Tools destek sayfası",
+   "dogrulandi": "2026-11-23",
+   "not": "bil-serit-ucu ile aynı konu; yalnız biri kullanılır."
+  },
+  {
+   "id": "zk-matkap-uclu-vida",
+   "tur": "yd",
+   "cift": "zor-kolay",
+   "grup": "baglanti",
+   "meslek": "çatı, sac, çelik",
+   "kanca_kalibi": "zor-yol",
+   "hook": [
+    "Sacı önce",
+    "delip sonra",
+    "mı vidalıyorsun?"
+   ],
+   "yanlis": {
+    "ne": "Önce delmek, sonra sac vidası takmak",
+    "alt": "İki uç, iki iş"
+   },
+   "dogru": {
+    "ne": "Matkap uçlu vida: deler ve bağlar",
+    "alt": "DIN 7504, tek seferde"
+   },
+   "why": "Ucundaki matkap sacı deler, diş arkasından tutar. Sac kalınlığı sınırına bak.",
+   "urun_ara": "matkap uçlu vida din7504",
+   "kaynak": "DIN 7504; üreticinin delme kapasitesi tablosu",
+   "dogrulandi": null
+  },
+  {
+   "id": "zk-kademeli-uc",
+   "tur": "yd",
+   "cift": "zor-kolay",
+   "grup": "matkap",
+   "meslek": "elektrikçi, sac işleri",
+   "kanca_kalibi": "zor-yol",
+   "hook": [
+    "Deliği uç",
+    "değiştirerek",
+    "mi büyütüyorsun?"
+   ],
+   "yanlis": {
+    "ne": "Sacda deliği uç değiştirerek büyütmek",
+    "alt": "Her çap için ayrı uç"
+   },
+   "dogru": {
+    "ne": "Kademeli (konik) uçla tek seferde",
+    "alt": "Çapak da alır"
+   },
+   "why": "İnce sacda kademeli uç istediğin çapa kadar iner; delik yuvarlak ve temiz çıkar.",
+   "urun_ara": "kademeli matkap ucu, konik matkap ucu",
+   "kaynak": "Üretici ürün föyü",
+   "dogrulandi": null
+  }
+ ],
+ "ipucu": [
+  {
+   "konu": "Polyester sapan renkleri",
+   "ozet": "EN 1492: mor 1 t, yeşil 2 t, sarı 3 t, gri 4 t, kırmızı 5 t, kahverengi 6 t, mavi 8 t, turuncu 10 t ve üstü. Esas olan mavi etiketteki değerdir; bağlama biçimi kapasiteyi değiştirir.",
+   "urun_ara": "polyester sapan",
+   "kaynak": "Certex, Mennens, LiftKing",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "konu": "İmbus cıvata ve alyan ölçüleri",
+   "ozet": "DIN 912: M3 2,5 · M4 3 · M5 4 · M6 5 · M8 6 · M10 8 · M12 10 mm alyan.",
+   "urun_ara": "alyan anahtar takımı, imbus cıvata",
+   "kaynak": "Brighton-Best DIN 912 / ISO 4762 föyü",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "konu": "Paslanmazla çalışmanın 5 kuralı",
+   "ozet": "Dişi yağla ve yavaş sık (sarma). Fırça ve taş paslanmaza ayrı olsun (demir bulaşması). Düşük devir, sabit baskı, kesme yağıyla del. 135° kobaltlı uç kullan. Mıknatıs testi yanıltır.",
+   "urun_ara": "inox fırça, inox kesme taşı, kobalt matkap ucu",
+   "kaynak": "BSSA, TWI",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "konu": "Kesme taşının etiketi nasıl okunur",
+   "ozet": "En yüksek devir ve çevre hızı (80 m/sn), son kullanma tarihi (metal halkada, üretimden en çok 3 yıl), ölçüler, kullanım kısıtı, EN 12413 işareti.",
+   "urun_ara": "kesme taşı",
+   "kaynak": "FEPA güvenlik föyü, oSa",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "konu": "Eldiven etiketi: EN 388",
+   "ozet": "Dört rakam ve bir harf: aşınma, kesilme (eski test), yırtılma, delinme, kesilme A–F (ISO 13997). F en yüksek.",
+   "urun_ara": "iş eldiveni",
+   "kaynak": "EN 388:2016 açıklamaları",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "konu": "Tork anahtarı bakımı",
+   "ozet": "İş bitince en düşük ayara al. Sökmede kullanma. Düşürme. Yılda bir ayar kontrolü. Klik sesinden sonra çekmeyi bırak.",
+   "urun_ara": "tork anahtarı",
+   "kaynak": "Snap-on ve Park Tool kılavuzları",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "konu": "Elle kılavuz çekmenin 5 adımı",
+   "ozet": "Doğru ön delik, dik başlangıç, kesme yağı, yarım tur ileri çeyrek tur geri, talaşı temizle. (Ön delik çapları 3 Aralık 2026'da işlendi; tekrar etme, yalnız anımsat.)",
+   "urun_ara": "kılavuz pafta seti",
+   "kaynak": "Sheldon Brown, ToolGuyd",
+   "dogrulandi": "2026-11-23"
+  },
+  {
+   "konu": "Fayans nasıl delinir",
+   "ozet": "Darbe kapalı, fayans ya da elmas uç, düşük devir (1.000 dev/dk altı), hafif baskı; fayansı geçince beton ucuna geç.",
+   "urun_ara": "seramik matkap ucu",
+   "kaynak": "Bosch",
+   "dogrulandi": "2026-11-23"
+  }
+ ]
+}

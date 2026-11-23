@@ -51,7 +51,8 @@
       "kaynak": "IEC 60529 (DigiKey özeti): IPX4 her yönden su sıçraması; IPX7 ve IPX8 suya daldırma",
       "stil": "sinematik",
       "muzik": "c",
-      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi"
+      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi",
+      "kanca_kalibi": "evet-hayir"
     },
     {
       "key": "bosch-gsb-18v-65",
@@ -227,7 +228,9 @@
       "kaynak": "Genel ölçüm bilgisi: uzun şerit sarkar; lazer metre tek kişiyle ölçer",
       "stil": "sinematik",
       "muzik": "a",
-      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi"
+      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi",
+      "kanca_kalibi": "ima",
+      "cift": "yanlis-dogru"
     }
   ]
 }

@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """Sinematik Reels için profesyonel ses: stok müzik + stok efektler + kendi imza seslerimiz.
 
-Kullanım: python3 ses_pro.py <bil|yd> <a|b|c> [--taslama]
-Çıktı:    work/ses/pro-<tür>-<varyant>[-taslama].wav (9 sn; yolu yazdırır)
+Kullanım: python3 ses_pro.py <bil|yd> <a|b|c> [--taslama] [--yumusak]
+Çıktı:    work/ses/pro-<tür>-<varyant>[-taslama][-yumusak].wav (9 sn; yolu yazdırır)
 
 - Müzik ve efekt kaynakları assets/ses-kaynak.json dosyasındadır (Pixabay; ticari kullanım serbest,
   Content ID kaydı olmayanlar). Dosyalar work/muzik/ klasörüne indirilir; depoya konmaz.
 - Müzik 120 BPM'e getirilir ve düşüşü tam 4. saniyeye oturtulur: "Bil bakalım"da cevabın, "Yanlış / doğru"da
   DOĞRU damgasının geldiği an. Kesim noktaları şablonlarla aynıdır (reel_bil.html, reel_yd.html).
 - İmza seslerimiz kalır: baştaki "tak" vuruşları, doğru cevapta "ding", yanlışta hata sesi, kapanışta "tınn".
+- --yumusak: "zor yol / kolay yol" kurgusu için; ilk damgada hata sesi (buzzer) çalmaz.
 - --taslama: "Yanlış / doğru" kancasına gerçek taşlama sesi ekler (taş, disk, spiral konularında).
 İndirme ya da üretim başarısız olursa 1 koduyla çıkar; reel.py o zaman kodla üretilmiş sese döner.
 """
@@ -51,7 +52,7 @@ def main():
     a = sys.argv[1:]
     if len(a) < 2 or a[0] not in ("bil", "yd"):
         raise SystemExit(__doc__)
-    tur, varyant, taslama = a[0], a[1], "--taslama" in a
+    tur, varyant, taslama, yumusak = a[0], a[1], "--taslama" in a, "--yumusak" in a
     with open(KAYNAK, encoding="utf-8") as f:
         K = json.load(f)
     mz = K["muzik"]
@@ -115,7 +116,8 @@ def main():
         m.put(S.sub_boom(), 0.0, 0.7)
         koy(fx["whoosh"], 1.5 - vur["whoosh"], 0.6)                            # YANLIŞ paneli
         m.put(S.impact(), 1.5, 0.7)
-        m.put(buzzer(), 2.0, 0.5, send=0.3)                                    # YANLIŞ damgası
+        if not yumusak:
+            m.put(buzzer(), 2.0, 0.5, send=0.3)                                # YANLIŞ damgası (zor-kolay kurgusunda çalmaz)
         m.put(S.hammer(), 2.0, 0.7, send=0.5)
         m.put(S.sub_boom(), 2.0, 0.6)
         for at in (2.5, 2.72, 3.0, 3.22):
@@ -140,7 +142,7 @@ def main():
     mix = stereo + (biz.astype(float) / 32768).T * 0.8
     mix = np.tanh(mix * 0.9) / np.tanh(0.9)
     mix /= np.abs(mix).max() / 0.89
-    yol = os.path.join(CIKTI, "pro-%s-%s%s.wav" % (tur, varyant, "-taslama" if taslama else ""))
+    yol = os.path.join(CIKTI, "pro-%s-%s%s%s.wav" % (tur, varyant, "-taslama" if taslama else "", "-yumusak" if yumusak else ""))
     wavfile.write(yol, SR, (mix.T * 32767).astype(np.int16))
     print(os.path.relpath(yol, ROOT))
 

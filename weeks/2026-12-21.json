@@ -51,7 +51,8 @@
       "kaynak": "Pro Tool Reviews delik testeresi devir tablosu: 67 mm bimetal, paslanmazda yaklaşık 65 dev/dk",
       "stil": "sinematik",
       "muzik": "a",
-      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi"
+      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi",
+      "kanca_kalibi": "hangisi"
     },
     {
       "key": "werka-dijital-kumpas",
@@ -227,7 +228,9 @@
       "kaynak": "ASME B30.16, Harrington ve Kito kullanım kılavuzları: caraskalla yandan çekiş yapılmaz, yük dik kaldırılır",
       "stil": "sinematik",
       "muzik": "b",
-      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi"
+      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi",
+      "kanca_kalibi": "ima",
+      "cift": "yanlis-dogru"
     }
   ]
 }

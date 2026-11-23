@@ -65,7 +65,8 @@
       "kaynak": "Böllhoff HELICOIL: düşük dayanımlı malzemede (alüminyum) yüksek dayanımlı diş",
       "stil": "sinematik",
       "muzik": "a",
-      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi"
+      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi",
+      "kanca_kalibi": "hangisi"
     },
     {
       "key": "scheppach-jenerator",
@@ -318,7 +319,9 @@
       "kaynak": "CPSC, NFPA, ESFI: ısıtıcı doğrudan duvar prizine takılır; uzatma kablosu ve çoklu priz kullanılmaz",
       "stil": "sinematik",
       "muzik": "b",
-      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi"
+      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi",
+      "kanca_kalibi": "ima",
+      "cift": "yanlis-dogru"
     }
   ]
 }

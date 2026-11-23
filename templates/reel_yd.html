@@ -1,4 +1,5 @@
 {% extends "reel_taban.html" %}
+{# cift: panel damgaları. "yanlis-dogru" (varsayılan), "efsane-gercek" ya da "zor-kolay" (çarpı yok, turuncu saat işareti). #}
 {# "Yanlış / doğru" Reels'i: kanca (0–1,5 sn), YANLIŞ paneli (1,5; damga 2,0), DOĞRU paneli (3,5; damga 4,0), neden (5,0), kapanış. #}
 {% block style %}
 @keyframes solIn{from{transform:translateX(-1100px)}to{transform:none}}
@@ -34,6 +35,9 @@
 .p.d .rozet{animation:damga .3s cubic-bezier(.2,.8,.3,1) 4s both}
 .p.y .rozet .daire{background:var(--red)}.p.y .soz{color:var(--red)}
 .p.d .rozet .daire{background:var(--green)}.p.d .soz{color:var(--green)}
+.rozet .soz.uzun{font-size:78px}
+/* "zor yol": hata değil, uzun yol. Kırmızı çarpı yerine turuncu saat. */
+.p.y.zor .rozet .daire{background:#F59E0B}.p.y.zor .soz{color:#F59E0B}
 .p .ne{font-weight:700;font-size:46px;line-height:1.14;color:var(--deep)}
 .p .alt{font-weight:500;font-size:31px;line-height:1.25;color:var(--muted)}
 .carpi{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;animation:damga .3s cubic-bezier(.2,.8,.3,1) 2s both}
@@ -58,29 +62,34 @@
 .sin .p::after{content:"";position:absolute;inset:0;border-radius:40px;pointer-events:none;opacity:0}
 .sin .p.y::after{background:radial-gradient(80% 90% at 30% 50%,rgba(229,56,59,.55),rgba(229,56,59,0));animation:flas .9s ease-out 2s both}
 .sin .p.d::after{background:radial-gradient(80% 90% at 30% 50%,rgba(22,163,74,.55),rgba(22,163,74,0));animation:flas .9s ease-out 4s both}
-.sin .p.y .soz{text-shadow:0 0 40px rgba(229,56,59,.6)}.sin .p.d .soz{text-shadow:0 0 40px rgba(22,163,74,.6)}
+.sin .p.y.zor::after{background:radial-gradient(80% 90% at 30% 50%,rgba(245,158,11,.5),rgba(245,158,11,0))}
+.sin .p.y.zor .soz{text-shadow:0 0 40px rgba(245,158,11,.6)}
+.sin .p.y:not(.zor) .soz{text-shadow:0 0 40px rgba(229,56,59,.6)}.sin .p.d .soz{text-shadow:0 0 40px rgba(22,163,74,.6)}
 .sin .serit.s1{top:286px;animation:serit .5s ease-in-out 2s both}
 .sin .serit.s2{top:836px;animation:serit .5s ease-in-out 4s both}
 {% endif %}
 {% endblock %}
 {% block fx %}{% if yanlis.image_shape == 'daire' and not video_zemin %} data-kivilcim="724,1412,145,1.25"{% endif %}{% endblock %}
 {% block sahne %}
+{% set CIFT = {'yanlis-dogru': ['YANLIŞ', 'DOĞRU'], 'efsane-gercek': ['EFSANE', 'GERÇEK'], 'zor-kolay': ['ZOR YOL', 'KOLAY YOL']} %}
+{% set damga = CIFT[cift or 'yanlis-dogru'] %}{% set zor = (cift == 'zor-kolay') %}
+{% set saat %}<circle cx="28" cy="28" r="19" fill="none" stroke="#fff" stroke-width="7"/><path d="M28 16v13l9 6" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>{% endset %}
 <div class="hook"><div class="k">{{ hook_kicker }}</div><h1 class="disp" data-fit>{% for l in hook %}<span class="l">{{ l }}</span>{% endfor %}</h1></div>
 {% set kanca_gorsel = hook_image or yanlis.image %}{% if kanca_gorsel and not video_zemin %}<div class="hookimg"><img src="{{ kanca_gorsel }}" alt=""{% if not hook_image and yanlis.image_shape == 'daire' %} class="daire"{% endif %}></div>{% endif %}
 {% if stil == 'sinematik' and yanlis.image_shape == 'daire' and not video_zemin %}<div class="parca"></div>{% endif %}
 {% if stil == 'sinematik' %}<div class="serit s1"></div><div class="serit s2"></div>{% endif %}
-<div class="p y{% if not yanlis.image %} duz{% endif %}">
+<div class="p y{% if not yanlis.image %} duz{% endif %}{% if zor %} zor{% endif %}">
 <div class="yazi">
-<div class="rozet"><span class="daire"><svg width="56" height="56" viewBox="0 0 56 56"><path d="M14 14l28 28M42 14L14 42" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/></svg></span><span class="soz disp">YANLIŞ</span></div>
+<div class="rozet"><span class="daire"><svg width="56" height="56" viewBox="0 0 56 56">{% if zor %}{{ saat }}{% else %}<path d="M14 14l28 28M42 14L14 42" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>{% endif %}</svg></span><span class="soz disp{% if damga[0]|length > 6 %} uzun{% endif %}">{{ damga[0] }}</span></div>
 <div class="ne">{{ yanlis.ne }}</div>{% if yanlis.alt %}<div class="alt">{{ yanlis.alt }}</div>{% endif %}
 </div>
 {% if yanlis.image %}<div class="gorsel"><img src="{{ yanlis.image }}" alt=""{% if yanlis.image_shape == 'daire' %} class="daire"{% endif %}>
-<div class="carpi"><svg width="330" height="330" viewBox="0 0 330 330"><path d="M40 40l250 250M290 40L40 290" fill="none" stroke="#E5383B" stroke-width="34" stroke-linecap="round" opacity=".92"/></svg></div></div>
-{% else %}<div class="gorsel"><svg class="isaret" width="230" height="230" viewBox="0 0 330 330"><path d="M40 40l250 250M290 40L40 290" fill="none" stroke="#E5383B" stroke-width="40" stroke-linecap="round" opacity=".92"/></svg></div>{% endif %}
+{% if not zor %}<div class="carpi"><svg width="330" height="330" viewBox="0 0 330 330"><path d="M40 40l250 250M290 40L40 290" fill="none" stroke="#E5383B" stroke-width="34" stroke-linecap="round" opacity=".92"/></svg></div>{% endif %}</div>
+{% else %}<div class="gorsel">{% if zor %}<svg class="isaret" width="230" height="230" viewBox="0 0 56 56"><circle cx="28" cy="28" r="21" fill="none" stroke="#F59E0B" stroke-width="5"/><path d="M28 14v15l10 6" fill="none" stroke="#F59E0B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>{% else %}<svg class="isaret" width="230" height="230" viewBox="0 0 330 330"><path d="M40 40l250 250M290 40L40 290" fill="none" stroke="#E5383B" stroke-width="40" stroke-linecap="round" opacity=".92"/></svg>{% endif %}</div>{% endif %}
 </div>
 <div class="p d{% if not dogru.image %} duz{% endif %}">
 <div class="yazi">
-<div class="rozet"><span class="daire"><svg width="56" height="56" viewBox="0 0 56 56"><path d="M12 29l11 11 21-24" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="soz disp">DOĞRU</span></div>
+<div class="rozet"><span class="daire"><svg width="56" height="56" viewBox="0 0 56 56"><path d="M12 29l11 11 21-24" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="soz disp{% if damga[1]|length > 6 %} uzun{% endif %}">{{ damga[1] }}</span></div>
 <div class="ne">{{ dogru.ne }}</div>{% if dogru.alt %}<div class="alt">{{ dogru.alt }}</div>{% endif %}
 </div>
 {% if dogru.image %}<div class="gorsel"><img src="{{ dogru.image }}" alt=""{% if dogru.image_shape == 'daire' %} class="daire"{% endif %}></div>

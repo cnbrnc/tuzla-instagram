@@ -10,6 +10,7 @@ Türler ve gerekli alanlar:
             isteğe bağlı label), answer (0 ya da 1), answer_text, why (en çok 2 satır), search_code.
   reel_yd   "Yanlış / doğru": tag, hook_kicker, hook (satırlar), yanlis ve dogru ({ne, alt, product_dir}),
             why (isteğe bağlı why_kicker), search_code. Panelde görsel yoksa yazı tüm genişliği kullanır.
+            cift: damga çifti. "yanlis-dogru" (varsayılan), "efsane-gercek", "zor-kolay" (çarpı ve hata sesi yok).
             hook_image: kancada yanlış ürün yerine gösterilecek görsel (isteğe bağlı).
   Yeni türlerde seçenek yazısı iki satırsa big yerine lines = ["ÜST", "ALT"] verilir.
   urun = {marka, ad, ozellik} ve product_dir verilirse kapanış kartında ürünün fotoğrafı ve adı durur (ürün tanıtımı).
@@ -143,6 +144,8 @@ def main():
                 komut = [sys.executable, os.path.join(ROOT, "ses_pro.py"), tur, post["muzik"]]
                 if post.get("sfx_kanca") == "taslama" and tur == "yd":
                     komut.append("--taslama")
+                if post.get("cift") == "zor-kolay" and tur == "yd":
+                    komut.append("--yumusak")
                 r = subprocess.run(komut, capture_output=True, text=True, cwd=ROOT)
                 yol = os.path.join(ROOT, r.stdout.strip().splitlines()[-1]) if r.returncode == 0 and r.stdout.strip() else ""
                 if yol and os.path.exists(yol):

@@ -103,6 +103,8 @@ Alanlar (`"template": "reel_bil"`):
 Alanlar (`"template": "reel_yd"`):
 
 - `tag`: `USTA HATASI`. `hook_kicker`: `SIK YAPILAN HATA`.
+- `cift`: damga çifti (kurgu). Yazılmazsa `yanlis-dogru`. Öbürleri: `efsane-gercek` (EFSANE / GERÇEK) ve `zor-kolay` (ZOR YOL / KOLAY YOL; kırmızı çarpı ve hata sesi yok). Hangisinin ne zaman kullanılacağı ve etiketleri `SENARYO.md` dosyasında (bölüm 3).
+- `kanca_kalibi` ve `fikir`: kancanın kalıbı ve dağarcıktaki kimliği (`SENARYO.md`, bölüm 2 ve 5). "Bil bakalım" öğelerine de yazılır.
 - `hook`: 3 satırlık soru, her satır en fazla 13 karakter. Örnek: "Kesme taşıyla / taşlama mı / yapıyorsun?"
 - `yanlis` ve `dogru`: her biri `{ne, alt, product_url, image_shape}`.
   - `ne`: ne yapıldığı, en fazla 36 karakter.
@@ -123,6 +125,7 @@ Alanlar (`"template": "reel_yd"`):
 - **Görsel:** İki ürünün de fotoğrafı net ve sade zeminli olsun.
 
 **Kapanışta ürün (`urun`):** Amaç bilgi verirken ürünü de tanıtmak. Öğede `url` (ürün sayfası) ve `urun` varsa kapanış kartında "Sitede arat" kodunun altında ürünün fotoğrafı, markası ve adı durur.
+- `kicker` (isteğe bağlı): fotoğrafın yanındaki küçük başlık. Yazılmazsa "BU İŞİN ALETİ". Alet olmayan ürünlerde (cıvata, eldiven) "SİTEMİZDE" yaz.
 - `marka`: en fazla 10 karakter, büyük harf. `ad`: en fazla 30 karakter. `ozellik`: en fazla 36 karakter, " · " ile ayrılmış 2–3 özellik.
 - Fiyat yazılmaz. Soru ya da hata o ürünün işiyle ilgili olsun (somun sıkma → hangi lokma; ısıtıcı → hangi priz).
 - Ürünle ilgisi olmayan genel bilgi sorusunda `urun` yazma.
@@ -340,14 +343,18 @@ Ne yapılacak:
 - Onay mesajının başına 2–4 satır yaz: takipçi sayısı ve değişimi, erişim, en iyi gönderi ve neden iyi olduğu (kaydetme, paylaşım).
 - Bir şey öğrendiysen (örnek: "soru kancalı Reels daha çok izlendi") yeni haftanın metinlerinde uygula.
 - Karne kaydındaki her Reels'e türünü (`tur`: `urun`, `bil`, `yd`), `gecme_orani`, `ort_izlenme` ve `yorum` değerlerini de yaz.
+  - Yeni türlerde `kanca_kalibi` ve (Cuma Reels'inde) `cift` değerini de yaz. `python3 fikir.py karne` bunlardan hangi kalıbın tuttuğunu çıkarır (`SENARYO.md`, bölüm 9).
   - Kıyas noktası, Kasım 2026'nın ürün Reels'leri: geçme oranı %73 ve %90, ortalama izlenme 4,3 ve 1,9 saniye.
   - Yeni türlerin ilk 4 haftası dolunca onay mesajının başına türlere göre kısa bir kıyas yaz. Hangi tür daha iyi tutuyorsa kullanıcıya söyle; karar onundur.
 
 ### 4. İçerik
 1. **Kuyruğu kontrol et:** `reels_bil` ve `reels_yd` listelerinde en az 1'er, `urun_carousel` listesinde en az 1, `ipucu_carousel` listesinde (tekli haftasıysa `tekli` listesinde) en az 1 öğe olmalı.
 2. **Eksikse yenisini yaz ve kuyruğa ekle.** Alan yapısı yukarıdaki gibi olur.
-   - **"Bil bakalım" ve "Yanlış / doğru" Reels'i:** "Biçimler ve alanlar" bölümündeki alanlara ve içerik kurallarına göre yaz.
-     - Her cevabı ve güvenlik bilgisini web aramasıyla doğrula.
+   - **"Bil bakalım" ve "Yanlış / doğru" Reels'i:** Önce `SENARYO.md` dosyasını oku; konu seçimi, kanca kalıpları, kurgular ve kontrol listesi orada.
+     - `python3 fikir.py sec <HAFTA>` ile fikir dağarcığından aday al. Seçtiğin fikrin iskeletini `python3 fikir.py kuyruk <id>` ile yazdır, "YAZ" alanlarını doldur ve kuyruğa ekle.
+     - Alanlar ve teknik sınırlar için "Biçimler ve alanlar" bölümüne bak.
+     - Dağarcıkta `dogrulandi` tarihi olan fikir doğrulanmıştır. Olmayanı ve kendi yazdığın her yeni cevabı, güvenlik bilgisini web aramasıyla doğrula.
+     - Kullandığın her fikrin yerine dağarcığa en az bir yeni, doğrulanmış fikir ekle (`dagarcik_yaz.py`).
      - Ürün gerekiyorsa `work/products.xml` dosyasında `grep` ile bul ve `fetch_product.py` ile stokta olduğuna bak.
      - Aynı konuyu 8 hafta içinde tekrarlama; İpucu kaydırmalısıyla aynı hafta aynı konuyu işleme.
    - **Ürün kaydırmalısı (ve ürün Reels'i):** `python3 pick_products.py 10` ile aday al, sonra seç:
@@ -520,6 +527,8 @@ Kullanıcı 23 Kasım 2026'da Aralık'ın 10 ürün Reels'inin yeni türlere çe
 - `render.py`: Kaydırmalı ve tekli gönderilerin PNG'lerini üretir (1080×1350).
 - `reel.py`: Reels videosunu ve kapağını üretir (üç tür: `reel`, `reel_bil`, `reel_yd`); sesi `assets/reel-ses-*.wav` dosyalarından ekler.
 - `ses.py`: Ürün Reels'inin özgün ses izini üretir. `ses_tur.py`: "Bil bakalım" ve "Yanlış / doğru" seslerini üretir. Yalnız animasyon zamanları değişirse çalıştırılırlar.
+- `SENARYO.md`: Senaryo rehberi (konu bulma, kanca kalıpları, kurgular, yazım kuralları, kontrol listesi).
+- `dagarcik.json`: Fikir dağarcığı; kaynağı `dagarcik_yaz.py`. `fikir.py`: dağarcıktan aday seçer, kuyruk iskeleti yazar, karneden kalıp kıyası çıkarır.
 - `ses_pro.py`: Sinematik Reels'in profesyonel sesini üretir (stok müzik ve efekt); kaynak listesi `assets/ses-kaynak.json`. `reel.py` kendisi çağırır.
 - `taslak/`: Onay bekleyen taslakların içeriği (yalnız metin ve betik; video konmaz).
 - `onizleme.py`: Onay için önizlemeleri üretir; bunlar depoya yüklenmez.

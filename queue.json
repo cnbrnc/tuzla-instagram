@@ -138,6 +138,54 @@
       "konu": "Paslanmaz ve galvanik korozyon",
       "ozet": "Paslanmaz cıvata alüminyum ya da galvanizli parçaya doğrudan temas edince nemde korozyon hızlanabilir; yalıtım pulu, uygun malzeme seçimi.",
       "urun_ara": "naylon pul, inox"
+    },
+    {
+      "konu": "Polyester sapan renkleri",
+      "ozet": "EN 1492: mor 1 t, yeşil 2 t, sarı 3 t, gri 4 t, kırmızı 5 t, kahverengi 6 t, mavi 8 t, turuncu 10 t ve üstü. Esas olan mavi etiketteki değerdir; bağlama biçimi kapasiteyi değiştirir.",
+      "urun_ara": "polyester sapan",
+      "kaynak": "Certex, Mennens, LiftKing (2026-11-23'de doğrulandı)"
+    },
+    {
+      "konu": "İmbus cıvata ve alyan ölçüleri",
+      "ozet": "DIN 912: M3 2,5 · M4 3 · M5 4 · M6 5 · M8 6 · M10 8 · M12 10 mm alyan.",
+      "urun_ara": "alyan anahtar takımı, imbus cıvata",
+      "kaynak": "Brighton-Best DIN 912 / ISO 4762 föyü (2026-11-23'de doğrulandı)"
+    },
+    {
+      "konu": "Paslanmazla çalışmanın 5 kuralı",
+      "ozet": "Dişi yağla ve yavaş sık (sarma). Fırça ve taş paslanmaza ayrı olsun (demir bulaşması). Düşük devir, sabit baskı, kesme yağıyla del. 135° kobaltlı uç kullan. Mıknatıs testi yanıltır.",
+      "urun_ara": "inox fırça, inox kesme taşı, kobalt matkap ucu",
+      "kaynak": "BSSA, TWI (2026-11-23'de doğrulandı)"
+    },
+    {
+      "konu": "Kesme taşının etiketi nasıl okunur",
+      "ozet": "En yüksek devir ve çevre hızı (80 m/sn), son kullanma tarihi (metal halkada, üretimden en çok 3 yıl), ölçüler, kullanım kısıtı, EN 12413 işareti.",
+      "urun_ara": "kesme taşı",
+      "kaynak": "FEPA güvenlik föyü, oSa (2026-11-23'de doğrulandı)"
+    },
+    {
+      "konu": "Eldiven etiketi: EN 388",
+      "ozet": "Dört rakam ve bir harf: aşınma, kesilme (eski test), yırtılma, delinme, kesilme A–F (ISO 13997). F en yüksek.",
+      "urun_ara": "iş eldiveni",
+      "kaynak": "EN 388:2016 açıklamaları (2026-11-23'de doğrulandı)"
+    },
+    {
+      "konu": "Tork anahtarı bakımı",
+      "ozet": "İş bitince en düşük ayara al. Sökmede kullanma. Düşürme. Yılda bir ayar kontrolü. Klik sesinden sonra çekmeyi bırak.",
+      "urun_ara": "tork anahtarı",
+      "kaynak": "Snap-on ve Park Tool kılavuzları (2026-11-23'de doğrulandı)"
+    },
+    {
+      "konu": "Elle kılavuz çekmenin 5 adımı",
+      "ozet": "Doğru ön delik, dik başlangıç, kesme yağı, yarım tur ileri çeyrek tur geri, talaşı temizle. (Ön delik çapları 3 Aralık 2026'da işlendi; tekrar etme, yalnız anımsat.)",
+      "urun_ara": "kılavuz pafta seti",
+      "kaynak": "Sheldon Brown, ToolGuyd (2026-11-23'de doğrulandı)"
+    },
+    {
+      "konu": "Fayans nasıl delinir",
+      "ozet": "Darbe kapalı, fayans ya da elmas uç, düşük devir (1.000 dev/dk altı), hafif baskı; fayansı geçince beton ucuna geç.",
+      "urun_ara": "seramik matkap ucu",
+      "kaynak": "Bosch (2026-11-23'de doğrulandı)"
     }
   ],
   "reels_slotlari": {
@@ -175,7 +223,8 @@
       ],
       "search_code": "10.9 cıvata",
       "kaynak": "ISO 898-1: 8.8 anma çekme dayanımı 800 MPa, 10.9 için 1000 MPa (23 Kasım 2026'da doğrulandı).",
-      "caption": "Cıvata kalite sınıfı: 8.8 mi, 10.9 mu? Hangisi daha sağlam? 🔩\n\nTahminini yorumlara yaz. Cevap videonun sonunda.\n\n📤 Ustana gönder, o da bilsin.\n💾 Kaydet, lazım olur.\n🔎 Sitede “10.9 cıvata” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#cıvata #bağlantıelemanları #makinemühendisi #imalat #tuzlahırdavat"
+      "caption": "Cıvata kalite sınıfı: 8.8 mi, 10.9 mu? Hangisi daha sağlam? 🔩\n\nTahminini yorumlara yaz. Cevap videonun sonunda.\n\n📤 Ustana gönder, o da bilsin.\n💾 Kaydet, lazım olur.\n🔎 Sitede “10.9 cıvata” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#cıvata #bağlantıelemanları #makinemühendisi #imalat #tuzlahırdavat",
+      "kanca_kalibi": "hangisi"
     },
     {
       "key": "bil-a2-a4",
@@ -205,7 +254,8 @@
       ],
       "search_code": "A4 cıvata",
       "kaynak": "ISO 3506: A2 = 304 sınıfı, A4 = 316 sınıfı (molibdenli); klorürlü ortamda A4 önerilir. İlk hafta gönderisinde (A2 mi A4 mü?) doğrulandı.",
-      "caption": "Paslanmaz cıvata: A2 mi, A4 mü? Deniz kenarında hangisi kullanılır? ⚓\n\nTahminini yorumlara yaz. Cevap videonun sonunda.\n\n📤 Tekne ya da sahil işi yapan arkadaşına gönder.\n💾 Kaydet, lazım olur.\n🔎 Sitede “A4 cıvata” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#paslanmazcıvata #bağlantıelemanları #denizcilik #inox #tuzlahırdavat"
+      "caption": "Paslanmaz cıvata: A2 mi, A4 mü? Deniz kenarında hangisi kullanılır? ⚓\n\nTahminini yorumlara yaz. Cevap videonun sonunda.\n\n📤 Tekne ya da sahil işi yapan arkadaşına gönder.\n💾 Kaydet, lazım olur.\n🔎 Sitede “A4 cıvata” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#paslanmazcıvata #bağlantıelemanları #denizcilik #inox #tuzlahırdavat",
+      "kanca_kalibi": "hangisi"
     },
     {
       "key": "bil-m8-516",
@@ -235,7 +285,8 @@
       ],
       "search_code": "M8 cıvata",
       "kaynak": "5/16 inç × 25,4 = 7,94 mm. M8 kaba diş adımı 1,25 mm; 5/16″ UNC inçte 18 diş (yaklaşık 1,41 mm).",
-      "caption": "Metrik mi, inç mi: M8 ile 5/16″ cıvatadan hangisi daha kalın? 🔩\n\nTahminini yorumlara yaz. Cevap videonun sonunda.\n\n📤 Ustana gönder, o da bilsin.\n💾 Kaydet, lazım olur.\n🔎 Sitede “M8 cıvata” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#cıvata #bağlantıelemanları #otoservis #imalat #tuzlahırdavat"
+      "caption": "Metrik mi, inç mi: M8 ile 5/16″ cıvatadan hangisi daha kalın? 🔩\n\nTahminini yorumlara yaz. Cevap videonun sonunda.\n\n📤 Ustana gönder, o da bilsin.\n💾 Kaydet, lazım olur.\n🔎 Sitede “M8 cıvata” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#cıvata #bağlantıelemanları #otoservis #imalat #tuzlahırdavat",
+      "kanca_kalibi": "hangisi"
     }
   ],
   "reels_yd": [
@@ -275,7 +326,9 @@
         "pan": 0.04
       },
       "kaynak_video": "Pixabay, “Sparks, Grind, Grinder” (Fronbondi_Skegs): https://pixabay.com/videos/sparks-grind-grinder-grinding-94063/ · Pixabay İçerik Lisansı (ticari kullanım serbest, kaynak göstermek gerekmez).",
-      "sfx_kanca": "taslama"
+      "sfx_kanca": "taslama",
+      "kanca_kalibi": "ima",
+      "cift": "yanlis-dogru"
     }
   ]
 }

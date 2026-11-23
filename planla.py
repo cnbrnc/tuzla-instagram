@@ -164,6 +164,9 @@ def cmd_durum(hafta, args):
         }
         if post.get("hikaye"):
             entry["hikaye"] = {"saat": post["hikaye"], "metricool": links.get(post["id"] + "-hikaye", "")}
+        if post.get("fikir"):                  # fikir dağarcığından gelen konu (fikir.py bir daha önermez)
+            entry["fikir"] = post["fikir"]
+            state.setdefault("kullanilan_fikirler", []).append({"id": post["fikir"], "hafta": hafta})
         state.setdefault("posted", []).append(entry)
         used.add(post.get("key"))
         if post.get("group"):
