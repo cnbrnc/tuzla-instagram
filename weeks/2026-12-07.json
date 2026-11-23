@@ -6,35 +6,52 @@
       "key": "grangos-somun-sikma",
       "group": "akulu",
       "url": "https://tuzlahirdavat.com.tr/20v-2ah--cift-akulu-somun-sikma-12-360nm-grangos-gcw20-f2",
-      "tag": "OTO SERVİS",
-      "hook_kicker": "KIŞ SORUSU",
-      "hook": [
-        "Kış lastiği",
-        "sırası",
-        "geldi mi?"
-      ],
-      "brand": "GRANGOS",
-      "sku": "GCW20-F2",
-      "title": "360 Nm güç.",
-      "chips": [
-        "360 Nm tork",
-        "Çift akü",
-        "1/2\" lokma uyumlu"
-      ],
       "search_code": "GCW20-F2",
-      "ses": "enerjik",
-      "caption": "Akülü somun sıkma: Grangos GCW20-F2, 360 Nm torkla bijonu ve sıkışmış somunu kolayca sök, tak. 🛞\n\n1/2\" kare uç standart lokmalarla çalışır; kömürsüz motor, çift akü ve LED çalışma ışığı.\n\n📤 Oto servisteki arkadaşına gönder.\n🔎 Sitede “GCW20-F2” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#somunsıkma #grangos #otoservis #lastik #tuzlahırdavat",
+      "caption": "Bil bakalım: darbeli somun sıkmaya hangi lokma takılır, krom mu, siyah mı? 🤔 Tahminini yoruma yaz: A mı, B mi? Cevap videoda.\n\nGrangos GCW20-F2 akülü somun sıkma: 360 Nm tork, kömürsüz motor, çift akü ve LED çalışma ışığı. 1/2\" kare uçlu; bijonu ve sıkışmış somunu kolayca sök, tak. 🛞\n\n📤 Oto servisteki arkadaşına gönder.\n🔎 Sitede “GCW20-F2” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#somunsıkma #grangos #otoservis #lastik #tuzlahırdavat",
       "id": "2026-12-07-grangos-somun-sikma",
       "date": "2026-12-07",
       "format": "reel",
-      "template": "reel",
       "product_dir": "work/grangos-somun-sikma",
       "metricool": {
         "uuid": "-2434990649305119681",
         "ilk_id": 419253120,
         "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-2434990649305119681",
-        "planlandi": "2026-11-06"
-      }
+        "planlandi": "2026-11-06",
+        "guncellendi": "2026-11-23",
+        "son_id": 438519356
+      },
+      "template": "reel_bil",
+      "tag": "BİL BAKALIM",
+      "question_kicker": "OTO SERVİS",
+      "question": [
+        "Darbeliye",
+        "hangi lokma?"
+      ],
+      "options": [
+        {
+          "product_dir": "work/aralik-yeni/destek/krom-lokma2",
+          "label": "Krom lokma"
+        },
+        {
+          "product_dir": "work/aralik-yeni/destek/havali-lokma",
+          "label": "Siyah darbeli lokma"
+        }
+      ],
+      "answer": 1,
+      "answer_text": "Cevap: Siyah lokma",
+      "why": [
+        "Krom lokma serttir; darbede çatlayıp fırlayabilir",
+        "Siyah darbeli lokma tok çeliktir, darbeyi emer"
+      ],
+      "urun": {
+        "marka": "GRANGOS",
+        "ad": "Akülü somun sıkma",
+        "ozellik": "360 Nm · çift akü · 1/2\" kare uç"
+      },
+      "kaynak": "Snap-on, Draper, Chicago Pneumatic: darbeli alette yalnız darbeli (impact) lokma kullanılır",
+      "stil": "sinematik",
+      "muzik": "c",
+      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi"
     },
     {
       "key": "gedore-lokma-232",
@@ -221,35 +238,56 @@
       "key": "bosch-sicak-hava",
       "group": "isi",
       "url": "https://tuzlahirdavat.com.tr/ghg-20-63-sicak-hava-tabancasi-bosch-06012a6200",
-      "tag": "ELEKTRİKLİ ALET",
-      "hook_kicker": "USTA SORUSU",
-      "hook": [
-        "Boya sökmek",
-        "kaç saat",
-        "sürüyor?"
-      ],
-      "brand": "BOSCH",
-      "sku": "GHG 20-63",
-      "title": "630 °C'ye kadar.",
-      "chips": [
-        "50–630 °C",
-        "2000 W",
-        "Aşırı ısınma koruması"
-      ],
       "search_code": "GHG 20-63",
-      "ses": "atolye",
-      "caption": "Sıcak hava tabancası: Bosch GHG 20-63, 50–630 °C ayarıyla boya sökmeden makarona kadar işini görür. 🔥\n\n2000 W güç, 3 kademeli hava akışı, aşırı ısınmada otomatik kesme ve soğutma.\n\n💾 Kaydet, lazım olur.\n🔎 Sitede “GHG 20-63” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#sıcakhavatabancası #bosch #usta #elaletleri #tuzlahırdavat",
+      "caption": "Makaronu çakmakla mı daraltıyorsun? ❌ Sık yapılan hata.\n\nAçık alev makaronu yakar, is bırakır, kabloyu zedeler. Sıcak hava her yandan eşit ısıtır, makaron düzgün oturur.\n\nBosch GHG 20-63 sıcak hava tabancası: 50–630 °C ayar, 2000 W güç, 3 kademeli hava akışı, aşırı ısınmada otomatik kesme. 🔥\n\n💾 Kaydet, lazım olur.\n🔎 Sitede “GHG 20-63” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#sıcakhavatabancası #bosch #usta #elaletleri #tuzlahırdavat",
       "id": "2026-12-11-bosch-sicak-hava",
       "date": "2026-12-11",
       "format": "reel",
-      "template": "reel",
       "product_dir": "work/bosch-sicak-hava",
       "metricool": {
         "uuid": "-570407006500403085",
         "ilk_id": 419253415,
         "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-570407006500403085",
-        "planlandi": "2026-11-06"
-      }
+        "planlandi": "2026-11-06",
+        "guncellendi": "2026-11-23",
+        "son_id": 438519399
+      },
+      "template": "reel_yd",
+      "tag": "USTA HATASI",
+      "hook_kicker": "SIK YAPILAN HATA",
+      "hook": [
+        "Makaronu",
+        "çakmakla mı",
+        "daraltıyorsun?"
+      ],
+      "yanlis": {
+        "ne": "Makaronu çakmak aleviyle daraltmak",
+        "alt": "Alev yakar, is bırakır, kabloyu zedeler"
+      },
+      "dogru": {
+        "ne": "Sıcak hava tabancasıyla daraltmak",
+        "alt": "Bosch GHG 20-63",
+        "product_dir": "work/bosch-sicak-hava"
+      },
+      "why_kicker": "Neden?",
+      "why": "Sıcak hava makaronu her yandan eşit ısıtır; makaron yanmadan, düzgün oturur.",
+      "urun": {
+        "marka": "BOSCH",
+        "ad": "Sıcak hava tabancası GHG 20-63",
+        "ozellik": "50–630 °C · 2000 W"
+      },
+      "bg_video": {
+        "file": "work/stok/pexels-6079664.mp4",
+        "url": "https://videos.pexels.com/video-files/6079664/6079664-uhd_2560_1440_24fps.mp4",
+        "start": 2.0,
+        "x": 0.42,
+        "pan": 0.02
+      },
+      "kaynak_video": "https://www.pexels.com/video/6079664/ (Pexels lisansı)",
+      "kaynak": "Essentra Components: makaron için sıcak hava tabancası önerilir; açık alev eşit ısıtmaz ve güvenlik riskidir",
+      "stil": "sinematik",
+      "muzik": "a",
+      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi"
     }
   ]
 }

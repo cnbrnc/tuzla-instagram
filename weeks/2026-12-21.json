@@ -6,35 +6,52 @@
       "key": "bosch-panc-67",
       "group": "panc",
       "url": "https://tuzlahirdavat.com.tr/67mm-sheet-metal-panc-pro-sm-pc-plus-hc-bosch-2608594461",
-      "tag": "ELEKTRİK PANOSU",
-      "hook_kicker": "ELEKTRİKÇİYE SORU",
-      "hook": [
-        "Panoya",
-        "temiz delik",
-        "lazım mı?"
-      ],
-      "brand": "BOSCH",
-      "sku": "PRO SHEET METAL",
-      "title": "Temiz delik.",
-      "chips": [
-        "67 mm çap",
-        "Bimetal kobalt",
-        "Sacda güvenli kesim"
-      ],
       "search_code": "panç 67 mm",
-      "ses": "atolye",
-      "caption": "Panç delik testeresi: Bosch PRO Sheet Metal 67 mm ile panoya, saca, paslanmaz panele buat deliğini temiz aç. ⚡\n\nKobalt alaşımlı bimetal, dalma yapmadan emniyetli kesim, Power Change Plus bağlantı.\n\n📤 Elektrikçi arkadaşına gönder.\n🔎 Sitede “panç 67 mm” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#panç #bosch #elektrikçi #elektrikpanosu #tuzlahırdavat",
+      "caption": "Bil bakalım: panç metalde yüksek devirde mi, düşük devirde mi kullanılır? 🤔 Tahminini yoruma yaz: A mı, B mi? Cevap videoda.\n\nBosch PRO Sheet Metal 67 mm panç: kobalt alaşımlı bimetal, Power Change Plus bağlantı. Panoya, saca, paslanmaz panele buat deliğini temiz aç. ⚡\n\n📤 Elektrikçi arkadaşına gönder.\n🔎 Sitede “panç 67 mm” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#panç #bosch #elektrikçi #elektrikpanosu #tuzlahırdavat",
       "id": "2026-12-21-bosch-panc-67",
       "date": "2026-12-21",
       "format": "reel",
-      "template": "reel",
       "product_dir": "work/bosch-panc-67",
       "metricool": {
         "uuid": "9081701053126887280",
         "ilk_id": 419254039,
         "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=9081701053126887280",
-        "planlandi": "2026-11-06"
-      }
+        "planlandi": "2026-11-06",
+        "guncellendi": "2026-11-23",
+        "son_id": 438519920
+      },
+      "template": "reel_bil",
+      "tag": "BİL BAKALIM",
+      "question_kicker": "ELEKTRİK PANOSU",
+      "question": [
+        "Panç metalde",
+        "hangi devirde?"
+      ],
+      "options": [
+        {
+          "big": "YÜKSEK",
+          "label": "devir"
+        },
+        {
+          "big": "DÜŞÜK",
+          "label": "devir"
+        }
+      ],
+      "answer": 1,
+      "answer_text": "Cevap: Düşük devir",
+      "why": [
+        "Yüksek devir dişi yakar, panç çabuk körelir",
+        "Paslanmazda düşük devir ve kesme yağı kullan"
+      ],
+      "urun": {
+        "marka": "BOSCH",
+        "ad": "Panç delik testeresi 67 mm",
+        "ozellik": "Bimetal kobalt · sac ve paslanmaz"
+      },
+      "kaynak": "Pro Tool Reviews delik testeresi devir tablosu: 67 mm bimetal, paslanmazda yaklaşık 65 dev/dk",
+      "stil": "sinematik",
+      "muzik": "a",
+      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi"
     },
     {
       "key": "werka-dijital-kumpas",
@@ -161,35 +178,56 @@
       "key": "grangos-caraskal",
       "group": "kaldirma",
       "url": "https://tuzlahirdavat.com.tr/1ton-5mt-caraskal-koseli-grangos",
-      "tag": "YÜK KALDIRMA",
-      "hook_kicker": "ATÖLYE SORUSU",
-      "hook": [
-        "1 tonluk yük",
-        "elle mi",
-        "kalkar?"
-      ],
-      "brand": "GRANGOS",
-      "sku": "GRCK15",
-      "title": "Zincirle kaldır.",
-      "chips": [
-        "1 ton kapasite",
-        "5 m kaldırma",
-        "Elektrik gerekmez"
-      ],
       "search_code": "GRCK15",
-      "ses": "derin",
-      "caption": "Zincirli caraskal: Grangos GRCK15 ile 1 tonluk yükü 5 metreye kadar elle kaldır. ⛓️\n\nElektrik gerekmez; atölyede, depoda ve şantiyede motor, kalıp ve makine parçası kaldırmak için.\n\n📤 Atölyesi olan arkadaşına gönder.\n🔎 Sitede “GRCK15” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#caraskal #grangos #atölye #yükkaldırma #tuzlahırdavat",
+      "caption": "Caraskalla yükü yandan mı çekiyorsun? ❌ Sık yapılan hata.\n\nCaraskal dik kaldırmak için yapılır. Yandan çekiş zinciri ve gövdeyi zorlar, yük savrulabilir. Kancayı yükün tam üstüne al, dik kaldır.\n\nGrangos GRCK15 zincirli caraskal: 1 ton kapasite, 5 m kaldırma; elektrik gerekmez. ⛓️\n\n📤 Atölyesi olan arkadaşına gönder.\n🔎 Sitede “GRCK15” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#caraskal #grangos #atölye #yükkaldırma #tuzlahırdavat",
       "id": "2026-12-25-grangos-caraskal",
       "date": "2026-12-25",
       "format": "reel",
-      "template": "reel",
       "product_dir": "work/grangos-caraskal",
       "metricool": {
         "uuid": "3298595060733857328",
         "ilk_id": 419254249,
         "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=3298595060733857328",
-        "planlandi": "2026-11-06"
-      }
+        "planlandi": "2026-11-06",
+        "guncellendi": "2026-11-23",
+        "son_id": 438519978
+      },
+      "template": "reel_yd",
+      "tag": "USTA HATASI",
+      "hook_kicker": "SIK YAPILAN HATA",
+      "hook": [
+        "Caraskalla",
+        "yandan mı",
+        "çekiyorsun?"
+      ],
+      "yanlis": {
+        "ne": "Yükü yandan, çapraz çekmek",
+        "alt": "Zincir ve gövde zorlanır, yük savrulur"
+      },
+      "dogru": {
+        "ne": "Kancayı yükün tam üstüne alıp dik kaldırmak",
+        "alt": "Grangos GRCK15, 1 ton",
+        "product_dir": "work/grangos-caraskal"
+      },
+      "why_kicker": "Neden?",
+      "why": "Caraskal dik kaldırmak için yapılır. Yandan çekiş zinciri ve gövdeyi zorlar; yük savrulabilir.",
+      "urun": {
+        "marka": "GRANGOS",
+        "ad": "Zincirli caraskal GRCK15",
+        "ozellik": "1 ton · 5 m kaldırma"
+      },
+      "bg_video": {
+        "file": "work/stok/pexels-6160043.mp4",
+        "url": "https://videos.pexels.com/video-files/6160043/6160043-uhd_2560_1440_24fps.mp4",
+        "start": 10.0,
+        "x": 0.52,
+        "pan": 0.02
+      },
+      "kaynak_video": "https://www.pexels.com/video/6160043/ (Pexels lisansı)",
+      "kaynak": "ASME B30.16, Harrington ve Kito kullanım kılavuzları: caraskalla yandan çekiş yapılmaz, yük dik kaldırılır",
+      "stil": "sinematik",
+      "muzik": "b",
+      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi"
     }
   ]
 }

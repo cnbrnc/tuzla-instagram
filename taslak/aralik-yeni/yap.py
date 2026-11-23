@@ -70,7 +70,7 @@ YENI = {
     urun={"marka": "GRANGOS", "ad": "Akülü somun sıkma", "ozellik": "360 Nm · çift akü · 1/2\" kare uç"},
     kaynak="Snap-on, Draper, Chicago Pneumatic: darbeli alette yalnız darbeli (impact) lokma kullanılır",
     giris="Bil bakalım: darbeli somun sıkmaya hangi lokma takılır, krom mu, siyah mı? 🤔 " + BIL
-          + "\n\nGrangos GCW20-F2 akülü somun sıkma: 360 Nm tork, kömürsüz motor, çift akü ve LED çalışma ışığı. 1/2\" kare uç; siyah darbeli lokmayla kullan. 🛞"),
+          + "\n\nGrangos GCW20-F2 akülü somun sıkma: 360 Nm tork, kömürsüz motor, çift akü ve LED çalışma ışığı. 1/2\" kare uçlu; bijonu ve sıkışmış somunu kolayca sök, tak. 🛞"),
  "2026-12-11-bosch-sicak-hava": dict(template="reel_yd", tag="USTA HATASI", hook_kicker="SIK YAPILAN HATA",
     hook=["Makaronu", "çakmakla mı", "daraltıyorsun?"],
     yanlis={"ne": "Makaronu çakmak aleviyle daraltmak", "alt": "Alev yakar, is bırakır, kabloyu zedeler"},
@@ -128,7 +128,7 @@ YENI = {
     urun={"marka": "VARTA", "ad": "Şarjlı el feneri F30R", "ozellik": "700 lümen · powerbank · IPX4"},
     kaynak="IEC 60529 (DigiKey özeti): IPX4 her yönden su sıçraması; IPX7 ve IPX8 suya daldırma",
     giris="Bil bakalım: IPX4 fener suya girer mi? 🤔 " + BIL
-          + "\n\nVARTA Night Cutter F30R: 700 lümen ışık ve telefonu şarj eden 2600 mAh powerbank bir arada. Alüminyum gövde, 2 metreden düşme testli; IPX4 ile yağmurda ve su sıçramasında çalışır. 🔦"),
+          + "\n\nVARTA Night Cutter F30R: 700 lümen ışık ve telefonu şarj eden 2600 mAh powerbank bir arada. Alüminyum gövde, 2 metreden düşme testli; 24 saate kadar kullanım. 🔦"),
  "2027-01-01-klpro-lazer-metre": dict(template="reel_yd", tag="USTA HATASI", hook_kicker="SIK YAPILAN HATA",
     hook=["Uzun mesafeyi", "şeritle mi", "ölçüyorsun?"],
     yanlis={"ne": "Uzun mesafeyi şerit metreyle tek başına ölçmek", "alt": "Şerit sarkar, ölçü şaşar", "product_dir": D + "serit"},
@@ -158,7 +158,7 @@ for f in sorted(glob.glob(os.path.join(ROOT, "weeks", "*.json"))):
         y = dict(y)
         q = {k: v for k, v in p.items() if k not in SIL}
         satir = p["caption"].split("\n")
-        k = next(n for n, s in enumerate(satir) if s[:1] in "💾📤")       # çağrı satırından sona kadar aynı kalır
+        k = next(n for n, s in enumerate(satir) if s and s[0] in "💾📤")       # çağrı satırından sona kadar aynı kalır
         q["caption"] = y.pop("giris") + "\n\n" + "\n".join(satir[k:])
         q.update(y, stil="sinematik", muzik="abc"[i % 3])
         i += 1

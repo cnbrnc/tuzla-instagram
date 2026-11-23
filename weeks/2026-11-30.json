@@ -6,35 +6,66 @@
       "key": "volkel-helikoil",
       "group": "helikoil",
       "url": "https://tuzlahirdavat.com.tr/m8x125-helikoil-tamir-seti-volkel-v-04012",
-      "tag": "DİŞ TAMİRİ",
-      "hook_kicker": "TAMİR SORUSU",
-      "hook": [
-        "Diş mi",
-        "sıyırdı?",
-        "Atma, onar."
-      ],
-      "brand": "VÖLKEL",
-      "sku": "V-04012",
-      "title": "Dişi yenile.",
-      "chips": [
-        "M8 × 1,25",
-        "Orijinal ölçüye dönüş",
-        "Set halinde"
-      ],
       "search_code": "V-04012",
-      "caption": "Helikoil diş tamir seti: sıyrılan M8 dişi, parçayı değiştirmeden orijinal ölçüsüne geri getir. 🛠️\n\nVölkel V-04012, M8×1,25 normal diş için set halinde. Alüminyum blokta, motor gövdesinde, makine parçasında işe yarar.\n\n💾 Kaydet, lazım olur.\n🔎 Sitede “V-04012” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#helikoil #völkel #otoservis #diştamiri #tuzlahırdavat",
-      "ses": "atolye",
+      "caption": "Bil bakalım: alüminyumda hangisi daha sağlam, parçaya açılan orijinal diş mi, helikoil diş mi? 🤔 Tahminini yoruma yaz: A mı, B mi? Cevap videoda.\n\nDiş sıyırdıysa parçayı atma: Völkel V-04012 helikoil seti M8×1,25 dişi orijinal ölçüsüne geri getirir. Alüminyum blokta, motor gövdesinde, makine parçasında işe yarar. 🛠️\n\n💾 Kaydet, lazım olur.\n🔎 Sitede “V-04012” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#helikoil #völkel #otoservis #diştamiri #tuzlahırdavat",
       "id": "2026-11-30-volkel-helikoil",
       "date": "2026-11-30",
       "format": "reel",
-      "template": "reel",
       "product_dir": "work/volkel-helikoil",
       "metricool": {
         "uuid": "3999527185590994202",
         "ilk_id": 419250578,
         "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=3999527185590994202",
-        "planlandi": "2026-11-06"
-      }
+        "planlandi": "2026-11-06",
+        "guncellendi": "2026-11-23",
+        "son_id": 438518594
+      },
+      "template": "reel_bil",
+      "tag": "BİL BAKALIM",
+      "question_kicker": "DİŞ TAMİRİ",
+      "question": [
+        "Alüminyumda",
+        "hangisi sağlam?"
+      ],
+      "options": [
+        {
+          "lines": [
+            "ORİJİNAL",
+            "DİŞ"
+          ],
+          "label": "Parçaya açılan diş"
+        },
+        {
+          "lines": [
+            "HELİKOİL",
+            "DİŞ"
+          ],
+          "label": "Çelik helisli diş"
+        }
+      ],
+      "answer": 1,
+      "answer_text": "Cevap: Helikoil",
+      "why": [
+        "Çelik helis yükü daha geniş alana yayar",
+        "Yumuşak alüminyumda diş daha zor sıyrılır"
+      ],
+      "urun": {
+        "marka": "VÖLKEL",
+        "ad": "Helikoil diş tamir seti",
+        "ozellik": "M8 × 1,25 · set halinde"
+      },
+      "bg_video": {
+        "file": "work/stok/pexels-4941356.mp4",
+        "url": "https://videos.pexels.com/video-files/4941356/4941356-hd_1920_1080_25fps.mp4",
+        "start": 0.0,
+        "x": 0.56,
+        "pan": 0.03
+      },
+      "kaynak_video": "https://www.pexels.com/video/4941356/ (Pexels lisansı)",
+      "kaynak": "Böllhoff HELICOIL: düşük dayanımlı malzemede (alüminyum) yüksek dayanımlı diş",
+      "stil": "sinematik",
+      "muzik": "a",
+      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi"
     },
     {
       "key": "scheppach-jenerator",
@@ -237,35 +268,57 @@
       "key": "crommac-isitici",
       "group": "isitma",
       "url": "https://tuzlahirdavat.com.tr/elektrikli-fanli-isitici-crm3kw-small",
-      "tag": "KIŞ HAZIRLIĞI",
-      "hook_kicker": "KIŞ SORUSU",
-      "hook": [
-        "Dükkân",
-        "buz gibi",
-        "mi?"
-      ],
-      "brand": "CROMMAC",
-      "sku": "CRM3KW",
-      "title": "Hızlı ısıt.",
-      "chips": [
-        "150 m³/sa hava",
-        "Devrilme emniyeti",
-        "Taşınabilir, 4 kg"
-      ],
       "search_code": "CRM3KW",
-      "ses": "derin",
-      "caption": "Fanlı ısıtıcı: Crommac CRM3KW ile dükkânı, ofisi, kış bahçesini hızla ısıt. 🔥\n\nSaatte 150 m³ hava akışı, devrilme emniyet sistemi ve 4 kg'lık taşınabilir gövde.\n\n📤 Üşüyen arkadaşına gönder.\n🔎 Sitede “CRM3KW” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#ısıtıcı #crommac #ofis #hırdavat #tuzlahırdavat",
+      "caption": "Isıtıcıyı uzatma kablosuna mı takıyorsun? ❌ Sık yapılan hata.\n\nGüçlü ısıtıcı yüksek akım çeker; ince ya da makaraya sarılı uzatma kablosu ısınır. Doğrusu: fişi doğrudan duvar prizine tak.\n\nCrommac CRM3KW fanlı ısıtıcı: saatte 150 m³ hava akışı, devrilme emniyeti ve 4 kg'lık taşınabilir gövde. 🔥\n\n📤 Üşüyen arkadaşına gönder.\n🔎 Sitede “CRM3KW” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#ısıtıcı #crommac #ofis #hırdavat #tuzlahırdavat",
       "id": "2026-12-04-crommac-isitici",
       "date": "2026-12-04",
       "format": "reel",
-      "template": "reel",
       "product_dir": "work/crommac-isitici",
       "metricool": {
         "uuid": "-4972109523897792242",
         "ilk_id": 419252939,
         "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-4972109523897792242",
-        "planlandi": "2026-11-06"
-      }
+        "planlandi": "2026-11-06",
+        "guncellendi": "2026-11-23",
+        "son_id": 438519324
+      },
+      "template": "reel_yd",
+      "tag": "USTA HATASI",
+      "hook_kicker": "SIK YAPILAN HATA",
+      "hook": [
+        "Isıtıcıyı",
+        "uzatmaya mı",
+        "takıyorsun?"
+      ],
+      "yanlis": {
+        "ne": "Isıtıcıyı uzatma kablosuna ya da çoklu prize takmak",
+        "alt": "Kablo ısınır, priz erir",
+        "product_dir": "work/aralik-yeni/destek/uzatma"
+      },
+      "dogru": {
+        "ne": "Fişi doğrudan duvar prizine takmak",
+        "alt": "Crommac CRM3KW fanlı ısıtıcı",
+        "product_dir": "work/crommac-isitici"
+      },
+      "why_kicker": "Neden?",
+      "why": "Güçlü ısıtıcı yüksek akım çeker. İnce ya da makaraya sarılı kablo ısınır, yangına yol açabilir.",
+      "urun": {
+        "marka": "CROMMAC",
+        "ad": "Fanlı ısıtıcı CRM3KW",
+        "ozellik": "150 m³/sa hava · devrilme emniyeti"
+      },
+      "bg_video": {
+        "file": "work/stok/pexels-4873237.mp4",
+        "url": "https://videos.pexels.com/video-files/4873237/4873237-hd_1920_1080_30fps.mp4",
+        "start": 1.5,
+        "x": 0.72,
+        "pan": 0.0
+      },
+      "kaynak_video": "https://www.pexels.com/video/4873237/ (Pexels lisansı)",
+      "kaynak": "CPSC, NFPA, ESFI: ısıtıcı doğrudan duvar prizine takılır; uzatma kablosu ve çoklu priz kullanılmaz",
+      "stil": "sinematik",
+      "muzik": "b",
+      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi"
     }
   ]
 }

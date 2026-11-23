@@ -452,19 +452,15 @@ Kullanıcı Aralık 2026'da askerde. Bu yüzden 5 haftanın 20 gönderisi önced
 | 27 Aralık | 2026-12-28 | |
 | 3 Ocak 2027 | 2027-01-04 | Normal düzen geri döner ve onay yine şarttır. Reels'ler yeni türlerdedir: Pazartesi "Bil bakalım", Cuma "Yanlış / doğru"; ilk öğeler kuyrukta hazır. Kaydırmalı listeleri boşalmış olur; 4. adımdaki kurallarla yeni öğe yaz. Onay mesajında Reels türünün değiştiğini bir cümleyle hatırlat. Mesajın başına hikaye denemesinin sonucunu da yaz (Biçimler → Hikaye denemesi). |
 
-### Aralık Reels'leri: yeni biçim taslağı (23 Kasım 2026, ONAY BEKLİYOR)
+### Aralık Reels'leri yeni biçimde (23 Kasım 2026'da onaylandı ve uygulandı)
 
-Kullanıcı 23 Kasım 2026'da Aralık'ın 10 ürün Reels'inin de yeni türlere çevrilmesini istedi. Taslak hazırlandı ve videolar kullanıcıya sohbette gönderildi. **Kullanıcı açıkça onaylayana kadar Metricool'daki gönderiler eski hâliyle kalır ve yayınlanır.** Pazar çalışması bu taslağa dokunmaz.
+Kullanıcı 23 Kasım 2026'da Aralık'ın 10 ürün Reels'inin yeni türlere çevrilmesini istedi, videoları sohbette izledi ve onayladı. Aynı gün 10 gönderi Metricool'da güncellendi.
 
-- **Taslak:** `taslak/aralik-yeni/yap.py` (içerik) ve `taslak/aralik-yeni/aralik-yeni.json` (çıktı). Videolar depoda yok.
-- **Düzen:** Pazartesi Reels'i "Bil bakalım", Cuma Reels'i "Yanlış / doğru" oldu. Hepsi sinematik stilde, profesyonel sesle. Kapanış kartında ürünün fotoğrafı ve adı var (`urun`). Kimlik, tarih, saat, ürün ve aranacak kod aynı.
-- **Onay gelirse (yalnız kullanıcının olduğu oturumda):**
-  1. `python3 taslak/aralik-yeni/yap.py --indir`, sonra `python3 taslak/aralik-yeni/yap.py`, sonra `python3 reel.py taslak/aralik-yeni/aralik-yeni.json out/aralik-yeni`.
-  2. Her videoyu ve kapağını `posts/<HAFTA>/` klasörüne eski dosyanın adıyla kopyala. Commit et ve push et.
-  3. `getScheduledPosts` ile gönderiyi `uuid` üzerinden bul (`weeks/<HAFTA>.json` → `metricool.uuid`). `updateScheduledPost` ile yalnız videoyu (jsDelivr adresi, yeni SHA) ve açıklamayı değiştir; tarih ve saat aynı kalır.
-  4. `weeks/<HAFTA>.json` içindeki öğeyi taslaktaki öğeyle değiştir; `metricool` alanını koru. `getScheduledPosts` ile kontrol et.
-  5. Bu başlığı "uygulandı" diye güncelle ve `state.json` notuna yaz.
-- **Kullanıcı düzeltme isterse:** `yap.py` içindeki öğeyi düzelt, yeniden üret, videoyu yine sohbette gönder.
+- **Düzen:** Pazartesi Reels'i "Bil bakalım", Cuma Reels'i "Yanlış / doğru". Hepsi sinematik stilde, profesyonel sesle; kapanış kartında ürünün fotoğrafı ve adı var. Tarih, saat, `uuid`, ürün ve aranacak kod aynı kaldı.
+- **Dosyalar:** `weeks/2026-11-30.json` … `weeks/2026-12-28.json` içindeki Reels öğeleri yeni türde; `metricool.guncellendi` ve `metricool.son_id` alanları eklendi. Videolar `posts/<HAFTA>/` klasöründe eski adlarıyla duruyor.
+- **İçerik kaynağı:** `taslak/aralik-yeni/yap.py`. Yeniden üretmek gerekirse: `python3 taslak/aralik-yeni/yap.py --indir`, `python3 taslak/aralik-yeni/yap.py`, `python3 reel.py taslak/aralik-yeni/aralik-yeni.json out/aralik-yeni`.
+- **Pazar çalışması:** Aşağıdaki adımlar aynen geçerli. Stok denetimi her Reels'in `url` alanındaki ürüne bakar. Yedekle değiştirme kuralı da aynıdır.
+- **Karne:** Bu haftaların Reels'lerinde `tur` alanına `bil` ya da `yd` yaz; 4 Ocak'tan sonraki haftalarla karşılaştırılabilsin.
 
 ### Adımlar
 1. **Karne:** 3. adımdaki karneyi çıkar ve `state.json` dosyasına ekle.

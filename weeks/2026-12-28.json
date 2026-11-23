@@ -6,35 +6,52 @@
       "key": "varta-f30r",
       "group": "fener",
       "url": "https://tuzlahirdavat.com.tr/night-cutter-f30r-el-feneri-varta-vrt18901101111",
-      "tag": "AYDINLATMA",
-      "hook_kicker": "KIŞ SORUSU",
-      "hook": [
-        "Işık da",
-        "şarj da",
-        "lazım mı?"
-      ],
-      "brand": "VARTA",
-      "sku": "F30R",
-      "title": "İkisi bir arada.",
-      "chips": [
-        "700 lümen",
-        "Powerbank: 2600 mAh",
-        "IPX4, 2 m düşme testi"
-      ],
       "search_code": "F30R",
-      "ses": "enerjik",
-      "caption": "Şarjlı el feneri: VARTA Night Cutter F30R, 700 lümen ışık ve telefonu şarj eden 2600 mAh powerbank bir arada. 🔦\n\nAlüminyum gövde, IPX4 su sıçramasına dayanıklı, 2 metreden düşme testli; 24 saate kadar kullanım.\n\n💾 Kaydet, kış akşamları lazım olur.\n🔎 Sitede “F30R” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#elfeneri #varta #kış #aydınlatma #tuzlahırdavat",
+      "caption": "Bil bakalım: IPX4 fener suya girer mi? 🤔 Tahminini yoruma yaz: A mı, B mi? Cevap videoda.\n\nVARTA Night Cutter F30R: 700 lümen ışık ve telefonu şarj eden 2600 mAh powerbank bir arada. Alüminyum gövde, 2 metreden düşme testli; 24 saate kadar kullanım. 🔦\n\n💾 Kaydet, kış akşamları lazım olur.\n🔎 Sitede “F30R” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#elfeneri #varta #kış #aydınlatma #tuzlahırdavat",
       "id": "2026-12-28-varta-f30r",
       "date": "2026-12-28",
       "format": "reel",
-      "template": "reel",
       "product_dir": "work/varta-f30r",
       "metricool": {
         "uuid": "-437729016984418568",
         "ilk_id": 419254437,
         "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-437729016984418568",
-        "planlandi": "2026-11-06"
-      }
+        "planlandi": "2026-11-06",
+        "guncellendi": "2026-11-23",
+        "son_id": 438520053
+      },
+      "template": "reel_bil",
+      "tag": "BİL BAKALIM",
+      "question_kicker": "AYDINLATMA",
+      "question": [
+        "IPX4 fener",
+        "suya girer mi?"
+      ],
+      "options": [
+        {
+          "big": "EVET",
+          "label": "Suya daldırılır"
+        },
+        {
+          "big": "HAYIR",
+          "label": "Yalnız su sıçraması"
+        }
+      ],
+      "answer": 1,
+      "answer_text": "Cevap: Hayır",
+      "why": [
+        "IPX4: her yönden su sıçramasına dayanır",
+        "Suya daldırmak için IPX7 ya da IPX8 gerekir"
+      ],
+      "urun": {
+        "marka": "VARTA",
+        "ad": "Şarjlı el feneri F30R",
+        "ozellik": "700 lümen · powerbank · IPX4"
+      },
+      "kaynak": "IEC 60529 (DigiKey özeti): IPX4 her yönden su sıçraması; IPX7 ve IPX8 suya daldırma",
+      "stil": "sinematik",
+      "muzik": "c",
+      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi"
     },
     {
       "key": "bosch-gsb-18v-65",
@@ -160,35 +177,57 @@
       "key": "klpro-lazer-metre",
       "group": "olcu",
       "url": "https://tuzlahirdavat.com.tr/kllzm80-80mt-profesyonel-lazer-metre-klpro",
-      "tag": "ÖLÇÜ ALETİ",
-      "hook_kicker": "USTA SORUSU",
-      "hook": [
-        "Şerit metre",
-        "yetmiyor",
-        "mu?"
-      ],
-      "brand": "KL PRO",
-      "sku": "KLLZM80",
-      "title": "80 metre menzil.",
-      "chips": [
-        "80 m ölçüm",
-        "Tek kişiyle ölçer",
-        "Dijital ekran"
-      ],
       "search_code": "KLLZM80",
-      "ses": "atolye",
-      "caption": "Lazer metre: KL Pro KLLZM80 ile 80 metreye kadar mesafeyi tek başına ölç. 📏\n\nŞerit metrenin yetmediği uzun mesafelerde ve yardımcı olmadan ölçüm için.\n\n💾 Kaydet, lazım olur.\n🔎 Sitede “KLLZM80” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#lazermetre #klpro #şantiye #ölçüaletleri #tuzlahırdavat",
+      "caption": "Uzun mesafeyi şerit metreyle mi ölçüyorsun? ❌\n\nUzun şerit sarkar, ucunu tutacak ikinci kişi ister. Lazer metre tek kişiyle, tek tuşla ölçer.\n\nKL Pro KLLZM80 lazer metre: 80 metreye kadar ölçüm, dijital ekran. 📏\n\n💾 Kaydet, lazım olur.\n🔎 Sitede “KLLZM80” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#lazermetre #klpro #şantiye #ölçüaletleri #tuzlahırdavat",
       "id": "2027-01-01-klpro-lazer-metre",
       "date": "2027-01-01",
       "format": "reel",
-      "template": "reel",
       "product_dir": "work/klpro-lazer-metre",
       "metricool": {
         "uuid": "-1392825388320929417",
         "ilk_id": 419254684,
         "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-1392825388320929417",
-        "planlandi": "2026-11-06"
-      }
+        "planlandi": "2026-11-06",
+        "guncellendi": "2026-11-23",
+        "son_id": 438520116
+      },
+      "template": "reel_yd",
+      "tag": "USTA HATASI",
+      "hook_kicker": "SIK YAPILAN HATA",
+      "hook": [
+        "Uzun mesafeyi",
+        "şeritle mi",
+        "ölçüyorsun?"
+      ],
+      "yanlis": {
+        "ne": "Uzun mesafeyi şerit metreyle tek başına ölçmek",
+        "alt": "Şerit sarkar, ölçü şaşar",
+        "product_dir": "work/aralik-yeni/destek/serit"
+      },
+      "dogru": {
+        "ne": "Lazer metreyle tek tuşla ölçmek",
+        "alt": "KL Pro KLLZM80, 80 m",
+        "product_dir": "work/klpro-lazer-metre"
+      },
+      "why_kicker": "Neden?",
+      "why": "Uzun şerit sarkar, ucunu tutacak ikinci kişi ister. Lazer metre tek kişiyle, saniyede ölçer.",
+      "urun": {
+        "marka": "KL PRO",
+        "ad": "Lazer metre KLLZM80",
+        "ozellik": "80 m ölçüm · dijital ekran"
+      },
+      "bg_video": {
+        "file": "work/stok/pexels-7033925.mp4",
+        "url": "https://videos.pexels.com/video-files/7033925/7033925-uhd_2560_1440_25fps.mp4",
+        "start": 1.0,
+        "x": 0.5,
+        "pan": 0.0
+      },
+      "kaynak_video": "https://www.pexels.com/video/7033925/ (Pexels lisansı)",
+      "kaynak": "Genel ölçüm bilgisi: uzun şerit sarkar; lazer metre tek kişiyle ölçer",
+      "stil": "sinematik",
+      "muzik": "a",
+      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi"
     }
   ]
 }

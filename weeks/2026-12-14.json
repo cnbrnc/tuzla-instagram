@@ -6,35 +6,52 @@
       "key": "fusion-boru-kaynak",
       "group": "tesisat",
       "url": "https://tuzlahirdavat.com.tr/fsbk15-s1-1500w-plastik-boru-kaynak-makinasi-set-fusion",
-      "tag": "TESİSAT",
-      "hook_kicker": "TESİSATÇIYA SORU",
-      "hook": [
-        "Tesisatta",
-        "sızıntı",
-        "derdi mi?"
-      ],
-      "brand": "FUSION",
-      "sku": "FSBK15-S1",
-      "title": "Sızdırmaz ek.",
-      "chips": [
-        "1500 W",
-        "PPR-C boru",
-        "Set halinde"
-      ],
       "search_code": "FSBK15",
-      "ses": "derin",
-      "caption": "Plastik boru kaynak makinesi: Fusion FSBK15-S1 1500 W set ile PPR-C borularda sızdırmaz ek yap. 💧\n\nSu ve sıhhi tesisat işleri için set halinde; sanayi tipi tesisatta da kullanılır.\n\n📤 Tesisatçı arkadaşına gönder.\n🔎 Sitede “FSBK15” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#borukaynak #fusion #tesisatçı #sıhhitesisat #tuzlahırdavat",
+      "caption": "Bil bakalım: PPR boru kaynağı kaç derecede yapılır, 160 mı, 260 mı? 🤔 Tahminini yoruma yaz: A mı, B mi? Cevap videoda.\n\nFusion FSBK15-S1 1500 W plastik boru kaynak makinesi seti ile PPR-C borularda sızdırmaz ek yap. Su ve sıhhi tesisat işleri için set halinde. 💧\n\n📤 Tesisatçı arkadaşına gönder.\n🔎 Sitede “FSBK15” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#borukaynak #fusion #tesisatçı #sıhhitesisat #tuzlahırdavat",
       "id": "2026-12-14-fusion-boru-kaynak",
       "date": "2026-12-14",
       "format": "reel",
-      "template": "reel",
       "product_dir": "work/fusion-boru-kaynak",
       "metricool": {
         "uuid": "-8802899935545767752",
         "ilk_id": 419253583,
         "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-8802899935545767752",
-        "planlandi": "2026-11-06"
-      }
+        "planlandi": "2026-11-06",
+        "guncellendi": "2026-11-23",
+        "son_id": 438519437
+      },
+      "template": "reel_bil",
+      "tag": "BİL BAKALIM",
+      "question_kicker": "TESİSAT",
+      "question": [
+        "PPR kaynağı",
+        "kaç derece?"
+      ],
+      "options": [
+        {
+          "big": "160°C",
+          "label": "Düşük ısı"
+        },
+        {
+          "big": "260°C",
+          "label": "Yüksek ısı"
+        }
+      ],
+      "answer": 1,
+      "answer_text": "Cevap: 260 °C",
+      "why": [
+        "PPR kaynağı 250–270 °C arasında yapılır",
+        "Düşük ısıda ek tam kaynamaz, sonradan sızdırır"
+      ],
+      "urun": {
+        "marka": "FUSION",
+        "ad": "Boru kaynak makinesi seti",
+        "ozellik": "1500 W · PPR-C boru"
+      },
+      "kaynak": "Wavin Ekoplastik PP-R montaj kılavuzu: kaynak sıcaklığı 250–270 °C",
+      "stil": "sinematik",
+      "muzik": "b",
+      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi"
     },
     {
       "key": "atg-maxicut-eldiven",
@@ -232,35 +249,50 @@
       "key": "bosch-dekupaj",
       "group": "testere",
       "url": "https://tuzlahirdavat.com.tr/gst-8000-e-dekupaj-testeresi-bosch-060158h000",
-      "tag": "ELEKTRİKLİ ALET",
-      "hook_kicker": "USTA SORUSU",
-      "hook": [
-        "Kavisli kesim",
-        "eğri mi",
-        "çıkıyor?"
-      ],
-      "brand": "BOSCH",
-      "sku": "GST 8000 E",
-      "title": "Kavis de keser.",
-      "chips": [
-        "710 W",
-        "4 kademe pandül",
-        "80 mm ahşap"
-      ],
       "search_code": "GST 8000",
-      "ses": "enerjik",
-      "caption": "Dekupaj testere: Bosch GST 8000 E ile ahşapta 80 mm'ye, çelikte 10 mm'ye kadar düz ve kavisli kesim. 🪚\n\n710 W motor, 4 kademeli pandül ve aletsiz bıçak değiştirme.\n\n💾 Kaydet, lazım olur.\n🔎 Sitede “GST 8000” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#dekupaj #bosch #marangoz #elaletleri #tuzlahırdavat",
+      "caption": "Sacı ahşap bıçağıyla mı kesiyorsun? ❌ Sık yapılan hata.\n\nİri dişli ahşap bıçağı ince saca takılır; bıçak körelir, sac titrer, kesim bozulur. Sac için ince dişli metal bıçağı tak (örnek: Bosch T 118 A, 1–3 mm sac).\n\nBosch GST 8000 E dekupaj testere: 710 W motor, 4 kademeli pandül, aletsiz bıçak değiştirme; ahşapta 80 mm'ye, çelikte 10 mm'ye kadar kesim. 🪚\n\n💾 Kaydet, lazım olur.\n🔎 Sitede “GST 8000” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#dekupaj #bosch #marangoz #elaletleri #tuzlahırdavat",
       "id": "2026-12-18-bosch-dekupaj",
       "date": "2026-12-18",
       "format": "reel",
-      "template": "reel",
       "product_dir": "work/bosch-dekupaj",
       "metricool": {
         "uuid": "5868049014215821146",
         "ilk_id": 419253905,
         "url": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=5868049014215821146",
-        "planlandi": "2026-11-06"
-      }
+        "planlandi": "2026-11-06",
+        "guncellendi": "2026-11-23",
+        "son_id": 438519703
+      },
+      "template": "reel_yd",
+      "tag": "USTA HATASI",
+      "hook_kicker": "SIK YAPILAN HATA",
+      "hook": [
+        "Sacı ahşap",
+        "bıçağıyla mı",
+        "kesiyorsun?"
+      ],
+      "hook_image": "work/bosch-dekupaj/product.png",
+      "yanlis": {
+        "ne": "Sacı iri dişli ahşap bıçağıyla kesmek",
+        "alt": "Bosch T 101 B: ahşap için",
+        "image": "work/aralik-yeni/destek/t101b/dis.png"
+      },
+      "dogru": {
+        "ne": "İnce dişli metal bıçağı takmak",
+        "alt": "Bosch T 118 A: 1–3 mm sac için",
+        "image": "work/aralik-yeni/destek/t118a/dis.png"
+      },
+      "why_kicker": "Neden?",
+      "why": "İri diş ince saca takılır; bıçak körelir, sac titrer, kesim bozulur.",
+      "urun": {
+        "marka": "BOSCH",
+        "ad": "Dekupaj testere GST 8000 E",
+        "ozellik": "710 W · 4 kademeli pandül"
+      },
+      "kaynak": "Bosch: T 118 A ince dişli, 1–3 mm sac için; T 101 B ahşap için",
+      "stil": "sinematik",
+      "muzik": "c",
+      "eski_tur": "reel (ürün Reels'i); 23 Kasım 2026'da yeni türe çevrildi"
     }
   ]
 }
