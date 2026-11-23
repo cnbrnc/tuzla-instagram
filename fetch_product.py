@@ -99,6 +99,11 @@ def main():
         with open(raw, "wb") as f:
             f.write(get(images[0], binary=True))
         im = Image.open(raw)
+        if im.mode in ("RGBA", "LA", "P"):      # saydam zeminli fotoğraf: beyaz zemine oturt (yoksa zemin bozuk çıkar)
+            im = im.convert("RGBA")
+            beyaz = Image.new("RGB", im.size, (255, 255, 255))
+            beyaz.paste(im, mask=im.split()[3])
+            im = beyaz
         white, edge = border_info(im)
         final = trim_white(im) if white else im.convert("RGB")
         final_path = os.path.join(out, "product.png")
