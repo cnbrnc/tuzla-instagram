@@ -124,6 +124,24 @@ Alanlar (`"template": "reel_yd"`):
 - **Stok:** Önerilen ürün stokta olmalı; `hafta.py` denetler.
 - **Görsel:** İki ürünün de fotoğrafı net ve sade zeminli olsun.
 
+### Reels: "Ürün tanıtımı" (`reel.py`, şablon `templates/reel_tanitim.html`)
+
+Kullanıcı 23 Kasım 2026'da istedi: "Direkt ürünü tanıt, doğru yanlış yapma." Soru, geri sayım ya da YANLIŞ / DOĞRU paneli yoktur; video baştan sona ürünü gösterir.
+
+- **Ne zaman:** Kullanıcı bir ürün bağlantısı verip tanıtım videosu istediğinde bu tür kullanılır. Böyle bir istekte "Bil bakalım" ya da "Yanlış / doğru" kurma.
+- **Haftalık düzen:** Pazartesi ve Cuma türleri aynı kalır. Bu tür, kullanıcının istediği ek videolar içindir; kullanıcı düzenli olmasını isterse `reels_slotlari` ayarı değiştirilir.
+- **Akış (9 sn):** Ürünün adı gerçek görüntünün üstünde (0–1,5 sn) · ürün fotoğrafı (1,5) · başlık (1,75) · özellikler tek tek (2,0 / 2,5 / 3,0 / 3,5) · rozet (4,0) · slogan (5,0) · kapanış kartı (6,75).
+- **Alanlar (`"template": "reel_tanitim"`):**
+  - `tag`: ürün türü, örnek `KAYNAK MAKİNESİ`. `hook_kicker` ve `marka`: marka adı.
+  - `hook`: 3 satır, ürünün ne olduğu. İlk satır sarı çıkar; en güçlü özelliği oraya yaz. Örnek: "200 AMPER / çanta tipi / kaynak makinesi".
+  - `baslik`: marka ve model, en fazla 22 karakter.
+  - `ozellikler`: 3–4 madde, her biri en fazla 28 karakter.
+  - `rozet` (isteğe bağlı): 2 kısa satır, örnek `["2 YIL", "GARANTİ"]`. `slogan` (isteğe bağlı): tek satır, en fazla 34 karakter.
+  - `url`, `product_dir`, `search_code`, `urun`, `caption`, `kaynak`; `bg_video` ve `kaynak_video` (ürünün işini gösteren stok görüntü).
+- **İçerik kuralı:** Her özellik ürün sayfasında yazıyor olmalı. Fiyat, "en ucuz", "yarı fiyatına" gibi kıyaslar ve rakip adı yazılmaz. Ürün stokta olmalı.
+- **Ses:** `muzik` alanıyla profesyonel ses; `ses_pro.py urun` zaman çizelgesini kullanır.
+- **Açıklama:** İlk satır ürünün adı ve en güçlü özelliği. Ardından sayfadaki özellikler, çağrı, sabit satırlar ve 5 hashtag.
+
 **Kapanışta ürün (`urun`):** Amaç bilgi verirken ürünü de tanıtmak. Öğede `url` (ürün sayfası) ve `urun` varsa kapanış kartında "Sitede arat" kodunun altında ürünün fotoğrafı, markası ve adı durur.
 - `kicker` (isteğe bağlı): fotoğrafın yanındaki küçük başlık. Yazılmazsa "BU İŞİN ALETİ". Alet olmayan ürünlerde (cıvata, eldiven) "SİTEMİZDE" yaz.
 - `marka`: en fazla 10 karakter, büyük harf. `ad`: en fazla 30 karakter. `ozellik`: en fazla 36 karakter, " · " ile ayrılmış 2–3 özellik.
@@ -525,7 +543,7 @@ Kullanıcı 23 Kasım 2026'da Aralık'ın 10 ürün Reels'inin yeni türlere çe
 ## Dosyalar
 - `hafta.py`: Kuyruktan haftayı kurar, ürünleri indirir, stok kontrol eder.
 - `render.py`: Kaydırmalı ve tekli gönderilerin PNG'lerini üretir (1080×1350).
-- `reel.py`: Reels videosunu ve kapağını üretir (üç tür: `reel`, `reel_bil`, `reel_yd`); sesi `assets/reel-ses-*.wav` dosyalarından ekler.
+- `reel.py`: Reels videosunu ve kapağını üretir (dört tür: `reel`, `reel_bil`, `reel_yd`, `reel_tanitim`); sesi `assets/reel-ses-*.wav` dosyalarından ekler.
 - `ses.py`: Ürün Reels'inin özgün ses izini üretir. `ses_tur.py`: "Bil bakalım" ve "Yanlış / doğru" seslerini üretir. Yalnız animasyon zamanları değişirse çalıştırılırlar.
 - `SENARYO.md`: Senaryo rehberi (konu bulma, kanca kalıpları, kurgular, yazım kuralları, kontrol listesi).
 - `dagarcik.json`: Fikir dağarcığı; kaynağı `dagarcik_yaz.py`. `fikir.py`: dağarcıktan aday seçer, kuyruk iskeleti yazar, karneden kalıp kıyası çıkarır.

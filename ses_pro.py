@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Sinematik Reels için profesyonel ses: stok müzik + stok efektler + kendi imza seslerimiz.
 
-Kullanım: python3 ses_pro.py <bil|yd> <a|b|c> [--taslama] [--yumusak]
+Kullanım: python3 ses_pro.py <bil|yd|urun> <a|b|c> [--taslama] [--yumusak]
 Çıktı:    work/ses/pro-<tür>-<varyant>[-taslama][-yumusak].wav (9 sn; yolu yazdırır)
 
 - Müzik ve efekt kaynakları assets/ses-kaynak.json dosyasındadır (Pixabay; ticari kullanım serbest,
@@ -50,7 +50,7 @@ def yukle(ad, url, tempo=None):
 
 def main():
     a = sys.argv[1:]
-    if len(a) < 2 or a[0] not in ("bil", "yd"):
+    if len(a) < 2 or a[0] not in ("bil", "yd", "urun"):
         raise SystemExit(__doc__)
     tur, varyant, taslama, yumusak = a[0], a[1], "--taslama" in a, "--yumusak" in a
     with open(KAYNAK, encoding="utf-8") as f:
@@ -105,6 +105,23 @@ def main():
         ding(m, note, 4.0)
         for at, f, p in ((4.27, 560, -0.2), (4.77, 640, 0.0), (5.27, 720, 0.2)):
             m.put(S.pop(f), at, 0.45, p, send=0.5)
+    elif tur == "urun":                                                        # ürün tanıtımı (reel_tanitim.html)
+        for at, semi, g in ((0.0, -12, 0.8), (0.25, -9, 0.7), (0.5, -5, 0.9)):  # kanca: tak-tak-TAK
+            m.put(S.metal_hit(note(semi)), at, g, (at - 0.25) * 1.2, send=0.3)
+        m.put(S.sub_boom(), 0.0, 0.7)
+        koy(fx["whoosh"], 1.5 - vur["whoosh"], 0.65)                           # ürün fotoğrafı
+        m.put(S.impact(), 1.5, 0.75)
+        m.put(S.hammer(), 1.5, 0.6, send=0.5)
+        m.put(S.sub_boom(), 1.5, 0.7)
+        m.put(S.pop(520), 1.77, 0.45, 0.0, send=0.4)                           # başlık
+        for n, at in enumerate((2.0, 2.5, 3.0, 3.5)):                          # özellikler: yükselen tık
+            m.put(S.pop(560 + 70 * n), at, 0.6, -0.3 + 0.2 * n, send=0.45)
+            m.put(S.tink(1400 + 120 * n), at, 0.5, 0.2, send=0.5)
+            m.put(S.kick(muffled=True), at, 0.7)
+        koy(fx["riser"], 4.0 - vur["riser"], 0.5)                              # rozete doğru yükseliş
+        koy(fx["hit"], 4.0 - vur["hit"], 0.7)                                  # rozet
+        ding(m, note, 4.0)
+        m.put(S.pop(640), 5.02, 0.5, 0.0, send=0.5)                            # slogan
     else:
         if taslama:
             t = np.arange(int(1.45 * SR)) / SR

@@ -14,6 +14,9 @@ Türler ve gerekli alanlar:
             hook_image: kancada yanlış ürün yerine gösterilecek görsel (isteğe bağlı).
   Yeni türlerde seçenek yazısı iki satırsa big yerine lines = ["ÜST", "ALT"] verilir.
   urun = {marka, ad, ozellik} ve product_dir verilirse kapanış kartında ürünün fotoğrafı ve adı durur (ürün tanıtımı).
+  reel_tanitim  "Ürün tanıtımı": doğrudan ürünü tanıtır (soru, yanlış/doğru yok). tag, hook_kicker (marka), hook (3 satır:
+            ürünün adı), marka, baslik, ozellikler (3–4 kısa madde), rozet (2 kısa satır, isteğe bağlı), slogan (tek satır,
+            isteğe bağlı), search_code, urun, product_dir.
   Seçeneklerde ve panellerde image_shape = "daire" yuvarlak ürünü (disk, taş) daire içinde gösterir.
 
 İsteğe bağlı (yeni türlerde): stil = "sinematik" (koyu sahne, film greni, fragman havasında ses) ve onunla birlikte
@@ -44,7 +47,8 @@ REEL_STYLE_DEFAULT = "max-width:860px;max-height:640px;width:auto;height:auto"
 # Yeni türlerin sesi ses_tur.py ile üretilir; zamanlaması reel_bil.html ve reel_yd.html ile aynıdır.
 SOUNDS = {k: os.path.join(ROOT, "assets", "reel-ses-%s.wav" % k)
           for k in ("enerjik", "atolye", "derin", "efekt", "bil", "yd", "bil-sin", "yd-sin")}
-DEFAULT_SOUND = {"reel": "enerjik", "reel_bil": "bil", "reel_yd": "yd"}
+DEFAULT_SOUND = {"reel": "enerjik", "reel_bil": "bil", "reel_yd": "yd", "reel_tanitim": "yd"}
+PRO_TUR = {"reel_bil": "bil", "reel_yd": "yd", "reel_tanitim": "urun"}      # ses_pro.py'deki zaman çizelgesi
 
 
 def mutlak(yol):
@@ -112,7 +116,7 @@ def main():
                 ctx["yanlis"], ctx["dogru"] = with_image(post["yanlis"]), with_image(post["dogru"])
                 ctx["hook_image"] = mutlak(post.get("hook_image"))
             # Kapanışta ürün: "urun" = {marka, ad, ozellik} ve product_dir varsa ürün fotoğrafı kapanış kartına girer
-            if tpl != "reel" and post.get("urun") and post.get("product_dir"):
+            if tpl != "reel" and post.get("product_dir") and (post.get("urun") or tpl == "reel_tanitim"):
                 ctx["urun_gorsel"] = with_image({"product_dir": post["product_dir"]})["image"]
             html_path = os.path.join(out, "html", post["id"] + ".html")
             with open(html_path, "w", encoding="utf-8") as f:
@@ -140,7 +144,7 @@ def main():
             audio = SOUNDS.get(post.get("ses") or varsayilan)
             # Profesyonel ses (stok müzik + efekt): "muzik": "a" | "b" | "c". Üretilemezse kodla üretilmiş ses kalır.
             if post.get("muzik") and post.get("stil") == "sinematik" and tpl != "reel" and not post.get("ses"):
-                tur = DEFAULT_SOUND[tpl]
+                tur = PRO_TUR[tpl]
                 komut = [sys.executable, os.path.join(ROOT, "ses_pro.py"), tur, post["muzik"]]
                 if post.get("sfx_kanca") == "taslama" and tur == "yd":
                     komut.append("--taslama")

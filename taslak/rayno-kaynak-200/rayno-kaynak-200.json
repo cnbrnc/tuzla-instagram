@@ -1,37 +1,38 @@
 {
  "hafta": "taslak",
- "taslak": "23 Kasım 2026: kullanıcı ürün bağlantısını verip tanıtım videosu istedi; onay ve tarih bekliyor",
+ "taslak": "23 Kasım 2026: kullanıcı doğrudan ürün tanıtımı istedi (yanlış/doğru değil); onay ve tarih bekliyor",
  "posts": [
   {
    "id": "rayno-kaynak-200",
    "key": "rayno-kaynak-200",
    "format": "reel",
-   "template": "reel_yd",
-   "cift": "yanlis-dogru",
+   "template": "reel_tanitim",
    "group": "kaynak",
-   "kanca_kalibi": "dert",
+   "kanca_kalibi": "urun-adi",
    "stil": "sinematik",
    "muzik": "c",
    "url": "https://tuzlahirdavat.com.tr/rayno-200a-invertor-kaynak-makinasi",
    "product_dir": "work/rayno-kaynak-200",
-   "tag": "USTA HATASI",
-   "hook_kicker": "KAYNAKÇIYA SORU",
+   "tag": "KAYNAK MAKİNESİ",
+   "hook_kicker": "RAYNO",
    "hook": [
-    "Elektrot",
-    "yapışıp",
-    "duruyor mu?"
+    "200 AMPER",
+    "çanta tipi",
+    "kaynak makinesi"
    ],
-   "yanlis": {
-    "ne": "3,25'lik elektrodu düşük amperle yakmak",
-    "alt": "Ark tutmaz, elektrot yapışır"
-   },
-   "dogru": {
-    "ne": "Amperi elektroda göre ayarlamak",
-    "alt": "3,25 mm rutil: yaklaşık 90–140 A",
-    "product_dir": "work/rayno-kaynak-200"
-   },
-   "why_kicker": "Neden?",
-   "why": "Doğru amper aralığı elektrot kutusunda yazar. Rayno 200A, 3,25'lik elektrodu rahat yakar.",
+   "marka": "RAYNO",
+   "baslik": "RAYNO 200A İNVERTER",
+   "ozellikler": [
+    "200 amper çıkış gücü",
+    "2,50 ve 3,25 mm elektrot",
+    "Çanta tipi, omuz askılı",
+    "Aşırı ısınma koruması"
+   ],
+   "rozet": [
+    "2 YIL",
+    "GARANTİ"
+   ],
+   "slogan": "3,25'lik elektrodu rahat yakar.",
    "search_code": "RYN6155",
    "urun": {
     "marka": "RAYNO",
@@ -46,8 +47,8 @@
     "pan": 0.03
    },
    "kaynak_video": "https://www.pexels.com/video/slow-motion-of-welding-in-factory-11887094/ (Pexels lisansı)",
-   "kaynak": "Miller (millerwelds.com): amper düşükse elektrot yapışır, ark söner; amper aralığı elektrot kutusunda yazar. E6013 3,2 mm için 90–140 A (TOKO föyü), 70–120 A (Weldbull). Ürün bilgileri ürün sayfasından (23 Kasım 2026).",
-   "caption": "Elektrot yapışıp duruyor mu? ❌ Çoğu zaman amper düşüktür.\n\nAmperi elektroda göre ayarla: 3,25 mm rutil elektrot yaklaşık 90–140 amper ister; doğru aralık elektrot kutusunda yazar. Amper düşükse ark tutmaz, elektrot parçaya yapışır.\n\nRayno 200A inverter kaynak makinesi: 200 amper, 2,50 ve 3,25 mm rutil ve bazik elektrot, IGBT teknolojisi, aşırı ısınma koruması. Çanta tipi, omuz askılı; 2 yıl garantili. ⚡\n\n📤 Kaynakçı arkadaşına gönder.\n🔎 Sitede “RYN6155” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#kaynakmakinesi #rayno #kaynakçı #demirdoğrama #tuzlahırdavat"
+   "kaynak": "Bütün özellikler ürün sayfasından (23 Kasım 2026): 200 A, 2,50 ve 3,25 mm rutil/bazik elektrot, IGBT, çanta tipi omuz askılı, aşırı ısınma koruması ve fan, 2 yıl garanti.",
+   "caption": "Rayno 200A inverter kaynak makinesi: çanta tipi, omuz askılı, 200 amper. ⚡\n\n2,50 ve 3,25 mm rutil ve bazik elektrotla çalışır. IGBT teknolojisi, aşırı ısınma koruması ve fanlı soğutma. İskelede, çatıda, mobil serviste taşıması kolay. 2 yıl garantili.\n\n📤 Kaynakçı arkadaşına gönder.\n🔎 Sitede “RYN6155” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#kaynakmakinesi #rayno #kaynakçı #demirdoğrama #tuzlahırdavat"
   }
  ]
 }

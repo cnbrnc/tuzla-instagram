@@ -54,7 +54,9 @@ Kanca yazarken:
 | Yanlış / doğru | `reel_yd`, `cift` yok ya da `yanlis-dogru` | YANLIŞ (kırmızı çarpı) / DOĞRU | Gerçek hata: güvenlik riski ya da alete, parçaya zarar |
 | Efsane / gerçek | `reel_yd`, `"cift": "efsane-gercek"` | EFSANE (kırmızı çarpı) / GERÇEK | Yaygın yanlış inanış. Kimse suçlanmaz. |
 | Zor yol / kolay yol | `reel_yd`, `"cift": "zor-kolay"` | ZOR YOL (turuncu saat, çarpı yok) / KOLAY YOL | Yanlış yok; bir ürün işi kolaylaştırıyor. Hata sesi çalmaz. |
+| Ürün tanıtımı | `reel_tanitim` | Ürün fotoğrafı, özellikler, rozet | Kullanıcı bir ürünü doğrudan tanıtmak istediğinde. Soru ve yanlış/doğru yok. |
 
+- **Kullanıcı "tanıtım videosu" derse:** Doğrudan ürünü tanıtan videoyu kasteder (23 Kasım 2026: "direkt ürünü tanıt, doğru yanlış yapma"). "Ürün tanıtımı" türünü kullan.
 - **Sattığımız ürüne çarpı:** İlk panelde bizim sattığımız bir ürün gösterilecekse önce "Zor yol / kolay yol" kurgusunu düşün. Kırmızı çarpı ürünü kötü gösterir. Kullanıcı Karbosan, İzeltaş, GFB, Tyrolit ve Egesan'ın ana bayisidir; bu markaların ürününe çarpı koymadan önce iki kez düşün.
 - **Etiketler:**
   - Yanlış / doğru: `tag` "USTA HATASI", `hook_kicker` "SIK YAPILAN HATA".

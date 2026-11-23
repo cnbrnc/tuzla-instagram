@@ -1,0 +1,60 @@
+{% extends "reel_taban.html" %}
+{# "Ürün tanıtımı" Reels'i: doğrudan ürünü tanıtır; soru ya da yanlış/doğru yoktur.
+   Kanca: ürünün adı (0–1,5 sn) · ürün fotoğrafı (1,5) · başlık (1,75) · özellikler (2,0 / 2,5 / 3,0 / 3,5) ·
+   rozet (4,0; müziğin düşüşü) · slogan (5,0) · kapanış (6,75). Zamanlama ses_pro.py "urun" ile aynıdır. #}
+{% block style %}
+@keyframes otur{0%{transform:scale(1.28);opacity:0;filter:blur(18px)}60%{transform:scale(.985);opacity:1;filter:blur(0)}100%{transform:none;opacity:1;filter:blur(0)}}
+@keyframes yuz{from{transform:translateY(0) scale(1)}to{transform:translateY(-14px) scale(1.035)}}
+@keyframes muhur{0%{transform:scale(2.4) rotate(-28deg);opacity:0}60%{transform:scale(.94) rotate(-12deg);opacity:1}100%{transform:rotate(-12deg);opacity:1}}
+@keyframes sagdan{from{transform:translateX(90px);opacity:0}to{transform:none;opacity:1}}
+/* kanca 0–1,5 sn: ürünün adı ilk karede ekranda */
+.hook{position:absolute;left:60px;right:150px;top:290px;animation:out .25s ease-in 1.25s both}
+.hook .k{font-weight:700;font-size:40px;letter-spacing:.16em;color:var(--accent)}
+.hook h1{margin:22px 0 0 0;font-size:176px;line-height:.9;color:#fff}
+.hook .l{display:block;white-space:nowrap;transform-origin:0 60%;animation:slam .22s cubic-bezier(.2,.8,.3,1) both}
+.hook .l:nth-child(1){animation-name:slam0}.hook .l:nth-child(2){animation-delay:.25s}.hook .l:nth-child(3){animation-delay:.5s}
+.hook .l.v{color:var(--accent)}
+.hookimg{position:absolute;left:0;right:0;top:900px;height:560px;display:flex;align-items:center;justify-content:center;animation:out .25s ease-in 1.25s both}
+.hookimg img{display:block;max-width:700px;max-height:560px;width:auto;height:auto;background:#fff;border-radius:36px;padding:24px;box-sizing:border-box}
+/* ürün 1,5 sn */
+.vitrin{position:absolute;left:60px;right:60px;top:280px;height:640px;animation:otur .4s cubic-bezier(.2,.8,.3,1) 1.5s both}
+.vitrin .ic{position:absolute;inset:0;background:#fff;border-radius:44px;display:flex;align-items:center;justify-content:center;overflow:hidden;animation:yuz 5.2s ease-out 1.6s both}
+.vitrin img{display:block;max-width:820px;max-height:580px;width:auto;height:auto}
+.vitrin .marka{position:absolute;left:28px;top:26px;height:54px;padding:0 24px;border-radius:999px;background:var(--navy);color:#fff;font-weight:700;font-size:26px;letter-spacing:.14em;display:flex;align-items:center;z-index:2}
+/* rozet 4,0 sn: müziğin düşüşü */
+.muhur{position:absolute;right:-6px;top:-34px;width:232px;height:232px;border-radius:50%;background:var(--accent);color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 18px 50px rgba(0,0,0,.45);z-index:3;animation:muhur .34s cubic-bezier(.2,.8,.3,1) 4s both}
+.muhur span{font-size:64px;line-height:.92;white-space:nowrap}
+.muhur span + span{font-size:46px}
+/* başlık 1,75 sn */
+.baslik{position:absolute;left:60px;right:60px;top:956px;font-size:92px;line-height:.95;color:#fff;white-space:nowrap;animation:slamT .3s cubic-bezier(.2,.8,.3,1) 1.75s both}
+/* özellikler 2,0 · 2,5 · 3,0 · 3,5 sn */
+.ozl{position:absolute;left:60px;right:150px;top:1078px;display:flex;flex-direction:column;gap:16px}
+.oz{display:flex;align-items:center;gap:22px;height:84px;padding:0 26px 0 16px;border-radius:22px;background:rgba(255,255,255,.1);animation:sagdan .28s cubic-bezier(.2,.8,.2,1) both}
+.oz:nth-child(1){animation-delay:2s}.oz:nth-child(2){animation-delay:2.5s}.oz:nth-child(3){animation-delay:3s}.oz:nth-child(4){animation-delay:3.5s}
+.oz .t{flex:none;width:54px;height:54px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center}
+.oz .y{font-weight:700;font-size:42px;line-height:1.1;color:#fff;white-space:nowrap}
+/* slogan 5,0 sn */
+.slogan{position:absolute;left:60px;right:150px;top:1490px;font-weight:700;font-size:42px;line-height:1.18;color:var(--accent);animation:up .3s cubic-bezier(.2,.8,.2,1) 5s both}
+{% if stil == 'sinematik' %}
+.sin .hook .l,.sin .hook .l:nth-child(1){animation-name:belir;animation-duration:.6s;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
+.sin .hook .l:nth-child(1){animation-delay:-.3s}
+.sin .hook h1{text-shadow:0 6px 40px rgba(0,0,0,.75)}
+.sin .kamera .hookimg{z-index:0}
+.sin .vitrin .ic{box-shadow:0 40px 110px rgba(0,0,0,.6),0 0 140px rgba(255,198,41,.16)}
+.sin .oz{background:linear-gradient(150deg,rgba(255,255,255,.14),rgba(255,255,255,.05));border:1.5px solid rgba(255,255,255,.18)}
+.sin.vid .oz{background:rgba(8,14,28,.66)}
+.sin .baslik{text-shadow:0 4px 30px rgba(0,0,0,.8)}
+.sin .slogan{text-shadow:0 2px 18px rgba(0,0,0,.9),0 0 50px rgba(255,198,41,.35)}
+.sin .serit{top:276px;animation:serit .55s ease-in-out 4s both}
+{% endif %}
+{% endblock %}
+{% block sahne %}
+<div class="hook"><div class="k">{{ hook_kicker }}</div><h1 class="disp" data-fit>{% for l in hook %}<span class="l{% if loop.first %} v{% endif %}">{{ l }}</span>{% endfor %}</h1></div>
+{% if not video_zemin %}<div class="hookimg"><img src="{{ urun_gorsel }}" alt=""></div>{% endif %}
+<div class="vitrin"><div class="ic">{% if marka %}<span class="marka">{{ marka }}</span>{% endif %}<img src="{{ urun_gorsel }}" alt=""></div>
+{% if rozet %}<div class="muhur disp">{% for l in rozet %}<span>{{ l }}</span>{% endfor %}</div>{% endif %}</div>
+{% if stil == 'sinematik' %}<div class="serit"></div>{% endif %}
+<div class="baslik disp" data-fit>{{ baslik }}</div>
+<div class="ozl">{% for o in ozellikler[:4] %}<div class="oz"><span class="t"><svg width="32" height="32" viewBox="0 0 56 56"><path d="M12 29l11 11 21-24" fill="none" stroke="#14171C" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="y">{{ o }}</span></div>{% endfor %}</div>
+{% if slogan %}<div class="slogan">{{ slogan }}</div>{% endif %}
+{% endblock %}
