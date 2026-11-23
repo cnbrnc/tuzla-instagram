@@ -1,0 +1,58 @@
+{
+ "hafta": "taslak",
+ "taslak": "23 Kasım 2026: kullanıcı GTA 6 temalı site tanıtımı istedi; marka kullanılamayacağı için özgün oyun temasıyla hazırlandı; onay bekliyor",
+ "posts": [
+  {
+   "id": "oyun-usta-modu",
+   "key": "oyun-usta-modu",
+   "format": "reel",
+   "template": "reel_oyun",
+   "group": "site",
+   "kanca_kalibi": "oyun",
+   "stil": "sinematik",
+   "muzik": "b",
+   "tag": "USTA MODU",
+   "hook_kicker": "TUZLA HIRDAVAT SUNAR",
+   "hook": [
+    "USTA",
+    "MODU"
+   ],
+   "gorev": {
+    "no": "01",
+    "seviye": "SEVİYE: USTA",
+    "ad": "Atölyeyi donat"
+   },
+   "maddeler": [
+    {
+     "ad": "Paslanmaz cıvata",
+     "product_dir": "work/f-paslanmaz-din933"
+    },
+    {
+     "ad": "El aletleri",
+     "product_dir": "work/f-izeltas-lokma-35"
+    },
+    {
+     "ad": "Kesme taşı",
+     "product_dir": "work/f-karbosan-thinline"
+    },
+    {
+     "ad": "İş eldiveni",
+     "product_dir": "work/atg-maxicut-eldiven"
+    }
+   ],
+   "tamam": "GÖREV TAMAM!",
+   "odul": "+100 USTALIK PUANI",
+   "cagri_ust": "Sıradaki görev burada:",
+   "cagri": "tuzlahirdavat.com.tr",
+   "cipler": [
+    "20.000+ ürün",
+    "Paslanmazdan el aletine",
+    "Tek adres"
+   ],
+   "kapanis_k": "HEMEN GİR",
+   "search_code": "tuzlahirdavat.com.tr",
+   "kaynak": "Ürün sayısı: sitenin ürün haritasında 21.517 ürün adresi (23 Kasım 2026). Görseller sitedeki ürün fotoğrafları.",
+   "caption": "Usta modu açıldı. 🎮 Görev: atölyeyi donat.\n\nPaslanmaz cıvatadan el aletine, kesme taşından iş güvenliğine 20.000'den fazla ürün tek adreste. Aradığını bul, sepete at, görevi tamamla.\n\n📤 Atölyesi olan arkadaşına gönder.\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#hırdavat #paslanmazcıvata #elaletleri #usta #tuzlahırdavat"
+  }
+ ]
+}

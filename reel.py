@@ -20,6 +20,9 @@ Türler ve gerekli alanlar:
   reel_fragman  "Fragman": film fragmanı gibi kurulmuş ürün tanıtımı. sahneler (4 gerçek görüntü: file, start, x, pan, hiz, gamma;
             her biri 1 sn, sonuncusu ürünün arkasında bulanık sürer), replikler (4 sahne için 1–2 satırlık cümleler),
             baslik, tur_yazi, ozellikler (3), slogan, search_code, urun, product_dir, kapak_ms (kapak karesi, ms).
+  reel_oyun  "Oyun": özgün oyun arayüzü temalı site tanıtımı (gerçek bir oyunun adı, logosu, görünümü kullanılmaz).
+            hook_kicker, hook (2 satır), gorev {no, seviye, ad}, maddeler (4 adet: ad, product_dir, xp), tamam, odul,
+            cagri_ust, cagri, cipler (3), kapanis_k (kapanış kartının küçük başlığı), search_code.
   Seçeneklerde ve panellerde image_shape = "daire" yuvarlak ürünü (disk, taş) daire içinde gösterir.
 
 İsteğe bağlı (yeni türlerde): stil = "sinematik" (koyu sahne, film greni, fragman havasında ses) ve onunla birlikte
@@ -50,8 +53,8 @@ REEL_STYLE_DEFAULT = "max-width:860px;max-height:640px;width:auto;height:auto"
 # Yeni türlerin sesi ses_tur.py ile üretilir; zamanlaması reel_bil.html ve reel_yd.html ile aynıdır.
 SOUNDS = {k: os.path.join(ROOT, "assets", "reel-ses-%s.wav" % k)
           for k in ("enerjik", "atolye", "derin", "efekt", "bil", "yd", "bil-sin", "yd-sin")}
-DEFAULT_SOUND = {"reel": "enerjik", "reel_bil": "bil", "reel_yd": "yd", "reel_tanitim": "yd", "reel_fragman": "yd"}
-PRO_TUR = {"reel_bil": "bil", "reel_yd": "yd", "reel_tanitim": "urun", "reel_fragman": "fragman"}      # ses_pro.py'deki zaman çizelgesi
+DEFAULT_SOUND = {"reel": "enerjik", "reel_bil": "bil", "reel_yd": "yd", "reel_tanitim": "yd", "reel_fragman": "yd", "reel_oyun": "yd"}
+PRO_TUR = {"reel_bil": "bil", "reel_yd": "yd", "reel_tanitim": "urun", "reel_fragman": "fragman", "reel_oyun": "urun"}      # ses_pro.py'deki zaman çizelgesi
 
 
 def mutlak(yol):
@@ -122,6 +125,8 @@ def main():
             ctx["bg_gecis"] = gecis = float(post.get("bg_gecis", 1.0 if tpl == "reel_bil" else 4.0 if tpl == "reel_fragman" else 1.4))
             if tpl == "reel_bil":
                 ctx["options"] = [with_image(o) for o in post["options"]]
+            elif tpl == "reel_oyun":
+                ctx["maddeler"] = [with_image(m) for m in post["maddeler"]]
             elif tpl == "reel_yd":
                 ctx["yanlis"], ctx["dogru"] = with_image(post["yanlis"]), with_image(post["dogru"])
                 ctx["hook_image"] = mutlak(post.get("hook_image"))

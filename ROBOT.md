@@ -158,6 +158,15 @@ Kullanıcı 23 Kasım 2026'da "Ürün tanıtımı" videosunu görünce istedi: "
 - **Ses:** `ses_pro.py fragman`: her kesimde vuuş ve darbe, 4. saniyeye yükseliş, üründe büyük vuruş.
 - **Ne zaman:** Kullanıcı bir ürün için tanıtım istediğinde önce bu türü hazırla; uygun görüntü bulunamazsa "Ürün tanıtımı" türüne dön ve nedenini kullanıcıya yaz.
 
+### Reels: "Oyun" (`reel.py`, şablon `templates/reel_oyun.html`)
+
+Kullanıcı 23 Kasım 2026'da "GTA 6 temalı site tanıtımı" istedi. Gerçek bir oyunun adı, logosu, yazı tipi ya da görünümü kullanılamaz (tescilli marka; hak ihlali ve Instagram'da kaldırılma riski). Bunun yerine özgün, oyun arayüzü temalı bir site tanıtımı kuruldu: kendi renklerimiz ve yazı tipimizle "görev" kurgusu.
+
+- **Akış (9 sn):** Açılış ekranı (0–1,5 sn) · görev kartı (1,5) · dört madde tek tek tamamlanır ve puan çubuğu dolar (2,0 / 2,5 / 3,0 / 3,5) · "GÖREV TAMAM!" (4,0) · site adresi ve üç kısa bilgi (5,0) · kapanış kartı (6,75).
+- **Alanlar (`"template": "reel_oyun"`, `"stil": "sinematik"`):** `hook_kicker`, `hook` (2 satır), `gorev` `{no, seviye, ad}`, `maddeler` (4 adet: `ad`, `product_url` ya da `product_dir`, isteğe bağlı `xp`), `tamam`, `odul`, `cagri_ust`, `cagri`, `cipler` (3), `kapanis_k` (kapanış kartının küçük başlığı; site tanıtımında "HEMEN GİR"), `search_code` (site tanıtımında site adresi), `caption`, `kaynak`.
+- **Kural:** Başka bir markanın ya da eserin (oyun, film, dizi, karakter) adı, logosu, kapağı ve tanınan görünümü hiçbir gönderide kullanılmaz. Kullanıcı böyle bir tema isterse nedenini bir cümleyle söyle ve aynı fikri özgün bir tasarımla yap.
+- **Sayılar:** "20.000+ ürün" gibi bir sayı yazılacaksa `work/products.xml` içindeki ürün adresi sayısından doğrula.
+
 **Kapanışta ürün (`urun`):** Amaç bilgi verirken ürünü de tanıtmak. Öğede `url` (ürün sayfası) ve `urun` varsa kapanış kartında "Sitede arat" kodunun altında ürünün fotoğrafı, markası ve adı durur.
 - `kicker` (isteğe bağlı): fotoğrafın yanındaki küçük başlık. Yazılmazsa "BU İŞİN ALETİ". Alet olmayan ürünlerde (cıvata, eldiven) "SİTEMİZDE" yaz.
 - `marka`: en fazla 10 karakter, büyük harf. `ad`: en fazla 30 karakter. `ozellik`: en fazla 36 karakter, " · " ile ayrılmış 2–3 özellik.
@@ -559,7 +568,7 @@ Kullanıcı 23 Kasım 2026'da Aralık'ın 10 ürün Reels'inin yeni türlere çe
 ## Dosyalar
 - `hafta.py`: Kuyruktan haftayı kurar, ürünleri indirir, stok kontrol eder.
 - `render.py`: Kaydırmalı ve tekli gönderilerin PNG'lerini üretir (1080×1350).
-- `reel.py`: Reels videosunu ve kapağını üretir (beş tür: `reel`, `reel_bil`, `reel_yd`, `reel_tanitim`, `reel_fragman`); sesi `assets/reel-ses-*.wav` dosyalarından ekler.
+- `reel.py`: Reels videosunu ve kapağını üretir (altı tür: `reel`, `reel_bil`, `reel_yd`, `reel_tanitim`, `reel_fragman`, `reel_oyun`); sesi `assets/reel-ses-*.wav` dosyalarından ekler.
 - `ses.py`: Ürün Reels'inin özgün ses izini üretir. `ses_tur.py`: "Bil bakalım" ve "Yanlış / doğru" seslerini üretir. Yalnız animasyon zamanları değişirse çalıştırılırlar.
 - `SENARYO.md`: Senaryo rehberi (konu bulma, kanca kalıpları, kurgular, yazım kuralları, kontrol listesi).
 - `dagarcik.json`: Fikir dağarcığı; kaynağı `dagarcik_yaz.py`. `fikir.py`: dağarcıktan aday seçer, kuyruk iskeleti yazar, karneden kalıp kıyası çıkarır.

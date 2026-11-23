@@ -101,7 +101,7 @@ html,body{background:transparent}
 {% if stil == 'sinematik' %}<div class="vinyet"></div>{% endif %}
 <div class="end{% if urun and urun_gorsel %} urunlu{% endif %}"><div class="in">
 <img class="logo" src="{{ logo }}" alt="Tuzla Hırdavat" style="height:72px;align-self:flex-start">
-<span class="k">SİTEDE ARAT</span>
+<span class="k">{{ kapanis_k or 'SİTEDE ARAT' }}</span>
 <p class="code disp" data-fit>{{ search_code }}</p>
 {% if urun and urun_gorsel %}<div class="urun"><div class="foto"><img src="{{ urun_gorsel }}" alt=""></div><div class="y"><span class="uk">{{ urun.kicker or 'BU İŞİN ALETİ' }}</span><span class="um disp" data-fit>{{ urun.marka }}</span><span class="ua">{{ urun.ad }}</span>{% if urun.ozellik %}<span class="uo">{{ urun.ozellik }}</span>{% endif %}</div></div>{% endif %}
 <div class="card"><span class="l1">tuzlahirdavat.com.tr</span><span class="l2">Sipariş: satis5@tuzlacivata.com.tr</span><span class="l3">Telefon: 0542 189 02 69</span></div>
