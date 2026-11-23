@@ -2,6 +2,7 @@
 
 Bu dosya, her Pazar 18:55'te (Türkiye saati) çalışan zamanlanmış görevin izlediği adımlardır.
 16 Kasım 2026 haftasından itibaren geçerli düzen budur: Reels ve kaydırmalı gönderiler.
+4 Ocak 2027 haftasından itibaren Reels türleri değişir: Pazartesi "Bil bakalım", Cuma "Yanlış / doğru" (kullanıcı 23 Kasım 2026'da onayladı).
 Depo herkese açıktır; buraya şifre, anahtar veya kişisel bilgi yazılmaz.
 
 ## Sabit kurallar
@@ -15,10 +16,13 @@ Depo herkese açıktır; buraya şifre, anahtar veya kişisel bilgi yazılmaz.
 
   | Gün | Biçim | Kuyruk listesi |
   |---|---|---|
-  | Pazartesi | Ürün Reels'i (10 sn video) | `reels` |
+  | Pazartesi | Reels: "Bil bakalım" (9 sn video) | `reels_bil` |
   | Çarşamba | Ürün kaydırmalısı (3 slayt) | `urun_carousel` |
   | Perşembe | Usta İpucu kaydırmalısı (5–8 slayt) | `ipucu_carousel` |
-  | Cuma | Ürün Reels'i | `reels` |
+  | Cuma | Reels: "Yanlış / doğru" (9 sn video) | `reels_yd` |
+
+  - 4 Ocak 2027'den önceki haftalarda iki Reels de ürün Reels'idir (`reels` listesi). Hangi listenin kullanılacağını `queue.json` içindeki `reels_slotlari` ayarı belirler; `hafta.py` ona bakar.
+  - Ürün Reels'i (`reels`) yedek tür olarak durur. Kullanıcı isterse ya da iki yeni listede de öğe yazılamıyorsa kullanılır.
 
 - **Tekli kart haftası:** HAFTA, `state.json` içindeki `last_tekli_week` tarihinden en az 42 gün sonraysa Perşembe günü İpucu yerine `tekli` listesindeki ilk kart kullanılır (`hafta.py --tekli`). Kampanya kartını kullanmadan önce eşiklerin sitede hâlâ aynı yazdığını kontrol et; değiştiyse görseli ve açıklamayı güncelle, kampanya kalktıysa kartı atla.
 - **Fiyat yok:** Ne görselde ne açıklamada ürün fiyatı yazılır. Tek istisna, kampanya kartında sitede yazan kargo ve taksit eşikleridir.
@@ -35,7 +39,87 @@ Depo herkese açıktır; buraya şifre, anahtar veya kişisel bilgi yazılmaz.
 
 `queue.json` içindeki öğeler bu alanlarla yazılır. Yeni öğe eklerken oradaki örnekleri kopyala.
 
-### Reels (`reel.py`, şablon `templates/reel.html`)
+### Neden yeni Reels türleri (23 Kasım 2026)
+
+İlk iki ürün Reels'inin sonucu:
+
+- Açanların %73'ü ve %90'ı ilk 3 saniyede geçti. Ortalama izlenme 4,3 ve 1,9 saniye, erişim 182 ve 145 kişi oldu.
+- Düz zemin üstünde yazıyla açılan video reklam gibi görünüyor.
+- Tutan şey, "yanlış mı yapıyorsun?" diye dürten somut soruydu: "Kabloyu hâlâ maketle mi soyuyorsun?" 3 yorum aldı.
+
+Yeni türlerin kuralları bundan çıkar. Yeni öğe yazarken hepsine uy:
+
+- **İlk kare:** Soru ve görsel ilk karede ekranda olur. Boş zeminle açılmaz.
+- **Bekleme nedeni:** İzleyen cevabı görmek için bekler. Cevap 4. saniyede gelir.
+- **Soru:** Ustanın gerçekten yaptığı ya da merak ettiği somut bir şeyi sorar. Genel söz yazılmaz ("Kaliteli ürün arıyorsan" gibi).
+- **Hedef:** İlk 3 saniyede geçenlerin oranını (karnede `gecme_orani`) düşürmek.
+
+### Reels: "Bil bakalım" (`reel.py`, şablon `templates/reel_bil.html`, liste `reels_bil`)
+
+1080×1920, 9 saniye. Akış:
+
+- **0–1 sn:** Soru ve iki seçenek (A, B) ekranda.
+- **1–4 sn:** 3-2-1 geri sayım ve "Tahminin ne? Yoruma yaz" çağrısı.
+- **4 sn:** Doğru seçenek sarıya döner, yanlış solar. Cevap ve nedeni gelir.
+- **6,75–9 sn:** "Sitede arat" kapanış kartı; video başa sarar.
+- **Kapak:** 1,2. saniyedeki kare (soru, seçenekler ve "3").
+
+Alanlar (`"template": "reel_bil"`):
+
+- `tag`: `BİL BAKALIM`.
+- `question_kicker`: en fazla 18 karakter, örnek `CIVATA BİLGİSİ`.
+- `question`: 2 satır, her biri en fazla 14 karakter. Örnek: "Hangisi daha / sağlam?"
+- `options`: tam 2 seçenek. Her biri şu üçünden biriyle gösterilir:
+  - `head`: cıvata başına basılı yazı (en fazla 4 karakter, örnek "8.8", "A4"),
+  - `big`: büyük yazı (en fazla 5 karakter, örnek "M8"),
+  - `product_url`: sitedeki ürünün fotoğrafı (yuvarlak ürünse `"image_shape": "daire"`).
+  - İsteğe bağlı `label`: en fazla 14 karakter.
+- `answer`: doğru seçeneğin sırası (0 = A, 1 = B). `answer_text`: "Cevap: …", en fazla 16 karakter.
+- `why`: 2 satır, her biri en fazla 40 karakter. Kısa ve sayıyla söyle.
+- `search_code`, `key`, `group`, `caption`; isteğe bağlı `url` (stok denetimi için ürün sayfası).
+- `kaynak`: Cevabı doğruladığın kaynak, tek cümle. Videoda görünmez.
+
+İçerik kuralları:
+
+- **Tek doğru cevap:** Cevap tartışmasız olmalı ve bir standarda ya da üretici verisine dayanmalı. "Duruma göre değişir" denebilecek soruyu sorma.
+- **Doğrula:** Her cevabı ve sayıyı en az bir güvenilir kaynakla doğrula; kaynağı `kaynak` alanına yaz.
+- **Açıklamada cevabı verme:** İlk satır soruyu sorar. Gövdede "Tahminini yorumlara yaz. Cevap videonun sonunda." yazar.
+- **Konu:** Bağlantı elemanı ve atölye bilgisi: kalite sınıfı, paslanmaz türü, ölçü, diş, matkap, aşındırıcı, anahtar.
+- **Doğru cevabın yeri:** A ve B arasında değiştir; hep aynı tarafta olmasın.
+
+### Reels: "Yanlış / doğru" (`reel.py`, şablon `templates/reel_yd.html`, liste `reels_yd`)
+
+1080×1920, 9 saniye. Akış:
+
+- **0–1,5 sn:** Kanca sorusu ve yanlış kullanılan ürünün görseli. Yuvarlak ürün (disk, taş) döner.
+- **1,5 sn:** YANLIŞ paneli gelir; 2. saniyede kırmızı damga ve çarpı.
+- **3,5 sn:** DOĞRU paneli gelir; 4. saniyede yeşil damga.
+- **5 sn:** Tek cümlelik neden.
+- **6,75–9 sn:** "Sitede arat" kapanış kartı.
+
+Alanlar (`"template": "reel_yd"`):
+
+- `tag`: `USTA HATASI`. `hook_kicker`: `SIK YAPILAN HATA`.
+- `hook`: 3 satırlık soru, her satır en fazla 13 karakter. Örnek: "Kesme taşıyla / taşlama mı / yapıyorsun?"
+- `yanlis` ve `dogru`: her biri `{ne, alt, product_url, image_shape}`.
+  - `ne`: ne yapıldığı, en fazla 36 karakter.
+  - `alt`: ürünün adı, en fazla 28 karakter.
+  - `product_url`: sitedeki ürün sayfası; fotoğrafı gösterilir.
+- `why_kicker`: `Neden?`. `why`: en fazla 110 karakter.
+- `url`: önerilen (doğru) ürünün sayfası. `search_code`, `key`, `group`, `caption`, `kaynak`.
+
+İçerik kuralları:
+
+- **Yanlış olan kullanımdır, ürün değil:** YANLIŞ panelindeki ürünü de satıyoruz. Metin ürünü kötülemez; yanlış işte kullanıldığını söyler.
+- **Güvenlik bilgisi:** Üretici kullanım talimatına ya da standarda dayanmalı. Kaynağı `kaynak` alanına yaz.
+- **Stok:** Önerilen ürün stokta olmalı; `hafta.py` denetler.
+- **Görsel:** İki ürünün de fotoğrafı net ve sade zeminli olsun.
+
+**Yeni türlerde ses:** Her türün kendi sesi vardır: `assets/reel-ses-bil.wav` ve `assets/reel-ses-yd.wav`; kaynağı `ses_tur.py`. Kapanıştaki "tınn" ve melodi ürün Reels'iyle aynıdır. `ses` alanı yazılmaz; `reel.py` türe göre seçer. Şablonlardaki zamanlar değişirse `ses_tur.py` içindeki zamanları da güncelle ve iki dosyayı yeniden üret.
+
+**Gerçek çekim (henüz kurulmadı):** Kullanıcıya telefonla çekilmiş kısa işlik videolarını robotun kurgulaması önerildi. Kullanıcı deneme çekimi gönderirse kurulacak. O zamana kadar Cuma "Yanlış / doğru" olur.
+
+### Ürün Reels'i (`reel.py`, şablon `templates/reel.html`, liste `reels`)
 
 1080×1920, 9 saniye, 30 fps. İzleyiciyi tutmak için kuruldu (kullanıcı 6 Kasım 2026'da istedi):
 
@@ -191,7 +275,7 @@ Metnin tamamı Türkçe olur. Bağırma (ünlem yağmuru, büyük harfle yazı) 
 |---|---|---|
 | Hesap | `["IGEV01","IGEV43","IGEV44","IGEV06","IGEV42"]` | takipçi, kazanılan, kaybedilen, erişim, etkileşen hesap |
 | Gönderiler | `["IGPO02","IGPO06","IGPO07","IGPO14","IGPO15","IGPO27","IGPO29"]` | tarih, bağlantı, tür, erişim, kaydetme, paylaşım, yeni takip |
-| Reels | `["IGRE02","IGRE06","IGRE11","IGRE23","IGRE12","IGRE21","IGRE28"]` | tarih, bağlantı, erişim, izlenme, kaydetme, paylaşım, 3 sn üstü izlenme oranı |
+| Reels | `["IGRE02","IGRE06","IGRE11","IGRE23","IGRE12","IGRE21","IGRE28","IGRE30","IGRE24","IGRE07"]` | tarih, bağlantı, erişim, izlenme, kaydetme, paylaşım, 3 sn üstü izlenme oranı, ilk 3 sn'de geçme oranı, ortalama izlenme süresi (sn), yorum |
 | Hikayeler (connector `stories`) | `["IGST02","IGST04","IGST10","IGST09","IGST11","IGST13","IGST08"]` | tarih ve saat, hikaye kimliği, erişim, gösterim, yanıt, ileri dokunma, çıkış |
 
 Sonuçları okurken:
@@ -208,11 +292,18 @@ Ne yapılacak:
   - Veri boş gelirse boş yaz, uydurma.
 - Onay mesajının başına 2–4 satır yaz: takipçi sayısı ve değişimi, erişim, en iyi gönderi ve neden iyi olduğu (kaydetme, paylaşım).
 - Bir şey öğrendiysen (örnek: "soru kancalı Reels daha çok izlendi") yeni haftanın metinlerinde uygula.
+- Karne kaydındaki her Reels'e türünü (`tur`: `urun`, `bil`, `yd`), `gecme_orani`, `ort_izlenme` ve `yorum` değerlerini de yaz.
+  - Kıyas noktası, Kasım 2026'nın ürün Reels'leri: geçme oranı %73 ve %90, ortalama izlenme 4,3 ve 1,9 saniye.
+  - Yeni türlerin ilk 4 haftası dolunca onay mesajının başına türlere göre kısa bir kıyas yaz. Hangi tür daha iyi tutuyorsa kullanıcıya söyle; karar onundur.
 
 ### 4. İçerik
-1. **Kuyruğu kontrol et:** `reels` listesinde en az 2, `urun_carousel` listesinde en az 1, `ipucu_carousel` listesinde (tekli haftasıysa `tekli` listesinde) en az 1 öğe olmalı.
+1. **Kuyruğu kontrol et:** `reels_bil` ve `reels_yd` listelerinde en az 1'er, `urun_carousel` listesinde en az 1, `ipucu_carousel` listesinde (tekli haftasıysa `tekli` listesinde) en az 1 öğe olmalı.
 2. **Eksikse yenisini yaz ve kuyruğa ekle.** Alan yapısı yukarıdaki gibi olur.
-   - **Reels ve ürün kaydırmalısı:** `python3 pick_products.py 10` ile aday al, sonra seç:
+   - **"Bil bakalım" ve "Yanlış / doğru" Reels'i:** "Biçimler ve alanlar" bölümündeki alanlara ve içerik kurallarına göre yaz.
+     - Her cevabı ve güvenlik bilgisini web aramasıyla doğrula.
+     - Ürün gerekiyorsa `work/products.xml` dosyasında `grep` ile bul ve `fetch_product.py` ile stokta olduğuna bak.
+     - Aynı konuyu 8 hafta içinde tekrarlama; İpucu kaydırmalısıyla aynı hafta aynı konuyu işleme.
+   - **Ürün kaydırmalısı (ve ürün Reels'i):** `python3 pick_products.py 10` ile aday al, sonra seç:
      - Görseli net, tek ürün, sade zemin olsun. Reels'te ürünün çözdüğü dert soruya dönüşebilmeli.
      - Aynı hafta farklı gruplardan olsun. `recent_groups` içinde son 2 haftada geçen grubu tekrarlama.
      - Haftada en az bir bağlantı elemanı içeriği olsun. İpucu genelde bunu karşılar; karşılamıyorsa ürünlerden biri `baglanti` grubundan olsun.
@@ -312,7 +403,7 @@ Kullanıcı Aralık 2026'da askerde. Bu yüzden 5 haftanın 20 gönderisi önced
 | 13 Aralık | 2026-12-14 | |
 | 20 Aralık | 2026-12-21 | 24 Aralık kampanya kartı: eşikler de denetlenir |
 | 27 Aralık | 2026-12-28 | |
-| 3 Ocak 2027 | 2027-01-04 | Normal düzen geri döner ve onay yine şarttır. Kuyruk boşalmış olur; 4. adımdaki kurallarla yeni öğe yaz. Onay mesajının başına hikaye denemesinin sonucunu da yaz (Biçimler → Hikaye denemesi). |
+| 3 Ocak 2027 | 2027-01-04 | Normal düzen geri döner ve onay yine şarttır. Reels'ler yeni türlerdedir: Pazartesi "Bil bakalım", Cuma "Yanlış / doğru"; ilk öğeler kuyrukta hazır. Kaydırmalı listeleri boşalmış olur; 4. adımdaki kurallarla yeni öğe yaz. Onay mesajında Reels türünün değiştiğini bir cümleyle hatırlat. Mesajın başına hikaye denemesinin sonucunu da yaz (Biçimler → Hikaye denemesi). |
 
 ### Adımlar
 1. **Karne:** 3. adımdaki karneyi çıkar ve `state.json` dosyasına ekle.
@@ -354,6 +445,7 @@ Kullanıcı Aralık 2026'da askerde. Bu yüzden 5 haftanın 20 gönderisi önced
   - Müzik eklenecek Reels'e `weeks/<HAFTA>.json` dosyasında üretimden önce `"ses": "efekt"` yaz. Böylece ritim müzikle çakışmaz.
   - Müziği `planla.py json … --muzik <id>=<audioId>` ile ekle. Videonun efektleri müziğin altında kalır (`videoVolume` 50).
   - Müzik yalnız Reels'te olur ve her zaman videonun başından başlar.
+  - "Bil bakalım" ve "Yanlış / doğru" Reels'ine müzik ekleme: geri sayım ve damga sesleri kurgunun parçasıdır. Müzik denemesi yalnız ürün Reels'inde yapılır.
   - `audioId` bir arama terimi (şarkı ya da sanatçı adı) veya bir numaradır.
   - Arama tek sonuca denk gelmezse Metricool isteği aday listesiyle reddeder. O zaman listeden **sözsüz (enstrümantal)** bir parça seç ve numarasıyla bir kez daha dene.
   - Sözlü, argo içeren ya da marka adı geçen parça seçme.
@@ -369,13 +461,13 @@ Kullanıcı Aralık 2026'da askerde. Bu yüzden 5 haftanın 20 gönderisi önced
 ## Dosyalar
 - `hafta.py`: Kuyruktan haftayı kurar, ürünleri indirir, stok kontrol eder.
 - `render.py`: Kaydırmalı ve tekli gönderilerin PNG'lerini üretir (1080×1350).
-- `reel.py`: Reels videosunu ve kapağını üretir; sesi `assets/reel-ses-*.wav` dosyalarından ekler.
-- `ses.py`: Reels'in özgün ses izini üretir. Yalnız animasyon zamanları değişirse çalıştırılır.
+- `reel.py`: Reels videosunu ve kapağını üretir (üç tür: `reel`, `reel_bil`, `reel_yd`); sesi `assets/reel-ses-*.wav` dosyalarından ekler.
+- `ses.py`: Ürün Reels'inin özgün ses izini üretir. `ses_tur.py`: "Bil bakalım" ve "Yanlış / doğru" seslerini üretir. Yalnız animasyon zamanları değişirse çalıştırılırlar.
 - `onizleme.py`: Onay için önizlemeleri üretir; bunlar depoya yüklenmez.
 - `planla.py`: Dosyaları kopyalar, Metricool isteklerini hazırlar, durumu kaydeder.
   - Önceden planlanmış haftalar için `stok`, `yedek` ve `yakala` komutları da onda.
 - `fetch_product.py`, `pick_products.py`, `tools_svg.py`: Ürün verisi, ürün adayları, cıvata çizimleri.
-- `templates/`: `urun`, `slide_liste`, `slide_kapak`, `slide_madde`, `slide_cta`, `reel`, `kampanya`, `toplu`, `bilgi`, `karsilastirma`.
+- `templates/`: `urun`, `slide_liste`, `slide_kapak`, `slide_madde`, `slide_cta`, `reel`, `reel_taban`, `reel_bil`, `reel_yd`, `kampanya`, `toplu`, `bilgi`, `karsilastirma`.
 - `queue.json`: İçerik kuyruğu. `state.json`: Geçmiş, karne ve ayarlar.
 - `weeks/`: Haftalık gönderi tanımları. `weeks/yedek.json`: Önceden planlanmış haftaların onaylı yedekleri.
 - `posts/`: Onaylanmış dosyalar.

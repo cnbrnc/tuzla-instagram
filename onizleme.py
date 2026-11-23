@@ -4,7 +4,8 @@
 Kullanım: python3 onizleme.py <hafta.json> <çıktı_klasörü>
 
 - Kaydırmalı gönderi: <id>-01.png, <id>-02.png ... dosyalarını tek görselde yan yana dizer -> <id>-onizleme.png
-- Reels: <id>.mp4 videosundan 4 kare alır (1., 3,5., 6. ve 8,5. saniye) -> <id>-kareler.png
+- Reels: <id>.mp4 videosundan 4 kare alır -> <id>-kareler.png
+  (ürün Reels'i: 1., 3,5., 6. ve 8,5. saniye; "Bil bakalım" ve "Yanlış / doğru": 1., 2,6., 5,6. ve 8. saniye)
 Tek görselli gönderiler için önizleme gerekmez; PNG'nin kendisi gönderilir.
 Önizleme dosyaları yalnız onay içindir; depoya yüklenmez.
 """
@@ -42,14 +43,14 @@ def main():
                 print("UYARI: slayt bulunamadı:", pid)
                 continue
             sheet([Image.open(p) for p in files], THUMB_W, THUMB_H, COLS, os.path.join(out, pid + "-onizleme.png"))
-        elif post.get("template") == "reel":
+        elif str(post.get("template", "")).startswith("reel"):
             mp4 = os.path.join(out, pid + ".mp4")
             if not os.path.exists(mp4):
                 print("UYARI: video bulunamadı:", pid)
                 continue
             frames = []
             with tempfile.TemporaryDirectory() as tmp:
-                for k, sec in enumerate((1.0, 3.5, 6.0, 8.5)):
+                for k, sec in enumerate((1.0, 3.5, 6.0, 8.5) if post["template"] == "reel" else (1.0, 2.6, 5.6, 8.0)):
                     jpg = os.path.join(tmp, "k%d.jpg" % k)
                     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", str(sec), "-i", mp4,
                                     "-frames:v", "1", jpg], check=True)

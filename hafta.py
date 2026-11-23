@@ -14,6 +14,10 @@ Slotlar (hepsi 10:00):
   Perşembe   ipucu_carousel[0]  (Usta İpucu kaydırmalısı) ya da --tekli ile tekli[0]
   Cuma       reels[1]           (Reels videosu)
 
+queue.json içindeki "reels_slotlari" ayarı varsa ve HAFTA onun "baslangic" tarihinden önce değilse,
+Pazartesi ve Cuma Reels'i ayarda yazan listelerin ilk öğesinden alınır
+(4 Ocak 2027'den itibaren: Pazartesi reels_bil "Bil bakalım", Cuma reels_yd "Yanlış / doğru").
+
 Ürün sayfalarını fetch_product.py ile work/<anahtar>/ klasörüne indirir ve stok durumunu kontrol eder.
 queue.json ve state.json DEĞİŞMEZ; kullanılan öğeler planlamadan sonra 'planla.py durum' ile düşülür.
 Bir sorun varsa (kuyruk boş, ürün stokta yok, sayfa açılmadı) açıklayıp 1 koduyla çıkar.
@@ -66,7 +70,16 @@ def main():
     with open(os.path.join(ROOT, "state.json"), encoding="utf-8") as f:
         state = json.load(f)
 
-    need = {"reels": 2, "urun_carousel": 1}
+    rs = q.get("reels_slotlari") or {}
+    if rs and hafta >= rs.get("baslangic", "9999"):
+        pzt_list, cuma_list = rs["pazartesi"], rs["cuma"]
+    else:
+        pzt_list = cuma_list = "reels"
+    need = {"urun_carousel": 1}
+    if pzt_list == cuma_list:
+        need[pzt_list] = 2
+    else:
+        need[pzt_list] = need[cuma_list] = 1
     need["tekli" if tekli else "ipucu_carousel"] = 1
     for k, n in need.items():
         if len(q.get(k, [])) < n:
@@ -74,10 +87,10 @@ def main():
 
     day = lambda n: (monday + dt.timedelta(days=n)).isoformat()
     slots = [
-        (day(0), "reel", q["reels"][0]),
+        (day(0), "reel", q[pzt_list][0]),
         (day(2), "carousel", q["urun_carousel"][0]),
         (day(3), "tekli" if tekli else "carousel", (q["tekli"] if tekli else q["ipucu_carousel"])[0]),
-        (day(4), "reel", q["reels"][1]),
+        (day(4), "reel", q[cuma_list][1 if pzt_list == cuma_list else 0]),
     ]
     theme = "light" if state.get("last_product_theme") == "dark" else "dark"
     # Reels ritimleri sırayla döner; aynı hafta iki Reels'te aynı ritim olmaz (state.json: ses_sirasi)
@@ -97,9 +110,10 @@ def main():
         if item.get("dogrula"):
             warnings.append("%s: %s" % (item["key"], item["dogrula"]))
         if fmt == "reel":
-            post["template"] = "reel"
-            post.setdefault("ses", ritimler[ses_i % len(ritimler)])
-            ses_i += 1
+            post.setdefault("template", "reel")
+            if post["template"] == "reel":       # yeni türlerin kendi sesi var (reel.py: DEFAULT_SOUND)
+                post.setdefault("ses", ritimler[ses_i % len(ritimler)])
+                ses_i += 1
             if hikaye_saati:
                 post["hikaye"] = hikaye_saati
         if item.get("url"):
@@ -108,6 +122,26 @@ def main():
             if prod.get("availability") != "InStock":
                 fail("stokta yok: %s (%s). Bu öğeyi atla: sıradaki öğeyi öne al ya da yenisini ekle." % (item["key"], item["url"]))
             post["product_dir"] = os.path.relpath(dest, ROOT)
+        # Yeni Reels türleri: seçeneklerin ve panellerin ürün görselleri
+        nested = [("options", i, o) for i, o in enumerate(item.get("options", []))]
+        nested += [(k, None, item[k]) for k in ("yanlis", "dogru") if isinstance(item.get(k), dict)]
+        for alan, i, d in nested:
+            if not d.get("product_url"):
+                continue
+            d = dict(d)
+            ad = "ab"[i] if alan == "options" else alan
+            dest = os.path.join(ROOT, "work", item["key"], ad)
+            prod = fetch(d.pop("product_url"), dest)
+            if prod.get("availability") != "InStock":
+                if alan == "dogru":
+                    fail("stokta yok: %s içinde önerilen ürün (%s). Bu öğeyi atla ya da başka ürünle güncelle." % (item["key"], prod.get("name")))
+                warnings.append("%s: %s görselindeki ürün stokta yok (görsel yine kullanılabilir)" % (item["key"], ad))
+            d["product_dir"] = os.path.relpath(dest, ROOT)
+            if alan == "options":
+                post["options"] = list(post["options"])
+                post["options"][i] = d
+            else:
+                post[alan] = d
         if item.get("slides"):
             slides = []
             for i, s in enumerate(item["slides"], 1):

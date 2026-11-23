@@ -61,7 +61,7 @@ def main():
                     item["id"] = "%s-%02d" % (post["id"], i)
                     item.setdefault("tag", "%d / %d" % (i, n))
                     items.append(item)
-            elif post.get("template") == "reel":
+            elif str(post.get("template", "")).startswith("reel"):
                 continue  # videolar reel.py ile üretilir
             else:
                 items.append(post)

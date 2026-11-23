@@ -172,12 +172,13 @@ def cmd_durum(hafta, args):
             state["last_product_theme"] = post.get("theme", state.get("last_product_theme"))
         if post.get("format") == "tekli":
             state["last_tekli_week"] = hafta
-    n_reels = sum(1 for p in wk["posts"] if p.get("format") == "reel" or p.get("template") == "reel")
+    n_reels = sum(1 for p in wk["posts"] if p.get("template") == "reel")  # ritim yalnız ürün Reels'inde döner
     state["ses_sirasi"] = state.get("ses_sirasi", 0) + n_reels
     if hafta not in state.setdefault("planned_weeks", []):
         state["planned_weeks"].append(hafta)
-    for k in ("reels", "urun_carousel", "ipucu_carousel", "tekli"):
-        queue[k] = [it for it in queue.get(k, []) if it.get("key") not in used]
+    for k, v in queue.items():                 # öğe listelerinin hepsi (reels, reels_bil, reels_yd, ...)
+        if isinstance(v, list) and v and all(isinstance(it, dict) and "key" in it for it in v):
+            queue[k] = [it for it in v if it["key"] not in used]
     save(state_path, state)
     save(queue_path, queue)
     print("state.json ve queue.json güncellendi; düşülen öğeler:", ", ".join(sorted(k for k in used if k)))

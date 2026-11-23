@@ -1,0 +1,66 @@
+{% extends "reel_taban.html" %}
+{# "Bil bakalım" Reels'i: soru ve iki seçenek (0–1 sn), geri sayım 3-2-1 (1–4 sn), cevap ve nedeni (4–6,75 sn), kapanış. #}
+{% block style %}
+@keyframes sayi{0%{opacity:0;transform:scale(1.7)}12%{opacity:1;transform:scale(1)}88%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.8)}}
+@keyframes halka{from{stroke-dashoffset:0}to{stroke-dashoffset:578}}
+@keyframes dogruK{0%{transform:scale(1);background:#fff}40%{transform:scale(1.1);background:var(--accent)}100%{transform:scale(1.04);background:var(--accent)}}
+@keyframes yanlisK{to{transform:scale(.93);opacity:.38}}
+/* soru: ilk karede ekranda */
+.soru{position:absolute;left:60px;right:150px;top:290px}
+.soru .k{font-weight:700;font-size:32px;letter-spacing:.16em;color:var(--accent)}
+.soru h1{margin:20px 0 0 0;font-size:150px;line-height:.9;color:#fff}
+.soru .l{display:block;white-space:nowrap;transform-origin:0 60%;animation:slam .22s cubic-bezier(.2,.8,.3,1) both}
+.soru .l:nth-child(1){animation-name:slam0}.soru .l:nth-child(2){animation-delay:.25s}
+/* seçenekler ilk karede ekranda; A 0,5 sn'de, B 0,75 sn'de vuruşla öne çıkar */
+.secenekler{position:absolute;left:60px;right:60px;top:670px;height:500px;display:flex;gap:30px}
+.sec{flex:1 1 0;min-width:0;animation:punch .28s ease-out}
+.sec:nth-child(1){animation-delay:.5s}.sec:nth-child(2){animation-delay:.75s}
+.kart{position:relative;width:100%;height:100%;box-sizing:border-box;background:#fff;border-radius:36px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:70px 24px 24px 24px}
+.kart.dogru{animation:dogruK .4s ease-out 4s forwards}
+.kart.yanlis{animation:yanlisK .3s ease-out 4s forwards}
+.harf{position:absolute;top:24px;left:24px;width:76px;height:76px;border-radius:50%;background:var(--navy);color:#fff;font-size:50px;line-height:1;display:flex;align-items:center;justify-content:center}
+.buyuk{display:block;width:100%;text-align:center;font-size:210px;line-height:.9;color:var(--deep);white-space:nowrap}
+.kart img{display:block;max-width:380px;max-height:300px;width:auto;height:auto}
+.kart img.daire{border-radius:50%}
+.kart svg.kafa{display:block;width:290px;height:290px}
+.kart .kafa + .et{font-size:44px;color:var(--deep)}
+.et{font-weight:700;font-size:34px;line-height:1.15;color:var(--muted);text-align:center}
+.tik{position:absolute;top:20px;right:20px;width:92px;height:92px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;animation:pop .3s cubic-bezier(.3,1.6,.5,1) 4.05s both}
+/* geri sayım 1–4 sn */
+.sayac{position:absolute;left:60px;right:150px;top:1215px;height:230px;display:flex;align-items:center;gap:36px;animation:up .25s cubic-bezier(.2,.8,.2,1) .85s both,out .2s ease-in 3.85s forwards}
+.cember{position:relative;width:210px;height:210px;flex:none}
+.cember svg{position:absolute;inset:0;transform:rotate(-90deg)}
+.cember .iz{fill:none;stroke:rgba(255,255,255,.18);stroke-width:14}
+.cember .dolu{fill:none;stroke:var(--accent);stroke-width:14;stroke-linecap:round;stroke-dasharray:578;animation:halka 3s linear 1s both}
+.cember .n{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:150px;line-height:1;color:#fff;opacity:0;animation:sayi 1s linear both}
+.cember .n:nth-of-type(1){animation-delay:1s}.cember .n:nth-of-type(2){animation-delay:2s}.cember .n:nth-of-type(3){animation-delay:3s}
+.sayac .t1{font-size:88px;line-height:.95;color:#fff}
+.sayac .t2{margin-top:10px;font-weight:700;font-size:38px;color:var(--mist)}
+/* cevap ve nedeni 4–6,75 sn */
+.neden{position:absolute;left:60px;right:150px;top:1215px}
+.neden .cvp{font-size:104px;line-height:.95;color:var(--accent);white-space:nowrap;animation:slamT .3s cubic-bezier(.2,.8,.3,1) 4.25s both}
+.neden .s{margin-top:16px;font-weight:700;font-size:42px;line-height:1.22;color:#fff;animation:up .3s cubic-bezier(.2,.8,.2,1) both}
+.neden .s:nth-of-type(2){animation-delay:4.75s}.neden .s:nth-of-type(3){animation-delay:5.25s}
+{% endblock %}
+{% block sahne %}
+<div class="soru"><div class="k">{{ question_kicker }}</div><h1 class="disp" data-fit>{% for l in question %}<span class="l">{{ l }}</span>{% endfor %}</h1></div>
+<div class="secenekler">
+{% for o in options %}<div class="sec"><div class="kart {{ 'dogru' if loop.index0 == answer else 'yanlis' }}">
+<span class="harf disp">{{ 'AB'[loop.index0] }}</span>
+{% if o.image %}<img src="{{ o.image }}" alt=""{% if o.image_shape == 'daire' %} class="daire"{% endif %}>
+{% elif o.head %}{# cıvata başı, üstten: kalite sınıfı başa basılıdır #}<svg class="kafa" viewBox="0 0 300 300"><defs><linearGradient id="celik{{ loop.index }}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E3E7ED"/><stop offset=".55" stop-color="#A9B2C0"/><stop offset="1" stop-color="#7C8798"/></linearGradient></defs>
+<polygon points="290,150 220,271 80,271 10,150 80,29 220,29" fill="url(#celik{{ loop.index }})" stroke="#4B5563" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="150" cy="150" r="112" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="4"/><circle cx="150" cy="150" r="116" fill="none" stroke="#4B5563" stroke-opacity=".35" stroke-width="3"/>
+<text x="152" y="189" text-anchor="middle" font-family="'Barlow Condensed','Arial Narrow',sans-serif" font-weight="800" font-size="112" fill="#fff" fill-opacity=".6">{{ o.head }}</text>
+<text x="150" y="186" text-anchor="middle" font-family="'Barlow Condensed','Arial Narrow',sans-serif" font-weight="800" font-size="112" fill="#273142">{{ o.head }}</text></svg>
+{% else %}<span class="buyuk disp" data-fit>{{ o.big }}</span>{% endif %}
+{% if o.label %}<span class="et">{{ o.label }}</span>{% endif %}
+{% if loop.index0 == answer %}<span class="tik"><svg width="56" height="56" viewBox="0 0 56 56"><path d="M12 29l11 11 21-24" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>{% endif %}
+</div></div>{% endfor %}
+</div>
+<div class="sayac">
+<div class="cember"><svg viewBox="0 0 210 210"><circle class="iz" cx="105" cy="105" r="92"/><circle class="dolu" cx="105" cy="105" r="92"/></svg><span class="n disp">3</span><span class="n disp">2</span><span class="n disp">1</span></div>
+<div><div class="t1 disp">Tahminin ne?</div><div class="t2">Yoruma yaz: A mı, B mi?</div></div>
+</div>
+<div class="neden"><div class="cvp disp" data-fit>{{ answer_text }}</div>{% for s in why %}<div class="s">{{ s }}</div>{% endfor %}</div>
+{% endblock %}

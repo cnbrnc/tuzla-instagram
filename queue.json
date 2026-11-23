@@ -1,5 +1,5 @@
 {
-  "note": "Haftalık içerik kuyruğu (yeni düzen, 16 Kasım 2026 haftasından itibaren). Robot her slot için ilgili listedeki ilk öğeyi alır ve kullanınca listeden çıkarır. Liste biterse ROBOT.md'deki kurallarla yenisini üretir. 'ipucu_konulari' yalnız konu ve özet listesidir; içerik yazılırken her teknik bilgi doğrulanır.",
+  "note": "Haftalık içerik kuyruğu (yeni düzen, 16 Kasım 2026 haftasından itibaren). Robot her slot için ilgili listedeki ilk öğeyi alır ve kullanınca listeden çıkarır. Liste biterse ROBOT.md'deki kurallarla yenisini üretir. 'ipucu_konulari' yalnız konu ve özet listesidir; içerik yazılırken her teknik bilgi doğrulanır. 4 Ocak 2027 haftasından itibaren Reels'ler 'reels_slotlari' ayarındaki listelerden alınır: Pazartesi 'reels_bil' (Bil bakalım), Cuma 'reels_yd' (Yanlış / doğru). 'reels' listesi (ürün Reels'i) yedek tür olarak durur.",
   "reels": [],
   "urun_carousel": [
     {
@@ -108,21 +108,6 @@
   ],
   "ipucu_konulari": [
     {
-      "konu": "Kılavuz ön delik çapları",
-      "ozet": "Normal dişte matkap çapı = anma çapı − adım. M3 2,5 · M4 3,3 · M5 4,2 · M6 5,0 · M8 6,8 · M10 8,5 · M12 10,2 mm. Her ölçü bir slayt ya da tek tablo.",
-      "urun_ara": "kılavuz, matkap ucu"
-    },
-    {
-      "konu": "Pul çeşitleri",
-      "ozet": "DIN 125 düz pul, DIN 9021 geniş pul, DIN 127 yaylı pul, DIN 6798 tırtıllı pul: hangisi nerede kullanılır.",
-      "urun_ara": "din125, din9021, din127, din6798"
-    },
-    {
-      "konu": "Somun çeşitleri",
-      "ozet": "DIN 934 altıköşe, DIN 985 fiberli, DIN 6923 flanşlı, DIN 315 kelebek, DIN 1587 kapak somun.",
-      "urun_ara": "din934, din985, din6923, din315, din1587"
-    },
-    {
       "konu": "Cıvata kaplamaları",
       "ozet": "Elektrogalvaniz, sıcak daldırma galvaniz, siyah (kaplamasız), paslanmaz: dış ortam, nem ve maliyete göre seçim.",
       "urun_ara": "elektrogalvanizli, sıcak daldırma, inox"
@@ -130,7 +115,8 @@
     {
       "konu": "Metrik mi inç mi?",
       "ozet": "M8 ile 5/16\" UNC aynı değil; metrikte adım mm, inçte TPI (inçteki diş sayısı). Karıştırınca diş bozulur.",
-      "urun_ara": "unc, unf"
+      "urun_ara": "unc, unf",
+      "not": "Aralık 2026 yedeği olarak hazırlandı (weeks/yedek.json: yedek-metrik-inc). state.json içindeki kullanilan_yedekler listesinde varsa bu konuyu atla; yoksa hazır yedeği kullanabilirsin."
     },
     {
       "konu": "Elektrod seçimi",
@@ -145,12 +131,142 @@
     {
       "konu": "Matkap ucu seçimi",
       "ozet": "HSS, kobaltlı HSS, karbür ve beton uçları: çelik, paslanmaz, beton için hangisi.",
-      "urun_ara": "hss matkap, kobalt matkap, beton matkap"
+      "urun_ara": "hss matkap, kobalt matkap, beton matkap",
+      "not": "Aralık 2026 yedeği olarak hazırlandı (weeks/yedek.json: yedek-matkap-ucu). state.json içindeki kullanilan_yedekler listesinde varsa bu konuyu atla; yoksa hazır yedeği kullanabilirsin."
     },
     {
       "konu": "Paslanmaz ve galvanik korozyon",
       "ozet": "Paslanmaz cıvata alüminyum ya da galvanizli parçaya doğrudan temas edince nemde korozyon hızlanabilir; yalıtım pulu, uygun malzeme seçimi.",
       "urun_ara": "naylon pul, inox"
+    }
+  ],
+  "reels_slotlari": {
+    "baslangic": "2027-01-04",
+    "pazartesi": "reels_bil",
+    "cuma": "reels_yd"
+  },
+  "reels_bil": [
+    {
+      "key": "bil-88-109",
+      "template": "reel_bil",
+      "group": "baglanti",
+      "tag": "BİL BAKALIM",
+      "question_kicker": "CIVATA BİLGİSİ",
+      "question": [
+        "Hangisi daha",
+        "sağlam?"
+      ],
+      "options": [
+        {
+          "head": "8.8",
+          "label": "8.8 kalite"
+        },
+        {
+          "head": "10.9",
+          "label": "10.9 kalite"
+        }
+      ],
+      "answer": 1,
+      "answer_text": "Cevap: 10.9",
+      "why": [
+        "İlk sayı × 100 = çekme dayanımı (MPa)",
+        "10.9 → 1000 MPa · 8.8 → 800 MPa"
+      ],
+      "search_code": "10.9 cıvata",
+      "kaynak": "ISO 898-1: 8.8 anma çekme dayanımı 800 MPa, 10.9 için 1000 MPa (23 Kasım 2026'da doğrulandı).",
+      "caption": "Cıvata kalite sınıfı: 8.8 mi, 10.9 mu? Hangisi daha sağlam? 🔩\n\nTahminini yorumlara yaz. Cevap videonun sonunda.\n\n📤 Ustana gönder, o da bilsin.\n💾 Kaydet, lazım olur.\n🔎 Sitede “10.9 cıvata” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#cıvata #bağlantıelemanları #makinemühendisi #imalat #tuzlahırdavat"
+    },
+    {
+      "key": "bil-a2-a4",
+      "template": "reel_bil",
+      "group": "baglanti",
+      "tag": "BİL BAKALIM",
+      "question_kicker": "PASLANMAZ BİLGİSİ",
+      "question": [
+        "Deniz kenarına",
+        "hangisi?"
+      ],
+      "options": [
+        {
+          "head": "A2",
+          "label": "A2 paslanmaz"
+        },
+        {
+          "head": "A4",
+          "label": "A4 paslanmaz"
+        }
+      ],
+      "answer": 1,
+      "answer_text": "Cevap: A4",
+      "why": [
+        "A4'te molibden var.",
+        "Tuzlu suya ve klora daha dayanıklı."
+      ],
+      "search_code": "A4 cıvata",
+      "kaynak": "ISO 3506: A2 = 304 sınıfı, A4 = 316 sınıfı (molibdenli); klorürlü ortamda A4 önerilir. İlk hafta gönderisinde (A2 mi A4 mü?) doğrulandı.",
+      "caption": "Paslanmaz cıvata: A2 mi, A4 mü? Deniz kenarında hangisi kullanılır? ⚓\n\nTahminini yorumlara yaz. Cevap videonun sonunda.\n\n📤 Tekne ya da sahil işi yapan arkadaşına gönder.\n💾 Kaydet, lazım olur.\n🔎 Sitede “A4 cıvata” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#paslanmazcıvata #bağlantıelemanları #denizcilik #inox #tuzlahırdavat"
+    },
+    {
+      "key": "bil-m8-516",
+      "template": "reel_bil",
+      "group": "baglanti",
+      "tag": "BİL BAKALIM",
+      "question_kicker": "ÖLÇÜ BİLGİSİ",
+      "question": [
+        "Hangisi daha",
+        "kalın?"
+      ],
+      "options": [
+        {
+          "big": "M8",
+          "label": "metrik"
+        },
+        {
+          "big": "5/16″",
+          "label": "inç"
+        }
+      ],
+      "answer": 0,
+      "answer_text": "Cevap: M8",
+      "why": [
+        "M8 = 8,00 mm · 5/16″ = 7,94 mm",
+        "Çok yakınlar ama dişleri birbirine uymaz."
+      ],
+      "search_code": "M8 cıvata",
+      "kaynak": "5/16 inç × 25,4 = 7,94 mm. M8 kaba diş adımı 1,25 mm; 5/16″ UNC inçte 18 diş (yaklaşık 1,41 mm).",
+      "caption": "Metrik mi, inç mi: M8 ile 5/16″ cıvatadan hangisi daha kalın? 🔩\n\nTahminini yorumlara yaz. Cevap videonun sonunda.\n\n📤 Ustana gönder, o da bilsin.\n💾 Kaydet, lazım olur.\n🔎 Sitede “M8 cıvata” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#cıvata #bağlantıelemanları #otoservis #imalat #tuzlahırdavat"
+    }
+  ],
+  "reels_yd": [
+    {
+      "key": "yd-kesme-taslama",
+      "template": "reel_yd",
+      "group": "asindirici",
+      "tag": "USTA HATASI",
+      "hook_kicker": "SIK YAPILAN HATA",
+      "url": "https://tuzlahirdavat.com.tr/115x6-4x22-nk-taslama-tasi-karbosan",
+      "hook": [
+        "Kesme taşıyla",
+        "taşlama mı",
+        "yapıyorsun?"
+      ],
+      "yanlis": {
+        "ne": "Kesme taşının yan yüzüyle taşlamak",
+        "alt": "Karbosan kesme taşı, 2,5 mm",
+        "image_shape": "daire",
+        "product_url": "https://tuzlahirdavat.com.tr/115x2-5x22-nk-duz-kesme-tasi-karbosan"
+      },
+      "dogru": {
+        "ne": "Taşlamayı taşlama taşıyla yapmak",
+        "alt": "Karbosan taşlama taşı, 6,4 mm",
+        "image_shape": "daire",
+        "product_url": "https://tuzlahirdavat.com.tr/115x6-4x22-nk-taslama-tasi-karbosan"
+      },
+      "why_kicker": "Neden?",
+      "why": "Kesme taşı yan yük için yapılmaz; kırılıp parçalanabilir. Etiketinde de yazar: “Taşlama yapmayınız.”",
+      "search_code": "taşlama taşı",
+      "kaynak": "Norton güvenlik önerileri: kesme taşının yan yüzüyle taşlama yapılmaz. Karbosan kesme taşının etiketinde “Taşlama yapmayınız / No side grinding” yazar (23 Kasım 2026'da doğrulandı).",
+      "caption": "Kesme taşıyla taşlama yapılmaz: ince disk yan yük için üretilmez, kırılıp parçalanabilir. ⚠️\n\nTaşlama için taşlama taşı kullan. Karbosan 115 × 6,4 mm taşlama taşı sitemizde.\n\n📤 Spiral kullanan arkadaşına gönder.\n💾 Kaydet, lazım olur.\n🔎 Sitede “taşlama taşı” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#taşlamataşı #karbosan #kaynakçı #aşındırıcı #tuzlahırdavat"
     }
   ]
 }

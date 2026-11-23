@@ -2,10 +2,19 @@
 """Reels videosu üretir (1080x1920, 30 fps, 9 sn, MP4).
 
 Kullanım: python3 reel.py <hafta.json> <çıktı_klasörü>
-hafta.json içinde template = "reel" olan gönderileri işler. Her biri için <id>.mp4 ve kapak <id>-kapak.jpg yazar.
-Gerekli alanlar: hook (satırlar), hook_kicker, tag, brand, sku, title, chips, search_code, product_dir.
-İsteğe bağlı: ses = "enerjik" (varsayılan), "atolye", "derin", "efekt" (yalnız efekt; Instagram müziği
-eklenecekse) ya da "yok". Video ve ses döngüde başa kesintisiz bağlanır.
+hafta.json içinde template alanı "reel" ile başlayan gönderileri işler. Her biri için <id>.mp4 ve kapak <id>-kapak.jpg yazar.
+
+Türler ve gerekli alanlar:
+  reel      Ürün Reels'i: hook (satırlar), hook_kicker, tag, brand, sku, title, chips, search_code, product_dir.
+  reel_bil  "Bil bakalım": tag, question_kicker, question (en çok 2 satır), options (2 adet: big ya da product_dir,
+            isteğe bağlı label), answer (0 ya da 1), answer_text, why (en çok 2 satır), search_code.
+  reel_yd   "Yanlış / doğru": tag, hook_kicker, hook (satırlar), yanlis ve dogru ({ne, alt, product_dir}),
+            why (isteğe bağlı why_kicker), search_code.
+  Seçeneklerde ve panellerde image_shape = "daire" yuvarlak ürünü (disk, taş) daire içinde gösterir.
+
+İsteğe bağlı: ses. Ürün Reels'inde "enerjik" (varsayılan), "atolye", "derin", "efekt" (yalnız efekt; Instagram
+müziği eklenecekse); yeni türlerde kendi sesi ("bil", "yd") varsayılandır. "yok" sessiz üretir.
+Video ve ses döngüde başa kesintisiz bağlanır.
 """
 import json
 import os
@@ -22,7 +31,17 @@ FPS = 30
 SECONDS = 9
 REEL_STYLE_DEFAULT = "max-width:860px;max-height:640px;width:auto;height:auto"
 # Kodla üretilmiş özgün ses izleri (ses.py). Zamanlama templates/reel.html ile aynıdır.
-SOUNDS = {k: os.path.join(ROOT, "assets", "reel-ses-%s.wav" % k) for k in ("enerjik", "atolye", "derin", "efekt")}
+# Yeni türlerin sesi ses_tur.py ile üretilir; zamanlaması reel_bil.html ve reel_yd.html ile aynıdır.
+SOUNDS = {k: os.path.join(ROOT, "assets", "reel-ses-%s.wav" % k) for k in ("enerjik", "atolye", "derin", "efekt", "bil", "yd")}
+DEFAULT_SOUND = {"reel": "enerjik", "reel_bil": "bil", "reel_yd": "yd"}
+
+
+def with_image(d):
+    """product_dir verilmiş seçenek ya da panele ürün görselinin yolunu ekler."""
+    if isinstance(d, dict) and d.get("product_dir") and not d.get("image"):
+        with open(os.path.join(d["product_dir"], "product.json"), encoding="utf-8") as f:
+            d = dict(d, image=json.load(f)["image"])
+    return d
 
 
 def reel_image_style(prod):
@@ -50,17 +69,24 @@ def main():
             "--disable-component-update", "--disable-sync", "--allow-file-access-from-files"])
         page = browser.new_page(viewport={"width": 1080, "height": 1920}, device_scale_factor=1)
         for post in spec["posts"]:
-            if post.get("template") != "reel":
+            tpl = post.get("template") or ""
+            if tpl not in DEFAULT_SOUND:
                 continue
-            with open(os.path.join(post["product_dir"], "product.json"), encoding="utf-8") as f:
-                prod = json.load(f)
             ctx = {"fontdir": os.path.join(ROOT, "node_modules"), "logo": os.path.join(ROOT, "assets", "logo.png"),
-                   "accent": "#FFC629", "image": prod["image"], "panel_bg": prod.get("panel_bg", "#FFFFFF"),
-                   "image_style": reel_image_style(prod)}
+                   "accent": "#FFC629"}
+            if tpl == "reel":
+                with open(os.path.join(post["product_dir"], "product.json"), encoding="utf-8") as f:
+                    prod = json.load(f)
+                ctx.update({"image": prod["image"], "panel_bg": prod.get("panel_bg", "#FFFFFF"),
+                            "image_style": reel_image_style(prod)})
             ctx.update(post)
+            if tpl == "reel_bil":
+                ctx["options"] = [with_image(o) for o in post["options"]]
+            elif tpl == "reel_yd":
+                ctx["yanlis"], ctx["dogru"] = with_image(post["yanlis"]), with_image(post["dogru"])
             html_path = os.path.join(out, "html", post["id"] + ".html")
             with open(html_path, "w", encoding="utf-8") as f:
-                f.write(env.get_template("reel.html").render(**ctx))
+                f.write(env.get_template(tpl + ".html").render(**ctx))
             page.goto("file://" + html_path)
             page.evaluate("document.fonts.ready.then(() => true)")
             # Yazı sığdırma, animasyonlar durgunken yapılır (1,2 sn): büyüyerek gelen satırlar ölçümü bozmasın
@@ -77,7 +103,7 @@ def main():
                 page.screenshot(path=os.path.join(frames, "f%04d.jpg" % i), type="jpeg", quality=92)
             mp4 = os.path.join(out, post["id"] + ".mp4")
             # Ses: ritim adı (varsayılan "enerjik"), "efekt" (Instagram müziği eklenecekse) ya da "yok"
-            audio = SOUNDS.get(post.get("ses", "enerjik"))
+            audio = SOUNDS.get(post.get("ses") or DEFAULT_SOUND[tpl])
             if audio and os.path.exists(audio):
                 audio_in = ["-i", audio]
                 audio_fx = ["-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-ar", "44100"]
