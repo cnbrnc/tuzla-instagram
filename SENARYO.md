@@ -26,6 +26,7 @@ Her öğeye `kanca_kalibi` alanı yazılır. Karne bu alana göre hangi kalıbı
 
 | Kalıp | Biçim | Örnek | Ne zaman |
 |---|---|---|---|
+| `dert` | "…oluyor mu?" | "Elektrot yapışıp duruyor mu?" | Ustanın yaşadığı bir dert varsa ve ürün onu çözüyorsa |
 | `ima` | "…mı yapıyorsun?" | "Paslanmazı darbeliyle mi sıkıyorsun?" | Sık yapılan gerçek bir hata varsa |
 | `hangisi` | "Hangisi…?" | "Çiviye basınca hangisi korur?" | İki ürün ya da iki sınıf kıyaslanacaksa |
 | `kac` | "Kaç…?" | "M8 imbusa kaç alyan?" | Cevap bir sayıysa ve usta bunu her gün kullanıyorsa |
