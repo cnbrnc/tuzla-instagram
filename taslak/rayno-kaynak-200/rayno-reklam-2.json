@@ -1,0 +1,86 @@
+{
+ "hafta": "taslak",
+ "taslak": "25 Kasım 2026: Rayno için ikinci reklam filmi (yeni kaynaklar: Mixkit, Pixabay, Pexels); onay bekliyor",
+ "posts": [
+  {
+   "id": "rayno-kaynak-200-reklam-2",
+   "key": "rayno-kaynak-200",
+   "format": "reel",
+   "template": "reel_fragman",
+   "group": "kaynak",
+   "kanca_kalibi": "fragman",
+   "stil": "sinematik",
+   "muzik": "d",
+   "url": "https://tuzlahirdavat.com.tr/rayno-200a-invertor-kaynak-makinasi",
+   "product_dir": "work/rayno-kaynak-200",
+   "tag": "KAYNAK MAKİNESİ",
+   "kapak_ms": 4900,
+   "replikler": [
+    [
+     "İŞ BAZEN",
+     "YUKARIDA."
+    ],
+    [
+     "İŞ",
+     "BEKLEMEZ."
+    ],
+    [
+     "DİKİŞ",
+     "TUTMALI."
+    ],
+    [
+     "ÇANTANI",
+     "AL, ÇIK."
+    ]
+   ],
+   "sahneler": [
+    {
+     "file": "work/stok/mixkit-4125.mp4",
+     "url": "https://assets.mixkit.co/videos/4125/4125-1080.mp4",
+     "start": 1.0,
+     "x": 0.78,
+     "pan": 0.0,
+     "gamma": 1.25
+    },
+    {
+     "file": "work/stok/pixabay-75269.mp4",
+     "url": "https://cdn.pixabay.com/video/2021/05/25/75269-555047162_large.mp4",
+     "start": 3.9,
+     "x": 0.3,
+     "pan": 0.0
+    },
+    {
+     "file": "work/stok/pixabay-18983.mp4",
+     "url": "https://cdn.pixabay.com/video/2018/10/28/18983-298307499_large.mp4",
+     "start": 40.0,
+     "x": 0.39,
+     "pan": 0.0
+    },
+    {
+     "file": "work/stok/pexels-6046358.mp4",
+     "url": "https://videos.pexels.com/video-files/6046358/6046358-hd_1920_1080_24fps.mp4",
+     "start": 14.0,
+     "x": 0.75,
+     "pan": 0.01
+    }
+   ],
+   "baslik": "RAYNO 200A",
+   "tur_yazi": "ÇANTA TİPİ KAYNAK MAKİNESİ",
+   "ozellikler": [
+    "Omuz askılı",
+    "200 amper",
+    "2 yıl garanti"
+   ],
+   "slogan": "İş neredeyse, kaynak orada.",
+   "search_code": "RYN6155",
+   "urun": {
+    "marka": "RAYNO",
+    "ad": "200A inverter kaynak makinesi",
+    "ozellik": "Çanta tipi · IGBT · 2 yıl garanti"
+   },
+   "kaynak_video": "Mixkit Stock Video Free License: mixkit.co/free-stock-video/welder-working-at-a-construction-4125/ · Pixabay Content License: pixabay.com/videos/welding-electrode-industry-75269/ (SergioParadox), pixabay.com/videos/welding-metal-sparks-glow-welded-18983/ (ArturLuczka) · Pexels lisansı: pexels.com/video/professional-welding-steel-6046358/",
+   "kaynak": "Bütün özellikler ürün sayfasından (23 Kasım 2026): 200 A, 2,50 ve 3,25 mm rutil/bazik elektrot, IGBT, çanta tipi omuz askılı, aşırı ısınma koruması ve fan, 2 yıl garanti.",
+   "caption": "Rayno 200A inverter kaynak makinesi: çanta tipi, omuz askılı, 200 amper. ⚡\n\n2,50 ve 3,25 mm rutil ve bazik elektrotla çalışır. IGBT teknolojisi, aşırı ısınma koruması ve fanlı soğutma. İskelede, çatıda, mobil serviste taşıması kolay. 2 yıl garantili.\n\n📤 Kaynakçı arkadaşına gönder.\n🔎 Sitede “RYN6155” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#kaynakmakinesi #rayno #kaynakçı #demirdoğrama #tuzlahırdavat"
+  }
+ ]
+}

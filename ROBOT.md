@@ -216,6 +216,10 @@ Kullanıcı 23 Kasım 2026'da 5 fragmanı izledi ve "kalanı hangisi iyi olacaks
 
 **Stok video zemini (`bg_video`):** `{"url": "<mp4 adresi>", "start": <sn>, "x": <0–1>, "pan": <0–0,08>}`. `hafta.py` dosyayı `work/stok/` klasörüne indirir; indiremezse uyarı verir ve gönderi kodla üretilmiş sahneyle hazırlanır.
 - **Kaynak:** Yalnız ticari kullanımı serbest stok siteleri: Pexels ve Pixabay. Başkasının YouTube, Instagram ya da TikTok videosundan kesit alınmaz.
+  - **Mixkit (25 Kasım 2026'da eklendi):** Her klibin lisansı ayrıdır. Klip sayfasında "Mixkit Stock Video Free License" yazıyorsa kullan; **"Mixkit Restricted License" (yalnız kişisel kullanım) yazıyorsa kullanma.** Sayfayı `curl` ile aç ve `data-license="videoFree"` ara. 25 Kasım'da bakılan 92 klibin 42'si kısıtlıydı; kaynak yakın çekimlerinin hepsi kısıtlı. Dosya adresi: `https://assets.mixkit.co/videos/<no>/<no>-1080.mp4`. İşe yarayanlar: kıvılcım ve kor görüntüleri (3460, 3463, 3465, 684), şantiyede kaynakçı (4125).
+  - **Coverr (25 Kasım 2026'da eklendi):** Lisans ticari kullanıma açık, kaynak gösterme yok. Arşivi küçük; hırdavat konularında az şey var (kaynak aramasında işe yarar klip çıkmadı). Adı `user-ai-generation` ile başlayan klipler yapay zekâ üretimidir, alma. Shutterstock'a giden bağlantılar ücretlidir. Dosya adresi: `https://cdn.coverr.co/videos/<ad>/1080p.mp4`.
+  - **Kullanma:** Vecteezy, Videezy, Dareful, Vidsplay (ücretsizde kaynak gösterme şart); Videvo ve Mazwai (adresleri başka siteye yönleniyor).
+  - **Kullanıcıya soruldu, cevap bekliyor (25 Kasım 2026):** ISO Republic (CC0, yaklaşık 130 klip; alan adı izni gerekir), Unsplash fotoğrafları (ticari kullanım serbest, kaynak gösterme yok; fotoğraf yavaş kamera hareketiyle sahne olur), Adobe Stock ücretsiz koleksiyonu (ticari lisans; Adobe hesabı ister, robot indiremez, kullanıcı indirip gönderebilir).
 - **Nasıl bulunur:**
   1. WebSearch ile ara; `allowed_domains` olarak `pexels.com` ya da `pixabay.com` ver. Örnek sorgu: "angle grinder sparks video".
   2. Video sayfasını WebFetch ile aç ve doğrudan dosya adresini iste (`videos.pexels.com/video-files/…mp4` ya da `cdn.pixabay.com/video/…mp4`). Lisans etiketini de oku.
@@ -229,7 +233,7 @@ Kullanıcı 23 Kasım 2026'da 5 fragmanı izledi ve "kalanı hangisi iyi olacaks
 - **Kontrol:** Üretimden sonra karelere bak: kanca yazısı görüntünün üstünde okunuyor mu, kesit konuyla ilgili mi?
 - **Kayıt:** Öğeye `kaynak_video` alanında sayfa adresini, yükleyeni ve lisansı yaz.
 - **Depoya yükleme:** Stok dosyasını depoya koyma; lisans tek başına dağıtıma izin vermez. `work/` zaten yok sayılır. Yalnız bitmiş Reels videosu `posts/` klasörüne girer.
-- **Erişim:** Kullanıcı `www.pexels.com`, `videos.pexels.com`, `pixabay.com` ve `cdn.pixabay.com` adreslerine izin verdi. Erişim kapalıysa tekrar deneme; gönderiyi kodla üretilmiş sahneyle hazırla ve kullanıcıya yaz.
+- **Erişim:** Kullanıcı `www.pexels.com`, `videos.pexels.com`, `pixabay.com`, `cdn.pixabay.com`, `mixkit.co`, `assets.mixkit.co`, `coverr.co` ve `cdn.coverr.co` adreslerine izin verdi. Mixkit ve Coverr sayfaları `curl` ile açılır. Erişim kapalıysa tekrar deneme; gönderiyi kodla üretilmiş sahneyle hazırla ve kullanıcıya yaz.
 
 **Gerçek çekim (henüz kurulmadı):** Kullanıcıya telefonla çekilmiş kısa işlik videolarını robotun kurgulaması önerildi. Kullanıcı deneme çekimi gönderirse kurulacak. O zamana kadar Cuma "Yanlış / doğru" olur.
 
