@@ -1,0 +1,161 @@
+{
+ "hafta": "taslak",
+ "taslak": "25 Kasım 2026: site tanıtım filmi, uzun sürüm (15 sn): dükkân çekimleri + iş görüntüleri; onay bekliyor",
+ "posts": [
+  {
+   "id": "site-tanitim-uzun",
+   "key": "site-tanitim-uzun",
+   "format": "reel",
+   "template": "reel_fragman",
+   "group": "site",
+   "kanca_kalibi": "fragman",
+   "stil": "sinematik",
+   "muzik": "e",
+   "tag": "TUZLA · İSTANBUL",
+   "kapak_ms": 10900,
+   "replikler": [
+    [
+     "DÜKKÂN",
+     "TUZLA'DA."
+    ],
+    [
+     "DEPO",
+     "DOLU."
+    ],
+    [
+     "ALETLER",
+     "HAZIR."
+    ],
+    [
+     "USTA",
+     "İŞ BAŞINDA."
+    ],
+    [
+     "HEPSİ",
+     "BİR TIK UZAKTA."
+    ]
+   ],
+   "sahneler": [
+    {
+     "file": "work/dukkan/d-3598k.mp4",
+     "start": 0.3,
+     "sure": 1.0
+    },
+    {
+     "file": "work/dukkan/d-3600k.mp4",
+     "start": 0.6,
+     "sure": 1.0
+    },
+    {
+     "file": "work/dukkan/d-3601.mp4",
+     "start": 2.0,
+     "sure": 1.0
+    },
+    {
+     "file": "work/dukkan/d-3595.mp4",
+     "start": 1.5,
+     "sure": 0.5
+    },
+    {
+     "file": "work/dukkan/d-3602.mp4",
+     "start": 0.2,
+     "sure": 0.5
+    },
+    {
+     "file": "work/dukkan/d-3594.mp4",
+     "start": 1.2,
+     "sure": 0.5
+    },
+    {
+     "file": "work/dukkan/d-3592.mp4",
+     "start": 0.6,
+     "sure": 0.5
+    },
+    {
+     "file": "work/dukkan/d-3596.mp4",
+     "start": 0.8,
+     "sure": 0.5
+    },
+    {
+     "file": "work/dukkan/d-3597.mp4",
+     "start": 1.6,
+     "sure": 0.5
+    },
+    {
+     "file": "work/stok/pexels-8447827.mp4",
+     "url": "https://videos.pexels.com/video-files/8447827/8447827-hd_1920_1080_30fps.mp4",
+     "start": 5.4,
+     "x": 0.58,
+     "sure": 0.5
+    },
+    {
+     "file": "work/stok/pixabay-94063.mp4",
+     "url": "https://pixabay.com/videos/id-94063/",
+     "start": 1.0,
+     "x": 0.45,
+     "sure": 0.5
+    },
+    {
+     "file": "work/stok/pexels-8926451.mp4",
+     "url": "https://videos.pexels.com/video-files/8926451/",
+     "start": 2.0,
+     "x": 0.31,
+     "gamma": 1.5,
+     "sure": 0.5
+    },
+    {
+     "file": "work/stok/pixabay-75269.mp4",
+     "url": "https://cdn.pixabay.com/video/2021/05/25/75269-555047162_large.mp4",
+     "start": 3.9,
+     "x": 0.3,
+     "sure": 0.5
+    },
+    {
+     "file": "work/dukkan/d-3593.mp4",
+     "start": 1.0,
+     "sure": 0.5
+    },
+    {
+     "file": "work/dukkan/d-3602.mp4",
+     "start": 3.9,
+     "hiz": 0.8
+    }
+   ],
+   "mozaik": [
+    {
+     "product_dir": "work/f-paslanmaz-din933"
+    },
+    {
+     "product_dir": "work/f-karbosan-thinline"
+    },
+    {
+     "product_dir": "work/f-izeltas-lokma-35"
+    },
+    {
+     "product_dir": "work/rayno-kaynak-200"
+    },
+    {
+     "product_dir": "work/f-tyrolit-flap"
+    },
+    {
+     "product_dir": "work/atg-maxicut-eldiven"
+    }
+   ],
+   "baslik": "TUZLA HIRDAVAT",
+   "tur_yazi": "20.000+ ÜRÜN · TEK ADRES",
+   "ozellikler": [
+    "Paslanmaz cıvata",
+    "El aletleri",
+    "Aşındırıcı"
+   ],
+   "slogan": "Dükkân Tuzla'da, raflar cebinde.",
+   "kapanis_k": "HEMEN GİR",
+   "search_code": "tuzlahirdavat.com.tr",
+   "kaynak": "Görüntüler kullanıcının kendi dükkânında çektiği videolar (25 Kasım 2026: IMG_3592–3602). Dükkân adresi: Tuzla, İstanbul (tuzlacivata.com.tr/iletisim). Ürün sayısı: sitenin ürün haritasında 21.517 ürün adresi (23 Kasım 2026).",
+   "kaynak_video": "Dükkân görüntüleri kullanıcının kendi çekimleri (IMG_3592–3602). İş görüntüleri: Pexels lisansı pexels.com/video/person-grabbing-a-screw-from-a-box-8447827/, /8926451 · Pixabay Content License pixabay.com/videos/id-94063, /welding-electrode-industry-75269/",
+   "caption": "Dükkân Tuzla'da, raflar cebinde. 🔩\n\nDepomuzdaki cıvatadan el aletine, kesme taşından kaynak makinesine 20.000'den fazla ürün tuzlahirdavat.com.tr'de. Siparişini ver, kargoyla kapına gelsin.\n\n📤 Atölyesi olan arkadaşına gönder.\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#hırdavat #paslanmazcıvata #elaletleri #tuzla #tuzlahırdavat",
+   "uzat": 6,
+   "replik_sure": 2
+  }
+ ]
+}

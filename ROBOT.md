@@ -156,6 +156,11 @@ Kullanıcı 23 Kasım 2026'da "Ürün tanıtımı" videosunu görünce istedi: "
 - **Senaryo:** Cümleler ustanın derdinden ürüne gider; nasıl yazılacağı `SENARYO.md` dosyasında (bölüm 3, "Fragman").
 - **Görüntü kuralları:** "Stok video zemini" bölümündeki kurallar aynen geçerli. Sahneler birbirinden farklı olsun (yakın, orta, geniş çekim) ve hepsi ürünün işini göstersin. Yüzü görünen kesiti kullanma.
 - **Ses:** `ses_pro.py fragman`: her kesimde vuuş ve darbe, 4. saniyeye yükseliş, üründe büyük vuruş.
+- **Uzun sürüm (`uzat`; 25 Kasım 2026):** Kullanıcı site filmi için "biraz daha uzun yap" dedi. Öğeye `"uzat": 6` yazınca film 15 saniye olur: sahneler 0–10 sn, ürün ya da site 10. saniyede (müziğin düşüşü), kapanış kartı 12,75'te. `uzat` çift sayı olmalı (2 sn = 1 ölçü).
+  - `"replik_sure": 2`: her cümle 2 saniye ekranda kalır; cümle sayısı (4 + `uzat`) / `replik_sure` olur (15 saniyede 5 cümle). Her cümlenin altına 2–4 kesit koy (`"sure": 0.5` ya da `1.0`); son kesit hariç sürelerin toplamı düşüş anından küçük olsun.
+  - `kapak_ms`: (4 + `uzat`) × 1000 + 900 (15 saniyelik filmde `10900`).
+  - Ses: `reel.py` `ses_pro.py`'ye `--uzat` verir; müzik düşüşten o kadar önce başlar. Düşüşten önce yeterli süresi olmayan parçada hata verir; başka parça seç. Yapıyı en iyi taşıyan parça `e` (düşüşe doğru yükseliyor).
+  - Yalnız fragman türünde çalışır. Örnek: `taslak/site-tanitim/site-tanitim-uzun.json`.
 - **Site tanıtımı (`mozaik`; 25 Kasım 2026):** Kullanıcı site için de "tanıtım filmi" istedi. Aynı tür kullanılır; tek ürün yerine 6 ürün karosu çıkar. Öğeye `mozaik` yaz: 6 adet `{"product_dir": "work/<ürün>"}`. `product_dir`, `url` ve `urun` yazılmaz; `baslik` "TUZLA HIRDAVAT", `tur_yazi` "20.000+ ÜRÜN · TEK ADRES", `kapanis_k` "HEMEN GİR", `search_code` site adresi olur. Karolara stokta olan ürünleri koy; ürün sayısını `work/products.xml` ile doğrula. Örnek: `taslak/site-tanitim/site-tanitim-filmi.json`.
 - **Ne zaman:** Kullanıcı bir ürün için tanıtım istediğinde önce bu türü hazırla; uygun görüntü bulunamazsa "Ürün tanıtımı" türüne dön ve nedenini kullanıcıya yaz.
 

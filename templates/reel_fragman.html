@@ -19,38 +19,38 @@
 .rep{position:absolute;left:60px;right:60px;top:1080px;text-align:center;color:#fff;letter-spacing:.02em;font-size:150px;line-height:.94;text-shadow:0 6px 44px rgba(0,0,0,.9),0 0 6px rgba(0,0,0,.7);opacity:0}
 .rep span{display:block;white-space:nowrap}
 .rep .v{color:var(--accent)}
-{% for r in replikler[:4] %}.rep.r{{ loop.index0 }}{animation:repGir .32s cubic-bezier(.2,.7,.2,1) {{ loop.index0 - (0.22 if loop.first else 0) }}s both,repCik .1s ease-in {{ loop.index0 + 0.88 }}s forwards}
+{% for r in replikler[:NR] %}.rep.r{{ loop.index0 }}{animation:repGir .32s cubic-bezier(.2,.7,.2,1) {{ loop.index0 * RS - (0.22 if loop.first else 0) }}s both,repCik .1s ease-in {{ (loop.index0 + 1) * RS - 0.12 }}s forwards}
 {% endfor %}
 .cak{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;animation:cakma .2s ease-out both}
-.cak.c1{animation-delay:1s}.cak.c2{animation-delay:2s}.cak.c3{animation-delay:3s}
-.cak.c4{--guc:.85;animation-duration:.5s;animation-delay:4s}
+{% for i in range(1, NR) %}.cak.c{{ i }}{animation-delay:{{ i * RS }}s}{% endfor %}
+.cak.cT{--guc:.85;animation-duration:.5s;animation-delay:{{ T }}s}
 /* ürün 4,0 sn */
-.hale{position:absolute;left:-60px;right:-60px;top:140px;height:1000px;background:radial-gradient(50% 46% at 50% 50%,rgba(255,198,41,.34),rgba(255,198,41,0) 70%);animation:hale .7s ease-out 4s both}
-.vitrin{position:absolute;left:110px;right:110px;top:300px;height:610px;animation:otur .45s cubic-bezier(.2,.8,.3,1) 4s both}
-.vitrin .ic{position:absolute;inset:0;background:#fff;border-radius:46px;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 50px 130px rgba(0,0,0,.7);animation:yuz 2.7s ease-out 4.1s both}
+.hale{position:absolute;left:-60px;right:-60px;top:140px;height:1000px;background:radial-gradient(50% 46% at 50% 50%,rgba(255,198,41,.34),rgba(255,198,41,0) 70%);animation:hale .7s ease-out {{ T }}s both}
+.vitrin{position:absolute;left:110px;right:110px;top:300px;height:610px;animation:otur .45s cubic-bezier(.2,.8,.3,1) {{ T }}s both}
+.vitrin .ic{position:absolute;inset:0;background:#fff;border-radius:46px;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 50px 130px rgba(0,0,0,.7);animation:yuz 2.7s ease-out {{ T + 0.1 }}s both}
 .vitrin img{display:block;max-width:780px;max-height:560px;width:auto;height:auto}
 /* site tanıtımı: tek ürün yerine 6 ürün karosu (mozaik) */
 .mozaik{position:absolute;left:70px;right:70px;top:292px;height:620px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:20px}
 .mozaik .k{background:#fff;border-radius:34px;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6);animation:otur .4s cubic-bezier(.2,.8,.3,1) both}
 .mozaik .k img{display:block;max-width:240px;max-height:240px;width:auto;height:auto}
-{% for m in (mozaik or [])[:6] %}.mozaik .k:nth-child({{ loop.index }}){animation-delay:{{ 4 + loop.index0 * 0.08 }}s}
+{% for m in (mozaik or [])[:6] %}.mozaik .k:nth-child({{ loop.index }}){animation-delay:{{ T + loop.index0 * 0.08 }}s}
 {% endfor %}
-.vitrin .ic::after{content:"";position:absolute;top:-10%;bottom:-10%;left:0;width:36%;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.85),rgba(255,255,255,0));animation:isik .7s ease-in-out 4.3s both}
-.ad{position:absolute;left:60px;right:60px;top:946px;text-align:center;font-size:176px;line-height:.92;color:#fff;white-space:nowrap;text-shadow:0 6px 40px rgba(0,0,0,.85);animation:slamT .3s cubic-bezier(.2,.8,.3,1) 4.25s both}
-.tur{position:absolute;left:60px;right:60px;top:1116px;text-align:center;font-weight:700;font-size:44px;letter-spacing:.1em;color:var(--accent);white-space:nowrap;text-shadow:0 2px 18px rgba(0,0,0,.9);animation:up .28s cubic-bezier(.2,.8,.2,1) 4.5s both}
+.vitrin .ic::after{content:"";position:absolute;top:-10%;bottom:-10%;left:0;width:36%;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.85),rgba(255,255,255,0));animation:isik .7s ease-in-out {{ T + 0.3 }}s both}
+.ad{position:absolute;left:60px;right:60px;top:946px;text-align:center;font-size:176px;line-height:.92;color:#fff;white-space:nowrap;text-shadow:0 6px 40px rgba(0,0,0,.85);animation:slamT .3s cubic-bezier(.2,.8,.3,1) {{ T + 0.25 }}s both}
+.tur{position:absolute;left:60px;right:60px;top:1116px;text-align:center;font-weight:700;font-size:44px;letter-spacing:.1em;color:var(--accent);white-space:nowrap;text-shadow:0 2px 18px rgba(0,0,0,.9);animation:up .28s cubic-bezier(.2,.8,.2,1) {{ T + 0.5 }}s both}
 /* özellikler ve slogan alt alta akar: özellikler iki satıra taşsa da slogana binmez */
 .altblok{position:absolute;left:40px;right:40px;top:1206px;display:flex;flex-direction:column;align-items:center;gap:30px}
 .ozl{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
 .oz{height:72px;padding:0 24px;border-radius:999px;display:flex;align-items:center;font-weight:700;font-size:34px;color:#fff;white-space:nowrap;background:rgba(8,14,28,.7);border:1.5px solid rgba(255,255,255,.28);animation:pop .28s cubic-bezier(.3,1.6,.5,1) both}
-.oz:nth-child(1){animation-delay:4.75s}.oz:nth-child(2){animation-delay:5s}.oz:nth-child(3){animation-delay:5.25s}
-.slogan{text-align:center;font-weight:700;font-size:46px;line-height:1.15;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.9);animation:up .3s cubic-bezier(.2,.8,.2,1) 5.5s both}
+.oz:nth-child(1){animation-delay:{{ T + 0.75 }}s}.oz:nth-child(2){animation-delay:{{ T + 1 }}s}.oz:nth-child(3){animation-delay:{{ T + 1.25 }}s}
+.slogan{text-align:center;font-weight:700;font-size:46px;line-height:1.15;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.9);animation:up .3s cubic-bezier(.2,.8,.2,1) {{ T + 1.5 }}s both}
 .sin .kamera{animation:none}
 .sin .karart{background:rgba(3,6,13,.72)}
 /* yazı alt üçte birde durur: görüntünün üstü açık kalır, altı kararır */
 .sin .perde{background:linear-gradient(180deg,rgba(3,6,13,.2) 0%,rgba(3,6,13,0) 30%,rgba(3,6,13,.12) 52%,rgba(3,6,13,.74) 100%)}
 {% endblock %}
 {% block sahne %}
-{% for r in replikler[:4] %}<div class="rep r{{ loop.index0 }} disp" data-fit>{% for l in r %}<span{% if loop.last and loop.length > 1 %} class="v"{% endif %}>{{ l }}</span>{% endfor %}</div>
+{% for r in replikler[:NR] %}<div class="rep r{{ loop.index0 }} disp" data-fit>{% for l in r %}<span{% if loop.last and loop.length > 1 %} class="v"{% endif %}>{{ l }}</span>{% endfor %}</div>
 {% endfor %}
 <div class="hale"></div>
 {% if mozaik %}<div class="mozaik">{% for m in mozaik[:6] %}<div class="k"><img src="{{ m.image }}" alt=""></div>{% endfor %}</div>
@@ -59,6 +59,6 @@
 {% if tur_yazi %}<div class="tur">{{ tur_yazi }}</div>{% endif %}
 <div class="altblok"><div class="ozl">{% for o in ozellikler[:3] %}<span class="oz">{{ o }}</span>{% endfor %}</div>
 {% if slogan %}<div class="slogan">{{ slogan }}</div>{% endif %}</div>
-<div class="cak c1"></div><div class="cak c2"></div><div class="cak c3"></div><div class="cak c4"></div>
+{% for i in range(1, NR) %}<div class="cak c{{ i }}"></div>{% endfor %}<div class="cak cT"></div>
 <div class="bant ust"></div><div class="bant alt"></div>
 {% endblock %}

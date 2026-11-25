@@ -53,6 +53,15 @@ def main():
     if len(a) < 2 or a[0] not in ("bil", "yd", "urun", "fragman"):
         raise SystemExit(__doc__)
     tur, varyant, taslama, yumusak = a[0], a[1], "--taslama" in a, "--yumusak" in a
+    # --uzat <sn>: uzun sürüm (yalnız fragman). Düşüş T = 4 + uzat saniyesine, kapanış sesleri de o kadar ileri kayar.
+    global N
+    U = float(a[a.index("--uzat") + 1]) if "--uzat" in a else 0.0
+    if U and tur != "fragman":
+        raise SystemExit("HATA: --uzat yalnız fragman türünde kullanılır")
+    T = 4.0 + U
+    N = int(round(SR * (S.DUR + U)))
+    import ses_tur
+    ses_tur.N = N                                            # Mix dizileri de aynı uzunlukta olsun
     with open(KAYNAK, encoding="utf-8") as f:
         K = json.load(f)
     mz = K["muzik"]
@@ -67,7 +76,9 @@ def main():
         bas = (mz["faz"] + mz["varyantlar"][varyant] * 4 * 60.0 / mz["bpm"]) / oran + mz.get("kaydirma", {}).get(varyant, 0.0)
     else:
         raise SystemExit("HATA: bilinmeyen müzik kimliği: " + varyant)
-    i = int(round(bas * SR))
+    i = int(round((bas - U) * SR))                          # uzun sürümde müzik düşüşten U saniye önce başlar
+    if i < 0:
+        raise SystemExit("HATA: bu parçada düşüşten önce %g saniye yok; başka müzik seç" % U)
     parca = muzik[i:i + N]
     if len(parca) < N:
         raise SystemExit("HATA: müzik parçası kısa")
@@ -91,7 +102,7 @@ def main():
     zarf = np.ones(N)
     k = int(0.01 * SR); zarf[:k] = np.linspace(0, 1, k)
     k = int(0.08 * SR); zarf[-k:] = np.linspace(1, 0, k)
-    i7 = int(6.9 * SR); zarf[i7:] *= np.concatenate([np.linspace(1, 0.7, int(0.3 * SR)), np.full(N - i7 - int(0.3 * SR), 0.7)])
+    i7 = int((6.9 + U) * SR); zarf[i7:] *= np.concatenate([np.linspace(1, 0.7, int(0.3 * SR)), np.full(N - i7 - int(0.3 * SR), 0.7)])
     # Müzik öndedir (kullanıcı: "hep aynı melodi"): her parça aynı düzeye getirilir, kendi efektlerimiz geride kalır
     parca = parca * (0.26 / (np.sqrt(np.mean(parca ** 2)) + 1e-9))
     stereo += parca.T * zarf
@@ -118,21 +129,24 @@ def main():
         koy(fx["hit"], 0.0 - vur["hit"], 0.55)                                 # açılış vuruşu
         m.put(S.sub_boom(), 0.0, 0.8)
         m.put(S.metal_hit(note(-12)), 0.0, 0.7, 0.0, send=0.4)
-        for at in (1.0, 2.0, 3.0):                                             # sahne kesimleri: vuuş ve darbe
-            koy(fx["whoosh"], at - vur["whoosh"], 0.5)
-            m.put(S.impact(), at, 0.75)
-            m.put(S.sub_boom(), at, 0.65)
+        for k in range(1, int(T)):                                             # sahne kesimleri: vuuş ve darbe
+            at = float(k)
+            guclu = U == 0 or k % 2 == 0                                       # uzun sürümde tek saniyeler hafif geçer
+            if guclu:
+                koy(fx["whoosh"], at - vur["whoosh"], 0.5)
+            m.put(S.impact(), at, 0.75 if guclu else 0.4)
+            m.put(S.sub_boom(), at, 0.65 if guclu else 0.35)
             m.put(S.kick(muffled=True), at - 0.5, 0.5)
-        koy(fx["riser"], 4.0 - vur["riser"], 0.65)                             # ürüne doğru yükseliş
-        koy(fx["hit"], 4.0 - vur["hit"], 0.85)                                 # ürün ortaya çıkar
-        m.put(S.hammer(), 4.0, 0.7, send=0.5)
-        m.put(S.sub_boom(), 4.0, 0.9)
-        m.put(S.pop(520), 4.27, 0.45, 0.0, send=0.4)                           # ad
-        m.put(S.pop(600), 4.52, 0.4, 0.0, send=0.4)                            # tür
-        for n, at in enumerate((4.77, 5.02, 5.27)):                            # özellikler
+        koy(fx["riser"], T - vur["riser"], 0.65)                               # ürüne doğru yükseliş
+        koy(fx["hit"], T - vur["hit"], 0.85)                                   # ürün ortaya çıkar
+        m.put(S.hammer(), T, 0.7, send=0.5)
+        m.put(S.sub_boom(), T, 0.9)
+        m.put(S.pop(520), T + 0.27, 0.45, 0.0, send=0.4)                       # ad
+        m.put(S.pop(600), T + 0.52, 0.4, 0.0, send=0.4)                        # tür
+        for n, at in enumerate((T + 0.77, T + 1.02, T + 1.27)):                # özellikler
             m.put(S.pop(600 + 80 * n), at, 0.55, -0.3 + 0.3 * n, send=0.45)
             m.put(S.tink(1400 + 150 * n), at, 0.45, 0.2, send=0.5)
-        m.put(S.pop(700), 5.52, 0.45, 0.0, send=0.5)                           # slogan
+        m.put(S.pop(700), T + 1.52, 0.45, 0.0, send=0.5)                       # slogan
     elif tur == "urun":                                                        # ürün tanıtımı (reel_tanitim.html)
         for at, semi, g in ((0.0, -12, 0.8), (0.25, -9, 0.7), (0.5, -5, 0.9)):  # kanca: tak-tak-TAK
             m.put(S.metal_hit(note(semi)), at, g, (at - 0.25) * 1.2, send=0.3)
@@ -172,11 +186,11 @@ def main():
         ding(m, note, 4.0)
         m.put(S.pop(600), 5.02, 0.5, 0.0, send=0.5)
     # kapanış kartı: vuuş, imza "tınn", başa saran yükseliş
-    koy(fx["whoosh"], 6.85 - vur["whoosh"], 0.55)
-    m.put(S.clank(), 7.0, 0.55, send=0.7)
-    m.put(S.sub_boom(), 7.0, 0.8)
-    m.put(S.crash(0.75)[::-1], 8.25, 0.4, send=0.2)
-    m.put(S.riser(0.75, 300, 7000), 8.25, 0.45)
+    koy(fx["whoosh"], 6.85 + U - vur["whoosh"], 0.55)
+    m.put(S.clank(), 7.0 + U, 0.55, send=0.7)
+    m.put(S.sub_boom(), 7.0 + U, 0.8)
+    m.put(S.crash(0.75)[::-1], 8.25 + U, 0.4, send=0.2)
+    m.put(S.riser(0.75, 300, 7000), 8.25 + U, 0.45)
 
     os.makedirs(CIKTI, exist_ok=True)
     gecici = os.path.join(CIKTI, "_bizim.wav")
@@ -186,7 +200,7 @@ def main():
     mix = stereo + (biz.astype(float) / 32768).T * 0.45
     mix = np.tanh(mix * 0.9) / np.tanh(0.9)
     mix /= np.abs(mix).max() / 0.89
-    yol = os.path.join(CIKTI, "pro-%s-%s%s%s.wav" % (tur, varyant, "-taslama" if taslama else "", "-yumusak" if yumusak else ""))
+    yol = os.path.join(CIKTI, "pro-%s-%s%s%s%s.wav" % (tur, varyant, "-taslama" if taslama else "", "-yumusak" if yumusak else "", "-u%g" % U if U else ""))
     wavfile.write(yol, SR, (mix.T * 32767).astype(np.int16))
     print(os.path.relpath(yol, ROOT))
 

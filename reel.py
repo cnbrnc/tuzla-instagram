@@ -37,6 +37,7 @@ Video ve ses döngüde başa kesintisiz bağlanır.
 """
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -86,6 +87,21 @@ def reel_image_style(prod):
     return "height:%dpx;width:auto;margin-top:40px" % min(640, int(h * 1.7))
 
 
+def ses_duzeyi_duzelt(mp4, hedef=-14.0):
+    """Tek geçişli loudnorm uzun ya da yoğun seste hedefi tutturamayabilir: ölç, 0,7 LU'dan fazla sapmışsa kazançla düzelt."""
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-i", mp4, "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True)
+    olcum = re.findall(r"I:\s+(-?[\d.]+) LUFS", r.stderr)
+    if not olcum:
+        return
+    fark = hedef - float(olcum[-1])
+    if abs(fark) > 0.7:
+        gecici = mp4 + ".ses.mp4"
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", mp4, "-c:v", "copy", "-af", "volume=%.2fdB" % fark,
+                        "-c:a", "aac", "-b:a", "192k", "-ar", "44100", gecici], check=True)
+        os.replace(gecici, mp4)
+        print("ses düzeyi düzeltildi: %+.1f dB" % fark)
+
+
 def main():
     spec_path, out = sys.argv[1], os.path.abspath(sys.argv[2])
     os.makedirs(os.path.join(out, "html"), exist_ok=True)
@@ -112,6 +128,11 @@ def main():
                     prod = json.load(f)
                 ctx.update({"image": prod["image"], "panel_bg": prod.get("panel_bg", "#FFFFFF"),
                             "image_style": reel_image_style(prod)})
+            # Uzun sürüm: "uzat" saniye eklenir (çift sayı; 120 BPM'de 2 sn = 1 ölçü). Düşüş T = 4 + uzat saniyesine kayar.
+            uzat = float(post.get("uzat", 0))
+            SN = SECONDS + uzat
+            RS = float(post.get("replik_sure", 1))                 # fragmanda bir cümlenin ekranda kaldığı süre (sn)
+            ctx.update({"U": uzat, "T": 4 + uzat, "RS": RS, "NR": int(round((4 + uzat) / RS))})
             ctx.update(post)
             bg = post.get("bg_video") if post.get("stil") == "sinematik" and tpl != "reel" else None
             # Fragman: birden çok sahne art arda kesilir; her biri {"file", "start", "x", "pan", "hiz", "sure"}
@@ -125,7 +146,7 @@ def main():
                     raise SystemExit("HATA: zemin videosu yok: %s" % c["file"])
             ctx["video_zemin"] = bool(bg)
             # zeminin bulanıklaşıp karardığı an: Yanlış/doğru'da ilk panel (1,4 sn), Bil bakalım'da geri sayım (1,0 sn)
-            ctx["bg_gecis"] = gecis = float(post.get("bg_gecis", 1.0 if tpl == "reel_bil" else 4.0 if tpl == "reel_fragman" else 1.4))
+            ctx["bg_gecis"] = gecis = float(post.get("bg_gecis", 1.0 if tpl == "reel_bil" else 4.0 + uzat if tpl == "reel_fragman" else 1.4))
             if tpl == "reel_bil":
                 ctx["options"] = [with_image(o) for o in post["options"]]
             elif tpl == "reel_oyun":
@@ -151,7 +172,7 @@ def main():
             frames = os.path.join(out, "frames-" + post["id"])
             shutil.rmtree(frames, ignore_errors=True)
             os.makedirs(frames)
-            total = FPS * SECONDS
+            total = int(round(FPS * SN))
             for i in range(total):
                 t = i * 1000.0 / FPS
                 page.evaluate("t => { document.getAnimations().forEach(a => { a.pause(); a.currentTime = t; }); if (window.setTime) window.setTime(t); }", t)
@@ -167,6 +188,8 @@ def main():
             if post.get("muzik") and post.get("stil") == "sinematik" and tpl != "reel" and not post.get("ses"):
                 tur = PRO_TUR[tpl]
                 komut = [sys.executable, os.path.join(ROOT, "ses_pro.py"), tur, post["muzik"]]
+                if uzat:
+                    komut += ["--uzat", "%g" % uzat]
                 if post.get("sfx_kanca") == "taslama" and tur == "yd":
                     komut.append("--taslama")
                 if post.get("cift") == "zor-kolay" and tur == "yd":
@@ -188,7 +211,7 @@ def main():
                 kirp = "crop=ih*9/16:ih:x='min(max(iw*%s-ow/2+iw*%s*t/%s\\,0)\\,iw-ow)':y=0,scale=1080:1920:flags=lanczos,setsar=1"
                 parca, video_in, t0 = [], [], 0.0
                 for i, c in enumerate(sahneler):
-                    sure = SECONDS - t0 if i == len(sahneler) - 1 else float(c.get("sure", 1.0))
+                    sure = SN - t0 if i == len(sahneler) - 1 else float(c.get("sure", 1.0))
                     video_in += ["-stream_loop", "-1", "-ss", str(c.get("start", 0)), "-i", c["file"]]
                     # gamma: karanlık kesiti açar (1.0 = dokunma; 1.3–1.7 karanlık atölye çekimleri için)
                     parca.append("[%d:v]setpts=PTS/%s,fps=%d,trim=duration=%s,setpts=PTS-STARTPTS,%s,eq=gamma=%s[s%d]"
@@ -200,7 +223,7 @@ def main():
                          "vignette=PI/5,gblur=sigma=18:enable='gte(t,%s)',noise=alls=7:allf=t[bg];[bg][%d:v]overlay=0:0:format=auto,format=yuv420p[v]"
                          % (gecis, n))
                 video_in += ["-framerate", str(FPS), "-i", os.path.join(frames, "f%04d.png")]
-                video_map = ["-filter_complex", zemin, "-map", "[v]", "-map", "%d:a" % (n + 1), "-t", str(SECONDS)]
+                video_map = ["-filter_complex", zemin, "-map", "[v]", "-map", "%d:a" % (n + 1), "-t", str(SN)]
             elif bg:
                 # Zemin: dikey kırp (yavaş kaydırma), renk ve kontrast, panel gelince bulanıklaş, hafif gren; üstüne şablon
                 zemin = ("[0:v]setpts=PTS/%s,fps=%d,crop=ih*9/16:ih:x='min(max(iw*%s-ow/2+iw*%s*t/%d\\,0)\\,iw-ow)':y=0,"
@@ -224,6 +247,7 @@ def main():
             else:
                 shutil.copy(os.path.join(frames, "f%04d.jpg" % int(FPS * 1.2)), kapak)
             shutil.rmtree(frames, ignore_errors=True)
+            ses_duzeyi_duzelt(mp4)
             print("ok", mp4)
         browser.close()
 
