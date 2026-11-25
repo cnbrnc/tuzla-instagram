@@ -1,0 +1,179 @@
+{
+ "hafta": "taslak",
+ "taslak": "25 Kasım 2026: A4-316 paslanmaz tanıtım filmi (tersane ağırlıklı, 15 sn); onay bekliyor",
+ "posts": [
+  {
+   "id": "a4-tersane",
+   "key": "a4-tersane",
+   "format": "reel",
+   "template": "reel_fragman",
+   "group": "baglanti",
+   "kanca_kalibi": "fragman",
+   "stil": "sinematik",
+   "muzik": "i",
+   "uzat": 6,
+   "replik_sure": 2,
+   "kapak_ms": 10900,
+   "tag": "A4 · 316 PASLANMAZ",
+   "replikler": [
+    [
+     "TUZLU SU",
+     "AFFETMEZ."
+    ],
+    [
+     "TERSANE",
+     "A4 İSTER."
+    ],
+    [
+     "SAVUNMA DA,",
+     "SANAYİ DE."
+    ],
+    [
+     "M1,6'DAN",
+     "M48'E."
+    ],
+    [
+     "HEPSİ",
+     "TUZLA'DA."
+    ]
+   ],
+   "sahneler": [
+    {
+     "file": "work/stok/pixabay-305355.mp4",
+     "url": "https://cdn.pixabay.com/video/2025/09/20/305355_large.mp4",
+     "start": 0.5,
+     "x": 0.6,
+     "sure": 1.0
+    },
+    {
+     "file": "work/stok/pexels-7829491.mp4",
+     "url": "https://videos.pexels.com/video-files/7829491/7829491-hd_1920_1080_30fps.mp4",
+     "start": 2.0,
+     "x": 0.5,
+     "sure": 0.5
+    },
+    {
+     "file": "work/stok/pexels-10904397.mp4",
+     "url": "https://videos.pexels.com/video-files/10904397/10904397-hd_1920_1080_30fps.mp4",
+     "start": 2.0,
+     "x": 0.3,
+     "sure": 0.5
+    },
+    {
+     "file": "work/stok/pixabay-61896.mp4",
+     "url": "https://cdn.pixabay.com/video/2021/01/13/61896-501113781_large.mp4",
+     "start": 1.0,
+     "x": 0.42,
+     "sure": 1.0
+    },
+    {
+     "file": "work/stok/pexels-4778070.mp4",
+     "url": "https://videos.pexels.com/video-files/4778070/4778070-hd_1920_1080_25fps.mp4",
+     "start": 1.0,
+     "x": 0.55,
+     "sure": 0.5
+    },
+    {
+     "file": "work/stok/pixabay-233388.mp4",
+     "url": "https://cdn.pixabay.com/video/2024/09/26/233388_large.mp4",
+     "start": 2.0,
+     "x": 0.72,
+     "sure": 0.5
+    },
+    {
+     "file": "work/stok/pexels-8926451.mp4",
+     "url": "https://videos.pexels.com/video-files/8926451/",
+     "start": 18.0,
+     "x": 0.45,
+     "gamma": 1.2,
+     "sure": 0.5
+    },
+    {
+     "file": "work/stok/pixabay-75269.mp4",
+     "url": "https://cdn.pixabay.com/video/2021/05/25/75269-555047162_large.mp4",
+     "start": 3.9,
+     "x": 0.3,
+     "sure": 0.5
+    },
+    {
+     "file": "work/stok/pexels-6046358.mp4",
+     "url": "https://videos.pexels.com/video-files/6046358/6046358-hd_1920_1080_24fps.mp4",
+     "start": 14.0,
+     "x": 0.75,
+     "sure": 0.5
+    },
+    {
+     "file": "work/stok/pixabay-94063.mp4",
+     "url": "https://pixabay.com/videos/id-94063/",
+     "start": 1.0,
+     "x": 0.45,
+     "sure": 0.5
+    },
+    {
+     "file": "work/stok/pixabay-27498.mp4",
+     "url": "https://cdn.pixabay.com/video/2019/10/03/27498-364430890_large.mp4",
+     "start": 1.0,
+     "x": 0.75,
+     "sure": 0.5
+    },
+    {
+     "file": "work/stok/pexels-8447827.mp4",
+     "url": "https://videos.pexels.com/video-files/8447827/8447827-hd_1920_1080_30fps.mp4",
+     "start": 5.4,
+     "x": 0.58,
+     "sure": 0.5
+    },
+    {
+     "file": "work/stok/pixabay-136297.mp4",
+     "url": "https://cdn.pixabay.com/video/2022/10/24/136297-764387770_large.mp4",
+     "start": 2.0,
+     "x": 0.5,
+     "sure": 1.0
+    },
+    {
+     "file": "work/dukkan/d-3601.mp4",
+     "start": 2.0,
+     "sure": 0.5
+    },
+    {
+     "file": "work/dukkan/d-3602.mp4",
+     "start": 3.9,
+     "hiz": 0.8
+    }
+   ],
+   "mozaik": [
+    {
+     "product_dir": "work/a4/m10x100-inox-akb-civata-din933-a4-316"
+    },
+    {
+     "product_dir": "work/a4/m12x100-inox-imbus-civata-din912-a4-316"
+    },
+    {
+     "product_dir": "work/a4/m8x10-inox-hb-imbus-civata-din7991-a4-31"
+    },
+    {
+     "product_dir": "work/a4/m1-6-inox-somun-din934-a4-316"
+    },
+    {
+     "product_dir": "work/a4/m10-inox-pul-din125-a4-316"
+    },
+    {
+     "product_dir": "work/a4/m12x1000-inox-gijon-din976-a4-316"
+    }
+   ],
+   "baslik": "A4 PASLANMAZ",
+   "tur_yazi": "AISI 316 · CIVATA · SOMUN · PUL",
+   "ozellikler": [
+    "Tersane",
+    "Savunma sanayi",
+    "M1,6–M48"
+   ],
+   "slogan": "Tersanelerin yanı başında, Tuzla'da.",
+   "kapanis_k": "SİTEDE ARAT",
+   "search_code": "A4-316",
+   "kaynak": "Ölçü aralığı ve stok: sitede A4-316 ürünleri M1,6'dan (M1.6X10 imbus DIN 912, M1.6 somun DIN 934) M48'e (M48X175 AKB DIN 933, M48X1.5 kontra somun DIN 936); hepsi 25 Kasım 2026'da stokta. Sektörler kullanıcının sözü (25 Kasım 2026): A4-316 en çok tersaneye, ayrıca savunma sanayine satılıyor. A4 = 316 kalite, molibdenli; klorürlü ve deniz ortamı için (ISO 3506). Dükkân Tuzla, İstanbul.",
+   "kaynak_video": "Pixabay Content License: 305355 (Solarselle77), 61896, 233388, 75269 (SergioParadox), 94063, 27498 (FreeCreativeStuff), 136297 (olenchic) · Pexels lisansı: 7829491, 10904397, 4778070, 8926451, 6046358, 8447827 · son iki kesit kullanıcının kendi depo çekimi",
+   "caption": "Tuzlu su affetmez: tersanede, teknede, deniz kenarında A4 (316) paslanmaz. ⚓\n\nM1,6'dan M48'e cıvata, somun, pul ve gijon. Tersane, savunma sanayi ve endüstri için A4-316 bağlantı elemanları Tuzla'daki depomuzda ve sitemizde.\n\n📤 Tersanedeki arkadaşına gönder.\n🔎 Sitede “A4-316” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#paslanmazcıvata #a4 #tersane #gemiinşa #tuzlahırdavat"
+  }
+ ]
+}

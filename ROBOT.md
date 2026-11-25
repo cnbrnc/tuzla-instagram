@@ -161,6 +161,8 @@ Kullanıcı 23 Kasım 2026'da "Ürün tanıtımı" videosunu görünce istedi: "
   - `kapak_ms`: (4 + `uzat`) × 1000 + 900 (15 saniyelik filmde `10900`).
   - Ses: `reel.py` `ses_pro.py`'ye `--uzat` verir; müzik düşüşten o kadar önce başlar. Düşüşten önce yeterli süresi olmayan parçada hata verir; başka parça seç. Yapıyı en iyi taşıyan parça `e` (düşüşe doğru yükseliyor).
   - Yalnız fragman türünde çalışır. Örnek: `taslak/site-tanitim/site-tanitim-uzun.json`.
+- **Pixabay dosya adresi:** Video sayfaları bu ortamdan açılmıyor (403). Arama sayfasını (`pixabay.com/videos/search/<kelime>/`) WebFetch ile aç ve her sonucun "Edit video" (Canva) bağlantısındaki `file-url` değerini iste; çözülmüş hali `https://cdn.pixabay.com/video/…_large.mp4` olur ve `curl` ile iner. "Ai Generated" etiketli klibi alma.
+- **Sektör bilgisi (kullanıcı, 25 Kasım 2026):** A4-316 paslanmaz en çok tersaneye, ayrıca savunma sanayine satılıyor; sitede M1,6'dan M48'e var. Örnek film: `taslak/a4-tersane/a4-tersane.json`.
 - **Site tanıtımı (`mozaik`; 25 Kasım 2026):** Kullanıcı site için de "tanıtım filmi" istedi. Aynı tür kullanılır; tek ürün yerine 6 ürün karosu çıkar. Öğeye `mozaik` yaz: 6 adet `{"product_dir": "work/<ürün>"}`. `product_dir`, `url` ve `urun` yazılmaz; `baslik` "TUZLA HIRDAVAT", `tur_yazi` "20.000+ ÜRÜN · TEK ADRES", `kapanis_k` "HEMEN GİR", `search_code` site adresi olur. Karolara stokta olan ürünleri koy; ürün sayısını `work/products.xml` ile doğrula. Örnek: `taslak/site-tanitim/site-tanitim-filmi.json`.
 - **Ne zaman:** Kullanıcı bir ürün için tanıtım istediğinde önce bu türü hazırla; uygun görüntü bulunamazsa "Ürün tanıtımı" türüne dön ve nedenini kullanıcıya yaz.
 
