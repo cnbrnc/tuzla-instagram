@@ -154,6 +154,9 @@ def main():
             elif tpl == "reel_fragman" and post.get("mozaik"):
                 # Site tanıtımı: tek ürün yerine ürün karoları (her biri {"product_dir"} ya da {"image"})
                 ctx["mozaik"] = [with_image(m) for m in post["mozaik"]]
+            if tpl == "reel_fragman" and post.get("replik_urun"):
+                # Marka filmi: her cümlede o cümlenin ürünü küçük kartta görünür ({"product_dir", "marka", "kod", "ad"} ya da null)
+                ctx["replik_urun"] = [with_image(u) if u else None for u in post["replik_urun"]]
             elif tpl == "reel_yd":
                 ctx["yanlis"], ctx["dogru"] = with_image(post["yanlis"]), with_image(post["dogru"])
                 ctx["hook_image"] = mutlak(post.get("hook_image"))
@@ -213,9 +216,9 @@ def main():
                 for i, c in enumerate(sahneler):
                     sure = SN - t0 if i == len(sahneler) - 1 else float(c.get("sure", 1.0))
                     video_in += ["-stream_loop", "-1", "-ss", str(c.get("start", 0)), "-i", c["file"]]
-                    # gamma: karanlık kesiti açar (1.0 = dokunma; 1.3–1.7 karanlık atölye çekimleri için)
-                    parca.append("[%d:v]setpts=PTS/%s,fps=%d,trim=duration=%s,setpts=PTS-STARTPTS,%s,eq=gamma=%s[s%d]"
-                                 % (i, c.get("hiz", 1.0), FPS, sure, kirp % (c.get("x", 0.5), c.get("pan", 0.0), sure), c.get("gamma", 1.0), i))
+                    # gamma: karanlık kesiti açar (1.0 = dokunma; 1.3–1.7 karanlık atölye çekimleri için); kontrast: soluk (düz renkli) kesiti canlandırır (1.0 = dokunma; 1.2–1.4)
+                    parca.append("[%d:v]setpts=PTS/%s,fps=%d,trim=duration=%s,setpts=PTS-STARTPTS,%s,eq=gamma=%s:contrast=%s[s%d]"
+                                 % (i, c.get("hiz", 1.0), FPS, sure, kirp % (c.get("x", 0.5), c.get("pan", 0.0), sure), c.get("gamma", 1.0), c.get("kontrast", 1.0), i))
                     t0 += sure
                 n = len(sahneler)
                 zemin = (";".join(parca) + ";" + "".join("[s%d]" % i for i in range(n)) + "concat=n=%d:v=1:a=0," % n

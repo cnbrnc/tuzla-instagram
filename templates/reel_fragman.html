@@ -24,6 +24,18 @@
 .cak{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;animation:cakma .2s ease-out both}
 {% for i in range(1, NR) %}.cak.c{{ i }}{animation-delay:{{ i * RS }}s}{% endfor %}
 .cak.cT{--guc:.85;animation-duration:.5s;animation-delay:{{ T }}s}
+/* marka filmi: her cümlede o cümlenin ürünü (replik_urun) üstte küçük kartta durur */
+@keyframes kartGir{from{opacity:0;transform:translateY(-26px)}to{opacity:1;transform:none}}
+@keyframes kartCik{to{opacity:0;transform:translateY(-14px)}}
+.ukart{position:absolute;left:50px;right:50px;top:286px;height:196px;border-radius:30px;background:rgba(6,10,20,.86);border:2px solid rgba(255,198,41,.6);box-shadow:0 20px 60px rgba(0,0,0,.6);display:flex;align-items:center;gap:26px;padding:0 28px 0 14px;opacity:0}
+.ukart .f{width:168px;height:168px;flex:none;border-radius:22px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ukart .f img{display:block;max-width:150px;max-height:150px;width:auto;height:auto}
+.ukart .m{flex:none;font-size:132px;line-height:1;color:var(--accent);letter-spacing:.01em}
+.ukart .y{display:flex;flex-direction:column;gap:8px;min-width:0}
+.ukart .y b{font-weight:700;font-size:46px;line-height:1;color:#fff;letter-spacing:.06em;white-space:nowrap}
+.ukart .y span{font-weight:700;font-size:38px;line-height:1.14;color:rgba(255,255,255,.86)}
+{% for u in (replik_urun or [])[:NR] %}{% if u %}.ukart.u{{ loop.index0 }}{animation:kartGir .28s cubic-bezier(.2,.8,.2,1) {{ loop.index0 * RS + 0.12 }}s both,kartCik .12s ease-in {{ (loop.index0 + 1) * RS - 0.14 }}s forwards}
+{% endif %}{% endfor %}
 /* ürün 4,0 sn */
 .hale{position:absolute;left:-60px;right:-60px;top:140px;height:1000px;background:radial-gradient(50% 46% at 50% 50%,rgba(255,198,41,.34),rgba(255,198,41,0) 70%);animation:hale .7s ease-out {{ T }}s both}
 .vitrin{position:absolute;left:110px;right:110px;top:300px;height:610px;animation:otur .45s cubic-bezier(.2,.8,.3,1) {{ T }}s both}
@@ -52,6 +64,8 @@
 {% block sahne %}
 {% for r in replikler[:NR] %}<div class="rep r{{ loop.index0 }} disp" data-fit>{% for l in r %}<span{% if loop.last and loop.length > 1 %} class="v"{% endif %}>{{ l }}</span>{% endfor %}</div>
 {% endfor %}
+{% for u in (replik_urun or [])[:NR] %}{% if u %}<div class="ukart u{{ loop.index0 }}"><div class="f"><img src="{{ u.image }}" alt=""></div><span class="m disp">{{ u.marka }}</span><div class="y"><b>{{ u.kod }}</b><span>{{ u.ad }}</span></div></div>
+{% endif %}{% endfor %}
 <div class="hale"></div>
 {% if mozaik %}<div class="mozaik">{% for m in mozaik[:6] %}<div class="k"><img src="{{ m.image }}" alt=""></div>{% endfor %}</div>
 {% else %}<div class="vitrin"><div class="ic"><img src="{{ urun_gorsel }}" alt=""></div></div>{% endif %}

@@ -1,6 +1,6 @@
 {
  "hafta": "taslak",
- "taslak": "25 Kasım 2026: GFB tanıtım filmi (15 sn); onay bekliyor",
+ "taslak": "25 Kasım 2026: GFB tanıtım filmi, GFB vurgulu ikinci sürüm (15 sn, her cümlede ürün kartı); onay bekliyor",
  "posts": [
   {
    "id": "gfb-tanitim",
@@ -17,20 +17,20 @@
    "tag": "GFB · KESİCİ TAKIMLAR",
    "replikler": [
     [
-     "METALİ",
-     "DELER."
+     "GFB MATKAP UCU",
+     "METALİ DELER."
     ],
     [
-     "ÇELİĞİ",
-     "İŞLER."
+     "GFB MURÇ",
+     "BETONU KIRAR."
     ],
     [
-     "VİDAYI",
-     "SIKAR."
+     "GFB XPRO BITS",
+     "VİDAYI SIKAR."
     ],
     [
-     "DEPOMUZDA",
-     "HAZIR."
+     "1.000+ GFB ÜRÜNÜ",
+     "SİTEMİZDE."
     ],
     [
      "HEPSİ",
@@ -39,32 +39,43 @@
    ],
    "sahneler": [
     {
+     "file": "work/stok/pexels-29913842.mp4",
+     "url": "https://videos.pexels.com/video-files/29913842/12840106_2560_1440_24fps.mp4",
+     "start": 3.0,
+     "x": 0.42,
+     "sure": 1.0
+    },
+    {
      "file": "work/stok/pexels-8926451.mp4",
      "url": "https://videos.pexels.com/video-files/8926451/",
      "start": 2.0,
      "x": 0.31,
      "gamma": 1.5,
-     "sure": 1.0
+     "sure": 0.5
     },
     {
      "file": "work/stok/pexels-855491.mp4",
      "url": "https://www.pexels.com/video/spinning-drill-855491/",
      "start": 3.0,
      "x": 0.55,
+     "sure": 0.5
+    },
+    {
+     "file": "work/stok/pexels-24964769.mp4",
+     "url": "https://videos.pexels.com/video-files/24964769/11899187_2560_1440_60fps.mp4",
+     "start": 4.0,
+     "x": 0.47,
+     "gamma": 0.8,
+     "kontrast": 1.35,
      "sure": 1.0
     },
     {
-     "file": "work/stok/pexels-19791092.mp4",
-     "url": "https://videos.pexels.com/video-files/19791092/",
-     "start": 1.5,
-     "x": 0.62,
-     "sure": 1.0
-    },
-    {
-     "file": "work/stok/pexels-8926451.mp4",
-     "url": "https://videos.pexels.com/video-files/8926451/",
-     "start": 18.0,
-     "x": 0.45,
+     "file": "work/stok/pexels-24964769.mp4",
+     "url": "https://videos.pexels.com/video-files/24964769/11899187_2560_1440_60fps.mp4",
+     "start": 7.0,
+     "x": 0.4,
+     "gamma": 0.8,
+     "kontrast": 1.35,
      "sure": 1.0
     },
     {
@@ -112,7 +123,7 @@
      "product_dir": "work/gfb/gfb2420"
     },
     {
-     "product_dir": "work/gfb/gfb2001"
+     "product_dir": "work/gfb/gfb2154"
     },
     {
      "product_dir": "work/gfb/gfb3960"
@@ -127,7 +138,7 @@
    "mozaik_url": [
     "https://tuzlahirdavat.com.tr/55mm-matkap-ucu-altin-seri-gfb-gfb1814",
     "https://tuzlahirdavat.com.tr/4-12-kademeli-matkap-ucu-titan-kapli-gfb-gfb2420",
-    "https://tuzlahirdavat.com.tr/12x210-sds-plus-matkap-ucu---gfb-gfb2001",
+    "https://tuzlahirdavat.com.tr/18x500-max-murc-gfb2154",
     "https://tuzlahirdavat.com.tr/40-parca-klavuz-pafta-seti-gfb-gfb3960",
     "https://tuzlahirdavat.com.tr/16mm-tct-metal-delme-panc---gfb-gfb4700",
     "https://tuzlahirdavat.com.tr/ph-2-75mm-xpro-darbeli-tornavida-ucu-siyah---gfb-gfb8012"
@@ -137,14 +148,41 @@
    "ozellikler": [
     "Matkap ucu",
     "Kılavuz · Pafta",
-    "Panç · Bits"
+    "Murç · Panç · Bits"
    ],
    "slogan": "GFB ana bayisi: Tuzla Hırdavat.",
    "kapanis_k": "SİTEDE ARAT",
    "search_code": "GFB",
-   "kaynak": "Ürünler ve stok: sitede 1.080 GFB ürünü var; mozaikteki altı ürün (GFB 1814 altın seri %5 kobaltlı matkap ucu, 2420 kademeli matkap ucu, 2001 SDS-Plus matkap ucu, 3960 40 parça kılavuz pafta seti, 4700 TCT metal delme panç, 8012 XPRO PH-2 darbeli tornavida ucu) 25 Kasım 2026'da stokta. Ürün grupları GFB Haziran 2026 listesinin içindekiler sayfasından ve XPRO Eylül 2026 kataloğundan; FİYATLAR KULLANILMADI. Ana bayilik kullanıcının sözü.",
-   "kaynak_video": "Pexels lisansı: 8926451 (matkap makro + CNC freze), 855491 (sütunlu matkap), 19791092 (CNC torna; tutucudaki parça numarası üst bandın altında kalıyor) · Pixabay Content License: 4728, 4729 (vida sıkan bits ucu), 94063 (kıvılcım) · raf ve depo kesitleri kullanıcının kendi çekimi (3601, 3602; 3595 başka marka kutuları göründüğü için çıkarıldı). Ürün fotoğrafları kullanıcının kendi sitesinden; GFB kataloğundaki görseller KULLANILMADI (katalog izinsiz kullanılamayacağını yazıyor).",
-   "caption": "Metali deler, çeliği işler, vidayı sıkar: GFB kesici ve delici takımlar. 🔩\n\nMatkap uçları, kademeli matkap, SDS-Plus uçlar, kılavuz ve pafta, panç, XPRO darbeli bits uçları. GFB ana bayisi olarak binin üzerinde çeşit sitemizde.\n\n📤 Atölyedeki ustana gönder.\n🔎 Sitede “GFB” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#gfb #matkapucu #kesicitakım #hırdavat #tuzlahırdavat"
+   "kaynak": "Ürünler ve stok: sitede 1.080 GFB ürün adresi var (\"1.000+ GFB ürünü sitemizde\"). Kartlardaki ve mozaikteki ürünler (GFB 1814 altın seri %5 kobaltlı matkap ucu, 2420 kademeli matkap ucu, 2154 SDS-Max sivri murç 18x500, 3960 40 parça kılavuz pafta seti, 4700 TCT metal delme panç, 8012 XPRO PH-2 darbeli tornavida ucu) 25 Kasım 2026'da stokta. Torna ve freze sahneleri çıkarıldı: GFB freze, torna kalemi ve torna aynaları o gün stokta yoktu. FİYATLAR KULLANILMADI. Ana bayilik kullanıcının sözü.",
+   "kaynak_video": "Pexels lisansı: 29913842 (altın renkli matkap ucu metal deliyor), 8926451 (matkap makro), 855491 (sütunlu matkap), 24964769 (kırıcıda sivri murç; yalnız bacak ve bot görünür, yüz ve marka yok) · Pixabay Content License: 4728, 4729 (vida sıkan bits ucu), 94063 (kıvılcım) · depo kesitleri kullanıcının kendi çekimi (3601, 3602; 3595 başka marka kutuları göründüğü için kullanılmadı). Ürün fotoğrafları kullanıcının kendi sitesinden; GFB kataloğundaki görseller KULLANILMADI (katalog izinsiz kullanılamayacağını yazıyor). Stok görüntülerdeki uçlar GFB değil, temsilîdir; gerçek GFB ürünü her cümlede üstteki kartta ve sondaki karolarda.",
+   "caption": "GFB matkap ucu metali deler, GFB murç betonu kırar, GFB XPRO bits vidayı sıkar. 🔩\n\nMatkap uçları, kademeli matkap, SDS uçlar ve murçlar, kılavuz ve pafta, panç, XPRO darbeli bits uçları. GFB ana bayisi olarak binin üzerinde GFB ürünü sitemizde.\n\n📤 Atölyedeki ustana gönder.\n🔎 Sitede “GFB” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#gfb #matkapucu #kesicitakım #hırdavat #tuzlahırdavat",
+   "replik_urun": [
+    {
+     "product_dir": "work/gfb/gfb1814",
+     "marka": "GFB",
+     "kod": "1814 · ALTIN SERİ",
+     "ad": "%5 kobaltlı matkap ucu"
+    },
+    {
+     "product_dir": "work/gfb/gfb2154",
+     "marka": "GFB",
+     "kod": "2154 · SDS-MAX",
+     "ad": "Sivri murç 18×500 mm"
+    },
+    {
+     "product_dir": "work/gfb/gfb8012",
+     "marka": "GFB",
+     "kod": "8012 · XPRO",
+     "ad": "Darbeli tornavida ucu PH2"
+    },
+    {
+     "product_dir": "work/gfb/gfb3960",
+     "marka": "GFB",
+     "kod": "3960 · 40 PARÇA",
+     "ad": "Kılavuz pafta seti"
+    },
+    null
+   ]
   }
  ]
 }
