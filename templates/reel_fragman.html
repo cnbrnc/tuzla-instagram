@@ -29,6 +29,12 @@
 .vitrin{position:absolute;left:110px;right:110px;top:300px;height:610px;animation:otur .45s cubic-bezier(.2,.8,.3,1) 4s both}
 .vitrin .ic{position:absolute;inset:0;background:#fff;border-radius:46px;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 50px 130px rgba(0,0,0,.7);animation:yuz 2.7s ease-out 4.1s both}
 .vitrin img{display:block;max-width:780px;max-height:560px;width:auto;height:auto}
+/* site tanıtımı: tek ürün yerine 6 ürün karosu (mozaik) */
+.mozaik{position:absolute;left:70px;right:70px;top:292px;height:620px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:20px}
+.mozaik .k{background:#fff;border-radius:34px;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6);animation:otur .4s cubic-bezier(.2,.8,.3,1) both}
+.mozaik .k img{display:block;max-width:240px;max-height:240px;width:auto;height:auto}
+{% for m in (mozaik or [])[:6] %}.mozaik .k:nth-child({{ loop.index }}){animation-delay:{{ 4 + loop.index0 * 0.08 }}s}
+{% endfor %}
 .vitrin .ic::after{content:"";position:absolute;top:-10%;bottom:-10%;left:0;width:36%;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.85),rgba(255,255,255,0));animation:isik .7s ease-in-out 4.3s both}
 .ad{position:absolute;left:60px;right:60px;top:946px;text-align:center;font-size:176px;line-height:.92;color:#fff;white-space:nowrap;text-shadow:0 6px 40px rgba(0,0,0,.85);animation:slamT .3s cubic-bezier(.2,.8,.3,1) 4.25s both}
 .tur{position:absolute;left:60px;right:60px;top:1116px;text-align:center;font-weight:700;font-size:44px;letter-spacing:.1em;color:var(--accent);white-space:nowrap;text-shadow:0 2px 18px rgba(0,0,0,.9);animation:up .28s cubic-bezier(.2,.8,.2,1) 4.5s both}
@@ -47,7 +53,8 @@
 {% for r in replikler[:4] %}<div class="rep r{{ loop.index0 }} disp" data-fit>{% for l in r %}<span{% if loop.last and loop.length > 1 %} class="v"{% endif %}>{{ l }}</span>{% endfor %}</div>
 {% endfor %}
 <div class="hale"></div>
-<div class="vitrin"><div class="ic"><img src="{{ urun_gorsel }}" alt=""></div></div>
+{% if mozaik %}<div class="mozaik">{% for m in mozaik[:6] %}<div class="k"><img src="{{ m.image }}" alt=""></div>{% endfor %}</div>
+{% else %}<div class="vitrin"><div class="ic"><img src="{{ urun_gorsel }}" alt=""></div></div>{% endif %}
 <div class="ad disp" data-fit>{{ baslik }}</div>
 {% if tur_yazi %}<div class="tur">{{ tur_yazi }}</div>{% endif %}
 <div class="altblok"><div class="ozl">{% for o in ozellikler[:3] %}<span class="oz">{{ o }}</span>{% endfor %}</div>

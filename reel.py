@@ -130,6 +130,9 @@ def main():
                 ctx["options"] = [with_image(o) for o in post["options"]]
             elif tpl == "reel_oyun":
                 ctx["maddeler"] = [with_image(m) for m in post["maddeler"]]
+            elif tpl == "reel_fragman" and post.get("mozaik"):
+                # Site tanıtımı: tek ürün yerine ürün karoları (her biri {"product_dir"} ya da {"image"})
+                ctx["mozaik"] = [with_image(m) for m in post["mozaik"]]
             elif tpl == "reel_yd":
                 ctx["yanlis"], ctx["dogru"] = with_image(post["yanlis"]), with_image(post["dogru"])
                 ctx["hook_image"] = mutlak(post.get("hook_image"))

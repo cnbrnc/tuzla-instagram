@@ -1,0 +1,100 @@
+{
+ "hafta": "taslak",
+ "taslak": "25 Kasım 2026: site için fragman tarzı tanıtım filmi; onay bekliyor",
+ "posts": [
+  {
+   "id": "site-tanitim-filmi",
+   "key": "site-tanitim-filmi",
+   "format": "reel",
+   "template": "reel_fragman",
+   "group": "site",
+   "kanca_kalibi": "fragman",
+   "stil": "sinematik",
+   "muzik": "h",
+   "tag": "TEK ADRES",
+   "kapak_ms": 4900,
+   "replikler": [
+    [
+     "CIVATA",
+     "MI?"
+    ],
+    [
+     "KESME TAŞI",
+     "MI?"
+    ],
+    [
+     "MATKAP UCU",
+     "MU?"
+    ],
+    [
+     "HEPSİ",
+     "TEK ADRESTE."
+    ]
+   ],
+   "sahneler": [
+    {
+     "file": "work/stok/pexels-8447827.mp4",
+     "url": "https://videos.pexels.com/video-files/8447827/8447827-hd_1920_1080_30fps.mp4",
+     "start": 5.4,
+     "x": 0.58,
+     "pan": 0.0
+    },
+    {
+     "file": "work/stok/pixabay-94063.mp4",
+     "url": "https://pixabay.com/videos/id-94063/",
+     "start": 1.0,
+     "x": 0.45,
+     "pan": 0.0
+    },
+    {
+     "file": "work/stok/pexels-8926451.mp4",
+     "url": "https://videos.pexels.com/video-files/8926451/",
+     "start": 2.0,
+     "x": 0.31,
+     "pan": 0.0,
+     "gamma": 1.5
+    },
+    {
+     "file": "work/stok/pexels-6046358.mp4",
+     "url": "https://videos.pexels.com/video-files/6046358/6046358-hd_1920_1080_24fps.mp4",
+     "start": 17.0,
+     "x": 0.75,
+     "pan": 0.01
+    }
+   ],
+   "mozaik": [
+    {
+     "product_dir": "work/f-paslanmaz-din933"
+    },
+    {
+     "product_dir": "work/f-karbosan-thinline"
+    },
+    {
+     "product_dir": "work/f-izeltas-lokma-35"
+    },
+    {
+     "product_dir": "work/rayno-kaynak-200"
+    },
+    {
+     "product_dir": "work/f-tyrolit-flap"
+    },
+    {
+     "product_dir": "work/atg-maxicut-eldiven"
+    }
+   ],
+   "baslik": "TUZLA HIRDAVAT",
+   "tur_yazi": "20.000+ ÜRÜN · TEK ADRES",
+   "ozellikler": [
+    "Paslanmaz cıvata",
+    "El aletleri",
+    "Aşındırıcı"
+   ],
+   "slogan": "Usta ne ararsa, burada.",
+   "kapanis_k": "HEMEN GİR",
+   "search_code": "tuzlahirdavat.com.tr",
+   "kaynak": "Ürün sayısı: sitenin ürün haritasında 21.517 ürün adresi (23 Kasım 2026). Karolardaki görseller sitedeki ürün fotoğrafları.",
+   "kaynak_video": "Pexels lisansı: pexels.com/video/person-grabbing-a-screw-from-a-box-8447827/, /8926451, /professional-welding-steel-6046358/ · Pixabay Content License: pixabay.com/videos/id-94063",
+   "caption": "Cıvata mı, kesme taşı mı, matkap ucu mu? Hepsi tek adreste. 🔩\n\nPaslanmaz bağlantı elemanından el aletine, aşındırıcıdan kaynak makinesine 20.000'den fazla ürün tuzlahirdavat.com.tr'de.\n\n📤 Atölyesi olan arkadaşına gönder.\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#hırdavat #paslanmazcıvata #elaletleri #usta #tuzlahırdavat"
+  }
+ ]
+}
