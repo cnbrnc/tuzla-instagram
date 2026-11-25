@@ -1,0 +1,101 @@
+{
+ "hafta": "taslak",
+ "taslak": "25 Kasım 2026: site tanıtım filmi, kullanıcının kendi dükkân çekimleriyle; onay bekliyor",
+ "posts": [
+  {
+   "id": "site-tanitim-dukkan",
+   "key": "site-tanitim-dukkan",
+   "format": "reel",
+   "template": "reel_fragman",
+   "group": "site",
+   "kanca_kalibi": "fragman",
+   "stil": "sinematik",
+   "muzik": "g",
+   "tag": "TUZLA · İSTANBUL",
+   "kapak_ms": 4900,
+   "replikler": [
+    [
+     "DÜKKÂN",
+     "TUZLA'DA."
+    ],
+    [
+     "DEPO",
+     "DOLU."
+    ],
+    [
+     "ALETLER",
+     "HAZIR."
+    ],
+    [
+     "HEPSİ",
+     "BİR TIK UZAKTA."
+    ]
+   ],
+   "sahneler": [
+    {
+     "file": "work/dukkan/d-3600k.mp4",
+     "start": 0.6,
+     "sure": 1.0
+    },
+    {
+     "file": "work/dukkan/d-3601.mp4",
+     "start": 2.2,
+     "sure": 0.5
+    },
+    {
+     "file": "work/dukkan/d-3597.mp4",
+     "start": 1.6,
+     "sure": 0.5
+    },
+    {
+     "file": "work/dukkan/d-3594.mp4",
+     "start": 1.2,
+     "sure": 0.5
+    },
+    {
+     "file": "work/dukkan/d-3592.mp4",
+     "start": 0.6,
+     "sure": 0.5
+    },
+    {
+     "file": "work/dukkan/d-3602.mp4",
+     "start": 3.9,
+     "hiz": 0.8
+    }
+   ],
+   "mozaik": [
+    {
+     "product_dir": "work/f-paslanmaz-din933"
+    },
+    {
+     "product_dir": "work/f-karbosan-thinline"
+    },
+    {
+     "product_dir": "work/f-izeltas-lokma-35"
+    },
+    {
+     "product_dir": "work/rayno-kaynak-200"
+    },
+    {
+     "product_dir": "work/f-tyrolit-flap"
+    },
+    {
+     "product_dir": "work/atg-maxicut-eldiven"
+    }
+   ],
+   "baslik": "TUZLA HIRDAVAT",
+   "tur_yazi": "20.000+ ÜRÜN · TEK ADRES",
+   "ozellikler": [
+    "Paslanmaz cıvata",
+    "El aletleri",
+    "Aşındırıcı"
+   ],
+   "slogan": "Dükkân Tuzla'da, raflar cebinde.",
+   "kapanis_k": "HEMEN GİR",
+   "search_code": "tuzlahirdavat.com.tr",
+   "kaynak": "Görüntüler kullanıcının kendi dükkânında çektiği videolar (25 Kasım 2026: IMG_3592–3602). Dükkân adresi: Tuzla, İstanbul (tuzlacivata.com.tr/iletisim). Ürün sayısı: sitenin ürün haritasında 21.517 ürün adresi (23 Kasım 2026).",
+   "kaynak_video": "Kullanıcının kendi çekimleri; stok görüntü yok.",
+   "caption": "Dükkân Tuzla'da, raflar cebinde. 🔩\n\nDepomuzdaki cıvatadan el aletine, kesme taşından kaynak makinesine 20.000'den fazla ürün tuzlahirdavat.com.tr'de. Siparişini ver, kargoyla kapına gelsin.\n\n📤 Atölyesi olan arkadaşına gönder.\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#hırdavat #paslanmazcıvata #elaletleri #tuzla #tuzlahırdavat"
+  }
+ ]
+}
