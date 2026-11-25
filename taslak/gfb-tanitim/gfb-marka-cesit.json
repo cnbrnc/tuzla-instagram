@@ -1,0 +1,350 @@
+{
+ "hafta": "taslak",
+ "taslak": "25 Kasım 2026: GFB'nin kendi hesabı için marka filmi, çeşit ve stok vurgulu (17 sn); bizim hesapta yayınlanmaz",
+ "posts": [
+  {
+   "id": "gfb-marka-cesit",
+   "key": "gfb-marka-cesit",
+   "format": "reel",
+   "template": "reel_fragman",
+   "group": "kesici",
+   "kanca_kalibi": "fragman",
+   "stil": "sinematik",
+   "muzik": "h",
+   "uzat": 8,
+   "replik_sure": 2,
+   "kapak_ms": 12900,
+   "tag": "2.800+ ÇEŞİT · GÜÇLÜ STOK",
+   "replikler": [
+    [
+     "GFB MATKAP UCU",
+     "METALİ DELER."
+    ],
+    [
+     "GFB FREZE",
+     "ÇELİĞİ İŞLER."
+    ],
+    [
+     "GFB MURÇ",
+     "BETONU KIRAR."
+    ],
+    [
+     "GFB XPRO BITS",
+     "VİDAYI SIKAR."
+    ],
+    [
+     "2.800+ ÇEŞİT",
+     "TEK ÇATI ALTINDA."
+    ],
+    [
+     "DEPO DOLU.",
+     "STOK HAZIR."
+    ]
+   ],
+   "sahneler": [
+    {
+     "file": "work/stok/pexels-29913842.mp4",
+     "url": "https://videos.pexels.com/video-files/29913842/12840106_2560_1440_24fps.mp4",
+     "start": 3.0,
+     "x": 0.42,
+     "sure": 1.0
+    },
+    {
+     "file": "work/stok/pexels-8926451.mp4",
+     "url": "https://videos.pexels.com/video-files/8926451/",
+     "start": 2.0,
+     "x": 0.31,
+     "gamma": 1.5,
+     "sure": 0.5
+    },
+    {
+     "file": "work/stok/pexels-855491.mp4",
+     "url": "https://www.pexels.com/video/spinning-drill-855491/",
+     "start": 3.0,
+     "x": 0.55,
+     "sure": 0.5
+    },
+    {
+     "file": "work/stok/pexels-8926451.mp4",
+     "url": "https://videos.pexels.com/video-files/8926451/",
+     "start": 18.0,
+     "x": 0.45,
+     "sure": 1.0
+    },
+    {
+     "file": "work/stok/pexels-19791092.mp4",
+     "url": "https://videos.pexels.com/video-files/19791092/",
+     "start": 1.5,
+     "x": 0.62,
+     "sure": 1.0
+    },
+    {
+     "file": "work/stok/pexels-24964769.mp4",
+     "url": "https://videos.pexels.com/video-files/24964769/11899187_2560_1440_60fps.mp4",
+     "start": 4.0,
+     "x": 0.47,
+     "gamma": 0.8,
+     "kontrast": 1.35,
+     "sure": 1.0
+    },
+    {
+     "file": "work/stok/pexels-24964769.mp4",
+     "url": "https://videos.pexels.com/video-files/24964769/11899187_2560_1440_60fps.mp4",
+     "start": 7.0,
+     "x": 0.4,
+     "gamma": 0.8,
+     "kontrast": 1.35,
+     "sure": 1.0
+    },
+    {
+     "file": "work/stok/pixabay-4728.mp4",
+     "url": "https://pixabay.com/videos/id-4728/",
+     "start": 3.0,
+     "x": 0.47,
+     "sure": 1.0
+    },
+    {
+     "file": "work/stok/pixabay-4729.mp4",
+     "url": "https://pixabay.com/videos/id-4729/",
+     "start": 6.0,
+     "x": 0.35,
+     "sure": 1.0
+    },
+    {
+     "file": "work/gfb/yer/s-tesis.mp4",
+     "foto": "kullanıcının gönderdiği GFB tesis fotoğrafı",
+     "start": 0.0,
+     "sure": 2.0
+    },
+    {
+     "file": "work/gfb/yer/s-depo-1.mp4",
+     "foto": "kullanıcının gönderdiği GFB depo fotoğrafı 1",
+     "foto_ayar": "--hf 0.86 --ust 0.05 --sol 0.0 0.04 --sure 2.5 --yakin 1.10",
+     "start": 0.0,
+     "sure": 1.0
+    },
+    {
+     "file": "work/gfb/yer/s-depo-2.mp4",
+     "foto": "kullanıcının gönderdiği GFB depo fotoğrafı 2",
+     "foto_ayar": "--hf 0.86 --ust 0.06 --sol 0.04 0.0 --sure 7.5 --yakin 1.10",
+     "start": 0.0
+    }
+   ],
+   "mozaik": [
+    {
+     "product_dir": "work/gfb/gfb1562"
+    },
+    {
+     "product_dir": "work/gfb/gfb1000"
+    },
+    {
+     "product_dir": "work/gfb/gfb3300"
+    },
+    {
+     "product_dir": "work/gfb/e03"
+    },
+    {
+     "product_dir": "work/gfb/e07"
+    },
+    {
+     "product_dir": "work/gfb/e08"
+    },
+    {
+     "product_dir": "work/gfb/e11"
+    },
+    {
+     "product_dir": "work/gfb/e14"
+    },
+    {
+     "product_dir": "work/gfb/e16"
+    },
+    {
+     "product_dir": "work/gfb/e29"
+    },
+    {
+     "product_dir": "work/gfb/e31"
+    },
+    {
+     "product_dir": "work/gfb/e35"
+    }
+   ],
+   "baslik": "GFB",
+   "tur_yazi": "2.800+ ÇEŞİT · TEK MARKA",
+   "ozellikler": [
+    "Kesici takımlar",
+    "Ölçü aletleri",
+    "Aşındırıcılar"
+   ],
+   "slogan": "Çeşit de stok da GFB'de.",
+   "kaynak": "GFB'NİN KENDİ HESABINDA PAYLAŞACAĞI FİLM, çeşit ve stok vurgulu sürüm (kullanıcı 25 Kasım 2026: \"daha çok çeşit ve güçlü stok vurgusu; çeşitten vuracağız\"). \"2.800+ çeşit\": GFB Haziran 2026 fiyat listesindeki fiyatlı satır sayısı (2.831) sayılarak bulundu; GFB doğrulamalı. Tuzla Hırdavat adı, sitesi, iletişimi yok. Web adresi GFB kataloğundan. Fiyat yok. 36 ayrı ürün görünür (24 kart + 12 karo).",
+   "kaynak_video": "Pexels lisansı: 29913842, 8926451, 855491, 19791092, 24964769 · Pixabay Content License: 4728, 4729. Tesis ve iki depo fotoğrafı kullanıcının gönderdiği GFB fotoğrafları (kaynağı GFB doğrulamalı). Ürün fotoğrafları tuzlahirdavat.com.tr'deki GFB ürün sayfalarından. Stok görüntüdeki uçlar temsilîdir.",
+   "caption": "Metali deler, çeliği işler, betonu kırar, vidayı sıkar: 2.800'den fazla çeşit, tek marka. 🔩\n\nMatkap uçları, frezeler, kılavuz ve pafta, murç ve keskiler, pançlar, XPRO bits uçları, ölçü aletleri, aşındırıcılar. Depo dolu, stok hazır.\n\n📤 Atölyedeki ustana gönder.\n🌐 www.gfb.com.tr\n\n#gfb #matkapucu #kesicitakım #xpro #hırdavat",
+   "replik_urun": [
+    [
+     {
+      "product_dir": "work/gfb/gfb1814",
+      "marka": "GFB",
+      "kod": "1814 · ALTIN SERİ",
+      "ad": "%5 kobaltlı matkap ucu"
+     },
+     {
+      "product_dir": "work/gfb/e02",
+      "marka": "GFB",
+      "kod": "1601 · TİTANYUM",
+      "ad": "TIN kaplı HSS matkap ucu"
+     },
+     {
+      "product_dir": "work/gfb/e01",
+      "marka": "GFB",
+      "kod": "18992 · DIN 345",
+      "ad": "Morslu konik matkap ucu"
+     },
+     {
+      "product_dir": "work/gfb/gfb2420",
+      "marka": "GFB",
+      "kod": "2420 · TİTAN KAPLI",
+      "ad": "Kademeli matkap ucu 4–12"
+     }
+    ],
+    [
+     {
+      "product_dir": "work/gfb/gfb2906",
+      "marka": "GFB",
+      "kod": "2906 · TIN KAPLI",
+      "ad": "Parmak freze, 4 ağızlı"
+     },
+     {
+      "product_dir": "work/gfb/e05",
+      "marka": "GFB",
+      "kod": "31740 · DIN 335",
+      "ad": "Havşa freze 90°"
+     },
+     {
+      "product_dir": "work/gfb/gfb2603",
+      "marka": "GFB",
+      "kod": "2603 · K11-160",
+      "ad": "Torna aynası, 3 ayak"
+     },
+     {
+      "product_dir": "work/gfb/e19",
+      "marka": "GFB",
+      "kod": "4947 · ER32",
+      "ad": "Pens"
+     }
+    ],
+    [
+     {
+      "product_dir": "work/gfb/gfb2154",
+      "marka": "GFB",
+      "kod": "2154 · SDS-MAX",
+      "ad": "Sivri murç 18×500 mm"
+     },
+     {
+      "product_dir": "work/gfb/gfb2001",
+      "marka": "GFB",
+      "kod": "2001 · SDS-PLUS",
+      "ad": "Matkap ucu 12×210 mm"
+     },
+     {
+      "product_dir": "work/gfb/e09",
+      "marka": "GFB",
+      "kod": "2219 · ELMASLI",
+      "ad": "Beton delme panç 50 mm"
+     },
+     {
+      "product_dir": "work/gfb/e34",
+      "marka": "GFB",
+      "kod": "2385 · TURBO",
+      "ad": "Elmas testere 115 mm"
+     }
+    ],
+    [
+     {
+      "product_dir": "work/gfb/gfb8012",
+      "marka": "GFB",
+      "kod": "8012 · XPRO",
+      "ad": "Darbeli tornavida ucu PH2"
+     },
+     {
+      "product_dir": "work/gfb/e23",
+      "marka": "GFB",
+      "kod": "8026 · XPRO",
+      "ad": "Darbeli bits PZ1×75"
+     },
+     {
+      "product_dir": "work/gfb/e22",
+      "marka": "GFB",
+      "kod": "2460 · TORK",
+      "ad": "Otomotiv bits T55"
+     },
+     {
+      "product_dir": "work/gfb/e13",
+      "marka": "GFB",
+      "kod": "2551 · MANYETİK",
+      "ad": "Somun lokması 8×65 mm"
+     }
+    ],
+    [
+     {
+      "product_dir": "work/gfb/gfb3960",
+      "marka": "GFB",
+      "kod": "3960 · 40 PARÇA",
+      "ad": "Kılavuz pafta seti"
+     },
+     {
+      "product_dir": "work/gfb/e24",
+      "marka": "GFB",
+      "kod": "3551 · DIN 371",
+      "ad": "Makina kılavuzu, helis"
+     },
+     {
+      "product_dir": "work/gfb/gfb4700",
+      "marka": "GFB",
+      "kod": "4700 · TCT",
+      "ad": "Metal delme panç 16 mm"
+     },
+     {
+      "product_dir": "work/gfb/e17",
+      "marka": "GFB",
+      "kod": "1151 · 0,01 mm",
+      "ad": "Dış çap mikrometresi"
+     }
+    ],
+    [
+     {
+      "product_dir": "work/gfb/e32",
+      "marka": "GFB",
+      "kod": "2322 · ZR",
+      "ad": "Flap disk 115 mm"
+     },
+     {
+      "product_dir": "work/gfb/e33",
+      "marka": "GFB",
+      "kod": "2361 · 180 mm",
+      "ad": "Taşlama taşı"
+     },
+     {
+      "product_dir": "work/gfb/e20",
+      "marka": "GFB",
+      "kod": "5161 · 65 mm",
+      "ad": "Pimli daire fırça"
+     },
+     {
+      "product_dir": "work/gfb/e26",
+      "marka": "GFB",
+      "kod": "5102 · 5 m",
+      "ad": "Şerit metre"
+     }
+    ]
+   ],
+   "marka_filmi": {
+    "ad": "GFB",
+    "ust": "2.800+ ÇEŞİT · GÜÇLÜ STOK",
+    "web": "www.gfb.com.tr",
+    "alt": "Kesici takımlar · Ölçü aletleri · Aşındırıcılar"
+   },
+   "mozaik_satir": 3,
+   "mozaik_sutun": 4
+  }
+ ]
+}

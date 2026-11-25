@@ -45,9 +45,10 @@
 .mozaik{position:absolute;left:70px;right:70px;top:292px;height:620px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:20px}
 .mozaik .k{background:#fff;border-radius:34px;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6);animation:otur .4s cubic-bezier(.2,.8,.3,1) both}
 .mozaik .k img{display:block;max-width:240px;max-height:240px;width:auto;height:auto}
-/* mozaik_satir = 3: dokuz karo (3×3), marka filminde çeşit göstermek için */
+/* mozaik_satir / mozaik_sutun: karo sayısı (varsayılan 2 × 3). Marka filminde çeşit göstermek için 3 × 3 ya da 3 × 4. */
 .mozaik.r3{grid-template-rows:repeat(3,1fr);gap:16px}.mozaik.r3 .k{border-radius:26px}.mozaik.r3 .k img{max-width:252px;max-height:168px}
-{% for m in (mozaik or [])[:9] %}.mozaik .k:nth-child({{ loop.index }}){animation-delay:{{ T + loop.index0 * (0.06 if mozaik_satir == 3 else 0.08) }}s}
+.mozaik.s4{grid-template-columns:repeat(4,1fr);gap:14px}.mozaik.s4 .k{border-radius:22px}.mozaik.s4 .k img{max-width:190px;max-height:164px}
+{% for m in (mozaik or [])[:12] %}.mozaik .k:nth-child({{ loop.index }}){animation-delay:{{ T + loop.index0 * (0.05 if mozaik_satir == 3 else 0.08) }}s}
 {% endfor %}
 .vitrin .ic::after{content:"";position:absolute;top:-10%;bottom:-10%;left:0;width:36%;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.85),rgba(255,255,255,0));animation:isik .7s ease-in-out {{ T + 0.3 }}s both}
 .ad{position:absolute;left:60px;right:60px;top:946px;text-align:center;font-size:176px;line-height:.92;color:#fff;white-space:nowrap;text-shadow:0 6px 40px rgba(0,0,0,.85);animation:slamT .3s cubic-bezier(.2,.8,.3,1) {{ T + 0.25 }}s both}
@@ -69,7 +70,7 @@
 {% for u in kartlar or [] %}<div class="ukart u{{ loop.index0 }}"><div class="f"><img src="{{ u.image }}" alt=""></div><span class="m disp">{{ u.marka }}</span><div class="y"><b>{{ u.kod }}</b><span>{{ u.ad }}</span></div></div>
 {% endfor %}
 <div class="hale"></div>
-{% if mozaik %}<div class="mozaik{% if mozaik_satir == 3 %} r3{% endif %}">{% for m in mozaik[:(9 if mozaik_satir == 3 else 6)] %}<div class="k"><img src="{{ m.image }}" alt=""></div>{% endfor %}</div>
+{% if mozaik %}<div class="mozaik{% if mozaik_satir == 3 %} r3{% endif %}{% if mozaik_sutun == 4 %} s4{% endif %}">{% for m in mozaik[:((mozaik_satir or 2) * (mozaik_sutun or 3))] %}<div class="k"><img src="{{ m.image }}" alt=""></div>{% endfor %}</div>
 {% else %}<div class="vitrin"><div class="ic"><img src="{{ urun_gorsel }}" alt=""></div></div>{% endif %}
 <div class="ad disp" data-fit>{{ baslik }}</div>
 {% if tur_yazi %}<div class="tur">{{ tur_yazi }}</div>{% endif %}
