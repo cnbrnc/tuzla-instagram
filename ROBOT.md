@@ -236,7 +236,14 @@ Kullanıcı 23 Kasım 2026'da 5 fragmanı izledi ve "kalanı hangisi iyi olacaks
 - **Depoya yükleme:** Stok dosyasını depoya koyma; lisans tek başına dağıtıma izin vermez. `work/` zaten yok sayılır. Yalnız bitmiş Reels videosu `posts/` klasörüne girer.
 - **Erişim:** Kullanıcı `www.pexels.com`, `videos.pexels.com`, `pixabay.com`, `cdn.pixabay.com`, `mixkit.co`, `assets.mixkit.co`, `coverr.co` ve `cdn.coverr.co` adreslerine izin verdi. Mixkit ve Coverr sayfaları `curl` ile açılır. Erişim kapalıysa tekrar deneme; gönderiyi kodla üretilmiş sahneyle hazırla ve kullanıcıya yaz.
 
-**Gerçek çekim (henüz kurulmadı):** Kullanıcıya telefonla çekilmiş kısa işlik videolarını robotun kurgulaması önerildi. Kullanıcı deneme çekimi gönderirse kurulacak. O zamana kadar Cuma "Yanlış / doğru" olur.
+**Gerçek çekim (25 Kasım 2026'da başladı):** Kullanıcı dükkânında telefonla çektiği 11 kısa videoyu sohbete ekledi (IMG_3592–3602; dik, 4K, 3–8 sn). Site tanıtım filmi bu görüntülerle kuruldu (`taslak/site-tanitim/site-tanitim-dukkan.json`).
+- **Hazırlık:** Her dosyayı `ffmpeg -i <mov> -vf "scale=1080:1920,fps=30" -c:v libx264 -crf 15 -an work/dukkan/d-<no>.mp4` ile çalışma boyutuna getir; telefonun döndürme bilgisini ffmpeg kendisi uygular.
+- **İçerik (25 Kasım çekimleri):** 3592 mağaza içi ve el aletleri duvarı · 3593 el aletleri · 3594 elektrikli aletler · 3595 kutulu raflar · 3596 çekiçler · 3597 kesme taşı duvarı · 3598 ve 3599 dış cephe (tabelalar) · 3600 "tuzla CIVATA HIRDAVAT" tabelası · 3601 cıvata deposu rafları · 3602 raf arasında yürüyüş.
+- **Kurgu:** Fragman türünde bir cümleye iki yarım saniyelik kesit konabilir (`"sure": 0.5`); kesimler yine vuruşa oturur.
+- **Gizlilik:** Araç plakası, başka firmanın araç yazısı ve tanınan yüz görünmesin. Gerekirse kesiti önceden kırp (3600 için `crop=750:1334:180:270`). Kullanıcının kendi tabelası ve bayisi olduğu markaların tabelaları kalabilir.
+- **Saklama:** Çekimler yalnız o sohbetin çalışma klasöründedir (`work/dukkan/`); depoya konmadı. Kullanıcı izin verirse kalıcı bir yere (depo ya da Drive) alınır; izin yoksa her kullanımda yeniden istenir.
+- Kullanıcının şirket sitesindeki galeri (`tuzlacivata.com.tr/galeri`, "Depomuzdan Kareler", 31 fotoğraf) da kullanılabilir; bağlantı bu ortamdan yavaş ve kesintili.
+- Cuma Reels'i "Yanlış / doğru" olarak kalır; gerçek çekim, uygun kesit olduğunda stok görüntünün yerine kullanılır.
 
 ### Ürün Reels'i (`reel.py`, şablon `templates/reel.html`, liste `reels`)
 
