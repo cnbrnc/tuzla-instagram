@@ -34,8 +34,8 @@
 .ukart .y{display:flex;flex-direction:column;gap:8px;min-width:0}
 .ukart .y b{font-weight:700;font-size:46px;line-height:1;color:#fff;letter-spacing:.06em;white-space:nowrap}
 .ukart .y span{font-weight:700;font-size:38px;line-height:1.14;color:rgba(255,255,255,.86)}
-{% for u in (replik_urun or [])[:NR] %}{% if u %}.ukart.u{{ loop.index0 }}{animation:kartGir .28s cubic-bezier(.2,.8,.2,1) {{ loop.index0 * RS + 0.12 }}s both,kartCik .12s ease-in {{ (loop.index0 + 1) * RS - 0.14 }}s forwards}
-{% endif %}{% endfor %}
+{% for u in kartlar or [] %}.ukart.u{{ loop.index0 }}{animation:kartGir {{ '.28s' if u.ilk else '.16s' }} cubic-bezier(.2,.8,.2,1) {{ u.t0 }}s both,kartCik .1s ease-in {{ u.t1 }}s forwards}
+{% endfor %}
 /* ürün 4,0 sn */
 .hale{position:absolute;left:-60px;right:-60px;top:140px;height:1000px;background:radial-gradient(50% 46% at 50% 50%,rgba(255,198,41,.34),rgba(255,198,41,0) 70%);animation:hale .7s ease-out {{ T }}s both}
 .vitrin{position:absolute;left:110px;right:110px;top:300px;height:610px;animation:otur .45s cubic-bezier(.2,.8,.3,1) {{ T }}s both}
@@ -45,7 +45,9 @@
 .mozaik{position:absolute;left:70px;right:70px;top:292px;height:620px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:20px}
 .mozaik .k{background:#fff;border-radius:34px;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6);animation:otur .4s cubic-bezier(.2,.8,.3,1) both}
 .mozaik .k img{display:block;max-width:240px;max-height:240px;width:auto;height:auto}
-{% for m in (mozaik or [])[:6] %}.mozaik .k:nth-child({{ loop.index }}){animation-delay:{{ T + loop.index0 * 0.08 }}s}
+/* mozaik_satir = 3: dokuz karo (3×3), marka filminde çeşit göstermek için */
+.mozaik.r3{grid-template-rows:repeat(3,1fr);gap:16px}.mozaik.r3 .k{border-radius:26px}.mozaik.r3 .k img{max-width:252px;max-height:168px}
+{% for m in (mozaik or [])[:9] %}.mozaik .k:nth-child({{ loop.index }}){animation-delay:{{ T + loop.index0 * (0.06 if mozaik_satir == 3 else 0.08) }}s}
 {% endfor %}
 .vitrin .ic::after{content:"";position:absolute;top:-10%;bottom:-10%;left:0;width:36%;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.85),rgba(255,255,255,0));animation:isik .7s ease-in-out {{ T + 0.3 }}s both}
 .ad{position:absolute;left:60px;right:60px;top:946px;text-align:center;font-size:176px;line-height:.92;color:#fff;white-space:nowrap;text-shadow:0 6px 40px rgba(0,0,0,.85);animation:slamT .3s cubic-bezier(.2,.8,.3,1) {{ T + 0.25 }}s both}
@@ -64,10 +66,10 @@
 {% block sahne %}
 {% for r in replikler[:NR] %}<div class="rep r{{ loop.index0 }} disp" data-fit>{% for l in r %}<span{% if loop.last and loop.length > 1 %} class="v"{% endif %}>{{ l }}</span>{% endfor %}</div>
 {% endfor %}
-{% for u in (replik_urun or [])[:NR] %}{% if u %}<div class="ukart u{{ loop.index0 }}"><div class="f"><img src="{{ u.image }}" alt=""></div><span class="m disp">{{ u.marka }}</span><div class="y"><b>{{ u.kod }}</b><span>{{ u.ad }}</span></div></div>
-{% endif %}{% endfor %}
+{% for u in kartlar or [] %}<div class="ukart u{{ loop.index0 }}"><div class="f"><img src="{{ u.image }}" alt=""></div><span class="m disp">{{ u.marka }}</span><div class="y"><b>{{ u.kod }}</b><span>{{ u.ad }}</span></div></div>
+{% endfor %}
 <div class="hale"></div>
-{% if mozaik %}<div class="mozaik">{% for m in mozaik[:6] %}<div class="k"><img src="{{ m.image }}" alt=""></div>{% endfor %}</div>
+{% if mozaik %}<div class="mozaik{% if mozaik_satir == 3 %} r3{% endif %}">{% for m in mozaik[:(9 if mozaik_satir == 3 else 6)] %}<div class="k"><img src="{{ m.image }}" alt=""></div>{% endfor %}</div>
 {% else %}<div class="vitrin"><div class="ic"><img src="{{ urun_gorsel }}" alt=""></div></div>{% endif %}
 <div class="ad disp" data-fit>{{ baslik }}</div>
 {% if tur_yazi %}<div class="tur">{{ tur_yazi }}</div>{% endif %}

@@ -1,0 +1,236 @@
+{
+ "hafta": "taslak",
+ "taslak": "25 Kasım 2026: GFB'nin kendi hesabı için marka filmi (15 sn, Tuzla Hırdavat adı yok); bizim hesapta yayınlanmaz",
+ "posts": [
+  {
+   "id": "gfb-marka",
+   "key": "gfb-marka",
+   "format": "reel",
+   "template": "reel_fragman",
+   "group": "kesici",
+   "kanca_kalibi": "fragman",
+   "stil": "sinematik",
+   "muzik": "h",
+   "uzat": 6,
+   "replik_sure": 2,
+   "kapak_ms": 10900,
+   "tag": "KESİCİ VE DELİCİ TAKIMLAR",
+   "replikler": [
+    [
+     "GFB MATKAP UCU",
+     "METALİ DELER."
+    ],
+    [
+     "GFB FREZE",
+     "ÇELİĞİ İŞLER."
+    ],
+    [
+     "GFB MURÇ",
+     "BETONU KIRAR."
+    ],
+    [
+     "GFB XPRO BITS",
+     "VİDAYI SIKAR."
+    ],
+    [
+     "KILAVUZ · PAFTA · PANÇ",
+     "HEPSİ GFB."
+    ]
+   ],
+   "sahneler": [
+    {
+     "file": "work/stok/pexels-29913842.mp4",
+     "url": "https://videos.pexels.com/video-files/29913842/12840106_2560_1440_24fps.mp4",
+     "start": 3.0,
+     "x": 0.42,
+     "sure": 1.0
+    },
+    {
+     "file": "work/stok/pexels-8926451.mp4",
+     "url": "https://videos.pexels.com/video-files/8926451/",
+     "start": 2.0,
+     "x": 0.31,
+     "gamma": 1.5,
+     "sure": 0.5
+    },
+    {
+     "file": "work/stok/pexels-855491.mp4",
+     "url": "https://www.pexels.com/video/spinning-drill-855491/",
+     "start": 3.0,
+     "x": 0.55,
+     "sure": 0.5
+    },
+    {
+     "file": "work/stok/pexels-8926451.mp4",
+     "url": "https://videos.pexels.com/video-files/8926451/",
+     "start": 18.0,
+     "x": 0.45,
+     "sure": 1.0
+    },
+    {
+     "file": "work/stok/pexels-19791092.mp4",
+     "url": "https://videos.pexels.com/video-files/19791092/",
+     "start": 1.5,
+     "x": 0.62,
+     "sure": 1.0
+    },
+    {
+     "file": "work/stok/pexels-24964769.mp4",
+     "url": "https://videos.pexels.com/video-files/24964769/11899187_2560_1440_60fps.mp4",
+     "start": 4.0,
+     "x": 0.47,
+     "gamma": 0.8,
+     "kontrast": 1.35,
+     "sure": 1.0
+    },
+    {
+     "file": "work/stok/pexels-24964769.mp4",
+     "url": "https://videos.pexels.com/video-files/24964769/11899187_2560_1440_60fps.mp4",
+     "start": 7.0,
+     "x": 0.4,
+     "gamma": 0.8,
+     "kontrast": 1.35,
+     "sure": 1.0
+    },
+    {
+     "file": "work/stok/pixabay-4728.mp4",
+     "url": "https://pixabay.com/videos/id-4728/",
+     "start": 3.0,
+     "x": 0.47,
+     "sure": 1.0
+    },
+    {
+     "file": "work/stok/pixabay-4729.mp4",
+     "url": "https://pixabay.com/videos/id-4729/",
+     "start": 6.0,
+     "x": 0.35,
+     "sure": 1.0
+    },
+    {
+     "file": "work/stok/pixabay-94063.mp4",
+     "url": "https://pixabay.com/videos/id-94063/",
+     "start": 1.0,
+     "x": 0.45,
+     "sure": 0.5
+    },
+    {
+     "file": "work/stok/pexels-29913842.mp4",
+     "url": "https://videos.pexels.com/video-files/29913842/12840106_2560_1440_24fps.mp4",
+     "start": 5.5,
+     "x": 0.42,
+     "hiz": 0.8
+    }
+   ],
+   "mozaik": [
+    {
+     "product_dir": "work/gfb/gfb1814"
+    },
+    {
+     "product_dir": "work/gfb/gfb1562"
+    },
+    {
+     "product_dir": "work/gfb/gfb2001"
+    },
+    {
+     "product_dir": "work/gfb/gfb2906"
+    },
+    {
+     "product_dir": "work/gfb/gfb3300"
+    },
+    {
+     "product_dir": "work/gfb/gfb3960"
+    },
+    {
+     "product_dir": "work/gfb/gfb4700"
+    },
+    {
+     "product_dir": "work/gfb/gfb8012"
+    },
+    {
+     "product_dir": "work/gfb/gfb1000"
+    }
+   ],
+   "baslik": "GFB",
+   "tur_yazi": "KESİCİ VE DELİCİ TAKIMLAR",
+   "ozellikler": [
+    "Matkap ucu · Freze",
+    "Kılavuz · Pafta",
+    "Murç · Panç · Bits"
+   ],
+   "slogan": "Atölyeden şantiyeye, her işe bir GFB.",
+   "kaynak": "GFB'NİN KENDİ HESABINDA PAYLAŞACAĞI FİLM (kullanıcı 25 Kasım 2026: \"GFB kendi paylaşacağı, benim tanıtımım olmayan video rica etti\"). Tuzla Hırdavat logosu, sitesi, e-postası, telefonu ve deposu YOK. Web adresi www.gfb.com.tr GFB'nin kendi kataloğundan. Marka kendi ürününü tanıttığı için stok şartı aranmadı (freze, torna aynası, kumpas, matkap seti sitede stokta değil). Fiyat yok.",
+   "kaynak_video": "Pexels lisansı: 29913842, 8926451, 855491, 19791092, 24964769 · Pixabay Content License: 4728, 4729, 94063. Kullanıcının dükkân çekimi yok. Ürün fotoğrafları tuzlahirdavat.com.tr'deki GFB ürün sayfalarından. Stok görüntüdeki uçlar temsilîdir. GFB logosu kullanılmadı (elde temiz dosya yok); marka adı yazıyla.",
+   "caption": "GFB matkap ucu metali deler, GFB freze çeliği işler, GFB murç betonu kırar, GFB XPRO bits vidayı sıkar. 🔩\n\nMatkap uçları, frezeler, kılavuz ve pafta, murç ve keskiler, pançlar, XPRO darbeli bits uçları.\n\n📤 Atölyedeki ustana gönder.\n🌐 www.gfb.com.tr\n\n#gfb #matkapucu #kesicitakım #xpro #hırdavat",
+   "replik_urun": [
+    [
+     {
+      "product_dir": "work/gfb/gfb1814",
+      "marka": "GFB",
+      "kod": "1814 · ALTIN SERİ",
+      "ad": "%5 kobaltlı matkap ucu"
+     },
+     {
+      "product_dir": "work/gfb/gfb2420",
+      "marka": "GFB",
+      "kod": "2420 · TİTAN KAPLI",
+      "ad": "Kademeli matkap ucu 4–12"
+     }
+    ],
+    [
+     {
+      "product_dir": "work/gfb/gfb2906",
+      "marka": "GFB",
+      "kod": "2906 · TIN KAPLI",
+      "ad": "Parmak freze, 4 ağızlı"
+     },
+     {
+      "product_dir": "work/gfb/gfb2603",
+      "marka": "GFB",
+      "kod": "2603 · K11-160",
+      "ad": "Torna aynası, 3 ayak"
+     }
+    ],
+    [
+     {
+      "product_dir": "work/gfb/gfb2154",
+      "marka": "GFB",
+      "kod": "2154 · SDS-MAX",
+      "ad": "Sivri murç 18×500 mm"
+     },
+     {
+      "product_dir": "work/gfb/gfb2001",
+      "marka": "GFB",
+      "kod": "2001 · SDS-PLUS",
+      "ad": "Matkap ucu 12×210 mm"
+     }
+    ],
+    {
+     "product_dir": "work/gfb/gfb8012",
+     "marka": "GFB",
+     "kod": "8012 · XPRO",
+     "ad": "Darbeli tornavida ucu PH2"
+    },
+    [
+     {
+      "product_dir": "work/gfb/gfb3960",
+      "marka": "GFB",
+      "kod": "3960 · 40 PARÇA",
+      "ad": "Kılavuz pafta seti"
+     },
+     {
+      "product_dir": "work/gfb/gfb4700",
+      "marka": "GFB",
+      "kod": "4700 · TCT",
+      "ad": "Metal delme panç 16 mm"
+     }
+    ]
+   ],
+   "marka_filmi": {
+    "ad": "GFB",
+    "ust": "KESİCİ VE DELİCİ TAKIMLAR",
+    "web": "www.gfb.com.tr"
+   },
+   "mozaik_satir": 3
+  }
+ ]
+}

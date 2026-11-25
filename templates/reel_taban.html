@@ -16,6 +16,7 @@ html,body{margin:0;padding:0;background:var(--navy)}
 /* Reels güvenli alan: üst ~220px, alt ~360px, sağ ~150px arayüze ayrılır */
 .top{position:absolute;top:150px;left:60px;right:150px;display:flex;align-items:center;justify-content:space-between}
 .logo{height:64px;width:auto;display:block}
+.mad{font-size:92px;line-height:.9;color:#fff;letter-spacing:.02em}
 .pill{display:inline-flex;align-items:center;height:56px;padding:0 26px;border-radius:999px;background:var(--accent);color:var(--ink);font-weight:700;font-size:24px;letter-spacing:.12em}
 /* Zamanlama ses_tur.py ile aynıdır (120 BPM, vuruş 0,5 sn). Birini değiştirirsen ötekini de değiştir. */
 @keyframes up{from{transform:translateY(70px);opacity:0}to{transform:none;opacity:1}}
@@ -93,19 +94,26 @@ html,body{background:transparent}
 <body>
 <div id="reel"{% if stil == 'sinematik' %} class="sin{% if video_zemin %} vid{% endif %}"{% endif %}>
 {% if video_zemin %}<div class="perde"></div><div class="karart"></div>{% endif %}
-<div class="top"><img class="logo" src="{{ logo }}" alt="Tuzla Hırdavat"><span class="pill">{{ tag }}</span></div>
+<div class="top">{% if marka_filmi %}<span class="mad disp">{{ marka_filmi.ad }}</span>{% else %}<img class="logo" src="{{ logo }}" alt="Tuzla Hırdavat">{% endif %}<span class="pill">{{ tag }}</span></div>
 <div class="kamera" style="position:absolute;inset:0">
 {% if stil == 'sinematik' %}<canvas id="fx" width="1080" height="1920"{% block fx %}{% endblock %}></canvas>{% endif %}
 {% block sahne %}{% endblock %}
 </div>
 {% if stil == 'sinematik' %}<div class="vinyet"></div>{% endif %}
-<div class="end{% if urun and urun_gorsel %} urunlu{% endif %}"><div class="in">
+{% if marka_filmi %}{# Marka filmi: markanın kendi hesabında paylaşacağı film. Tuzla Hırdavat logosu, sitesi ve iletişimi yoktur. #}
+<div class="end"><div class="in">
+<span class="k">{{ marka_filmi.ust }}</span>
+<p class="code disp" data-fit>{{ marka_filmi.ad }}</p>
+<div class="card"><span class="l1">{{ marka_filmi.web }}</span>{% if marka_filmi.alt %}<span class="l2">{{ marka_filmi.alt }}</span>{% endif %}</div>
+</div></div>
+{% else %}<div class="end{% if urun and urun_gorsel %} urunlu{% endif %}"><div class="in">
 <img class="logo" src="{{ logo }}" alt="Tuzla Hırdavat" style="height:72px;align-self:flex-start">
 <span class="k">{{ kapanis_k or 'SİTEDE ARAT' }}</span>
 <p class="code disp" data-fit>{{ search_code }}</p>
 {% if urun and urun_gorsel %}<div class="urun"><div class="foto"><img src="{{ urun_gorsel }}" alt=""></div><div class="y"><span class="uk">{{ urun.kicker or 'BU İŞİN ALETİ' }}</span><span class="um disp" data-fit>{{ urun.marka }}</span><span class="ua">{{ urun.ad }}</span>{% if urun.ozellik %}<span class="uo">{{ urun.ozellik }}</span>{% endif %}</div></div>{% endif %}
 <div class="card"><span class="l1">tuzlahirdavat.com.tr</span><span class="l2">Sipariş: satis5@tuzlacivata.com.tr</span><span class="l3">Telefon: 0542 189 02 69</span></div>
 </div></div>
+{% endif %}
 {% if stil == 'sinematik' %}<canvas id="gren" width="270" height="480"></canvas>{% endif %}
 </div>
 <script>

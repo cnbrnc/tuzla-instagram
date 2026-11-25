@@ -155,8 +155,16 @@ def main():
                 # Site tanıtımı: tek ürün yerine ürün karoları (her biri {"product_dir"} ya da {"image"})
                 ctx["mozaik"] = [with_image(m) for m in post["mozaik"]]
             if tpl == "reel_fragman" and post.get("replik_urun"):
-                # Marka filmi: her cümlede o cümlenin ürünü küçük kartta görünür ({"product_dir", "marka", "kod", "ad"} ya da null)
-                ctx["replik_urun"] = [with_image(u) if u else None for u in post["replik_urun"]]
+                # Marka filmi: her cümlede o cümlenin ürünü küçük kartta görünür. Cümle başına bir öğe:
+                # {"product_dir", "marka", "kod", "ad"}, null ya da bunların listesi (liste cümlenin süresini eşit böler).
+                kartlar = []
+                for i, u in enumerate(post["replik_urun"][:ctx["NR"]]):
+                    us = u if isinstance(u, list) else [u] if u else []
+                    for j, k in enumerate(us):
+                        kartlar.append(dict(with_image(k), ilk=(j == 0),
+                                            t0=round(i * RS + j * RS / len(us) + (0.12 if j == 0 else 0.0), 3),
+                                            t1=round(i * RS + (j + 1) * RS / len(us) - (0.14 if j == len(us) - 1 else 0.08), 3)))
+                ctx["kartlar"] = kartlar
             elif tpl == "reel_yd":
                 ctx["yanlis"], ctx["dogru"] = with_image(post["yanlis"]), with_image(post["dogru"])
                 ctx["hook_image"] = mutlak(post.get("hook_image"))
