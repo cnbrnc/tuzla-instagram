@@ -13,6 +13,7 @@ import datetime as dt
 import json
 import os
 import shutil
+import subprocess
 import sys
 
 import planla
@@ -44,12 +45,33 @@ def ay_sayimi(ay, hafta=None):
     return n
 
 
+def uret(taslak, out, pid):
+    """Taslak tanımındaki (tek gönderili JSON) videoyu üretir; stok kesitleri eksikse 'url' alanından indirir."""
+    spec = planla.load(os.path.join(ROOT, taslak))
+    post = spec["posts"][0]
+    for c in post.get("sahneler", []) + ([post["bg_video"]] if post.get("bg_video") else []):
+        yol = os.path.join(ROOT, c["file"])
+        if not os.path.exists(yol):
+            os.makedirs(os.path.dirname(yol), exist_ok=True)
+            subprocess.run(["curl", "-sSL", "-m", "240", "-A", "Mozilla/5.0", "-o", yol, c.get("url", "")])
+            if not (os.path.exists(yol) and os.path.getsize(yol) > 50000):
+                raise SystemExit("HATA: kesit indirilemedi: %s (%s)" % (c["file"], c.get("url")))
+    if post.get("product_dir") and not os.path.exists(os.path.join(ROOT, post["product_dir"], "product.json")):
+        subprocess.run([sys.executable, "-I", os.path.join(ROOT, "fetch_product.py"), post["url"], os.path.join(ROOT, post["product_dir"])], check=True)
+    gecici = os.path.join(out, "_ek")
+    subprocess.run([sys.executable, os.path.join(ROOT, "reel.py"), os.path.join(ROOT, taslak), gecici], check=True, cwd=ROOT)
+    for son in (".mp4", "-kapak.jpg"):
+        shutil.move(os.path.join(gecici, post["id"] + son), os.path.join(out, pid + son))
+    shutil.rmtree(gecici, ignore_errors=True)
+    return {k: v for k, v in post.items() if k != "id"}
+
+
 def cmd_liste():
     q = planla.load(os.path.join(ROOT, "queue.json"))
     kalan = q.get(LISTE, [])
     print("Sıradaki ek videolar (%d):" % len(kalan))
     for it in kalan:
-        print("  %-22s %s · sitede arat: %s" % (it["key"], it["baslik"], it["search_code"]))
+        print("  %-22s %s%s" % (it["key"], it.get("baslik") or it.get("not", ""), "  (taslaktan üretilecek)" if it.get("taslak") else ""))
     bugun = dt.date.today()
     for i in range(3):
         y, m = bugun.year + (bugun.month - 1 + i) // 12, (bugun.month - 1 + i) % 12 + 1
@@ -70,27 +92,40 @@ def cmd_ekle(hafta):
     if any(p.get("ek") for p in wk["posts"]):
         raise SystemExit("Bu haftada zaten bir ek video var; ikinci eklenmez.")
     gun = (pzt + dt.timedelta(days=1)).isoformat()            # Salı
+    dolu = [e["id"] for e in planla.load(os.path.join(ROOT, "state.json")).get("posted", []) if e["date"][:10] == gun]
+    if dolu:
+        raise SystemExit("EKLENMEDİ: %s Salı günü zaten planlı gönderi var (%s). Bu hafta ek video yok." % (gun, ", ".join(dolu)))
     n = ay_sayimi(gun[:7], hafta)
-    if n + 1 > SINIR:
-        raise SystemExit("EKLENMEDİ: %s ayında %d gönderi var; ek video sınırı (%d) aşar. Gelecek aya kalır." % (gun[:7], n, SINIR))
+    # ayın bu haftadan sonraki normal gönderileri de (Pzt, Çrş, Prş, Cuma) sınıra sayılır
+    d, kalan = pzt + dt.timedelta(days=7), 0
+    while d.isoformat()[:7] <= gun[:7]:
+        kalan += d.isoformat()[:7] == gun[:7] and d.weekday() in (0, 2, 3, 4)
+        d += dt.timedelta(days=1)
+    if n + kalan + 1 > SINIR:
+        raise SystemExit("EKLENMEDİ: %s ayında %d gönderi var, %d normal gönderi daha gelecek; ek video sınırı (%d) aşar. Gelecek aya kalır."
+                         % (gun[:7], n, kalan, SINIR))
     q = planla.load(os.path.join(ROOT, "queue.json"))
     for it in q.get(LISTE, []):
-        durum, neden = planla.urun_kontrol(it["url"], os.path.join(ROOT, "work", "ek-stok-" + it["key"]))
-        if durum != "TAMAM":
-            print("atlandı: %s (%s: %s)" % (it["key"], durum, neden))
-            continue
+        if it.get("url"):                                     # ürünlü video: stokta mı?
+            durum, neden = planla.urun_kontrol(it["url"], os.path.join(ROOT, "work", "ek-stok-" + it["key"]))
+            if durum != "TAMAM":
+                print("atlandı: %s (%s: %s)" % (it["key"], durum, neden))
+                continue
         pid = "%s-%s" % (gun, it["key"])
         out = os.path.join(ROOT, "out", hafta)
         os.makedirs(out, exist_ok=True)
-        for son in (".mp4", "-kapak.jpg"):
-            kaynak = os.path.join(ROOT, it["medya"] + son)
-            if not os.path.exists(kaynak):
-                raise SystemExit("HATA: dosya yok: %s%s" % (it["medya"], son))
-            shutil.copy2(kaynak, os.path.join(out, pid + son))
+        if it.get("medya"):                                   # bitmiş video depoda (posts/ek/)
+            for son in (".mp4", "-kapak.jpg"):
+                kaynak = os.path.join(ROOT, it["medya"] + son)
+                if not os.path.exists(kaynak):
+                    raise SystemExit("HATA: dosya yok: %s%s" % (it["medya"], son))
+                shutil.copy2(kaynak, os.path.join(out, pid + son))
+        else:                                                 # video depoda yok: taslak tanımından yeniden üretilir
+            it = dict(uret(it["taslak"], out, pid), **it)
         post = dict(it, id=pid, date=gun, ek=True, hazir=True)
         wk["posts"] = sorted(wk["posts"] + [post], key=lambda p: p["date"])
         planla.save(wpath, wk)
-        print("eklendi: %s → Salı %s 10:00 (ayın toplamı %d olur)" % (it["key"], gun, n + 1))
+        print("eklendi: %s → Salı %s 10:00 (ay sonunda toplam %d olur)" % (it["key"], gun, n + kalan + 1))
         print("video: out/%s/%s.mp4" % (hafta, pid))
         print("açıklama:\n" + it["caption"])
         return

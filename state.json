@@ -139,6 +139,18 @@
       "url": "https://tuzlahirdavat.com.tr/rayno-200a-invertor-kaynak-makinasi",
       "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-3875703907430610441",
       "ek": true
+    },
+    {
+      "date": "2027-01-05T10:00:00",
+      "id": "2027-01-05-site-tanitim-uzun",
+      "type": "reel",
+      "key": "site-tanitim-uzun",
+      "group": "site",
+      "url": "",
+      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-4359201216394344402",
+      "ek": true,
+      "metricool_id": 441455344,
+      "medya": "posts/ek/site-tanitim-uzun.mp4"
     }
   ],
   "planned_weeks": [
@@ -271,7 +283,8 @@
     "2026-11-25: Kullanıcı Mixkit ve Coverr alan adlarına izin verdi ve Rayno kaynak makinesi için yeni bir reklam filmi istedi. Fragman türünde ikinci film hazırlandı (taslak/rayno-kaynak-200/rayno-reklam-2.json; müzik d; sahneler Mixkit 4125, Pixabay 75269 ve 18983, Pexels 6046358). Video sohbette gönderildi; ONAY BEKLİYOR, planlanmadı. Kasım ve Aralık 19'da olduğu için yeni gönderi sığmıyor: ya 28 Kasım'daki Rayno videosunun yerine geçer ya da Ocak'a kalır; kullanıcıya soruldu. Bulgu: Mixkit'teki kaynak yakın çekimlerinin hepsi 'Restricted' (yalnız kişisel kullanım) lisanslı; Coverr'da kaynakla ilgili işe yarar klip yok.",
     "2026-11-25: Kullanıcı site için de bir tanıtım filmi istedi. Fragman türünde hazırlandı (taslak/site-tanitim/site-tanitim-filmi.json; müzik h): \"Cıvata mı?\" · \"Kesme taşı mı?\" · \"Matkap ucu mu?\" · \"Hepsi tek adreste.\" → 6 ürün karosu, TUZLA HIRDAVAT, 20.000+ ürün. reel_fragman şablonuna 'mozaik' seçeneği eklendi. Video sohbette gönderildi; ONAY BEKLİYOR, planlanmadı (Kasım ve Aralık 19'da; en erken Ocak). İlk denemede kullanılan pexels-4941356 kesitinde okunur bir alet markası çıktığı için değiştirildi.",
     "2026-11-25: Kullanıcı dükkânında çektiği 11 videoyu gönderdi ve tuzlacivata.com.tr alan adına izin verdi. Site tanıtım filmi tamamı kendi çekimleriyle yeniden kuruldu (taslak/site-tanitim/site-tanitim-dukkan.json; müzik g): \"Dükkân Tuzla'da.\" · \"Depo dolu.\" · \"Aletler hazır.\" · \"Hepsi bir tık uzakta.\" → 6 ürün karosu; slogan \"Dükkân Tuzla'da, raflar cebinde.\" Video sohbette gönderildi; ONAY BEKLİYOR, planlanmadı. Onay bekleyen üç taslak var: Rayno reklam filmi 2, site filmi (stok görüntülü), site filmi (dükkân görüntülü). Çekimler depoya konmadı; kalıcı saklama için kullanıcıya soruldu.",
-    "2026-11-25: Kullanıcı site filmi için \"biraz daha uzun yap; benim görüntülerimin yanında siteden ya da başka yerden görüntü de kullanabilirsin\" dedi. Fragman türüne uzun sürüm eklendi (uzat, replik_sure; reel.py, ses_pro.py, şablonlar). 15 saniyelik film hazırlandı (taslak/site-tanitim/site-tanitim-uzun.json; müzik e): beş cümle, 15 kesit (11'i kullanıcının dükkân çekimi, 4'ü stok iş görüntüsü), sonra ürün karoları. Video sohbette gönderildi; ONAY BEKLİYOR, planlanmadı. reel.py'ye ses düzeyi düzeltmesi eklendi (ölçüp -14 LUFS'a çeker)."
+    "2026-11-25: Kullanıcı site filmi için \"biraz daha uzun yap; benim görüntülerimin yanında siteden ya da başka yerden görüntü de kullanabilirsin\" dedi. Fragman türüne uzun sürüm eklendi (uzat, replik_sure; reel.py, ses_pro.py, şablonlar). 15 saniyelik film hazırlandı (taslak/site-tanitim/site-tanitim-uzun.json; müzik e): beş cümle, 15 kesit (11'i kullanıcının dükkân çekimi, 4'ü stok iş görüntüsü), sonra ürün karoları. Video sohbette gönderildi; ONAY BEKLİYOR, planlanmadı. reel.py'ye ses düzeyi düzeltmesi eklendi (ölçüp -14 LUFS'a çeker).",
+    "2026-11-25: Kullanıcı: \"Bunu Ocak'a sakla, son attığın video da uygundur.\" 15 saniyelik site tanıtım filmi onaylandı ve 5 Ocak 2027 Salı 10:00'a planlandı (Metricool id 441455344, uuid -4359201216394344402; medya posts/ek/site-tanitim-uzun.mp4; kapak 10900 ms). Rayno'nun ikinci reklam filmi Ocak'a ayrıldı: queue.json 'ek_fragman' listesinin başında, taslaktan üretilecek (video depoda yok); ek.py Pazar hazırlığında üretip onay mesajına ekler. Cumartesi (28 Kasım) çıkacak Rayno videosu aynen kaldı. Ocak sayımı: 1 Ocak lazer metre + 5 Ocak site filmi + 16 normal gönderi = 18; bir ek daha sığar. Site filminin öbür iki sürümü (9 sn) kullanılmayacak."
   ],
   "ses_sirasi": 4,
   "kullanilan_yedekler": [],

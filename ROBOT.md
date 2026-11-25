@@ -178,6 +178,8 @@ Kullanıcı 23 Kasım 2026'da "GTA 6 temalı site tanıtımı" istedi. Gerçek b
 Kullanıcı 23 Kasım 2026'da 5 fragmanı izledi ve "kalanı hangisi iyi olacaksa onu yap" dedi. Paslanmaz DIN 933 fragmanı 1 Aralık'a planlandı. Kalan dördü Aralık'ın sınırına (ayda 19) sığmadığı için sıraya alındı: İzeltaş 35 parça lokma, Karbosan Thinline kesme taşı, Tyrolit flap disk, Egesan inox kesme taşı.
 
 - **Videolar hazır:** `posts/ek/fragman-<anahtar>.mp4` ve `-kapak.jpg`. Yeniden üretme; `reel.py` `"hazir": true` yazan gönderiyi atlar.
+- **Taslaktan üretilen öğe (`taslak`):** Listede `medya` yerine `taslak` yazan öğenin videosu depoda yoktur (kullanıcı "Ocak'a sakla" dedi ama yayın onayı Pazar mesajında alınacak). `ek.py ekle` onu taslak tanımından kendisi üretir; eksik stok kesitlerini `url` alanından indirir. Sıranın başındaki öğe: Rayno 200A ikinci reklam filmi.
+- **Aynı Salı dolu ise:** `state.json` içinde o Salı için kayıtlı gönderi varsa `ek.py` eklemez (5 Ocak 2027: site tanıtım filmi).
 - **Ne zaman:** 4 Ocak 2027 haftasından itibaren, liste bitene kadar, haftada en fazla bir tane; **Salı 10:00**. Haftanın 4 gönderisine ektir, onların yerine geçmez.
 - **Nasıl:** `python3 hafta.py <HAFTA>` çalıştıktan sonra `python3 ek.py ekle <HAFTA>` çalıştır.
   - Ayın toplamı (gönderi + hikaye) 19'u geçecekse eklemez ve bunu söyler; o hafta ek video çıkmaz.
@@ -539,7 +541,7 @@ Kullanıcı Aralık 2026'da askerde. Bu yüzden 5 haftanın 20 gönderisi önced
 | 13 Aralık | 2026-12-14 | |
 | 20 Aralık | 2026-12-21 | 24 Aralık kampanya kartı: eşikler de denetlenir |
 | 27 Aralık | 2026-12-28 | |
-| 3 Ocak 2027 | 2027-01-04 | Normal düzen geri döner ve onay yine şarttır. Reels'ler yeni türlerdedir: Pazartesi "Bil bakalım", Cuma "Yanlış / doğru"; ilk öğeler kuyrukta hazır. Kaydırmalı listeleri boşalmış olur; 4. adımdaki kurallarla yeni öğe yaz. Sırada onaylı ek fragman var (`ek.py`; Ocak'ta 1 Ocak gönderisiyle birlikte 17 normal gönderi olur, yani en fazla 2 ek sığar). Reels türü Aralık'ta zaten değişti; onay mesajında Aralık Reels'lerinin karne özetini (geçme oranı, ortalama izlenme) yaz. Mesajın başına hikaye denemesinin sonucunu da yaz (Biçimler → Hikaye denemesi). |
+| 3 Ocak 2027 | 2027-01-04 | Normal düzen geri döner ve onay yine şarttır. Reels'ler yeni türlerdedir: Pazartesi "Bil bakalım", Cuma "Yanlış / doğru"; ilk öğeler kuyrukta hazır. Kaydırmalı listeleri boşalmış olur; 4. adımdaki kurallarla yeni öğe yaz. **5 Ocak Salı 10:00'da onaylı ve planlı bir gönderi zaten var: 15 saniyelik site tanıtım filmi** (25 Kasım 2026'da planlandı; `state.json` `posted` içinde; `getScheduledPosts` çıktısında görünür, dokunma). Bu yüzden 4 Ocak haftasında `ek.py` ek video eklemez. Ocak'ta 1 Ocak ve 5 Ocak gönderileriyle birlikte 18 gönderi olur; yalnız 1 ek daha sığar (sıradaki: Rayno'nun ikinci reklam filmi, 11 Ocak haftasında). Reels türü Aralık'ta zaten değişti; onay mesajında Aralık Reels'lerinin karne özetini (geçme oranı, ortalama izlenme) yaz. Mesajın başına hikaye denemesinin sonucunu da yaz (Biçimler → Hikaye denemesi). |
 
 ### Aralık Reels'leri yeni biçimde (23 Kasım 2026'da onaylandı ve uygulandı)
 
