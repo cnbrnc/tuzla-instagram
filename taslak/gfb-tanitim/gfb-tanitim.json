@@ -1,0 +1,150 @@
+{
+ "hafta": "taslak",
+ "taslak": "25 Kasım 2026: GFB tanıtım filmi (15 sn); onay bekliyor",
+ "posts": [
+  {
+   "id": "gfb-tanitim",
+   "key": "gfb-tanitim",
+   "format": "reel",
+   "template": "reel_fragman",
+   "group": "kesici",
+   "kanca_kalibi": "fragman",
+   "stil": "sinematik",
+   "muzik": "g",
+   "uzat": 6,
+   "replik_sure": 2,
+   "kapak_ms": 10900,
+   "tag": "GFB · KESİCİ TAKIMLAR",
+   "replikler": [
+    [
+     "METALİ",
+     "DELER."
+    ],
+    [
+     "ÇELİĞİ",
+     "İŞLER."
+    ],
+    [
+     "VİDAYI",
+     "SIKAR."
+    ],
+    [
+     "DEPOMUZDA",
+     "HAZIR."
+    ],
+    [
+     "HEPSİ",
+     "GFB."
+    ]
+   ],
+   "sahneler": [
+    {
+     "file": "work/stok/pexels-8926451.mp4",
+     "url": "https://videos.pexels.com/video-files/8926451/",
+     "start": 2.0,
+     "x": 0.31,
+     "gamma": 1.5,
+     "sure": 1.0
+    },
+    {
+     "file": "work/stok/pexels-855491.mp4",
+     "url": "https://www.pexels.com/video/spinning-drill-855491/",
+     "start": 3.0,
+     "x": 0.55,
+     "sure": 1.0
+    },
+    {
+     "file": "work/stok/pexels-19791092.mp4",
+     "url": "https://videos.pexels.com/video-files/19791092/",
+     "start": 1.5,
+     "x": 0.62,
+     "sure": 1.0
+    },
+    {
+     "file": "work/stok/pexels-8926451.mp4",
+     "url": "https://videos.pexels.com/video-files/8926451/",
+     "start": 18.0,
+     "x": 0.45,
+     "sure": 1.0
+    },
+    {
+     "file": "work/stok/pixabay-4728.mp4",
+     "url": "https://pixabay.com/videos/id-4728/",
+     "start": 3.0,
+     "x": 0.47,
+     "sure": 1.0
+    },
+    {
+     "file": "work/stok/pixabay-4729.mp4",
+     "url": "https://pixabay.com/videos/id-4729/",
+     "start": 6.0,
+     "x": 0.35,
+     "sure": 1.0
+    },
+    {
+     "file": "work/dukkan/d-3602.mp4",
+     "start": 0.2,
+     "sure": 1.0
+    },
+    {
+     "file": "work/dukkan/d-3601.mp4",
+     "start": 2.0,
+     "sure": 1.0
+    },
+    {
+     "file": "work/stok/pixabay-94063.mp4",
+     "url": "https://pixabay.com/videos/id-94063/",
+     "start": 1.0,
+     "x": 0.45,
+     "sure": 0.5
+    },
+    {
+     "file": "work/dukkan/d-3602.mp4",
+     "start": 3.9,
+     "hiz": 0.8
+    }
+   ],
+   "mozaik": [
+    {
+     "product_dir": "work/gfb/gfb1814"
+    },
+    {
+     "product_dir": "work/gfb/gfb2420"
+    },
+    {
+     "product_dir": "work/gfb/gfb2001"
+    },
+    {
+     "product_dir": "work/gfb/gfb3960"
+    },
+    {
+     "product_dir": "work/gfb/gfb4700"
+    },
+    {
+     "product_dir": "work/gfb/gfb8012"
+    }
+   ],
+   "mozaik_url": [
+    "https://tuzlahirdavat.com.tr/55mm-matkap-ucu-altin-seri-gfb-gfb1814",
+    "https://tuzlahirdavat.com.tr/4-12-kademeli-matkap-ucu-titan-kapli-gfb-gfb2420",
+    "https://tuzlahirdavat.com.tr/12x210-sds-plus-matkap-ucu---gfb-gfb2001",
+    "https://tuzlahirdavat.com.tr/40-parca-klavuz-pafta-seti-gfb-gfb3960",
+    "https://tuzlahirdavat.com.tr/16mm-tct-metal-delme-panc---gfb-gfb4700",
+    "https://tuzlahirdavat.com.tr/ph-2-75mm-xpro-darbeli-tornavida-ucu-siyah---gfb-gfb8012"
+   ],
+   "baslik": "GFB",
+   "tur_yazi": "KESİCİ VE DELİCİ TAKIMLAR",
+   "ozellikler": [
+    "Matkap ucu",
+    "Kılavuz · Pafta",
+    "Panç · Bits"
+   ],
+   "slogan": "GFB ana bayisi: Tuzla Hırdavat.",
+   "kapanis_k": "SİTEDE ARAT",
+   "search_code": "GFB",
+   "kaynak": "Ürünler ve stok: sitede 1.080 GFB ürünü var; mozaikteki altı ürün (GFB 1814 altın seri %5 kobaltlı matkap ucu, 2420 kademeli matkap ucu, 2001 SDS-Plus matkap ucu, 3960 40 parça kılavuz pafta seti, 4700 TCT metal delme panç, 8012 XPRO PH-2 darbeli tornavida ucu) 25 Kasım 2026'da stokta. Ürün grupları GFB Haziran 2026 listesinin içindekiler sayfasından ve XPRO Eylül 2026 kataloğundan; FİYATLAR KULLANILMADI. Ana bayilik kullanıcının sözü.",
+   "kaynak_video": "Pexels lisansı: 8926451 (matkap makro + CNC freze), 855491 (sütunlu matkap), 19791092 (CNC torna; tutucudaki parça numarası üst bandın altında kalıyor) · Pixabay Content License: 4728, 4729 (vida sıkan bits ucu), 94063 (kıvılcım) · raf ve depo kesitleri kullanıcının kendi çekimi (3601, 3602; 3595 başka marka kutuları göründüğü için çıkarıldı). Ürün fotoğrafları kullanıcının kendi sitesinden; GFB kataloğundaki görseller KULLANILMADI (katalog izinsiz kullanılamayacağını yazıyor).",
+   "caption": "Metali deler, çeliği işler, vidayı sıkar: GFB kesici ve delici takımlar. 🔩\n\nMatkap uçları, kademeli matkap, SDS-Plus uçlar, kılavuz ve pafta, panç, XPRO darbeli bits uçları. GFB ana bayisi olarak binin üzerinde çeşit sitemizde.\n\n📤 Atölyedeki ustana gönder.\n🔎 Sitede “GFB” arat\n🛒 tuzlahirdavat.com.tr\n✉️ Sipariş: satis5@tuzlacivata.com.tr\n📞 0542 189 02 69\n\n#gfb #matkapucu #kesicitakım #hırdavat #tuzlahırdavat"
+  }
+ ]
+}

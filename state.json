@@ -1,317 +1,318 @@
 {
-  "posted": [
-    {
-      "date": "2026-11-09T10:00:00",
-      "id": "2026-11-09-gedore-tork",
-      "type": "urun",
-      "group": "tork",
-      "url": "https://tuzlahirdavat.com.tr/gedore-red-12-40-200-nm-tork-anahtari-r68900200-14000005613",
-      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=7250319658039985355"
-    },
-    {
-      "date": "2026-11-11T10:00:00",
-      "id": "2026-11-11-grangos-set",
-      "type": "urun",
-      "group": "akulu",
-      "url": "https://tuzlahirdavat.com.tr/20v-kit-gcd25--gcg20--2-x-50-ah--gcc02--grc06-gckit202a-f2",
-      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=3234855027400130928"
-    },
-    {
-      "date": "2026-11-12T10:00:00",
-      "id": "2026-11-12-a2-a4",
-      "type": "karsilastirma",
-      "group": "baglanti",
-      "url": "",
-      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-6571475556082367643"
-    },
-    {
-      "date": "2026-11-13T10:00:00",
-      "id": "2026-11-13-starline-cizme",
-      "type": "urun",
-      "group": "isg",
-      "url": "https://tuzlahirdavat.com.tr/stl-9910-s4-yesil-cizme-uzun-no43-starline-20199101211430",
-      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=324216549419272888"
-    },
-    {
-      "date": "2026-11-16T10:00:00",
-      "id": "2026-11-16-gedore-pense",
-      "type": "reel",
-      "key": "gedore-pense",
-      "group": "pense",
-      "url": "https://tuzlahirdavat.com.tr/gedore-red-cok-amacli-kablo-soyma-pensesir28002204-14000006114",
-      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-2928118930348815422",
-      "hikaye": {
-        "saat": "18:00",
-        "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=5892304936894153459"
-      }
-    },
-    {
-      "date": "2026-11-18T10:00:00",
-      "id": "2026-11-18-izeltas-fener",
-      "type": "carousel",
-      "key": "izeltas-fener",
-      "group": "fener",
-      "url": "https://tuzlahirdavat.com.tr/pro-12000-lumen-zoom-ozellikli-cob-led-el-feneri--14000006173",
-      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-3017217111699993727"
-    },
-    {
-      "date": "2026-11-19T10:00:00",
-      "id": "2026-11-19-ipucu-civata-okuma",
-      "type": "carousel",
-      "key": "ipucu-civata-okuma",
-      "group": "baglanti",
-      "url": "",
-      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-5332040080573906355"
-    },
-    {
-      "date": "2026-11-20T10:00:00",
-      "id": "2026-11-20-kolege-kaynak",
-      "type": "reel",
-      "key": "kolege-kaynak",
-      "group": "kaynak",
-      "url": "https://tuzlahirdavat.com.tr/klg200mma-inverter-200amper-ortulu-elektrod-kaynak-klg200mma",
-      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-3035150912428815514",
-      "hikaye": {
-        "saat": "18:00",
-        "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-2899628288196391452"
-      }
-    },
-    {
-      "date": "2026-11-23T10:00:00",
-      "id": "2026-11-23-rayno-vinc",
-      "type": "reel",
-      "key": "rayno-vinc",
-      "group": "kaldirma",
-      "url": "https://tuzlahirdavat.com.tr/rayno-elektrikli-mini-vinc-400-800-kg-20-m-wifi-ryn11157",
-      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=7443168713099134362",
-      "hikaye": {
-        "saat": "18:00",
-        "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=4727891801889786296"
-      }
-    },
-    {
-      "date": "2026-11-24T10:00:00",
-      "id": "2026-11-24-oyun-usta-modu",
-      "type": "reel",
-      "key": "oyun-usta-modu",
-      "group": "site",
-      "url": "",
-      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=4268851937087605144",
-      "ek": true
-    },
-    {
-      "date": "2026-11-25T10:00:00",
-      "id": "2026-11-25-hikoki-dv18dd",
-      "type": "carousel",
-      "key": "hikoki-dv18dd",
-      "group": "akulu",
-      "url": "https://tuzlahirdavat.com.tr/18v-50-ah-55nm-akulu-darbeli-vidalama-matkap-hiko-dv18dd-50",
-      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-8284489730898574313"
-    },
-    {
-      "date": "2026-11-26T10:00:00",
-      "id": "2026-11-26-ipucu-din-numaralari",
-      "type": "carousel",
-      "key": "ipucu-din-numaralari",
-      "group": "baglanti",
-      "url": "",
-      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=438892824696013262"
-    },
-    {
-      "date": "2026-11-27T10:00:00",
-      "id": "2026-11-27-crc-5-56",
-      "type": "reel",
-      "key": "crc-5-56",
-      "group": "kimyasal",
-      "url": "https://tuzlahirdavat.com.tr/crc-5-56-pro-pas-sokucu",
-      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-8128068499861584844",
-      "hikaye": {
-        "saat": "18:00",
-        "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-4526158585744503431"
-      }
-    },
-    {
-      "date": "2026-11-28T10:00:00",
-      "id": "2026-11-28-rayno-kaynak-200",
-      "type": "reel",
-      "key": "rayno-kaynak-200",
-      "group": "kaynak",
-      "url": "https://tuzlahirdavat.com.tr/rayno-200a-invertor-kaynak-makinasi",
-      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-3875703907430610441",
-      "ek": true
-    },
-    {
-      "date": "2027-01-05T10:00:00",
-      "id": "2027-01-05-site-tanitim-uzun",
-      "type": "reel",
-      "key": "site-tanitim-uzun",
-      "group": "site",
-      "url": "",
-      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-4359201216394344402",
-      "ek": true,
-      "metricool_id": 441455344,
-      "medya": "posts/ek/site-tanitim-uzun.mp4"
-    },
-    {
-      "date": "2027-01-19T10:00:00",
-      "id": "2027-01-19-a4-tersane-l400",
-      "type": "reel",
-      "key": "a4-tersane-l400",
-      "group": "baglanti",
-      "url": "",
-      "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-5005514698825642368",
-      "ek": true,
-      "metricool_id": 441547329,
-      "medya": "posts/ek/a4-tersane-l400.mp4"
-    }
-  ],
-  "planned_weeks": [
-    "2026-11-09",
-    "2026-11-16",
-    "2026-11-23"
-  ],
-  "recent_groups": [
-    "baglanti",
-    "kaynak",
-    "kaldirma",
-    "akulu",
-    "baglanti",
-    "kimyasal"
-  ],
-  "last_product_theme": "dark",
-  "last_tekli_week": "2026-11-09",
-  "facebook_bagli": false,
-  "karne": [
-    {
-      "tarih": "2026-11-03",
-      "takipci": 1498,
-      "not": "Başlangıç noktası (robottan önce). Ekim 2026'da günlük erişim 0–5 kişi; Ağustos–Ekim 2026 arasında paylaşım yok."
-    },
-    {
-      "hafta": "2026-11-09",
-      "takipci": 1503,
-      "yeni_takipci": 1,
-      "kaybedilen": 0,
-      "erisim": 371,
-      "etkilesen": 10,
-      "en_iyi": {
-        "id": "2026-11-09-gedore-tork",
-        "erisim": 150,
-        "kaydetme": 0,
-        "paylasim": 0
-      },
-      "not": "4 tekli görsel gönderi yayınlandı; Reels ve hikaye yoktu. Kaydetme ve paylaşım 0. Erişimler: 150, 82, 87, 78."
-    },
-    {
-      "hafta": "2026-11-16",
-      "takipci": 1501,
-      "yeni_takipci": 3,
-      "kaybedilen": 5,
-      "erisim": 420,
-      "etkilesen": 9,
-      "en_iyi": {
-        "id": "2026-11-16-gedore-pense",
-        "erisim": 176,
-        "kaydetme": 0,
-        "paylasim": 0
-      },
-      "reels": [
-        {
-          "id": "2026-11-16-gedore-pense",
-          "ses": "enerjik",
-          "erisim": 176,
-          "izlenme": 233,
-          "kaydetme": 0,
-          "paylasim": 0,
-          "izlenme_3sn_orani": 26.0
-        },
-        {
-          "id": "2026-11-20-kolege-kaynak",
-          "ses": "atolye",
-          "erisim": 143,
-          "izlenme": 173,
-          "kaydetme": 0,
-          "paylasim": 0,
-          "izlenme_3sn_orani": 9.5
-        }
-      ],
-      "kaydirmali": [
-        {
-          "id": "2026-11-18-izeltas-fener",
-          "erisim": 43,
-          "kaydetme": 0,
-          "paylasim": 0
-        },
-        {
-          "id": "2026-11-19-ipucu-civata-okuma",
-          "erisim": 77,
-          "kaydetme": 1,
-          "paylasim": 0
-        }
-      ],
-      "hikayeler": [
-        {
-          "tarih": "2026-11-16T18:00",
-          "erisim": null,
-          "gosterim": null,
-          "yanit": null,
-          "ileri": null,
-          "cikis": null,
-          "reels_erisim": 176
-        },
-        {
-          "tarih": "2026-11-20T18:00",
-          "erisim": null,
-          "gosterim": null,
-          "yanit": null,
-          "ileri": null,
-          "cikis": null,
-          "reels_erisim": 143
-        }
-      ],
-      "not": "İlk Reels haftası. Takipçi 1503'ten 1501'e (3 kazanılan, 5 kaybedilen; 22 Kasım verisi henüz yok). Reels erişimi kaydırmalıların 2–4 katı. Soru kancalı Gedore Reels'i 3 sn üstü izlenmede %26, Kolege %9,5. İki hikaye de yayınlandı (Metricool: PUBLISHED) ama hikaye ölçümleri boş geldi. yg1-kilavuz-seti stokta yok; kuyruğun sonuna alındı, yerine hikoki-dv18dd eklendi."
-    }
-  ],
-  "notes": [
-    "Robot 2026-11-04'te kuruldu. İlk hafta (2026-11-09) kullanıcı onayıyla planlandı.",
-    "2026-11-04: Kullanıcı yeni düzeni onayladı. 16 Kasım 2026 haftasından itibaren Pazartesi ve Cuma Reels, Çarşamba ürün kaydırmalısı, Perşembe Usta İpucu kaydırmalısı; en fazla 5 hashtag.",
-    "2026-11-04: İlk haftanın (2026-11-09) 4 gönderisinin hashtag'leri 5'e indirildi (Metricool'da güncellendi).",
-    "2026-11-05: Kullanıcı Reels için kodla üretilmiş özgün sesi onayladı (ses.py, assets/reel-ses.wav). Facebook Sayfası (facebook.com/tuzlacivata) yetkisi kullanıcının babasında ya da abisinde; kullanıcı abisinden tam yetki isteyecek. Olmazsa Facebook olmadan devam: Reels kendi sesimizle çıkar.",
-    "2026-11-06: Kullanıcı Reels'in izleyiciyi tutmasını istedi. 2. sürüm: 9 sn, vuruşla gelen kanca, 2. saniyede düşüş, yakınlaşma ve parlama, döngüde başa saran ses. Üç ritim (enerjik, atolye, derin) sırayla döner. Kullanıcıya örnek sayfada sunuldu.",
-    "2026-11-06: Kullanıcı Aralık 2026'da askerde olacak. 30 Kasım 2026 – 1 Ocak 2027 arasındaki 5 haftanın 20 gönderisi onaylandı ve aynı gün Metricool'a planlandı (weeks/ içinde on_planli). Bu haftalarda onay istenmez; robot Pazar günleri stok ve kampanya denetimi yapar, sorun varsa weeks/yedek.json'daki onaylı yedekle değiştirir (ROBOT.md, 'Önceden planlanmış haftalar'). volkel-helikoil ve kampanya-kargo Aralık'ta kullanıldığı için kuyruktan çıkarıldı.",
-    "2026-11-09: Kullanıcı hikaye denemesini onayladı: 16 ve 23 Kasım haftalarının 4 Reels'i aynı gün 18:00'de Instagram hikayesi olarak da yayınlanır. Kasım'da 13 gönderi + 4 hikaye = 17 (ücretsiz planın 20 sınırı içinde). Sonuç karneye yazılır ve 3 Ocak 2027 çalışmasında kullanıcıya sunulur; devamına kullanıcı karar verir.",
-    "2026-11-23: Kullanıcı Reels türünün değişmesini onayladı (\"önerinden ilerleyelim\"). Neden: ilk iki ürün Reels'ini açanların %73'ü ve %90'ı ilk 3 saniyede geçti. 4 Ocak 2027 haftasından itibaren Pazartesi \"Bil bakalım\" (reels_bil), Cuma \"Yanlış / doğru\" (reels_yd). Aralık planı değişmedi. Telefonla gerçek çekim fikri de önerildi; kullanıcı deneme çekimi gönderirse kurulacak. Örnek videolar Örnekler sayfasında (\"Ocak: yeni Reels\").",
-    "2026-11-23: Kullanıcı sinematik stili ve gerçek stok görüntü kullanımını seçti (\"bundan sonra bu yeteneğimizi kullanalım\"). 4 Ocak 2027'den itibaren yeni türler sinematik stilde: \"Yanlış / doğru\" stok görüntü zeminiyle, \"Bil bakalım\" kodla üretilmiş sahneyle. Kullanıcı stok siteleri için alan adı izni verdi (Pexels, Pixabay). Amaç sözü: yayılmak, izlenmek, ürünü tanıtmak, yeri geldiğinde bilgi vermek, sayfayı popüler yapmak.",
-    "2026-11-23: Kullanıcı sesin profesyonelleşmesini ve Aralık Reels'lerinin de yeni biçime çevrilmesini istedi. Profesyonel ses kuruldu (ses_pro.py; Pixabay müzik ve efekt, Content ID'siz); 4 Ocak 2027'den itibaren yeni türlerde varsayılan. Aralık'ın 10 Reels'i için yeni biçim TASLAĞI hazırlandı ve videolar sohbette gönderildi (taslak/aralik-yeni/). ONAY BEKLİYOR: onay gelmeden Metricool'daki Aralık gönderileri değişmez. Kapanış kartına ürün fotoğrafı eklendi (urun alanı).",
-    "2026-11-23: Kullanıcı Aralık Reels'lerinin yeni biçimini onayladı (\"ONAYLIYORUM\"). 10 Reels Metricool'da güncellendi (aynı tarih ve saat, aynı uuid; yeni video ve açıklama). Pazartesi \"Bil bakalım\", Cuma \"Yanlış / doğru\"; sinematik stil, profesyonel ses, kapanışta ürün. 18 Aralık dekupaj videosunda jsDelivr adresi reddedildi; raw adresiyle bir kez denendi ve oldu. Eski 18 Aralık videosundaki bozuk ürün fotoğrafı da böylece giderildi.",
-    "2026-11-23: Kullanıcı \"gelecek paylaşımlar için dağarcığını ve senaryo kabiliyetini geliştir\" dedi. Kuruldu: SENARYO.md (senaryo rehberi), dagarcik.json (16 Bil bakalım, 16 Yanlış/doğru ailesi, 8 İpucu fikri; 25'i kaynakla doğrulandı, 7'si kullanılmadan önce doğrulanacak), fikir.py (aday seçimi, kuyruk iskeleti, karne kıyası). Yanlış/doğru şablonuna iki yeni kurgu eklendi: Efsane/gerçek ve Zor yol/kolay yol (cift alanı). İki örnek video sohbette gönderildi; kullanıcı bu iki kurguyu henüz görmedi ve onaylamadı. Haftalık onay kuralı aynen geçerli.",
-    "2026-11-23: Kullanıcı Rayno 200A kaynak makinesinin bağlantısını verip tanıtım videosu istedi. İlk taslak Yanlış/doğru türündeydi; kullanıcı reddetti: \"direkt ürünü tanıt, doğru yanlış yapma\". Yeni tür kuruldu: Ürün tanıtımı (reel_tanitim). Taslak taslak/rayno-kaynak-200/ klasöründe; video sohbette gönderildi. ONAY ve yayın günü bekliyor; Metricool'a planlanmadı. Aylık sınır: Kasım'da 3, Aralık'ta 2 boş yer.",
-    "2026-11-23: Kullanıcı Rayno 200A ürün tanıtımı Reels'ini onayladı (gün yazmadı; önerilen gün uygulandı). 28 Kasım 2026 Cumartesi 10:00'a planlandı (ek gönderi; hikayesi yok). Kasım toplamı 18/20 oldu. Karnede türü 'tanitim' olarak yaz. Aranacak kod RYN6155; site aramasında bulunduğu doğrulanamadı, kullanıcıya soruldu.",
-    "2026-11-23: Kullanıcı Rayno tanıtım videosunu onaylayıp planlattıktan sonra \"daha sinematik, daha senaryolu bir şey yapamaz mıyız\" dedi. Yeni tür kuruldu: Fragman (reel_fragman): dört gerçek sahne, dört cümle, sonra ürün. Rayno'nun fragman sürümü taslak/rayno-kaynak-200/rayno-fragman.json; video sohbette gönderildi, onay bekliyor. 28 Kasım'a planlı video (ürün tanıtımı sürümü) yerinde duruyor; kullanıcı isterse fragmanla değiştirilecek.",
-    "2026-11-23: Kullanıcı Rayno fragmanını beğendi (\"bunu sevdim\") ve 5-6 ürüne aynı türde tanıtım istedi. 5 fragman hazırlandı ve sohbette gönderildi: Karbosan NK Thinline kesme taşı (910450), Tyrolit ONE 2in1 flap disk (34689695), Egesan Pro inox kesme taşı, İzeltaş 35 parça lokma takımı (1113001038; stok 8), A2 paslanmaz DIN 933 cıvata. Taslak: taslak/fragman-5/. ONAY ve yayın günleri bekliyor; hiçbiri planlanmadı. GFB için yapılmadı: stokta olan ürün SDS-Plus beton ucu, ama yüzü ya da markası görünmeyen beton delme görüntüsü bulunamadı. Aylık sınır: Kasım'da 2, Aralık'ta 2 boş yer. 28 Kasım'a planlı Rayno videosu hâlâ 'ürün tanıtımı' sürümü; kullanıcı 'değiştir' derse fragman sürümüyle değiştirilecek.",
-    "2026-11-23: Kullanıcı \"GTA 6 temalı Tuzla Hırdavat sitesi tanıtımı\" istedi. GTA'nın adı, logosu ve görünümü kullanılmadı (tescilli marka); kullanıcıya söylendi. Yerine özgün oyun temalı site tanıtımı hazırlandı: \"Usta Modu\" (reel_oyun). Taslak taslak/oyun-usta-modu/; video sohbette gönderildi, onay bekliyor, planlanmadı.",
-    "2026-11-23: Kullanıcı: \"Güzel ama hep aynı melodi; izleyeni sıkar; her gönderide aynı.\" Müzik kütüphanesi 1 parçadan 6 parçaya çıkarıldı (kimlikler a–j, assets/ses-kaynak.json; hepsi Pixabay, Content ID kaydı yok). Müzik miksajda öne alındı, ortak efektler kısıldı. Taslak 7 videonun (5 fragman, Rayno fragman, oyun) sesi farklı parçalarla değiştirildi ve sohbette gönderildi. Planlı 11 videonun (28 Kasım Rayno + Aralık'ın 10 Reels'i) yeni sesli sürümleri hazırlandı (out/yeni-ses/, plan.json) ama Metricool'a YÜKLENMEDİ: kullanıcı parçaları dinleyip onay verince yüklenecek.",
-    "2026-11-23: Kullanıcı: \"Oyun temalı onaylı, kalanı hangisi iyi olacaksa onu yap.\" Yapılanlar: (1) Oyun temalı \"Usta Modu\" 24 Kasım Salı 10:00'a planlandı (Kasım toplamı 19). (2) 28 Kasım Rayno gönderisinin videosu fragman sürümüyle değiştirildi; açıklama aynı. (3) Paslanmaz DIN 933 fragmanı 1 Aralık Salı 10:00'a planlandı (Aralık toplamı 19; weeks/2026-11-30.json içinde ek gönderi). (4) Aralık'ın 10 Reels'inin sesi farklı parçalarla değiştirildi ve Metricool'da güncellendi (görüntü, açıklama, tarih aynı). (5) Kalan 4 fragman (İzeltaş lokma, Karbosan Thinline, Tyrolit flap, Egesan inox) queue.json 'ek_fragman' listesine alındı; Ocak'tan itibaren ek.py ile haftaya bir tane, ayın toplamı 19'u geçmeden eklenir ve Pazar onay mesajında gösterilir. Sitede aranacak kodlar (RYN6155, 910450, 34689695, 1113001038, 'Egesan inox', 'DIN 933 A2') site aramasında denenemedi; kullanıcıdan denemesi istendi.",
-    "2026-11-25: Kullanıcı Mixkit ve Coverr alan adlarına izin verdi ve Rayno kaynak makinesi için yeni bir reklam filmi istedi. Fragman türünde ikinci film hazırlandı (taslak/rayno-kaynak-200/rayno-reklam-2.json; müzik d; sahneler Mixkit 4125, Pixabay 75269 ve 18983, Pexels 6046358). Video sohbette gönderildi; ONAY BEKLİYOR, planlanmadı. Kasım ve Aralık 19'da olduğu için yeni gönderi sığmıyor: ya 28 Kasım'daki Rayno videosunun yerine geçer ya da Ocak'a kalır; kullanıcıya soruldu. Bulgu: Mixkit'teki kaynak yakın çekimlerinin hepsi 'Restricted' (yalnız kişisel kullanım) lisanslı; Coverr'da kaynakla ilgili işe yarar klip yok.",
-    "2026-11-25: Kullanıcı site için de bir tanıtım filmi istedi. Fragman türünde hazırlandı (taslak/site-tanitim/site-tanitim-filmi.json; müzik h): \"Cıvata mı?\" · \"Kesme taşı mı?\" · \"Matkap ucu mu?\" · \"Hepsi tek adreste.\" → 6 ürün karosu, TUZLA HIRDAVAT, 20.000+ ürün. reel_fragman şablonuna 'mozaik' seçeneği eklendi. Video sohbette gönderildi; ONAY BEKLİYOR, planlanmadı (Kasım ve Aralık 19'da; en erken Ocak). İlk denemede kullanılan pexels-4941356 kesitinde okunur bir alet markası çıktığı için değiştirildi.",
-    "2026-11-25: Kullanıcı dükkânında çektiği 11 videoyu gönderdi ve tuzlacivata.com.tr alan adına izin verdi. Site tanıtım filmi tamamı kendi çekimleriyle yeniden kuruldu (taslak/site-tanitim/site-tanitim-dukkan.json; müzik g): \"Dükkân Tuzla'da.\" · \"Depo dolu.\" · \"Aletler hazır.\" · \"Hepsi bir tık uzakta.\" → 6 ürün karosu; slogan \"Dükkân Tuzla'da, raflar cebinde.\" Video sohbette gönderildi; ONAY BEKLİYOR, planlanmadı. Onay bekleyen üç taslak var: Rayno reklam filmi 2, site filmi (stok görüntülü), site filmi (dükkân görüntülü). Çekimler depoya konmadı; kalıcı saklama için kullanıcıya soruldu.",
-    "2026-11-25: Kullanıcı site filmi için \"biraz daha uzun yap; benim görüntülerimin yanında siteden ya da başka yerden görüntü de kullanabilirsin\" dedi. Fragman türüne uzun sürüm eklendi (uzat, replik_sure; reel.py, ses_pro.py, şablonlar). 15 saniyelik film hazırlandı (taslak/site-tanitim/site-tanitim-uzun.json; müzik e): beş cümle, 15 kesit (11'i kullanıcının dükkân çekimi, 4'ü stok iş görüntüsü), sonra ürün karoları. Video sohbette gönderildi; ONAY BEKLİYOR, planlanmadı. reel.py'ye ses düzeyi düzeltmesi eklendi (ölçüp -14 LUFS'a çeker).",
-    "2026-11-25: Kullanıcı: \"Bunu Ocak'a sakla, son attığın video da uygundur.\" 15 saniyelik site tanıtım filmi onaylandı ve 5 Ocak 2027 Salı 10:00'a planlandı (Metricool id 441455344, uuid -4359201216394344402; medya posts/ek/site-tanitim-uzun.mp4; kapak 10900 ms). Rayno'nun ikinci reklam filmi Ocak'a ayrıldı: queue.json 'ek_fragman' listesinin başında, taslaktan üretilecek (video depoda yok); ek.py Pazar hazırlığında üretip onay mesajına ekler. Cumartesi (28 Kasım) çıkacak Rayno videosu aynen kaldı. Ocak sayımı: 1 Ocak lazer metre + 5 Ocak site filmi + 16 normal gönderi = 18; bir ek daha sığar. Site filminin öbür iki sürümü (9 sn) kullanılmayacak.",
-    "2026-11-25: Kullanıcı: \"A4-316 paslanmaz cıvatayı daha çok tersane sektörüne satıyoruz, savunma sanayine de. 1,6 cıvata da var, daha büyükleri de. Tersane ağırlıklı ama diğerlerini de içeren bir tanıtım videosu yap.\" 15 saniyelik fragman hazırlandı (taslak/a4-tersane/a4-tersane.json; müzik i): \"Tuzlu su affetmez.\" · \"Tersane A4 ister.\" · \"Savunma da, sanayi de.\" · \"M1,6'dan M48'e.\" · \"Hepsi Tuzla'da.\" → 6 A4 ürün karosu. Ölçü aralığı site haritasından doğrulandı (M1,6–M48; uç ürünler stokta). Video sohbette gönderildi; ONAY BEKLİYOR, planlanmadı. Ocak dolu (19); onaylanırsa Şubat sırasına alınır ya da kullanıcı yer değiştirir.",
-    "2026-11-25: Kullanıcı A4 filminde L400 TCG Anadolu ve SİHA'nın mutlaka görünmesini istedi; iki YouTube bağlantısı ve dört indirilmiş video gönderdi (Anadolu Ajansı TB2 görüntüsü, GİSBİR TV haberi, bir drone kanalının tersane çekimi, kaynağı belirsiz L400 görüntüsü) ve logoların kırpılmasını istedi. Bunlar kullanılmadı: izin yok; logo kırpmak kaynağı gizlemek olur. Kullanıcı ısrar etti; kural değişmedi. Çözüm: Pexels'teki serbest lisanslı fotoğraflar yavaş kamera hareketiyle sahneye çevrildi (foto_sahne.py): TCG Anadolu (17623242, 19065496), Kızılelma (17854252), Akıncı (16660291). Kullanıcı ABD Donanması görüntüsü istemedi; kullanılmadı. Yeni sürüm: taslak/a4-tersane/a4-tersane-l400.json; video sohbette gönderildi; ONAY BEKLİYOR. Alan adı izinleri eklendi: images.pexels.com, commons.wikimedia.org, upload.wikimedia.org (Wikimedia API bu ortamdan 429 veriyor).",
-    "2026-11-25: Kullanıcı: \"Son yaptığımız A4 ve Tuzla Hırdavat tanıtımını Ocak'ta kullanırız; bir yere sıkıştırma ama plana al.\" A4-316 filmi (L400 ve SİHA'lı sürüm) onaylandı ve 19 Ocak 2027 Salı 10:00'a planlandı (Metricool id 441547329, uuid -5005514698825642368; medya posts/ek/a4-tersane-l400.mp4; kapak 10900 ms). Site tanıtım filmi 5 Ocak'ta zaten planlıydı. Ocak sayımı: 1 Ocak + 5 Ocak + 19 Ocak + 16 normal gönderi = 19; Ocak doldu, ek.py Ocak'ta başka ek eklemez. Rayno'nun ikinci reklam filmi ve dört fragman Şubat'tan itibaren sırayla çıkar (ek_fragman). A4 filminin L400'süz ilk sürümü kullanılmayacak.",
-    "2026-11-25: Kullanıcı yineledi: \"Aralık'ta onay yok, Ocak'ta devam.\" Aralık haftaları (30 Kasım – 1 Ocak) onay istemeden, bildirim göndermeden yürür; 3 Ocak 2027 Pazar hazırlığından itibaren onay yine şart."
-  ],
-  "ses_sirasi": 4,
-  "kullanilan_yedekler": [],
-  "hikaye_denemesi": {
-    "haftalar": [
-      "2026-11-16",
-      "2026-11-23"
-    ],
+ "posted": [
+  {
+   "date": "2026-11-09T10:00:00",
+   "id": "2026-11-09-gedore-tork",
+   "type": "urun",
+   "group": "tork",
+   "url": "https://tuzlahirdavat.com.tr/gedore-red-12-40-200-nm-tork-anahtari-r68900200-14000005613",
+   "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=7250319658039985355"
+  },
+  {
+   "date": "2026-11-11T10:00:00",
+   "id": "2026-11-11-grangos-set",
+   "type": "urun",
+   "group": "akulu",
+   "url": "https://tuzlahirdavat.com.tr/20v-kit-gcd25--gcg20--2-x-50-ah--gcc02--grc06-gckit202a-f2",
+   "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=3234855027400130928"
+  },
+  {
+   "date": "2026-11-12T10:00:00",
+   "id": "2026-11-12-a2-a4",
+   "type": "karsilastirma",
+   "group": "baglanti",
+   "url": "",
+   "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-6571475556082367643"
+  },
+  {
+   "date": "2026-11-13T10:00:00",
+   "id": "2026-11-13-starline-cizme",
+   "type": "urun",
+   "group": "isg",
+   "url": "https://tuzlahirdavat.com.tr/stl-9910-s4-yesil-cizme-uzun-no43-starline-20199101211430",
+   "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=324216549419272888"
+  },
+  {
+   "date": "2026-11-16T10:00:00",
+   "id": "2026-11-16-gedore-pense",
+   "type": "reel",
+   "key": "gedore-pense",
+   "group": "pense",
+   "url": "https://tuzlahirdavat.com.tr/gedore-red-cok-amacli-kablo-soyma-pensesir28002204-14000006114",
+   "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-2928118930348815422",
+   "hikaye": {
     "saat": "18:00",
-    "kapsam": "Haftanın iki Reels'i, aynı gün hikaye olarak (aynı video, metinsiz, bağlantısız)",
-    "onay": "2026-11-09",
-    "sonuc_sunulacak": "2027-01-03"
+    "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=5892304936894153459"
+   }
+  },
+  {
+   "date": "2026-11-18T10:00:00",
+   "id": "2026-11-18-izeltas-fener",
+   "type": "carousel",
+   "key": "izeltas-fener",
+   "group": "fener",
+   "url": "https://tuzlahirdavat.com.tr/pro-12000-lumen-zoom-ozellikli-cob-led-el-feneri--14000006173",
+   "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-3017217111699993727"
+  },
+  {
+   "date": "2026-11-19T10:00:00",
+   "id": "2026-11-19-ipucu-civata-okuma",
+   "type": "carousel",
+   "key": "ipucu-civata-okuma",
+   "group": "baglanti",
+   "url": "",
+   "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-5332040080573906355"
+  },
+  {
+   "date": "2026-11-20T10:00:00",
+   "id": "2026-11-20-kolege-kaynak",
+   "type": "reel",
+   "key": "kolege-kaynak",
+   "group": "kaynak",
+   "url": "https://tuzlahirdavat.com.tr/klg200mma-inverter-200amper-ortulu-elektrod-kaynak-klg200mma",
+   "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-3035150912428815514",
+   "hikaye": {
+    "saat": "18:00",
+    "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-2899628288196391452"
+   }
+  },
+  {
+   "date": "2026-11-23T10:00:00",
+   "id": "2026-11-23-rayno-vinc",
+   "type": "reel",
+   "key": "rayno-vinc",
+   "group": "kaldirma",
+   "url": "https://tuzlahirdavat.com.tr/rayno-elektrikli-mini-vinc-400-800-kg-20-m-wifi-ryn11157",
+   "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=7443168713099134362",
+   "hikaye": {
+    "saat": "18:00",
+    "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=4727891801889786296"
+   }
+  },
+  {
+   "date": "2026-11-24T10:00:00",
+   "id": "2026-11-24-oyun-usta-modu",
+   "type": "reel",
+   "key": "oyun-usta-modu",
+   "group": "site",
+   "url": "",
+   "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=4268851937087605144",
+   "ek": true
+  },
+  {
+   "date": "2026-11-25T10:00:00",
+   "id": "2026-11-25-hikoki-dv18dd",
+   "type": "carousel",
+   "key": "hikoki-dv18dd",
+   "group": "akulu",
+   "url": "https://tuzlahirdavat.com.tr/18v-50-ah-55nm-akulu-darbeli-vidalama-matkap-hiko-dv18dd-50",
+   "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-8284489730898574313"
+  },
+  {
+   "date": "2026-11-26T10:00:00",
+   "id": "2026-11-26-ipucu-din-numaralari",
+   "type": "carousel",
+   "key": "ipucu-din-numaralari",
+   "group": "baglanti",
+   "url": "",
+   "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=438892824696013262"
+  },
+  {
+   "date": "2026-11-27T10:00:00",
+   "id": "2026-11-27-crc-5-56",
+   "type": "reel",
+   "key": "crc-5-56",
+   "group": "kimyasal",
+   "url": "https://tuzlahirdavat.com.tr/crc-5-56-pro-pas-sokucu",
+   "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-8128068499861584844",
+   "hikaye": {
+    "saat": "18:00",
+    "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-4526158585744503431"
+   }
+  },
+  {
+   "date": "2026-11-28T10:00:00",
+   "id": "2026-11-28-rayno-kaynak-200",
+   "type": "reel",
+   "key": "rayno-kaynak-200",
+   "group": "kaynak",
+   "url": "https://tuzlahirdavat.com.tr/rayno-200a-invertor-kaynak-makinasi",
+   "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-3875703907430610441",
+   "ek": true
+  },
+  {
+   "date": "2027-01-05T10:00:00",
+   "id": "2027-01-05-site-tanitim-uzun",
+   "type": "reel",
+   "key": "site-tanitim-uzun",
+   "group": "site",
+   "url": "",
+   "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-4359201216394344402",
+   "ek": true,
+   "metricool_id": 441455344,
+   "medya": "posts/ek/site-tanitim-uzun.mp4"
+  },
+  {
+   "date": "2027-01-19T10:00:00",
+   "id": "2027-01-19-a4-tersane-l400",
+   "type": "reel",
+   "key": "a4-tersane-l400",
+   "group": "baglanti",
+   "url": "",
+   "metricool": "https://app.metricool.com/planner/calendar?blogId=7877690&openWithPostUuid=-5005514698825642368",
+   "ek": true,
+   "metricool_id": 441547329,
+   "medya": "posts/ek/a4-tersane-l400.mp4"
   }
+ ],
+ "planned_weeks": [
+  "2026-11-09",
+  "2026-11-16",
+  "2026-11-23"
+ ],
+ "recent_groups": [
+  "baglanti",
+  "kaynak",
+  "kaldirma",
+  "akulu",
+  "baglanti",
+  "kimyasal"
+ ],
+ "last_product_theme": "dark",
+ "last_tekli_week": "2026-11-09",
+ "facebook_bagli": false,
+ "karne": [
+  {
+   "tarih": "2026-11-03",
+   "takipci": 1498,
+   "not": "Başlangıç noktası (robottan önce). Ekim 2026'da günlük erişim 0–5 kişi; Ağustos–Ekim 2026 arasında paylaşım yok."
+  },
+  {
+   "hafta": "2026-11-09",
+   "takipci": 1503,
+   "yeni_takipci": 1,
+   "kaybedilen": 0,
+   "erisim": 371,
+   "etkilesen": 10,
+   "en_iyi": {
+    "id": "2026-11-09-gedore-tork",
+    "erisim": 150,
+    "kaydetme": 0,
+    "paylasim": 0
+   },
+   "not": "4 tekli görsel gönderi yayınlandı; Reels ve hikaye yoktu. Kaydetme ve paylaşım 0. Erişimler: 150, 82, 87, 78."
+  },
+  {
+   "hafta": "2026-11-16",
+   "takipci": 1501,
+   "yeni_takipci": 3,
+   "kaybedilen": 5,
+   "erisim": 420,
+   "etkilesen": 9,
+   "en_iyi": {
+    "id": "2026-11-16-gedore-pense",
+    "erisim": 176,
+    "kaydetme": 0,
+    "paylasim": 0
+   },
+   "reels": [
+    {
+     "id": "2026-11-16-gedore-pense",
+     "ses": "enerjik",
+     "erisim": 176,
+     "izlenme": 233,
+     "kaydetme": 0,
+     "paylasim": 0,
+     "izlenme_3sn_orani": 26.0
+    },
+    {
+     "id": "2026-11-20-kolege-kaynak",
+     "ses": "atolye",
+     "erisim": 143,
+     "izlenme": 173,
+     "kaydetme": 0,
+     "paylasim": 0,
+     "izlenme_3sn_orani": 9.5
+    }
+   ],
+   "kaydirmali": [
+    {
+     "id": "2026-11-18-izeltas-fener",
+     "erisim": 43,
+     "kaydetme": 0,
+     "paylasim": 0
+    },
+    {
+     "id": "2026-11-19-ipucu-civata-okuma",
+     "erisim": 77,
+     "kaydetme": 1,
+     "paylasim": 0
+    }
+   ],
+   "hikayeler": [
+    {
+     "tarih": "2026-11-16T18:00",
+     "erisim": null,
+     "gosterim": null,
+     "yanit": null,
+     "ileri": null,
+     "cikis": null,
+     "reels_erisim": 176
+    },
+    {
+     "tarih": "2026-11-20T18:00",
+     "erisim": null,
+     "gosterim": null,
+     "yanit": null,
+     "ileri": null,
+     "cikis": null,
+     "reels_erisim": 143
+    }
+   ],
+   "not": "İlk Reels haftası. Takipçi 1503'ten 1501'e (3 kazanılan, 5 kaybedilen; 22 Kasım verisi henüz yok). Reels erişimi kaydırmalıların 2–4 katı. Soru kancalı Gedore Reels'i 3 sn üstü izlenmede %26, Kolege %9,5. İki hikaye de yayınlandı (Metricool: PUBLISHED) ama hikaye ölçümleri boş geldi. yg1-kilavuz-seti stokta yok; kuyruğun sonuna alındı, yerine hikoki-dv18dd eklendi."
+  }
+ ],
+ "notes": [
+  "Robot 2026-11-04'te kuruldu. İlk hafta (2026-11-09) kullanıcı onayıyla planlandı.",
+  "2026-11-04: Kullanıcı yeni düzeni onayladı. 16 Kasım 2026 haftasından itibaren Pazartesi ve Cuma Reels, Çarşamba ürün kaydırmalısı, Perşembe Usta İpucu kaydırmalısı; en fazla 5 hashtag.",
+  "2026-11-04: İlk haftanın (2026-11-09) 4 gönderisinin hashtag'leri 5'e indirildi (Metricool'da güncellendi).",
+  "2026-11-05: Kullanıcı Reels için kodla üretilmiş özgün sesi onayladı (ses.py, assets/reel-ses.wav). Facebook Sayfası (facebook.com/tuzlacivata) yetkisi kullanıcının babasında ya da abisinde; kullanıcı abisinden tam yetki isteyecek. Olmazsa Facebook olmadan devam: Reels kendi sesimizle çıkar.",
+  "2026-11-06: Kullanıcı Reels'in izleyiciyi tutmasını istedi. 2. sürüm: 9 sn, vuruşla gelen kanca, 2. saniyede düşüş, yakınlaşma ve parlama, döngüde başa saran ses. Üç ritim (enerjik, atolye, derin) sırayla döner. Kullanıcıya örnek sayfada sunuldu.",
+  "2026-11-06: Kullanıcı Aralık 2026'da askerde olacak. 30 Kasım 2026 – 1 Ocak 2027 arasındaki 5 haftanın 20 gönderisi onaylandı ve aynı gün Metricool'a planlandı (weeks/ içinde on_planli). Bu haftalarda onay istenmez; robot Pazar günleri stok ve kampanya denetimi yapar, sorun varsa weeks/yedek.json'daki onaylı yedekle değiştirir (ROBOT.md, 'Önceden planlanmış haftalar'). volkel-helikoil ve kampanya-kargo Aralık'ta kullanıldığı için kuyruktan çıkarıldı.",
+  "2026-11-09: Kullanıcı hikaye denemesini onayladı: 16 ve 23 Kasım haftalarının 4 Reels'i aynı gün 18:00'de Instagram hikayesi olarak da yayınlanır. Kasım'da 13 gönderi + 4 hikaye = 17 (ücretsiz planın 20 sınırı içinde). Sonuç karneye yazılır ve 3 Ocak 2027 çalışmasında kullanıcıya sunulur; devamına kullanıcı karar verir.",
+  "2026-11-23: Kullanıcı Reels türünün değişmesini onayladı (\"önerinden ilerleyelim\"). Neden: ilk iki ürün Reels'ini açanların %73'ü ve %90'ı ilk 3 saniyede geçti. 4 Ocak 2027 haftasından itibaren Pazartesi \"Bil bakalım\" (reels_bil), Cuma \"Yanlış / doğru\" (reels_yd). Aralık planı değişmedi. Telefonla gerçek çekim fikri de önerildi; kullanıcı deneme çekimi gönderirse kurulacak. Örnek videolar Örnekler sayfasında (\"Ocak: yeni Reels\").",
+  "2026-11-23: Kullanıcı sinematik stili ve gerçek stok görüntü kullanımını seçti (\"bundan sonra bu yeteneğimizi kullanalım\"). 4 Ocak 2027'den itibaren yeni türler sinematik stilde: \"Yanlış / doğru\" stok görüntü zeminiyle, \"Bil bakalım\" kodla üretilmiş sahneyle. Kullanıcı stok siteleri için alan adı izni verdi (Pexels, Pixabay). Amaç sözü: yayılmak, izlenmek, ürünü tanıtmak, yeri geldiğinde bilgi vermek, sayfayı popüler yapmak.",
+  "2026-11-23: Kullanıcı sesin profesyonelleşmesini ve Aralık Reels'lerinin de yeni biçime çevrilmesini istedi. Profesyonel ses kuruldu (ses_pro.py; Pixabay müzik ve efekt, Content ID'siz); 4 Ocak 2027'den itibaren yeni türlerde varsayılan. Aralık'ın 10 Reels'i için yeni biçim TASLAĞI hazırlandı ve videolar sohbette gönderildi (taslak/aralik-yeni/). ONAY BEKLİYOR: onay gelmeden Metricool'daki Aralık gönderileri değişmez. Kapanış kartına ürün fotoğrafı eklendi (urun alanı).",
+  "2026-11-23: Kullanıcı Aralık Reels'lerinin yeni biçimini onayladı (\"ONAYLIYORUM\"). 10 Reels Metricool'da güncellendi (aynı tarih ve saat, aynı uuid; yeni video ve açıklama). Pazartesi \"Bil bakalım\", Cuma \"Yanlış / doğru\"; sinematik stil, profesyonel ses, kapanışta ürün. 18 Aralık dekupaj videosunda jsDelivr adresi reddedildi; raw adresiyle bir kez denendi ve oldu. Eski 18 Aralık videosundaki bozuk ürün fotoğrafı da böylece giderildi.",
+  "2026-11-23: Kullanıcı \"gelecek paylaşımlar için dağarcığını ve senaryo kabiliyetini geliştir\" dedi. Kuruldu: SENARYO.md (senaryo rehberi), dagarcik.json (16 Bil bakalım, 16 Yanlış/doğru ailesi, 8 İpucu fikri; 25'i kaynakla doğrulandı, 7'si kullanılmadan önce doğrulanacak), fikir.py (aday seçimi, kuyruk iskeleti, karne kıyası). Yanlış/doğru şablonuna iki yeni kurgu eklendi: Efsane/gerçek ve Zor yol/kolay yol (cift alanı). İki örnek video sohbette gönderildi; kullanıcı bu iki kurguyu henüz görmedi ve onaylamadı. Haftalık onay kuralı aynen geçerli.",
+  "2026-11-23: Kullanıcı Rayno 200A kaynak makinesinin bağlantısını verip tanıtım videosu istedi. İlk taslak Yanlış/doğru türündeydi; kullanıcı reddetti: \"direkt ürünü tanıt, doğru yanlış yapma\". Yeni tür kuruldu: Ürün tanıtımı (reel_tanitim). Taslak taslak/rayno-kaynak-200/ klasöründe; video sohbette gönderildi. ONAY ve yayın günü bekliyor; Metricool'a planlanmadı. Aylık sınır: Kasım'da 3, Aralık'ta 2 boş yer.",
+  "2026-11-23: Kullanıcı Rayno 200A ürün tanıtımı Reels'ini onayladı (gün yazmadı; önerilen gün uygulandı). 28 Kasım 2026 Cumartesi 10:00'a planlandı (ek gönderi; hikayesi yok). Kasım toplamı 18/20 oldu. Karnede türü 'tanitim' olarak yaz. Aranacak kod RYN6155; site aramasında bulunduğu doğrulanamadı, kullanıcıya soruldu.",
+  "2026-11-23: Kullanıcı Rayno tanıtım videosunu onaylayıp planlattıktan sonra \"daha sinematik, daha senaryolu bir şey yapamaz mıyız\" dedi. Yeni tür kuruldu: Fragman (reel_fragman): dört gerçek sahne, dört cümle, sonra ürün. Rayno'nun fragman sürümü taslak/rayno-kaynak-200/rayno-fragman.json; video sohbette gönderildi, onay bekliyor. 28 Kasım'a planlı video (ürün tanıtımı sürümü) yerinde duruyor; kullanıcı isterse fragmanla değiştirilecek.",
+  "2026-11-23: Kullanıcı Rayno fragmanını beğendi (\"bunu sevdim\") ve 5-6 ürüne aynı türde tanıtım istedi. 5 fragman hazırlandı ve sohbette gönderildi: Karbosan NK Thinline kesme taşı (910450), Tyrolit ONE 2in1 flap disk (34689695), Egesan Pro inox kesme taşı, İzeltaş 35 parça lokma takımı (1113001038; stok 8), A2 paslanmaz DIN 933 cıvata. Taslak: taslak/fragman-5/. ONAY ve yayın günleri bekliyor; hiçbiri planlanmadı. GFB için yapılmadı: stokta olan ürün SDS-Plus beton ucu, ama yüzü ya da markası görünmeyen beton delme görüntüsü bulunamadı. Aylık sınır: Kasım'da 2, Aralık'ta 2 boş yer. 28 Kasım'a planlı Rayno videosu hâlâ 'ürün tanıtımı' sürümü; kullanıcı 'değiştir' derse fragman sürümüyle değiştirilecek.",
+  "2026-11-23: Kullanıcı \"GTA 6 temalı Tuzla Hırdavat sitesi tanıtımı\" istedi. GTA'nın adı, logosu ve görünümü kullanılmadı (tescilli marka); kullanıcıya söylendi. Yerine özgün oyun temalı site tanıtımı hazırlandı: \"Usta Modu\" (reel_oyun). Taslak taslak/oyun-usta-modu/; video sohbette gönderildi, onay bekliyor, planlanmadı.",
+  "2026-11-23: Kullanıcı: \"Güzel ama hep aynı melodi; izleyeni sıkar; her gönderide aynı.\" Müzik kütüphanesi 1 parçadan 6 parçaya çıkarıldı (kimlikler a–j, assets/ses-kaynak.json; hepsi Pixabay, Content ID kaydı yok). Müzik miksajda öne alındı, ortak efektler kısıldı. Taslak 7 videonun (5 fragman, Rayno fragman, oyun) sesi farklı parçalarla değiştirildi ve sohbette gönderildi. Planlı 11 videonun (28 Kasım Rayno + Aralık'ın 10 Reels'i) yeni sesli sürümleri hazırlandı (out/yeni-ses/, plan.json) ama Metricool'a YÜKLENMEDİ: kullanıcı parçaları dinleyip onay verince yüklenecek.",
+  "2026-11-23: Kullanıcı: \"Oyun temalı onaylı, kalanı hangisi iyi olacaksa onu yap.\" Yapılanlar: (1) Oyun temalı \"Usta Modu\" 24 Kasım Salı 10:00'a planlandı (Kasım toplamı 19). (2) 28 Kasım Rayno gönderisinin videosu fragman sürümüyle değiştirildi; açıklama aynı. (3) Paslanmaz DIN 933 fragmanı 1 Aralık Salı 10:00'a planlandı (Aralık toplamı 19; weeks/2026-11-30.json içinde ek gönderi). (4) Aralık'ın 10 Reels'inin sesi farklı parçalarla değiştirildi ve Metricool'da güncellendi (görüntü, açıklama, tarih aynı). (5) Kalan 4 fragman (İzeltaş lokma, Karbosan Thinline, Tyrolit flap, Egesan inox) queue.json 'ek_fragman' listesine alındı; Ocak'tan itibaren ek.py ile haftaya bir tane, ayın toplamı 19'u geçmeden eklenir ve Pazar onay mesajında gösterilir. Sitede aranacak kodlar (RYN6155, 910450, 34689695, 1113001038, 'Egesan inox', 'DIN 933 A2') site aramasında denenemedi; kullanıcıdan denemesi istendi.",
+  "2026-11-25: Kullanıcı Mixkit ve Coverr alan adlarına izin verdi ve Rayno kaynak makinesi için yeni bir reklam filmi istedi. Fragman türünde ikinci film hazırlandı (taslak/rayno-kaynak-200/rayno-reklam-2.json; müzik d; sahneler Mixkit 4125, Pixabay 75269 ve 18983, Pexels 6046358). Video sohbette gönderildi; ONAY BEKLİYOR, planlanmadı. Kasım ve Aralık 19'da olduğu için yeni gönderi sığmıyor: ya 28 Kasım'daki Rayno videosunun yerine geçer ya da Ocak'a kalır; kullanıcıya soruldu. Bulgu: Mixkit'teki kaynak yakın çekimlerinin hepsi 'Restricted' (yalnız kişisel kullanım) lisanslı; Coverr'da kaynakla ilgili işe yarar klip yok.",
+  "2026-11-25: Kullanıcı site için de bir tanıtım filmi istedi. Fragman türünde hazırlandı (taslak/site-tanitim/site-tanitim-filmi.json; müzik h): \"Cıvata mı?\" · \"Kesme taşı mı?\" · \"Matkap ucu mu?\" · \"Hepsi tek adreste.\" → 6 ürün karosu, TUZLA HIRDAVAT, 20.000+ ürün. reel_fragman şablonuna 'mozaik' seçeneği eklendi. Video sohbette gönderildi; ONAY BEKLİYOR, planlanmadı (Kasım ve Aralık 19'da; en erken Ocak). İlk denemede kullanılan pexels-4941356 kesitinde okunur bir alet markası çıktığı için değiştirildi.",
+  "2026-11-25: Kullanıcı dükkânında çektiği 11 videoyu gönderdi ve tuzlacivata.com.tr alan adına izin verdi. Site tanıtım filmi tamamı kendi çekimleriyle yeniden kuruldu (taslak/site-tanitim/site-tanitim-dukkan.json; müzik g): \"Dükkân Tuzla'da.\" · \"Depo dolu.\" · \"Aletler hazır.\" · \"Hepsi bir tık uzakta.\" → 6 ürün karosu; slogan \"Dükkân Tuzla'da, raflar cebinde.\" Video sohbette gönderildi; ONAY BEKLİYOR, planlanmadı. Onay bekleyen üç taslak var: Rayno reklam filmi 2, site filmi (stok görüntülü), site filmi (dükkân görüntülü). Çekimler depoya konmadı; kalıcı saklama için kullanıcıya soruldu.",
+  "2026-11-25: Kullanıcı site filmi için \"biraz daha uzun yap; benim görüntülerimin yanında siteden ya da başka yerden görüntü de kullanabilirsin\" dedi. Fragman türüne uzun sürüm eklendi (uzat, replik_sure; reel.py, ses_pro.py, şablonlar). 15 saniyelik film hazırlandı (taslak/site-tanitim/site-tanitim-uzun.json; müzik e): beş cümle, 15 kesit (11'i kullanıcının dükkân çekimi, 4'ü stok iş görüntüsü), sonra ürün karoları. Video sohbette gönderildi; ONAY BEKLİYOR, planlanmadı. reel.py'ye ses düzeyi düzeltmesi eklendi (ölçüp -14 LUFS'a çeker).",
+  "2026-11-25: Kullanıcı: \"Bunu Ocak'a sakla, son attığın video da uygundur.\" 15 saniyelik site tanıtım filmi onaylandı ve 5 Ocak 2027 Salı 10:00'a planlandı (Metricool id 441455344, uuid -4359201216394344402; medya posts/ek/site-tanitim-uzun.mp4; kapak 10900 ms). Rayno'nun ikinci reklam filmi Ocak'a ayrıldı: queue.json 'ek_fragman' listesinin başında, taslaktan üretilecek (video depoda yok); ek.py Pazar hazırlığında üretip onay mesajına ekler. Cumartesi (28 Kasım) çıkacak Rayno videosu aynen kaldı. Ocak sayımı: 1 Ocak lazer metre + 5 Ocak site filmi + 16 normal gönderi = 18; bir ek daha sığar. Site filminin öbür iki sürümü (9 sn) kullanılmayacak.",
+  "2026-11-25: Kullanıcı: \"A4-316 paslanmaz cıvatayı daha çok tersane sektörüne satıyoruz, savunma sanayine de. 1,6 cıvata da var, daha büyükleri de. Tersane ağırlıklı ama diğerlerini de içeren bir tanıtım videosu yap.\" 15 saniyelik fragman hazırlandı (taslak/a4-tersane/a4-tersane.json; müzik i): \"Tuzlu su affetmez.\" · \"Tersane A4 ister.\" · \"Savunma da, sanayi de.\" · \"M1,6'dan M48'e.\" · \"Hepsi Tuzla'da.\" → 6 A4 ürün karosu. Ölçü aralığı site haritasından doğrulandı (M1,6–M48; uç ürünler stokta). Video sohbette gönderildi; ONAY BEKLİYOR, planlanmadı. Ocak dolu (19); onaylanırsa Şubat sırasına alınır ya da kullanıcı yer değiştirir.",
+  "2026-11-25: Kullanıcı A4 filminde L400 TCG Anadolu ve SİHA'nın mutlaka görünmesini istedi; iki YouTube bağlantısı ve dört indirilmiş video gönderdi (Anadolu Ajansı TB2 görüntüsü, GİSBİR TV haberi, bir drone kanalının tersane çekimi, kaynağı belirsiz L400 görüntüsü) ve logoların kırpılmasını istedi. Bunlar kullanılmadı: izin yok; logo kırpmak kaynağı gizlemek olur. Kullanıcı ısrar etti; kural değişmedi. Çözüm: Pexels'teki serbest lisanslı fotoğraflar yavaş kamera hareketiyle sahneye çevrildi (foto_sahne.py): TCG Anadolu (17623242, 19065496), Kızılelma (17854252), Akıncı (16660291). Kullanıcı ABD Donanması görüntüsü istemedi; kullanılmadı. Yeni sürüm: taslak/a4-tersane/a4-tersane-l400.json; video sohbette gönderildi; ONAY BEKLİYOR. Alan adı izinleri eklendi: images.pexels.com, commons.wikimedia.org, upload.wikimedia.org (Wikimedia API bu ortamdan 429 veriyor).",
+  "2026-11-25: Kullanıcı: \"Son yaptığımız A4 ve Tuzla Hırdavat tanıtımını Ocak'ta kullanırız; bir yere sıkıştırma ama plana al.\" A4-316 filmi (L400 ve SİHA'lı sürüm) onaylandı ve 19 Ocak 2027 Salı 10:00'a planlandı (Metricool id 441547329, uuid -5005514698825642368; medya posts/ek/a4-tersane-l400.mp4; kapak 10900 ms). Site tanıtım filmi 5 Ocak'ta zaten planlıydı. Ocak sayımı: 1 Ocak + 5 Ocak + 19 Ocak + 16 normal gönderi = 19; Ocak doldu, ek.py Ocak'ta başka ek eklemez. Rayno'nun ikinci reklam filmi ve dört fragman Şubat'tan itibaren sırayla çıkar (ek_fragman). A4 filminin L400'süz ilk sürümü kullanılmayacak.",
+  "2026-11-25: Kullanıcı yineledi: \"Aralık'ta onay yok, Ocak'ta devam.\" Aralık haftaları (30 Kasım – 1 Ocak) onay istemeden, bildirim göndermeden yürür; 3 Ocak 2027 Pazar hazırlığından itibaren onay yine şart.",
+  "2026-11-25: Kullanıcı GFB tanıtımı istedi ve iki GFB kataloğu gönderdi (XPRO Eylül 2026, Haziran 2026 fiyat listesi). 15 saniyelik GFB filmi taslak olarak gönderildi: taslak/gfb-tanitim/gfb-tanitim.json (müzik g; replikler Metali deler / Çeliği işler / Vidayı sıkar / Depomuzda hazır / Hepsi GFB; mozaik: GFB 1814, 2420, 2001, 3960, 4700, 8012, hepsi stokta). ONAY BEKLİYOR; planlanmadı, medya depoya konmadı. Katalog fiyat listesi olduğu için fiyat kullanılmadı; katalog görselleri izinsiz kullanılamayacağı için ürün fotoğrafları siteden alındı. Onay gelirse: Ocak dolu (19), ek_fragman sırasına girer (Şubat ve sonrası) ya da kullanıcının söylediği güne."
+ ],
+ "ses_sirasi": 4,
+ "kullanilan_yedekler": [],
+ "hikaye_denemesi": {
+  "haftalar": [
+   "2026-11-16",
+   "2026-11-23"
+  ],
+  "saat": "18:00",
+  "kapsam": "Haftanın iki Reels'i, aynı gün hikaye olarak (aynı video, metinsiz, bağlantısız)",
+  "onay": "2026-11-09",
+  "sonuc_sunulacak": "2027-01-03"
+ }
 }
