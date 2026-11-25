@@ -33,7 +33,7 @@
      "VİDAYI SIKAR."
     ],
     [
-     "KILAVUZ · PAFTA · PANÇ",
+     "TEK ÇATI ALTINDA",
      "HEPSİ GFB."
     ]
    ],
@@ -107,18 +107,10 @@
      "sure": 1.0
     },
     {
-     "file": "work/stok/pixabay-94063.mp4",
-     "url": "https://pixabay.com/videos/id-94063/",
-     "start": 1.0,
-     "x": 0.45,
-     "sure": 0.5
-    },
-    {
-     "file": "work/stok/pexels-29913842.mp4",
-     "url": "https://videos.pexels.com/video-files/29913842/12840106_2560_1440_24fps.mp4",
-     "start": 5.5,
-     "x": 0.42,
-     "hiz": 0.8
+     "file": "work/gfb/yer/s-tesis.mp4",
+     "foto": "kullanıcının gönderdiği GFB tesis fotoğrafı (25 Kasım 2026)",
+     "foto_ayar": "altı 150 px uzatılmış kopya; --hf 1.0 --ust 0.0 --sol 0.0 0.12 --sure 7.2 --yakin 1.04",
+     "start": 0.0
     }
    ],
    "mozaik": [
@@ -159,7 +151,7 @@
    ],
    "slogan": "Atölyeden şantiyeye, her işe bir GFB.",
    "kaynak": "GFB'NİN KENDİ HESABINDA PAYLAŞACAĞI FİLM (kullanıcı 25 Kasım 2026: \"GFB kendi paylaşacağı, benim tanıtımım olmayan video rica etti\"). Tuzla Hırdavat logosu, sitesi, e-postası, telefonu ve deposu YOK. Web adresi www.gfb.com.tr GFB'nin kendi kataloğundan. Marka kendi ürününü tanıttığı için stok şartı aranmadı (freze, torna aynası, kumpas, matkap seti sitede stokta değil). Fiyat yok.",
-   "kaynak_video": "Pexels lisansı: 29913842, 8926451, 855491, 19791092, 24964769 · Pixabay Content License: 4728, 4729, 94063. Kullanıcının dükkân çekimi yok. Ürün fotoğrafları tuzlahirdavat.com.tr'deki GFB ürün sayfalarından. Stok görüntüdeki uçlar temsilîdir. GFB logosu kullanılmadı (elde temiz dosya yok); marka adı yazıyla.",
+   "kaynak_video": "Pexels lisansı: 29913842, 8926451, 855491, 19791092, 24964769 · Pixabay Content License: 4728, 4729. Kullanıcının dükkân çekimi yok. Ürün fotoğrafları tuzlahirdavat.com.tr'deki GFB ürün sayfalarından. Stok görüntüdeki uçlar temsilîdir. GFB logosu kullanılmadı (elde temiz dosya yok); marka adı yazıyla. Son sahne: kullanıcının gönderdiği GFB tesis fotoğrafı (havadan çekim, GFB tabelalı); kaynağı bilinmiyor, GFB kendi fotoğrafı olduğunu doğrulamalı. Ekran görüntüsündeki sarı nokta kapatıldı.",
    "caption": "GFB matkap ucu metali deler, GFB freze çeliği işler, GFB murç betonu kırar, GFB XPRO bits vidayı sıkar. 🔩\n\nMatkap uçları, frezeler, kılavuz ve pafta, murç ve keskiler, pançlar, XPRO darbeli bits uçları.\n\n📤 Atölyedeki ustana gönder.\n🌐 www.gfb.com.tr\n\n#gfb #matkapucu #kesicitakım #xpro #hırdavat",
    "replik_urun": [
     [
